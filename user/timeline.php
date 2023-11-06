@@ -8,6 +8,7 @@
 </head>
 <body>
     <h3>Our Love Story</h3>
+    
     <img src="assets/images/jason/12.png" alt="" class="crown">
 
     <div class="timeline">
@@ -42,19 +43,18 @@
     </div>
 
     <script>
-        const timeline = document.querySelector('.timeline');
         const timelineItems = document.querySelectorAll('.timeline-item');
+        const timelineConnectors = [];
 
-        timelineItems.forEach((item, index, items) => {
-            if (index > 0) {
-                const connector = document.createElement('div');
-                connector.classList.add('timeline-connector');
-                item.insertBefore(connector, item.querySelector('.timeline-bullet'));
+        timelineItems.forEach((item, index) => {
+            const connector = document.createElement('div');
+            connector.classList.add('timeline-connector');
+            item.insertBefore(connector, item.querySelector('.timeline-bullet'));
+            timelineConnectors.push(connector);
 
-                if (index === items.length - 1) {
-                    // Adjust the connector position for the last item
-                    connector.style.top = '50%';
-                }
+            if (index === timelineItems.length - 1) {
+                connector.style.top = '50%';
+                connector.style.bottom = '0';
             }
         });
     </script>
