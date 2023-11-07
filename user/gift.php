@@ -3,7 +3,7 @@
 <head> 
   <title>Gift Option</title> 
   <style> 
-    body { 
+    #gift { 
       margin: 0; 
       padding: 0; 
       background-color: #f0f0f0; 
@@ -29,7 +29,7 @@
   </style> 
 </head> 
 <body> 
-
+<div id="gift">
 <div class="options-container"> 
   <div class="option"> 
     <h2>Wedding Angpao</h2> 
@@ -40,6 +40,8 @@
     <p>Choose this option if you mind to send gift to the bride and groom</p> 
   </div> 
 </div> 
+</div>
+
 
 </body> 
 </html>

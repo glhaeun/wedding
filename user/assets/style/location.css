@@ -1,0 +1,16 @@
+#location {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.event {
+    margin-top: 50px;
+    display: block;
+    text-align: center;
+}
+
+.countdown {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+}

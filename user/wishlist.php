@@ -2,7 +2,7 @@
 <html>
 <head>
   <style>
-    body {
+    #wishlist {
       font-family: Arial, sans-serif;
       background-color: #f0f0f0;
       margin: 0;
@@ -64,7 +64,7 @@
   </style>
 </head>
 <body>
- 
+<div id="wishlist">
 <div class="wishlist-container">
   <h1>My Wishlist</h1>
   <ul>
@@ -79,6 +79,8 @@
     <button>Add</button>
   </div>
 </div>
+</div>
+
  
 </body>
 </html>

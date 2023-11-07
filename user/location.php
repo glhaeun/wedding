@@ -4,28 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Information</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        .event {
-            margin-top: 50px;
-        }
-
-        .countdown {
-            font-size: 30px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/style/location.css">
+    <link rel="stylesheet" href="assets/style/general.css">
 </head>
 <body>
+    <div id="location">
+    <div class="event">
     <h1>Holy Matrimony</h1>
     <p>Sunday, 29 October 2023 at 09.00 am</p>
     <p>Methodist Indonesia Church, Jl. M. T. Haryono No.38, Pusat Ps., Kec. Medan Kota, Kota Medan</p>
     <a href="https://maps.google.com/?q=Methodist+Indonesia+Church,Jl.+M.+T.+Haryono+No.38,Pusat+Ps.,Kec.+Medan+Kota,Kota+Medan">Get directions using maps</a>
+    </div>
 
     <div class="event">
         <h1>Reception</h1>
@@ -35,6 +24,8 @@
     </div>
 
     <div class="countdown" id="countdown"></div>
+    </div>
+    
 
     <script>
         // Set the date and time of the event

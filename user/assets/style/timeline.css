@@ -1,4 +1,4 @@
-body {
+#timeline {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@ body {
     flex-direction: column;
 }
 
-h3 {
+.timeline-h3 {
     font-size: 40px;
     margin-bottom: 10px;
 }
@@ -47,12 +47,12 @@ h3 {
     /* border: 1px solid black; */
 }
 
-h4 {
+.timeline-h4 {
     font-size: 1.2rem;
     margin: 0;
 }
 
-p {
+.timeline-p {
     margin-top: 10px;
     text-align: justify;
     /* border: 1px solid black; */

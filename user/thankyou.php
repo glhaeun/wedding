@@ -3,14 +3,14 @@
 <head> 
   <title>Thank You Page</title> 
   <style>
-    body {
+    #ty {
       font-family: Ephesis, script; 
       background-color: #f0f0f0; 
       margin: 0;
       padding: 0;
     }
 
-    h1 {
+    .ty-h1 {
       font-size: 72px; 
       color: #FFCA00; /* Sesuaikan warna font */
       text-align: center;
@@ -36,7 +36,10 @@
   </style>
 </head> 
 <body> 
-  <h1>Thank you for confirming</h1>
+<div class="thank-you-container">
+  <h1 class="ty-h1">Thank you for confirming</h1>
+</div>
+
 
   <script>
     // JavaScript untuk animasi

@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bride Groom Introduction</title>
     <link rel="stylesheet" href="assets/style/general.css">
-    <link rel="stylesheet" href="assets/style/haeun.css">
+    <link rel="stylesheet" href="assets/style/haeun2.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
 </head>
 <body>
     <section id="background">
-            <div class="glitter"></div>
-            <div class="glitterbottom"></div>
-
+    <div class="glitter-section">
+            <!-- <div class="glitter"></div> -->
+            <!-- <div class="glitterbottom"></div> -->
+    </div>
             <div class="container">
                 <div class="groom">
+                    <!-- <h1>Groom</h1> -->
                     <div class="photoContainer">
                         <div class="circlePhoto">
                         <img src="assets/images/haeun/groom.png" alt="groom" class="photo">
                         </div>
-                        <div class="frame">
+                        <!-- <div class="frame">
                         <img src="assets/images/haeun/frame.png" alt="frame" class="">
-                        </div>  
+                        </div>   -->
                     </div>
                     <div class="details">
                     <h1 class="pengantinName">Alexander</h1>
@@ -36,13 +38,14 @@
                     </div>
                 </div>
                 <div class="bride">
+                <!-- <h1>Bride</h1> -->
                     <div class="photoContainer">
                         <div class="circlePhoto">
                         <img src="assets/images/haeun/bride.png" alt="bride" class="photo">
                         </div>
-                        <div class="frame">
+                        <!-- <div class="frame">
                         <img src="assets/images/haeun/frame.png" alt="frame" class="">
-                        </div>  
+                        </div>   -->
                     </div>
                     <div class="details">
                         <h1 class="pengantinName">Olivia</h1>
