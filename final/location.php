@@ -80,4 +80,26 @@
         </div>
     </section>
 </body>
+
+<script>
+    const eventDate = new Date(document.querySelector('#tampilan-waktu').getAttribute('data-waktu')).getTime();
+
+    setInterval(updateCountdown, 1000);
+
+    function updateCountdown() {
+            const now = new Date();
+            const timeDifference = eventDate - now;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.querySelector('#hari').textContent = days;
+            document.querySelector('#jam').textContent = hours;
+            document.querySelector('#menit').textContent = minutes;
+            document.querySelector('#detik').textContent = seconds;
+        }
+
+</script>
 </html>

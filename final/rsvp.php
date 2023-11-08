@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-    <section id="rsvp">
+    <section id="rsvp" class="m-5">
     <div class="container">
 
 <div class="card-body border rounded-4 shadow p-3">
@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<div class="rounded-4 mt-4 mb-2" id="daftar-ucapan">
+<div class="rounded-4 mt-5 mb-2" id="daftar-ucapan">
 <div class="mb-3">
         <div class="card-body bg-light shadow p-3 m-0 rounded-4" data-parent="true" id="41d3dc17-02e0-4ff2-ab22-f2b54618ff0f">
             <div class="d-flex flex-wrap justify-content-between align-items-center">
