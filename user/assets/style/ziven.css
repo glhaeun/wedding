@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .container-inv {
   width: 100vw;
   height: 100vh;
@@ -7,6 +11,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column;
+  overflow: hidden;
 }
 
 .golden-blur {
@@ -14,7 +20,9 @@
   background-image: url(../images/ziven/golden-blur.png);
   background-size: cover;
   background-repeat: no-repeat;
-  animation: golden-blur 3s linear infinite alternate;
+  width: 60vw;
+  height: 60vh;
+  animation: golden-blur 15s linear infinite alternate;
 }
 
 .golden-blur-1 {
@@ -42,18 +50,18 @@
 
 @keyframes golden-blur {
   from {
-    width: 40vw;
-    height: 40vh;
-  }
-  to {
     width: 60vw;
     height: 60vh;
+  }
+  to {
+    width: 80vw;
+    height: 80vh;
   }
 }
 
 .leave-a {
   position: absolute;
-  top: 0;
+
   background-image: url(../images/ziven/leave-1.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -103,6 +111,7 @@
   background-image: url(../images/ziven/leave-2.png);
   width: 50vw;
   height: 50vh;
+
   background-size: contain;
   background-repeat: no-repeat;
   /* animation: golden-blur 3s linear infinite alternate; */
@@ -110,15 +119,237 @@
 
 .leave-1 {
   left: 0;
-  animation: initial-leave-1 0.3s linear 1 forwards,
-    leave-a 10s linear infinite alternate;
+  top: 0;
+  width: 40vw;
+  height: 40vh;
+  /* animation: initial-leave-1 0.3s linear 1 forwards,
+    leave-a 10s linear infinite alternate; */
 }
 
 .leave-2 {
-  width: 20vw;
-  height: 20vh;
+  width: 35vw;
+  height: 35vh;
+  top: 0;
   right: 0;
   transform: scaleX(-1);
-  animation: initial-leave-2 0.3s linear 1 forwards,
-    leave-a 10s linear infinite alternate;
+  /* animation: initial-leave-2 0.3s linear 1 forwards,
+    leave-a 10s linear infinite alternate; */
+}
+
+.leave-3 {
+  left: 0;
+  bottom: 0;
+  width: 40vw;
+  height: 40vh;
+  transform: scaleY(-1);
+}
+
+.leave-4 {
+  right: 0;
+  bottom: 0;
+  transform: scaleY(-1) scaleX(-1);
+  width: 35vw;
+  height: 35vh;
+}
+
+.leave-3 {
+  bottom: 0;
+}
+
+.flower {
+  position: absolute;
+  background-image: url(../images/ziven/flower.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30vw;
+  height: 50vh;
+  opacity: 0.3;
+}
+
+.flower-1 {
+  bottom: 10vh;
+  animation: idle 20s infinite alternate;
+  left: 5vw;
+}
+
+.flower-2 {
+  bottom: 5vh;
+  right: 0vw;
+  animation: idle-2 30s infinite alternate;
+  transform: scaleX(-1);
+}
+
+.middle-circle-inv {
+  width: min(75vw, 75vh);
+  height: min(75vw, 75vh);
+  /* height: 10000px; */
+  background: linear-gradient(
+    180deg,
+    white 0%,
+    rgba(255, 255, 255, 0.33) 100%,
+    white 100%,
+    white 100%
+  );
+  box-shadow: 0px 0px 250px 50px rgba(74.37, 74.37, 74.37, 0.1);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.tap-to-open {
+  color: #c7863d;
+  margin-top: 30px;
+  font-size: min(6vh, 6vw);
+  font-family: Cormorant Infant;
+  font-weight: 500;
+  word-wrap: break-word;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sparkle-inv {
+  position: absolute;
+  background-image: url(../images/ziven/sparkle.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: min(85vw, 85vh);
+  height: min(85vw, 85vh);
+  margin: -30px -20px 0 0;
+}
+
+.frame-inv {
+  position: absolute;
+  background-image: url(../images/ziven/frame.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: min(85vw, 85vh);
+  height: min(85vw, 85vh);
+  margin-top: calc(min(15vw, 15vh) * -1);
+  overflow: hidden;
+}
+
+.frame-1 {
+  /* animation: frameRotation 20s linear reverse infinite; */
+  animation: frameRotation 20s linear reverse infinite;
+}
+
+.frame-2 {
+  margin-left: -30px;
+  transform: rotate(30deg);
+  animation: frameRotation 20s linear infinite;
+}
+
+@keyframes frameRotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes openCardFrame {
+  50% {
+    width: 10px;
+    height: 10px;
+    transform: rotate(360deg);
+  }
+
+  75% {
+    transform: rotate(0);
+  }
+
+  100% {
+    width: max(150vw, 150vh);
+    height: max(150vw, 150vh);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes idle {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(3vw) translateY(-2vh);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes idle-2 {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-3vw) translateY(2vh);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes openRemove {
+  0% {
+  }
+
+  30% {
+    width: 0px;
+    height: 0px;
+  }
+
+  100% {
+    width: 0px;
+    height: 0px;
+  }
+}
+
+@keyframes openMiddleCircle {
+  25% {
+    background-color: #f5e08f;
+    background: #f5e08f;
+  }
+
+  45% {
+    width: min(75vw, 75vh);
+    height: min(75vw, 75vh);
+    transform: scale(0.01);
+    /* border-radius: 0; */
+  }
+
+  50% {
+    width: min(75vw, 75vh);
+    height: min(75vw, 75vh);
+    transform: scale(0.01);
+  }
+
+  100% {
+    width: max(100vw, 100vh);
+    height: max(100vw, 100vh);
+    background-color: #f5e08f;
+    background: white;
+    transform: scale(10);
+    /* border-radius: 0; */
+  }
+}
+.invitation-title {
+  text-shadow: 0px 4px 4px rgba(116, 116, 116, 0.25);
+  font-family: Fasthand;
+  font-size: min(8vh, 8vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  background: linear-gradient(
+    183deg,
+    #f5e08f 37.86%,
+    #f5e08f 50.98%,
+    #d6a357 68.6%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

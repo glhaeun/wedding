@@ -1,0 +1,121 @@
+.landing-inv {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/ziven/landingBackground.png);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.landing-flower {
+  position: absolute;
+  /* width: 100vw; */
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+}
+
+.element-landing-1 {
+  width: 20vw;
+}
+
+.together-landing {
+  color: #c79856;
+  font-family: Redressed;
+  font-size: min(5vh, 5vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.title-landing {
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(116, 116, 116, 0.25);
+  font-family: Ephesis;
+  font-size: min(10vh, 10vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(
+    183deg,
+    #ffca00 40.65%,
+    #f5e08f 50.98%,
+    #d7b123 50.99%,
+    #d6a357 68.6%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.text-landing {
+  color: #000;
+  text-align: center;
+  font-family: Enriqueta;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.date-landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-separator-landing {
+  height: 100%;
+}
+
+.side-date-landing {
+  color: #b27f32;
+  text-align: center;
+  font-family: Asul;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 30px;
+  margin: 0;
+}
+
+.main-date-landing {
+  color: #b27f32;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Asul;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 30px;
+  margin: 0;
+}
+
+.flower-3 {
+  bottom: 0vh;
+  animation: idle 20s infinite alternate ease-in-out;
+  right: 0vw;
+}
+.bride-groom-landing {
+  border-radius: 9999px;
+  background-image: url(../images/ziven/borderbridegroom.png);
+  width: 390px;
+  height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center center;
+}
+.bride-groom-landing img {
+  border-radius: 350px;
+}
