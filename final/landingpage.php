@@ -23,7 +23,7 @@
        <div class="overflow-x-hidden">
         <div class="groom">
             <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
-                <img src="../user/assets/images/haeun/groom.png" alt="" class="">
+                <img src="assets/images/haeun/groom.png" alt="" class="">
             </div>
             <h1 class="font-esthetic" style="font-size: 3rem;">Wahyu Siapa</h1>
             <h5 class="mt-3 mb-0">Son of</h5>
@@ -34,7 +34,7 @@
 
         <div class="groom">
             <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
-                <img src="../user/assets/images/haeun/bride.png" alt="" class="w-full h-screen object-cover">
+                <img src="assets/images/haeun/bride.png" alt="" class="w-full h-screen object-cover">
             </div>
             <h1 class="font-esthetic" style="font-size: 3rem;">Wahyu Siapa</h1>
             <h5 class="mt-3 mb-0">Daughter of</h5>
