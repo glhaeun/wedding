@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
     <style>
+        .crown {
+            width: 300px; 
+            height: 65px;
+            margin-top: -40px;
+            margin-bottom: 0px;
+            /* border: 1px solid black; */
+        }
+
         .img-crop {
             width: 14rem;
             height: 14rem;
@@ -45,6 +53,10 @@
         <div class="container">
             <div class="text-center">
             <h1 class="font-esthetic py-3" style="font-size: 2rem;">Wedding Information</h1>
+
+            <div class="d-flex justify-content-center">
+                <img src="../user/assets/images/jason/12.png" alt="" class="crown img-fluid">
+            </div>
 
                     <div class="overflow-x-hidden">
                         <div class="py-2">
