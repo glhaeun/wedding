@@ -18,8 +18,8 @@
 </head>
 <body>
     <div class="container-inv">
-        <div class="flower flower-1"></div>
-        <div class="flower flower-2"></div>
+        <div class="flowers flower-1"></div>
+        <div class="flowers flower-2"></div>
         <div class="golden-blur golden-blur-1"></div>
         <div class="golden-blur golden-blur-2"></div>
         <div class="golden-blur golden-blur-3"></div>
@@ -51,7 +51,7 @@
         <div class="bride-groom-landing">
             <img src="assets/images/ziven/bridegroom.png">
         </div>
-        <div class="flower flower-3"></div>
+        <div class="flowers flower-3"></div>
         <p class="title-landing"> Alexander & Olivia</p>
         <p class="text-landing"> invite you to celebrate their wedding</p>
         <div class="date-landing">
