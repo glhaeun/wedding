@@ -9,35 +9,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="assets/style/bridegroom.css">
+    <link rel="stylesheet" href="assets/style/haeun.css">
+
 </head>
 <body>
+
     <section id="bridegroom">
-        <div class="glitter">
-        <img src="assets/images/haeun/glittertop.png" alt="" class="">
+        <div class="glitter" data-aos="fade-down-right" data-aos-duration="1000">
+        <img src="assets/images/haeun/glittertop.png" alt="" class="" >
         <img src="assets/images/haeun/glittertop.png" alt="" class="glitter2">
         </div>
 
         <!-- <img src="assets/images/haeun/glitterbottom.png" alt="" class="glitterbottom"> -->
 
        <div class="text-center mb-5">
-       <h1 class="py-4 px-2" style="font-size: 2rem">Congratulations Lovebirds</h1>
+       <h1 class="py-4 px-2" style="font-size: 2rem" data-aos="fade-down" data-aos-duration="1000">Congratulations Lovebirds</h1>
 
        <div class="overflow-x-hidden testing">
-        <div class="groom">
+        <div class="groom" data-aos="fade-right" data-aos-duration="2000">
             
             <div class="img-crop-bridegroom border-light shadow my-4 mx-auto">
                 <img src="assets/images/haeun/groom.png" alt="" class="">
-                <img class="flower flower1" src="assets/images/haeun/flower1.png">
+                <img class="flower flower1" src="assets/images/haeun/flower1.png" data-aos="fade-up" data-aos-duration="2000">
             </div>
        
             <div class="details">
             <div class="name">
-            <img class="butterfly" src="assets/images/haeun/butterfly.png">
+            <img class="butterfly" src="assets/images/haeun/butterfly.png"  data-aos="fade-down-right" data-aos-duration="2000">
             <h1 class="font-esthetic" style="font-size: 3rem;">Wahyu Siapa</h1>
             </div>
             <h5 class="mt-3 mb-0">Son of</h5>
@@ -51,14 +55,14 @@
 
         <!-- <h1 class="font-esthetic my-4" style="font-size: 4rem;">&</h1> -->
 
-        <div class="groom">
+        <div class="groom" data-aos="fade-left" data-aos-duration="2000">
             <div class="img-crop-bridegroom border border-3 border-light shadow my-4 mx-auto">
                 <img src="assets/images/haeun/bride.png" alt="" class="w-full h-screen object-cover">
-                <img class="flower flower2" src="assets/images/haeun/flower2.png">
+                <img class="flower flower2" src="assets/images/haeun/flower2.png"  data-aos="fade-up" data-aos-duration="2000">
             </div>
             <div class="details">
             <div class="name">
-            <img class="butterfly" src="assets/images/haeun/butterfly.png">
+            <img class="butterfly" src="assets/images/haeun/butterfly.png"  data-aos="fade-down-right" data-aos-duration="2000">
             <h1 class="font-esthetic" style="font-size: 3rem;">Wahyu Siapa</h1>
             </div>
             <h5 class="mt-3 mb-0">Daughter of</h5>
@@ -82,14 +86,14 @@
                 </linearGradient>
             </defs>
             <path fill="url(#grad)" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,165.3C672,160,768,96,864,96C960,96,1056,160,1152,154.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            <image href="assets/images/haeun/2.png" x="0" y="0" height="320" />
-            <image href="assets/images/haeun/3.png" x="100" y="0" height="320" />
-            <image href="assets/images/haeun/3.png" x="300" y="0" height="320" />
-            <image href="assets/images/haeun/3.png" x="500" y="0" height="320" />
-            <image href="assets/images/haeun/3.png" x="700" y="0" height="320" />
-            <image href="assets/images/haeun/3.png" x="900" y="0" height="320" />
-            <image href="assets/images/haeun/3.png" x="1100" y="0" height="320" />
-            <image href="assets/images/haeun/1.png" x="1120" y="0" height="320" />
+            <image href="assets/images/haeun/2.png" x="0" y="0" height="320" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="500"/>
+            <image href="assets/images/haeun/3.png" x="100" y="0" height="320" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500" />
+            <image href="assets/images/haeun/3.png" x="300" y="0" height="320" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500" />
+            <image href="assets/images/haeun/3.png" x="500" y="0" height="320" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500" />
+            <image href="assets/images/haeun/3.png" x="700" y="0" height="320" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500" />
+            <image href="assets/images/haeun/3.png" x="900" y="0" height="320" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500" />
+            <image href="assets/images/haeun/3.png" x="1100" y="0" height="320" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500" />
+            <image href="assets/images/haeun/1.png" x="1120" y="0" height="320" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500" />
 
         </svg>
 
@@ -100,6 +104,10 @@
         </div>  -->
     </section>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     
 </body>
 </html>

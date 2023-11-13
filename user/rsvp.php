@@ -239,6 +239,8 @@
     </ul>
 </nav>
 </div>
+<?php include 'divider.php' ?>
+
     </section>
 
 
