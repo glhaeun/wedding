@@ -14,7 +14,7 @@ if (isset($_GET['email'])) {
     include 'location.php';
     include 'timeline.php';
     include 'rsvp.php';
-    //scratch
+    include 'scratch.php';
     include 'gifts.php';
     include 'thankyou.php';
 ?>
