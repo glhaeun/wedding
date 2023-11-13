@@ -255,6 +255,7 @@ body {
 
 .frame-2 {
   /* margin-left: -30px; */
+  animation: frameRotation 20s linear infinite;
   transform: rotate(30deg);
 }
 
