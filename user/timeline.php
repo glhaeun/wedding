@@ -79,39 +79,39 @@
         } */
 
         .board {
-        display: none;
-        position: relative;
-        /* top: 100%; */
-        /* left: 0; */
-        /* transform: translate(-50%, -50%); */
-        background-color: rgba(0, 0, 0, 0.4); /* Set the background color with transparency */
-        padding: 10px;
-        border-radius: 30px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        max-width: 900px; /* Set a maximum width for the board */
-        transition: all 0.3s ease; /* Add a smooth transition effect */
-    }
+            display: none;
+            position: relative;
+            /* top: 100%; */
+            /* left: 0; */
+            /* transform: translate(-50%, -50%); */
+            background-color: rgba(0, 0, 0, 0.4); /* Set the background color with transparency */
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            max-width: 900px; /* Set a maximum width for the board */
+            transition: all 0.3s ease; /* Add a smooth transition effect */
+        }
 
-    .board img {
-        width: 30%; /* Set the width of each picture to 30% of the total width */
-        /* max-width: 100%; */
-        height: auto;
-        margin-left: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+        .board img {
+            width: 30%; /* Set the width of each picture to 30% of the total width */
+            /* max-width: 100%; */
+            height: auto;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 
-    .close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        background: none;
-        border: none;
-        font-size: 18px;
-        color: white;
-    }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: white;
+        }
 
         .slide-in-left {
             animation: slide-in-left 1.5s cubic-bezier(0.25, 0.45, 0.45, 0.95) both;
@@ -811,36 +811,35 @@
         //     }, 1500); // Adjust the timeout duration to match your animation duration
         // }
 
-    function showBoard(bullet) {
-        // Find the closest timeline-item to the clicked bullet
-        var timelineItem = bullet.closest('.timeline-item');
+        function showBoard(bullet) {
+            // Find the closest timeline-item to the clicked bullet
+            var timelineItem = bullet.closest('.timeline-item');
 
-        // Find all other open boards and close them
-        var allBoards = document.querySelectorAll('.board');
-        allBoards.forEach(function (board) {
-            if (board !== timelineItem.querySelector('.board')) {
-                board.style.display = 'none';
-            }
-        });
+            // Find all other open boards and close them
+            var allBoards = document.querySelectorAll('.board');
+            allBoards.forEach(function (board) {
+                if (board !== timelineItem.querySelector('.board')) {
+                    board.style.display = 'none';
+                }
+            });
 
-        // Find the board within the timeline-item
-        var board = timelineItem.querySelector('.board');
+            // Find the board within the timeline-item
+            var board = timelineItem.querySelector('.board');
 
-        // Show the board
-        board.style.display = 'block';
-    }
+            // Show the board
+            board.style.display = 'block';
+        }
 
-    function closeBoard(button) {
-        // Find the closest timeline-item to the clicked close button
-        var timelineItem = button.closest('.timeline-item');
+        function closeBoard(button) {
+            // Find the closest timeline-item to the clicked close button
+            var timelineItem = button.closest('.timeline-item');
 
-        // Find the board within the timeline-item
-        var board = timelineItem.querySelector('.board');
+            // Find the board within the timeline-item
+            var board = timelineItem.querySelector('.board');
 
-        // Hide the board
-        board.style.display = 'none';
-    }
-
+            // Hide the board
+            board.style.display = 'none';
+        }
     </script>
 
 </body>
