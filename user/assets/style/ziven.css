@@ -183,16 +183,15 @@ body {
 }
 
 .flower-1 {
-  bottom: 10vh;
+  bottom: max(5vh, 10vw);
   animation: idle 20s infinite alternate;
-  left: 5vw;
+  left: 0vw;
 }
 
 .flower-2 {
-  bottom: 5vh;
+  bottom: max(1vh, 5vw);
   right: 0vw;
   animation: idle-2 30s infinite alternate;
-  transform: scaleX(-1);
 }
 
 .middle-circle-inv {
@@ -334,13 +333,13 @@ body {
 }
 @keyframes idle {
   0% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) scaleX(-1);
   }
   50% {
-    transform: translateX(3vw) translateY(-2vh);
+    transform: translateX(3vw) translateY(-2vh) scaleX(-1);
   }
   100% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) scaleX(-1);
   }
 }
 
