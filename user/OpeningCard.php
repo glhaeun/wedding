@@ -28,10 +28,10 @@
         <div class="leave-2 leave-a"></div>
         <div class="leave-3 leave-a"></div>
         <div class="leave-4 leave-a"></div>
-        <div class="sparkle-inv"  data-aos="fade-up"></div>
-        <div id="frame-1" data-aos="fade-up" class="frame-inv frame-1"></div>
-        <div id="frame-2" data-aos="fade-up" class="frame-inv frame-2"></div>
-        <div class="middle-circle-inv" data-aos="fade-down">
+        <div class="sparkle-inv"  data-aos="fade-up" data-aos-delay="100"></div>
+        <div id="frame-1" data-aos="fade-up" data-aos-delay="100" class="frame-inv frame-1"></div>
+        <div id="frame-2" data-aos="fade-up" data-aos-delay="100" class="frame-inv frame-2"></div>
+        <div class="middle-circle-inv" data-aos="fade-up" data-aos-delay="100">
             <h2 class="invitation-title">Celebrating Love’s</h2>
             <h2 class="invitation-title">Journey</h2>
         </div>
@@ -40,17 +40,19 @@
 
     </div>
 
-
-
+    <div class="spinning-cd" onclick="playInvitationSong()">
+        
+    </div>
+    <!-- <div class="landing-inv"></div> -->
     <div class="landing-inv">
         <div class="golden-blur golden-blur-2"></div>
         <div class="golden-blur golden-blur-3"></div>
-        <img class="landing-flower" data-aos="fade-up" data-aos-delay="100" src="assets/images/ziven/flowerLanding.png">
+        <img class="landing-flower" data-aos="fade-up" data-aos-delay="300" src="assets/images/ziven/flowerLanding.png">
         <div class="flex-inv" >
             <div class="flex-inv-container" >
-                <img class="element-landing-1" data-aos="fade-down" data-aos-delay="150"src="assets/images/ziven/element1.png">
+                <img class="element-landing-1" data-aos="fade-up" data-aos-delay="300"src="assets/images/ziven/element1.png">
                 <!-- <p class="together-landing">Together with their families</p> -->
-                <div class="bride-groom-landing" data-aos="fade-down" data-aos-delay="100">
+                <div class="bride-groom-landing" data-aos="fade-up fade-out" data-aos-delay="300">
                     <img src="assets/images/ziven/bridegroom.png">
                 </div>
             </div>
@@ -73,9 +75,10 @@
         
     </div>
 
-    <div class="landing-inv"></div>
-    <div class="landing-inv"></div>
-    <audio autoplay id="invitationAudio" src="assets/sound/invitation.mp3"></audio>
+   
+    
+    <!-- <div class="landing-inv"></div> -->
+    <audio id="invitationAudio" src="assets/sound/invitation.mp3"></audio>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/invitation.js">
         

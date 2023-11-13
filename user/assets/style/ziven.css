@@ -3,6 +3,21 @@ body {
   overflow-x: hidden;
 }
 
+.spinning-cd {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  width: min(8vw, 8vh);
+  height: min(8vw, 8vh);
+  background-image: url(../images/ziven/audioCd.png);
+  background-size: cover;
+  background-position: center center;
+  animation: frameRotation 10s linear infinite;
+  left: min(15vw, 15vh);
+  bottom: min(5vw, 5vh);
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
 .container-inv {
   width: 100vw;
   height: 100vh;
@@ -164,7 +179,7 @@ body {
   background-repeat: no-repeat;
   width: 30vw;
   height: 50vh;
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 .flower-1 {
@@ -181,8 +196,8 @@ body {
 }
 
 .middle-circle-inv {
-  width: min(75vw, 75vh);
-  height: min(75vw, 75vh);
+  width: min(70vw, 70vh);
+  height: min(70vw, 70vh);
   /* height: 10000px; */
   background: linear-gradient(
     180deg,
@@ -191,6 +206,8 @@ body {
     white 100%,
     white 100%
   );
+  margin-top: calc(min(15vw, 15vh) * -1);
+  position: absolute;
   box-shadow: 0px 0px 250px 50px rgba(74.37, 74.37, 74.37, 0.1);
   border-radius: 9999px;
   display: flex;
@@ -201,7 +218,8 @@ body {
 
 .tap-to-open {
   color: #c7863d;
-  margin-top: 30px;
+  position: absolute;
+  bottom: 2vh;
   font-size: min(6vh, 6vw);
   font-family: Cormorant Infant;
   font-weight: 500;
@@ -236,9 +254,8 @@ body {
 }
 
 .frame-2 {
-  margin-left: -30px;
+  /* margin-left: -30px; */
   transform: rotate(30deg);
-  animation: frameRotation 20s linear infinite;
 }
 
 @keyframes frameRotation {
@@ -256,7 +273,6 @@ body {
     width: 10px;
     height: 10px;
     transform: rotate(359deg);
-    margin-top: 0;
   }
 
   60% {
@@ -289,7 +305,6 @@ body {
     width: 10px;
     height: 10px;
     transform: rotate(-360deg);
-    margin-top: 0;
   }
 
   60% {
@@ -361,8 +376,8 @@ body {
   }
 
   35% {
-    width: min(75vw, 75vh);
-    height: min(75vw, 75vh);
+    width: min(70vw, 70vh);
+    height: min(70vw, 70vh);
     background-image: url(../images/ziven/landingBackground.png);
     background: gold;
     transform: scale(0.1);

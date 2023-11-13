@@ -7,9 +7,9 @@ AOS.init({
 document.addEventListener("DOMContentLoaded", () => {});
 
 var audio = document.getElementById("invitationAudio");
-audio.autoplay = true;
+// audio.autoplay = true;
 audio.loop = true;
-audio.load();
+// audio.load();
 
 var first = true;
 document.addEventListener("click", () => {
@@ -44,8 +44,9 @@ document.addEventListener("click", () => {
       setTimeout(() => {
         document.body.style.overflow = "auto";
       }, 1000);
+      document.querySelector(".spinning-cd").style.display = "block";
       document.querySelector(".landing-inv").style.animation =
-        "reverseBlur 0.7s linear 1";
+        "reverseBlur 0.3s linear 1";
       invContainer.remove();
     }, 2000);
     first = false;
@@ -55,7 +56,11 @@ function playInvitationSong() {
   var audio = document.getElementById("invitationAudio");
   if (audio.paused) {
     audio.play();
+    document.querySelector(".spinning-cd").style.animation =
+      "frameRotation 10s linear infinite";
   } else {
+    document.querySelector(".spinning-cd").style.animation =
+      "frameRotation 99999s linear infinite";
     audio.pause();
   }
 }
