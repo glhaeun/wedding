@@ -1,12 +1,10 @@
-temp = ["Tap to open", "Tap to open.", "Tap to open..", "Tap to open..."];
 let currentIndex = 0;
 
-document.addEventListener("DOMContentLoaded", () => {
-  setInterval(() => {
-    document.querySelector(".tap-to-open").innerHTML = temp[currentIndex];
-    currentIndex = (currentIndex + 1) % temp.length;
-  }, 1000);
+AOS.init({
+  offset: 0,
 });
+
+document.addEventListener("DOMContentLoaded", () => {});
 
 var audio = document.getElementById("invitationAudio");
 audio.autoplay = true;
@@ -24,31 +22,32 @@ document.addEventListener("click", () => {
     let sparkleInv = document.querySelector(".sparkle-inv");
     let circleText = document.querySelectorAll(".invitation-title");
     circleText.forEach((element) => {
-      element.style.animation = "openTextCircle 4s ease-in-out 1";
+      element.style.animation = "openTextCircle 2s ease-in-out 1";
     });
-
-    middleCircle.style.animation = "openMiddleCircle 4s ease-in-out 1";
-    frame1.style.animation = "openCardFrame 4s ease-in-out 1";
-    frame2.style.animation = "openCardFrame-2 4s ease-in-out 1";
-    sparkleInv.style.animation = "openCardFrame 4s ease-in-out 1";
-    temp = ["&nbsp", "&nbsp", "&nbsp", "&nbsp"];
+    setTimeout(() => {
+      document.querySelector(".tap-to-open").innerHTML = " ";
+    }, 200);
+    middleCircle.style.animation = "openMiddleCircle 2s ease-in-out 1";
+    frame1.style.animation = "openCardFrame 2s ease-in-out 1";
+    frame2.style.animation = "openCardFrame-2 2s ease-in-out 1";
+    sparkleInv.style.animation = "openCardFrame 2s ease-in-out 1";
 
     document
       .querySelectorAll(
-        ".flower-1, .flower-2, .leave-1, .leave-2, .leave-3, .leave-4, .golden-blur"
+        ".flower-1, .flower-2, .leave-1, .leave-2, .leave-3, .leave-4, .golden-blur, .tap-to-open"
       )
       .forEach((element) => {
-        element.style.animation = "openRemove 4s ease-in-out 1";
+        element.style.animation = "openRemove 2s ease-in-out 1";
       });
 
     setTimeout(function () {
       setTimeout(() => {
         document.body.style.overflow = "auto";
-      }, 300);
+      }, 1000);
       document.querySelector(".landing-inv").style.animation =
-        "reverseBlur 4s linear 1";
+        "reverseBlur 0.7s linear 1";
       invContainer.remove();
-    }, 4000);
+    }, 2000);
     first = false;
   }
 });

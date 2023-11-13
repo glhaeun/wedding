@@ -1,5 +1,6 @@
 body {
   overflow: hidden;
+  overflow-x: hidden;
 }
 
 .container-inv {
@@ -156,7 +157,7 @@ body {
   bottom: 0;
 }
 
-.flower {
+.flower-inv {
   position: absolute;
   background-image: url(../images/ziven/flower.png);
   background-size: contain;
@@ -255,6 +256,7 @@ body {
     width: 10px;
     height: 10px;
     transform: rotate(359deg);
+    margin-top: 0;
   }
 
   60% {
@@ -287,6 +289,7 @@ body {
     width: 10px;
     height: 10px;
     transform: rotate(-360deg);
+    margin-top: 0;
   }
 
   60% {
@@ -397,6 +400,7 @@ body {
     height: min(75vw, 75vh);
     /* box-shadow: none; */
     /* border-radius: 0; */
+    /* background: gold; */
     background-image: url(../images/ziven/landingBackground.png);
     background-position: center;
     transform: scale(10);
@@ -404,7 +408,7 @@ body {
   }
 
   100% {
-    filter: blur(10px);
+    filter: blur(5px);
   }
 
   /* 100% {
