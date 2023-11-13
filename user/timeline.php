@@ -390,17 +390,17 @@
 
 <section id="timeline">
 
-<div class="container pb-2 pt-4">
+<div class="container pb-2 pt-4" data-aos="fade-left" data-aos-duration="2000">
 
     <div class="card-body border rounded-4 shadow p-3">
 
-        <h1 class="font-esthetic text-center py-3" style="font-size: 3rem;">Our Love Story</h1>
+        <h1 class="font-esthetic text-center py-3" style="font-size: 3rem;"  data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100" >Our Love Story</h1>
 
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500" >
             <img src="../user/assets/images/jason/12.png" alt="" class="crown img-fluid">
         </div>
 
-        <div class="timeline py-2" data-aos="fade-down"  data-aos-delay="500" >
+        <div class="timeline py-2" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500" >
             <div class="row timeline-item">
                 <div class="col-12 col-md-1">
                     <div class="timeline-bullet" onclick="showBoard(this)"></div>
