@@ -478,6 +478,7 @@
         </div>
     </div>
 </div>
+<?php include 'divider.php' ?>
 </section>
 
     <!-- <script>

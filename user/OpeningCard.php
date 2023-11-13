@@ -48,35 +48,33 @@
     <div class="landing-inv">
         <div class="golden-blur golden-blur-2"></div>
         <div class="golden-blur golden-blur-3"></div>
-        <img class="landing-flower" data-aos="fade-up" data-aos-delay="300" src="assets/images/ziven/flowerLanding.png">
+        <img class="landing-flower" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300" src="assets/images/ziven/flowerLanding.png">
         <div class="flex-inv" >
             <div class="flex-inv-container" >
-                <img class="element-landing-1" data-aos="fade-up" data-aos-delay="300"src="assets/images/ziven/element1.png">
+                <img class="element-landing-1" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300"src="assets/images/ziven/element1.png">
                 <!-- <p class="together-landing">Together with their families</p> -->
-                <div class="bride-groom-landing" data-aos="fade-up fade-out" data-aos-delay="300">
+                <div class="bride-groom-landing" data-aos="fade-up fade-out" data-aos-delay="300" data-aos-duration="2000">
                     <img src="assets/images/ziven/bridegroom.png">
                 </div>
             </div>
             <div class="flex-inv-container">
-                <p class="title-landing"  data-aos="fade-up" data-aos-delay="100"> Alexander & Olivia</p>
-                <p class="text-landing" data-aos="fade-up" data-aos-delay="150"> invite you to celebrate their wedding</p>
-                <div class="date-landing" data-aos="fade-up" data-aos-delay="200">
+                <p class="title-landing"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000"> Alexander & Olivia</p>
+                <p class="text-landing" data-aos="fade-up" data-aos-delay="150" data-aos-duration="2000"> invite you to celebrate their wedding</p>
+                <div class="date-landing" data-aos="fade-up" data-aos-delay="200" data-aos-duration="2000">
                     <p class="side-date-landing">Oct</p>
                     <img class="separator-date-landing-1" src="assets/images/ziven/line.png">
                     <p class="main-date-landing">29</p>
                     <img class="separator-date-landing-1" src="assets/images/ziven/line.png">
                     <p class="side-date-landing">2023</p>
                 </div>
-                <p class="together-landing" data-aos="fade-up" data-aos-delay="250">08:00 pm</p>
-                <p class="together-landing" data-aos="fade-up" data-aos-delay="300">at Wisma benteng restaurant</p>
+                <p class="together-landing" data-aos="fade-up" data-aos-delay="250" data-aos-duration="2000">08:00 pm</p>
+                <p class="together-landing" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">at Wisma benteng restaurant</p>
             </div>
         </div>
        
-        <div class="flower-inv flower-3" data-aos="fade-right" data-aos-delay="150"></div>
+        <div class="flower-inv flower-3" data-aos="fade-right" data-aos-delay="150" data-aos-duration="2000"></div>
         
     </div>
-
-   
     
     <!-- <div class="landing-inv"></div> -->
     <audio id="invitationAudio" src="assets/sound/invitation.mp3"></audio>
