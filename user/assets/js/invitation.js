@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {});
 var audio = document.getElementById("invitationAudio");
 // audio.autoplay = true;
 audio.loop = true;
-// audio.load();
+audio.load();
 
 var first = true;
 document.addEventListener("click", () => {
