@@ -251,23 +251,68 @@ body {
 }
 
 @keyframes openCardFrame {
-  50% {
+  40% {
     width: 10px;
     height: 10px;
-    transform: rotate(360deg);
+    transform: rotate(359deg);
   }
 
-  75% {
+  60% {
+    width: max(30vw, 30vh);
+    height: max(30vw, 30vh);
     transform: rotate(0);
+  }
+
+  70% {
+    width: max(35vw, 35vh);
+    height: max(35vw, 35vh);
+    transform: rotate(135deg);
+  }
+
+  80% {
+    width: max(150vw, 150vh);
+    height: max(150vw, 150vh);
+    transform: rotate(360deg);
   }
 
   100% {
     width: max(150vw, 150vh);
     height: max(150vw, 150vh);
-    transform: rotate(360deg);
+    transform: rotate(0);
   }
 }
 
+@keyframes openCardFrame-2 {
+  40% {
+    width: 10px;
+    height: 10px;
+    transform: rotate(-360deg);
+  }
+
+  60% {
+    width: max(30vw, 30vh);
+    height: max(30vw, 30vh);
+    transform: rotate(-90deg);
+  }
+
+  70% {
+    width: max(45vw, 45vh);
+    height: max(45vw, 45vh);
+    transform: rotate(-225deg);
+  }
+
+  80% {
+    width: max(150vw, 150vh);
+    height: max(150vw, 150vh);
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    width: max(150vw, 150vh);
+    height: max(150vw, 150vh);
+    transform: rotate(0);
+  }
+}
 @keyframes idle {
   0% {
     transform: translateX(0) translateY(0);
@@ -296,7 +341,7 @@ body {
   0% {
   }
 
-  30% {
+  50% {
     width: 0px;
     height: 0px;
   }
@@ -312,27 +357,75 @@ body {
     background: white;
   }
 
-  45% {
+  35% {
     width: min(75vw, 75vh);
     height: min(75vw, 75vh);
     background-image: url(../images/ziven/landingBackground.png);
-    transform: scale(0.01);
+    background: gold;
+    transform: scale(0.1);
     /* border-radius: 0; */
   }
 
-  50% {
+  43% {
     width: min(75vw, 75vh);
     height: min(75vw, 75vh);
-    transform: scale(0.01);
+    /* background-image: url(../images/ziven/landingBackground.png); */
+    background: gold;
+    transform: scale(0.1);
+  }
+
+  60% {
+    width: min(25vw, 30vh);
+    height: min(25vw, 30vh);
+    transform: scale(1);
+    /* box-shadow: none; */
+    background: gold;
+    /* background-image: url(../images/ziven/landingBackground.png); */
+  }
+
+  70% {
+    width: min(35vw, 50vh);
+    height: min(35vw, 50vh);
+    transform: scale(1);
+    /* box-shadow: none; */
+    background: gold;
+    /* background-image: url(../images/ziven/landingBackground.png); */
+  }
+
+  99% {
+    width: min(75vw, 75vh);
+    height: min(75vw, 75vh);
+    /* box-shadow: none; */
+    /* border-radius: 0; */
     background-image: url(../images/ziven/landingBackground.png);
+    background-position: center;
+    transform: scale(10);
+    /* border-radius: 0; */
   }
 
   100% {
-    width: max(100vw, 100vh);
-    height: max(100vw, 100vh);
+    filter: blur(10px);
+  }
+
+  /* 100% {
+    width: 100vw;
+    height: 100vh;
     background-image: url(../images/ziven/landingBackground.png);
-    transform: scale(10);
-    /* border-radius: 0; */
+    transform: scale(1.5);
+    filter: blur(10px);
+  } */
+}
+
+@keyframes openTextCircle {
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 .invitation-title {

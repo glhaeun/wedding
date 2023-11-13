@@ -12,6 +12,15 @@
   position: relative;
 }
 
+@keyframes reverseBlur {
+  0% {
+    filter: blur(10px);
+  }
+
+  100% {
+    filter: blur(0);
+  }
+}
 .landing-flower {
   position: absolute;
   /* width: 100vw; */

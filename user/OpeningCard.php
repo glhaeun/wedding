@@ -40,6 +40,8 @@
 
     </div>
 
+    <div class="landing-inv"></div>
+
     <div class="landing-inv">
         <div class="golden-blur golden-blur-2"></div>
         <div class="golden-blur golden-blur-3"></div>

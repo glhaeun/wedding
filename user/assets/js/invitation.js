@@ -22,22 +22,31 @@ document.addEventListener("click", () => {
     let middleCircle = document.querySelector(".middle-circle-inv");
     let invContainer = document.querySelector(".container-inv");
     let sparkleInv = document.querySelector(".sparkle-inv");
-    frame1.style.animation = "openCardFrame 3.4s ease-in-out 1";
-    frame2.style.animation = "openCardFrame 3.4s ease-in-out 1";
-    sparkleInv.style.animation = "openCardFrame 3.4s ease-in-out 1";
+    let circleText = document.querySelectorAll(".invitation-title");
+    circleText.forEach((element) => {
+      element.style.animation = "openTextCircle 4s ease-in-out 1";
+    });
+
     middleCircle.style.animation = "openMiddleCircle 4s ease-in-out 1";
+    frame1.style.animation = "openCardFrame 4s ease-in-out 1";
+    frame2.style.animation = "openCardFrame-2 4s ease-in-out 1";
+    sparkleInv.style.animation = "openCardFrame 4s ease-in-out 1";
     temp = ["&nbsp", "&nbsp", "&nbsp", "&nbsp"];
 
     document
       .querySelectorAll(
-        ".flower-1, .flower-2, .leave-1, .leave-2, .leave-3, .leave-4"
+        ".flower-1, .flower-2, .leave-1, .leave-2, .leave-3, .leave-4, .golden-blur"
       )
       .forEach((element) => {
         element.style.animation = "openRemove 4s ease-in-out 1";
       });
 
     setTimeout(function () {
-      document.body.style.overflow = "auto";
+      setTimeout(() => {
+        document.body.style.overflow = "auto";
+      }, 300);
+      document.querySelector(".landing-inv").style.animation =
+        "reverseBlur 4s linear 1";
       invContainer.remove();
     }, 4000);
     first = false;
