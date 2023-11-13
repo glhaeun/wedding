@@ -44,7 +44,7 @@
             align-items: center;
         }
 
-        .timeline-item {
+        .timeline-container {
             width: 900px;
         }
 
@@ -61,11 +61,12 @@
 
         .timeline-content {
             max-width: 400px; /* Set a maximum width */
-            margin-left: 25%;
-            margin-right: 25%;
+            /* margin-left: 25%;
+            margin-right: 25%; */
             margin-bottom: 20px;
             /* margin-left: 30px; Adjust margin for better spacing */
             /* border: 1px solid black; */
+            align-items: center;
             text-align: justify;
             transition: all 0.3s ease; /* Add a smooth transition effect */
         }
@@ -399,7 +400,7 @@
             <img src="../user/assets/images/jason/12.png" alt="" class="crown img-fluid">
         </div>
 
-        <div class="timeline py-2">
+        <div class="timeline py-2" data-aos="fade-down"  data-aos-delay="500" >
             <div class="row timeline-item">
                 <div class="col-12 col-md-1">
                     <div class="timeline-bullet" onclick="showBoard(this)"></div>
@@ -416,7 +417,6 @@
                         <img src="../user/assets/images/jason/bridegroom3.png" alt="" class="img-fluid slide-in-right">
                         <button class="close-button" onclick="closeBoard(this)"> X </button>
                     </div>
-
                     <!-- End of Picture board code -->
                 </div>
             </div>
