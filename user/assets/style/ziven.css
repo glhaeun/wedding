@@ -4,7 +4,7 @@ body {
 }
 
 .spinning-cd {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   display: none;
   width: min(8vw, 8vh);
