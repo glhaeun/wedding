@@ -137,7 +137,7 @@
         }
 
         .board img:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .close-button {
@@ -431,25 +431,25 @@
 
 <section id="timeline">
 
-<div class="container pb-2 pt-4">
+<div class="container pb-2 pt-4" data-aos="fade-left" data-aos-duration="2000">
 
     <div class="card-body border rounded-4 shadow p-3" id="background-container">
 
-        <h1 class="font-esthetic text-center py-3" style="font-size: 3rem;">Our Love Story</h1>
+        <h1 class="font-esthetic text-center py-3" style="font-size: 3rem;"  data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100" >Our Love Story</h1>
 
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500" >
             <img src="../user/assets/images/jason/12.png" alt="" class="crown img-fluid">
         </div>
 
-        <div class="timeline py-2" data-aos="zoom-in"  data-aos-delay="500" >
+        <div class="timeline py-2" data-aos="flip-down"  data-aos-delay="500" >
             <div class="row timeline-item">
                 <div class="col-12 col-md-1">
                     <div class="timeline-bullet" onclick="showBoard(this)"></div>
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4 class="font-arabic">First Meet (2013)</h4>
-                        <p class="font-arabic">Bulan Agustus 2013, kami pertama kali bertemu pada Ospek Perkuliahan. Pada masa tersebut kami hanyalah teman biasa saja.</p>
+                        <h4>First Meet (2013)</h4>
+                        <p>Bulan Agustus 2013, kami pertama kali bertemu pada Ospek Perkuliahan. Pada masa tersebut kami hanyalah teman biasa saja.</p>
                     </div>
                     <!-- Picture board code -->
                     <div class="board">
@@ -467,8 +467,8 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4 class="font-arabic">Relationship (2018)</h4>
-                        <p class="font-arabic">Tanggal 25 Februari 2018, kami mengikat janji sebagai sepasang kekasih.</p>
+                        <h4>Relationship (2018)</h4>
+                        <p>Tanggal 25 Februari 2018, kami mengikat janji sebagai sepasang kekasih.</p>
                     </div>
                     <div class="board">
                         <img src="../user/assets/images/jason/bridegroom1.png" alt="" class="img-fluid slide-in-left">
@@ -484,8 +484,8 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4 class="font-arabic">Engagement (2021)</h4>
-                        <p class="font-arabic">Lika-liku hubungan kami lalui bersama hingga kami memutuskan untuk bertunangan pada 25 Februari 2021.</p>
+                        <h4>Engagement (2021)</h4>
+                        <p>Lika-liku hubungan kami lalui bersama hingga kami memutuskan untuk bertunangan pada 25 Februari 2021.</p>
                     </div>
                 <!-- Picture board code -->
                 <div class="board">
@@ -503,8 +503,8 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4 class="font-arabic">Married (2023)</h4>
-                        <p class="font-arabic">Kami memutuskan untuk mengikat janji suci pernikahan pada 29 Oktober 2023</p>
+                        <h4>Married (2023)</h4>
+                        <p>Kami memutuskan untuk mengikat janji suci pernikahan pada 29 Oktober 2023</p>
                     </div>
                 <!-- Picture board code -->
                     <div class="board">

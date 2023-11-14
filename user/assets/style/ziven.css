@@ -402,8 +402,8 @@ body {
   }
 
   70% {
-    width: min(35vw, 50vh);
-    height: min(35vw, 50vh);
+    width: min(30vw, 45vh);
+    height: min(30vw, 45vh);
     transform: scale(1);
     /* box-shadow: none; */
     background: gold;

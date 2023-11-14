@@ -16,15 +16,16 @@
 
     
     <style>
-        .font-esthetic {
-            font-family: 'Ephesis', cursive !important;
-            color: #000000 !important;
-        }
+       .font-esthetic {
+    font-family: 'Ephesis', cursive !important;
+    color: #ffd700 !important; /* Change to yellow/gold color */
+}
 
-        .font-arabic {
-            font-family: 'Enriqueta', serif !important;
-            color: #000000 !important;
-        }
+.font-arabic {
+    font-family: 'Enriqueta', serif !important;
+    color: #ffd700 !important; /* Change to yellow/gold color */
+}
+
     </style>
 </head>
 <body>
@@ -35,11 +36,13 @@
 
                 <p style="font-size: 0.9rem;" class="pt-2 pb-1 px-2" >
                     Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak / Ibu / Saudara / i.
-                    berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.
+                    Berkenan hadir untuk merayakan hari yang bahagia ini.
                 </p>
 
-                <h1 class="font-esthetic" >Wassalamualaikum Warahmatullahi Wabarakatuh</h1>
+                <h1 class="font-esthetic" >Terima kasih</h1>
                 <hr class="mt-3 mb-2">
+                <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg2.pngdownload.id%2F20181209%2Fch%2Fkisspng-bridegroom-wedding-dress-portable-network-graphics-5c0d9f2b0a4fc5.5362063615443965870422.jpg&tbnid=CQCUu88t15-ECM&vet=12ahUKEwjqlYTq2cKCAxXUwaACHcGBADYQMyhAegUIARDqAQ..i&imgrefurl=https%3A%2F%2Fwww.pngdownload.id%2Fpng-ymtwpf%2F&docid=KibpVop_ty3_IM&w=900&h=900&q=graphic%20mempelai&ved=2ahUKEwjqlYTq2cKCAxXUwaACHcGBADYQMyhAegUIARDqAQ" class="img-fluid rounded" width="150" alt="bride">
+
 
             </div>
         </div>

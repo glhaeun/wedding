@@ -41,7 +41,7 @@
 
     </div>
 
-    <div class="spinning-cd" onclick="playInvitationSong()">
+    <div class="spinning-cd" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000" onclick="playInvitationSong()">
         
     </div>
     <!-- <div class="landing-inv"></div> -->
@@ -53,7 +53,7 @@
             <div class="flex-inv-container" >
                 <img class="element-landing-1" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300"src="assets/images/ziven/element1.png">
                 <!-- <p class="together-landing">Together with their families</p> -->
-                <div class="bride-groom-landing" data-aos="fade-up fade-out" data-aos-delay="300" data-aos-duration="2000">
+                <div class="bride-groom-landing" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
                     <img src="assets/images/ziven/bridegroom.png">
                 </div>
             </div>
