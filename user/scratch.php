@@ -5,14 +5,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-        font-family: "Montserrat", sans-serif;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Redressed&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+        .font-esthetic {
+          font-family: 'Ephesis', cursive !important;
+          /* color: #ffd700 !important; Change to gold/yellow color */
+      }
+
+      .font-arabic {
+          font-family: 'Enriqueta', serif !important;
+          /*  Change to gold/yellow color */
+      }
+      .font-inside, .code {
+        font-family: 'Asul';
         }
 
         .main-heading {
@@ -161,12 +175,14 @@
 </head>
 
 <body class="bg-light">
-    <h1 class="text-center">Lucky Draw</h1>
-    <p class="text-center">
+  <section id="scratch">
+
+    <div class="container mt-5 ">
+    <h1 class="text-center font-esthetic">Lucky Draw</h1>
+    <p class="text-center font-inside">
     Gunakan kursor pada perangkat komputer atau gesek layar dengan jari pada perangkat seluler untuk mengungkap area yang ditentukan pada kartu. Perhatikan dan simpan huruf atau angka yang terungkap setelah penggosokan.
     </p>
     <div class="container">
-
 
          
 
@@ -178,7 +194,7 @@
 
         <div class="row">
             <div class="col-md-4">
-                <h3>Scratch Card 1</h3>
+                <h3 class="font-arabic">Scratch Card 1</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
                         <div class="code">D7DF9CFF0C</div>
@@ -188,7 +204,7 @@
             </div>
 
             <div class="col-md-4">
-                <h3>Scratch Card 2</h3>
+                <h3 class="font-arabic">Scratch Card 2</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
                         <div class="code">8DDIECIW3</div>
@@ -198,7 +214,7 @@
             </div>
 
             <div class="col-md-4">
-                <h3>Scratch Card 3</h3>
+                <h3 class="font-arabic">Scratch Card 3</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
                         <div class="code">38CUDCJS93</div>
@@ -207,7 +223,7 @@
                 </div>
             </div>
 
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
                 <h3>Scratch Card 1</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
@@ -235,7 +251,7 @@
                     </div>
                     <canvas id="scratch-card6" class="w-100" height="150"></canvas>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -245,10 +261,10 @@
         <!-- Prize 1 -->
         <div class="col-md-4">
           <div class="prize-container">
-            <h5 class="prize-title">Prize 1</h5>
+            <h5 class="prize-title font-arabic">Prize 1</h5>
             <!-- Image for Prize 1 -->
             <div class="stage">
-            <p class="prize-description">Brand New Private Jet</p>
+            <p class="prize-description font-inside">Brand New Private Jet</p>
               <div class="stage-content"></div>
               <label class="curtain-container">
                 <div class="curtain-panel">
@@ -264,10 +280,10 @@
         <!-- Prize 2 -->
         <div class="col-md-4">
           <div class="prize-container">
-            <h5 class="prize-title">Prize 2</h5>
+            <h5 class="prize-title font-arabic">Prize 2</h5>
             <!-- Image for Prize 2 -->
             <div class="stage">
-            <p class="prize-description">Brand New Car</p>
+            <p class="prize-description font-inside">Brand New Car</p>
               <div class="stage-content1"></div>
               <label class="curtain-container">
                 <div class="curtain-panel">
@@ -283,10 +299,10 @@
         <!-- Prize 3 -->
         <div class="col-md-4">
           <div class="prize-container">
-            <h5 class="prize-title">Prize 3</h5>
+            <h5 class="prize-title font-arabic">Prize 3</h5>
             <!-- Image for Prize 3 -->
             <div class="stage">
-            <p class="prize-description">Brand New Motorcycle</p>
+            <p class="prize-description font-inside">Brand New Motorcycle</p>
               <div class="stage-content2"></div>
               <label class="curtain-container">
                 <div class="curtain-panel">
@@ -299,7 +315,12 @@
             </div>
           </div>
       </div>
+
       </div>
+    </div>
+<?php include 'divider.php' ?>
+
+  </section>
     
     
 

@@ -4,9 +4,9 @@ if (isset($_GET['email'])) {
     $userEmail = $_GET['email'];
 
     
-    echo "User's email: " . $userEmail;
+    // echo "User's email: " . $userEmail;
 } else {
-    echo "No email provided.";
+    // echo "No email provided.";
 }
 
     include 'OpeningCard.php';
@@ -18,3 +18,9 @@ if (isset($_GET['email'])) {
     include 'gifts.php';
     include 'thankyou.php';
 ?>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+

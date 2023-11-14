@@ -6,8 +6,13 @@
     <title>Document</title>
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Redressed&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
@@ -20,12 +25,16 @@
         }
         .font-esthetic {
     font-family: 'Ephesis', cursive !important;
-    color: #ffd700 !important; /* Change to gold/yellow color */
+    /* color: #ffd700 !important; Change to gold/yellow color */
 }
 
 .font-arabic {
     font-family: 'Enriqueta', serif !important;
-    color: #ffd700 !important; /* Change to gold/yellow color */
+    /*  Change to gold/yellow color */
+}
+
+.yellow {
+    color: #ffd700 !important;
 }
 
 .btn-light {
@@ -37,23 +46,27 @@
     background-color: #ffcc00 !important; /* Change button background color on hover to a slightly different shade of gold/yellow */
 }
 
+.font-inside {
+        font-family: 'Asul';
+        }
+
     </style>
 </head>
 <body>
     <section id="hadiah">
         <div class="container">
-            <div class="text-center">
-            <h1 class="font-esthetic mt-0 mb-3" style="font-size: 3rem;">Hadiah</h1>
-                    <p class="mb-1" style="font-size: 0.9rem;">
+            <div class="text-center mt-5 mb-5">
+            <h1 class="font-esthetic mt-0 mb-3 yellow" style="font-size: 3rem;">Hadiah</h1>
+                    <p class="mb-1 font-inside" style="font-size: 0.9rem;">
                         Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami,
                         dapat melalui :
                     </p>
 
-                <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3">Send Angpao</button>
-                <button data-toggle="gift" class="btn btn-light btn-sm rounded-3">Send Gift</button>
+                <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic">Send Angpao</button>
+                <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic">Send Gift</button>
 
 
-                    <div class="overflow-x-hidden" id="angpao">
+                    <div class="overflow-x-hidden font-inside" id="angpao">
                         <div class="row justify-content-center">
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;">
@@ -62,7 +75,7 @@
                                 <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">No. Rekening 123456789</p>
                                 <p class="card-text" style="font-size: 0.9rem;">a.n Lorem ipsum dolor</p>
 
-                                <button class="btn btn-light btn-sm rounded-3" data-rek="123456789">Salin No. Rekening</button>
+                                <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789">Salin No. Rekening</button>
                             </div>
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" >
@@ -72,12 +85,12 @@
                                 <p class="card-text" style="font-size: 0.9rem;">a.n Lorem ipsum dolor</p>
 
                                 <!-- Ubah juga data-nomer sesuai dengan no rekening -->
-                                <button class="btn btn-light btn-sm rounded-3" data-rek="123456789">Salin No. Rekening</button>
+                                <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789">Salin No. Rekening</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="overflow-x-hidden" id="gift">
+                    <div class="overflow-x-hidden font-inside" id="gift">
                         <div class="row justify-content-center">
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;">
@@ -95,7 +108,7 @@
                                 <p class="card-text" style="font-size: 0.9rem;"> Jalan Padang Bulan No 101, Medan</p></p>
                                 <p class="card-text" style="font-size: 0.9rem;"> No Telp: 08123456789</p></p>
                                 <!-- Ubah juga data-nomer sesuai dengan no rekening -->
-                                <button class="btn btn-light btn-sm rounded-3" data-rek="Jalan Padang Bulan No 101, 08123456789">Salin Alamat</button>
+                                <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="Jalan Padang Bulan No 101, 08123456789">Salin Alamat</button>
                             </div>
 
 

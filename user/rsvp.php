@@ -28,10 +28,11 @@
     </style>
 </head>
 <body>
-    <section id="rsvp" class="m-5">
-    <div class="container">
+    
+<section id="rsvp">
+<div class="container" class="m-5">
 
-<div class="card-body border rounded-4 shadow p-3">
+<div class="card-body border rounded-4 shadow p-3 mt-5">
     <h1 class="font-esthetic text-center mb-3" style="font-size: 3rem;">Ucapan & Doa</h1>
     <div class="mb-1" id="balasan"></div>
 
@@ -240,6 +241,7 @@
 </nav>
 </div>
 <?php include 'divider.php' ?>
+
 
     </section>
 

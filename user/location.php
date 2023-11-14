@@ -6,8 +6,12 @@
     <title>Document</title>
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Redressed&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
@@ -40,53 +44,62 @@
         .font-esthetic {
             font-family: 'Ephesis', cursive !important;
             color: #000000 !important;
+            font-size: 3.8rem;
         }
 
         .font-arabic {
             font-family: 'Enriqueta', serif !important;
             color: #000000 !important;
         }
+
+        .font-inside {
+        font-family: 'Asul';
+        }
     </style>
 </head>
 <body>
     <section id="lokasi">
-        <div class="container">
-            <div class="text-center">
-            <h1 class="font-esthetic py-3" style="font-size: 2rem;">Wedding Information</h1>
+        <div class="container mt-5">
+            <div class="text-center ">
+            <h1 class="font-esthetic py-3" >Wedding Information</h1>
 
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center mb-3">
                 <img src="../user/assets/images/darren/Asset 1@4xa.png" alt="" class="line img-fluid">
             </div>
 
-                    <div class="overflow-x-hidden">
-                        <div class="py-2">
-                            <h4 class="font-esthetic" style="font-size: 2rem;">Holy Matrimony</h4>
-                            <p>Sunday, 29 October 2023 at 09.00 am</p>
-                            <p>Methodist Indonesia Church, Jl. M. T. Haryono No.38, Pusat Ps., Kec. Medan Kota, Kota Medan</p>
-                            <a href="https://maps.google.com/?q=Methodist+Indonesia+Church,Jl.+M.+T.+Haryono+No.38,Pusat+Ps.,Kec.+Medan+Kota,Kota+Medan">Get directions using maps</a>
+                    <div class="overflow-x-hidden mt-5">
+                        <div class="py-2 mb-4">
+                            <h4 class="font-arabic" style="font-size: 2rem;">Holy Matrimony</h4>
+                            <p class="font-inside">Sunday, 29 October 2023 at 09.00 am</p>
+                            <p class="font-inside">Methodist Indonesia Church, Jl. M. T. Haryono No.38, Pusat Ps., Kec. Medan Kota, Kota Medan</p>
+                            <a class="font-inside" href="https://maps.google.com/?q=Methodist+Indonesia+Church,Jl.+M.+T.+Haryono+No.38,Pusat+Ps.,Kec.+Medan+Kota,Kota+Medan">Get directions using maps</a>
                         </div>
 
-                        <div class="py-2">
-                            <h4 class="font-esthetic" style="font-size: 2rem;">Reception</h4>
-                            <p>Sunday, 29 October 2023 at 08.00 pm</p>
-                            <p>Ballroom, Wisma Benteng restaurant Jl. Kapten Maulana Lubis No.6, Petisah Tengah, Kec. Medan Petisah, Kota Medan</p>
-                            <a href="https://maps.google.com/?q=Ballroom,Wisma+Benteng+restaurant,Jl.+Kapten+Maulana+Lubis+No.6,Petisah+Tengah,Kec.+Medan+Petisah,Kota+Medan">Get directions using maps</a>
+                        <div class="py-2 mb-4">
+                            <h4 class="font-arabic" style="font-size: 2rem;">Reception</h4>
+                            <p class="font-inside">Sunday, 29 October 2023 at 08.00 pm</p>
+                            <p class="font-inside">Ballroom, Wisma Benteng restaurant Jl. Kapten Maulana Lubis No.6, Petisah Tengah, Kec. Medan Petisah, Kota Medan</p>
+                            <a class="font-inside" href="https://maps.google.com/?q=Ballroom,Wisma+Benteng+restaurant,Jl.+Kapten+Maulana+Lubis+No.6,Petisah+Tengah,Kec.+Medan+Petisah,Kota+Medan">Get directions using maps</a>
                         </div>
                     </div>
 
-                    <div class="row justify-content-center mt-4 mb-5" data-waktu="2024-01-01 00:00:00" id="tampilan-waktu">
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
-                            </div>
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="jam">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Jam</small>
-                            </div>
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="menit">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Menit</small>
-                            </div>
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="detik">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Detik</small>
-                            </div>
+                    <!-- <h1 class="font-esthetic py-3 font-arabic" style="font-size: 2rem;">Countdown for event: </h1> -->
+                    <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
+
+                        <div class="row justify-content-center mt-4 mb-5" data-waktu="2024-01-01 00:00:00" id="tampilan-waktu">
+                                <div class="col-3 p-1">
+                                    <h2 class="d-inline m-0 p-0 font-inside" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
+                                </div>
+                                <div class="col-3 p-1">
+                                    <h2 class="d-inline m-0 p-0 font-inside" id="jam">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Jam</small>
+                                </div>
+                                <div class="col-3 p-1">
+                                    <h2 class="d-inline m-0 p-0 font-inside" id="menit">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Menit</small>
+                                </div>
+                                <div class="col-3 p-1">
+                                    <h2 class="d-inline m-0 p-0 font-inside" id="detik">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Detik</small>
+                                </div>
+                        </div>
                     </div>
             </div>
         </div>
