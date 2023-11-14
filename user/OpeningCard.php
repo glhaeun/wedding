@@ -3,6 +3,7 @@
 <head>
     <link rel="icon" href="assets/images/ziven/favicon.jpg" type="image/x-icon">
     <meta charset="UTF-8">
+    <meta name="description" content="Wedding Invitation">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style/general.css">
     <link rel="stylesheet" href="assets/style/ziven.css">
@@ -51,13 +52,13 @@
     <div class="landing-inv">
         <div class="golden-blur golden-blur-2"></div>
         <div class="golden-blur golden-blur-3"></div>
-        <img class="landing-flower" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300" src="assets/images/ziven/flowerLanding.png">
+        <img class="landing-flower" alt="Flower for wedding" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300" src="assets/images/ziven/flowerLanding.webp">
         <div class="flex-inv" >
             <div class="flex-inv-container" >
-                <img class="element-landing-1" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300"src="assets/images/ziven/element1.png">
+                <img class="element-landing-1" alt="Element for wedding" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300"src="assets/images/ziven/element1.webp">
                 <!-- <p class="together-landing">Together with their families</p> -->
                 <div class="bride-groom-landing" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
-                    <img src="assets/images/ziven/bridegroom.png">
+                    <img alt="bride groom"  src="assets/images/ziven/bridegroom.webp">
                 </div>
             </div>
             <div class="flex-inv-container">
@@ -65,9 +66,9 @@
                 <p class="text-landing" data-aos="fade-up" data-aos-delay="150" data-aos-duration="2000"> invite you to celebrate their wedding</p>
                 <div class="date-landing" data-aos="fade-up" data-aos-delay="200" data-aos-duration="2000">
                     <p class="side-date-landing">Oct</p>
-                    <img class="separator-date-landing-1" src="assets/images/ziven/line.png">
+                    <img alt="separator" class="separator-date-landing-1" src="assets/images/ziven/line.png">
                     <p class="main-date-landing">29</p>
-                    <img class="separator-date-landing-1" src="assets/images/ziven/line.png">
+                    <img alt="separator" class="separator-date-landing-1" src="assets/images/ziven/line.png">
                     <p class="side-date-landing">2023</p>
                 </div>
                 <p class="together-landing" data-aos="fade-up" data-aos-delay="250" data-aos-duration="2000">08:00 pm</p>
