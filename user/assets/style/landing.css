@@ -51,6 +51,15 @@
   width: max(20vw, 20vh);
 }
 
+@keyframes upAndDown {
+  from {
+  }
+
+  to {
+    transform: translateY(min(-1vw, -1vh));
+  }
+}
+
 .together-landing {
   color: #c79856;
   font-family: Redressed;
@@ -58,7 +67,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin: 0;
+  margin: min(1vw, 1vh);
 }
 
 .title-landing {
@@ -79,7 +88,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 0;
+  margin: min(1vw, 1vh);
 }
 
 .text-landing {
@@ -90,18 +99,19 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin: 10px;
+  margin: min(0.5vh, 0.5vw);
+  /* animation: upAndDown 10s alternate ease-in-out infinite; */
 }
 
 .date-landing {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4vh 0;
+  margin: min(2vh, 2vw);
 }
 
-.date-separator-landing {
-  height: 100%;
+.separator-date-landing-1 {
+  height: 50%;
 }
 
 .side-date-landing {
@@ -139,6 +149,7 @@
   background-image: url(../images/ziven/borderbridegroom.png);
   width: min(30vw, 30vh);
   height: min(30vw, 30vh);
+  margin-top: min(3vw, 3vh);
   display: flex;
   align-items: center;
   justify-content: center;
