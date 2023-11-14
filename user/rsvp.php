@@ -40,7 +40,6 @@
     </style>
 </head>
 <body>
-<<<<<<< HEAD
     <section id="rsvp" class="m-5">
         <div class="container-rsvp">
             <div class="card-body border rounded-4 shadow p-3">
@@ -52,15 +51,6 @@
                         <label for="form-nama" class="form-label">Nama</label>
                         <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Isikan Nama Anda">
                     </div>
-=======
-    
-<section id="rsvp">
-<div class="container" class="m-5">
-
-<div class="card-body border rounded-4 shadow p-3 mt-5">
-    <h1 class="font-esthetic text-center mb-3" style="font-size: 3rem;">Ucapan & Doa</h1>
-    <div class="mb-1" id="balasan"></div>
->>>>>>> 8f9a45546ab2ea31379f961834b0825d084bc04f
 
                     <div class="mb-3">
                         <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
