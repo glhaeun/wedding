@@ -9,404 +9,17 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Redressed&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
+    <link rel="stylesheet" href="assets/style/timeline.css">
+
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-
-    <style>
-        .font-esthetic {
-            font-family: 'Ephesis', cursive !important;
-            color: #000000 !important;
-        }
-
-        .font-arabic {
-            font-family: 'Enriqueta', serif !important;
-            color: #000000 !important;
-        }
-
-        #background-container {           
-            background-image: url(../user/assets/images/jason/11.png);
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            /* animation: spin 10s linear infinite; */
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .crown {
-            width: 300px; 
-            height: 65px;
-            margin-top: -40px;
-            margin-bottom: 0px;
-            /* border: 1px solid black; */
-        } 
-
-        .timeline {
-            margin: 20px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* .timeline-item {
-            width: 900px;
-        } */
-
-        .timeline-bullet {
-            width: 20px;
-            height: 20px;
-            background-color: #C79856;
-            border-radius: 50%;
-            /* margin-left: 480%; */
-            margin-right: 5px;
-            flex: 0 0 20px; 
-            cursor: pointer;
-        }
-
-        .timeline-bullet:hover {
-            background-color: #e1c46c;
-        } 
-
-        .timeline-content {
-            max-width: 400px; /* Set a maximum width */
-            /* margin-left: 25%;
-            margin-right: 25%; */
-            margin-bottom: 20px;
-            /* margin-left: 30px; Adjust margin for better spacing */
-            /* border: 1px solid black; */
-            align-items: center;
-            text-align: justify;
-            transition: all 0.3s ease; /* Add a smooth transition effect */
-        }
-
-        /* .board-visible {
-            display: block;
-        } */
-
-        /* .timeline-content.board-visible + .board {
-            top: 100%;
-        } */
-
-        .board {
-            display: none;
-            position: relative;
-            /* top: 100%; */
-            /* left: 0; */
-            /* transform: translate(-50%, -50%); */
-            background-color: rgba(0, 0, 0, 0.4); /* Set the background color with transparency */
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            max-width: 900px; /* Set a maximum width for the board */
-            animation: slide-in-board 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-        }
-
-        @keyframes slide-in-board {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .board img {
-            width: 31%; /* Set the width of each picture to 30% of the total width */
-            /* max-width: 100%; */
-            height: auto;
-            margin-left: 10px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .board img:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-size: 18px;
-            color: white;
-        }
-
-        .close-button:hover {
-            color: red;
-        }
-
-        .slide-in-left {
-            animation: slide-in-left 1.5s cubic-bezier(0.25, 0.45, 0.45, 0.95) both;
-        }
-
-        .fade-in {
-            animation: fade-in 1.5s ease-in-out both;
-        }
-
-        .slide-in-right {
-            animation: slide-in-right 1.5s cubic-bezier(0.25, 0.45, 0.45, 0.95) both;
-        }
-
-        @keyframes slide-in-left {
-            0% {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0%);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slide-in-right {
-            0% {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0%);
-                opacity: 1;
-            }
-        }
-
-        /* .board {
-            position: absolute;
-            top: 7%0;
-            left: 25%;
-            width: 50%;
-            height: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            background-image: url(../user/assets/images/jason/4.png);
-            background-size: cover; 
-            display: none;
-            border-radius: 20px 0 20px 0;
-        }
-
-        .board img {
-            width: 30%;
-            margin-top: 25px;
-            margin-left: 10px;
-            margin-right: 10px;
-            float: left;
-            opacity: 0; 
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; 
-        } 
-
-        .slide-in-left {
-            animation: slide-in-left 1.5s cubic-bezier(0.25, 0.45, 0.45, 0.95) both;
-        }
-
-        .fade-in {
-            animation: fade-in 1.5s ease-in-out both;
-        }
-
-        .slide-in-right {
-            animation: slide-in-right 1.5s cubic-bezier(0.25, 0.45, 0.45, 0.95) both;
-        }
-
-        @keyframes slide-in-left {
-            0% {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0%);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slide-in-right {
-            0% {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0%);
-                opacity: 1;
-            }
-        }*/
-
-        /* .close-board {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 30px;
-            cursor: pointer;
-        } */
-
-        /* .close-button {
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .close-button:hover {
-            background-color: #C79856;
-        } */
-
-        /* Add this CSS to your existing style tag */
-
-        /* Add this CSS to your existing style tag */
-
-        /* .board {
-            display: none;
-            position: relative;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .board img {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .close-button {
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .close-button:hover {
-            background-color: #C79856;
-        }
-
-        .slide-in-left {
-            animation: slideInLeft 1.5s forwards;
-        }
-
-        .slide-in-right {
-            animation: slideInRight 1.5s forwards;
-        }
-
-        .fade-in {
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(100%);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        } */        
-
-        /* .timeline-connector {
-            position: absolute;
-            background-color: #C79856;
-            width: 2px;
-            left: 2.5%;
-            top: 0;
-            bottom: 0;
-            transform: translateX(-50%);
-            z-index: -1;
-        } */
-
-        /* .board {
-            position: absolute;
-            background-color: white;
-            border: 1px solid black;
-            padding: 10px;
-            display: none;
-            }
-
-        .board-close-button {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            cursor: pointer;
-        } */
-
-        @media (max-width: 768px) {
-            .font-esthetic {
-                font-size: 1.5rem;
-            }
-
-            .timeline-item {
-                max-width: 100%;
-                margin-left: 0;
-            }
-
-            .timeline-content {
-                max-width: 100%;
-                margin-left: 0;
-            }
-
-            .board {
-                flex-direction: column;
-                width: 75%; 
-                height: auto;
-                left: 10%; 
-            }
-
-            .board img {
-                width: 75%; 
-                margin-left: 10%;
-                margin-top: 10px; 
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- <section id="timeline">
@@ -432,8 +45,11 @@
 <section id="timeline">
 
 <div class="container pb-2 pt-4" data-aos="fade-left" data-aos-duration="2000">
+    <div id="background-container">
+        <div class="background-image"></div>
+    </div>
 
-    <div class="card-body border rounded-4 shadow p-3" id="background-container">
+    <div class="card-body border rounded-4 shadow p-3">
 
         <h1 class="font-esthetic text-center py-3" style="font-size: 3rem;"  data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100" >Our Love Story</h1>
 
@@ -448,8 +64,8 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4>First Meet (2013)</h4>
-                        <p>Bulan Agustus 2013, kami pertama kali bertemu pada Ospek Perkuliahan. Pada masa tersebut kami hanyalah teman biasa saja.</p>
+                        <h4 class="font-arabic">First Meet (2013)</h4>
+                        <p class="font-inside">Bulan Agustus 2013, kami pertama kali bertemu pada Ospek Perkuliahan. Pada masa tersebut kami hanyalah teman biasa saja.</p>
                     </div>
                     <!-- Picture board code -->
                     <div class="board">
@@ -467,8 +83,8 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4>Relationship (2018)</h4>
-                        <p>Tanggal 25 Februari 2018, kami mengikat janji sebagai sepasang kekasih.</p>
+                        <h4 class="font-arabic">Relationship (2018)</h4>
+                        <p class="font-inside">Tanggal 25 Februari 2018, kami mengikat janji sebagai sepasang kekasih.</p>
                     </div>
                     <div class="board">
                         <img src="../user/assets/images/jason/bridegroom1.png" alt="" class="img-fluid slide-in-left">
@@ -484,8 +100,8 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4>Engagement (2021)</h4>
-                        <p>Lika-liku hubungan kami lalui bersama hingga kami memutuskan untuk bertunangan pada 25 Februari 2021.</p>
+                        <h4 class="font-arabic">Engagement (2021)</h4>
+                        <p class="font-inside">Lika-liku hubungan kami lalui bersama hingga kami memutuskan untuk bertunangan pada 25 Februari 2021.</p>
                     </div>
                 <!-- Picture board code -->
                 <div class="board">
@@ -503,8 +119,8 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4>Married (2023)</h4>
-                        <p>Kami memutuskan untuk mengikat janji suci pernikahan pada 29 Oktober 2023</p>
+                        <h4 class="font-arabic">Married (2023)</h4>
+                        <p class="font-inside">Kami memutuskan untuk mengikat janji suci pernikahan pada 29 Oktober 2023</p>
                     </div>
                 <!-- Picture board code -->
                     <div class="board">
