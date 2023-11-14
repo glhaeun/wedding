@@ -4,7 +4,9 @@ AOS.init({
   offset: 0,
 });
 
-document.addEventListener("DOMContentLoaded", () => {});
+document.addEventListener("DOMContentLoaded", () => {
+  window.scrollTo(0, 0);
+});
 
 var audio = document.getElementById("invitationAudio");
 // audio.autoplay = true;
@@ -12,6 +14,7 @@ audio.loop = true;
 audio.load();
 
 var first = true;
+
 document.addEventListener("click", () => {
   if (first) {
     audio.play();

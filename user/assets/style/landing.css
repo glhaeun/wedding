@@ -29,7 +29,7 @@
   height: auto;
   bottom: 0;
   left: 0;
-  animation: landingFlower 15s linear infinite alternate;
+  /* animation: landingFlower 5s linear infinite alternate; */
 }
 
 @keyframes landingFlower {
@@ -132,7 +132,7 @@
 .flower-3 {
   bottom: 0vh;
   animation: idle 20s infinite alternate ease-in-out;
-  right: 0vw;
+  right: 10vw;
 }
 .bride-groom-landing {
   border-radius: 9999px;
