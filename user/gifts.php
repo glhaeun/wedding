@@ -19,14 +19,24 @@
             display: none; /* Initially hide the angpao element */
         }
         .font-esthetic {
-            font-family: 'Ephesis', cursive !important;
-            color: #000000 !important;
-        }
+    font-family: 'Ephesis', cursive !important;
+    color: #ffd700 !important; /* Change to gold/yellow color */
+}
 
-        .font-arabic {
-            font-family: 'Enriqueta', serif !important;
-            color: #000000 !important;
-        }
+.font-arabic {
+    font-family: 'Enriqueta', serif !important;
+    color: #ffd700 !important; /* Change to gold/yellow color */
+}
+
+.btn-light {
+    background-color: #ffd700 !important; /* Change button background color to gold/yellow */
+    color: #000000 !important; /* Set text color for buttons */
+}
+
+.btn-light:hover {
+    background-color: #ffcc00 !important; /* Change button background color on hover to a slightly different shade of gold/yellow */
+}
+
     </style>
 </head>
 <body>
@@ -110,5 +120,3 @@
         });
     </script>
 </html>
-
-
