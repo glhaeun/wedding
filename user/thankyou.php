@@ -16,15 +16,18 @@
 
     
     <style>
-        .font-esthetic {
-            font-family: 'Ephesis', cursive !important;
-            color: #000000 !important;
+       .font-esthetic {
+    font-family: 'Ephesis', cursive !important;
         }
 
-        .font-arabic {
-            font-family: 'Enriqueta', serif !important;
-            color: #000000 !important;
-        }
+    .font-arabic {
+        font-family: 'Enriqueta', serif !important;
+    }
+
+    /* .yellow {
+        color: #ffd700 !important;
+    } */
+
     </style>
 </head>
 <body>
@@ -35,10 +38,10 @@
 
                 <p style="font-size: 0.9rem;" class="pt-2 pb-1 px-2" >
                     Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak / Ibu / Saudara / i.
-                    berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.
+                    Berkenan hadir untuk merayakan hari yang bahagia ini.
                 </p>
 
-                <h1 class="font-esthetic" >Wassalamualaikum Warahmatullahi Wabarakatuh</h1>
+                <h1 class="font-esthetic yellow" >Terima kasih</h1>
                 <hr class="mt-3 mb-2">
 
             </div>

@@ -1,19 +1,20 @@
-temp = ["Tap to open", "Tap to open.", "Tap to open..", "Tap to open..."];
 let currentIndex = 0;
 
+AOS.init({
+  offset: 0,
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-  setInterval(() => {
-    document.querySelector(".tap-to-open").innerHTML = temp[currentIndex];
-    currentIndex = (currentIndex + 1) % temp.length;
-  }, 1000);
+  window.scrollTo(0, 0);
 });
 
 var audio = document.getElementById("invitationAudio");
-audio.autoplay = true;
+// audio.autoplay = true;
 audio.loop = true;
 audio.load();
 
 var first = true;
+
 document.addEventListener("click", () => {
   if (first) {
     audio.play();
@@ -24,31 +25,35 @@ document.addEventListener("click", () => {
     let sparkleInv = document.querySelector(".sparkle-inv");
     let circleText = document.querySelectorAll(".invitation-title");
     circleText.forEach((element) => {
-      element.style.animation = "openTextCircle 4s ease-in-out 1";
+      element.style.animation = "openTextCircle 2s ease-in-out 1";
     });
-
-    middleCircle.style.animation = "openMiddleCircle 4s ease-in-out 1";
-    frame1.style.animation = "openCardFrame 4s ease-in-out 1";
-    frame2.style.animation = "openCardFrame-2 4s ease-in-out 1";
-    sparkleInv.style.animation = "openCardFrame 4s ease-in-out 1";
-    temp = ["&nbsp", "&nbsp", "&nbsp", "&nbsp"];
+    document.querySelector(".tap-to-open").innerHTML = "";
+    document.querySelector(".tap-to-open").style.animation =
+      "openTextCircle 2s ease-in-out 1";
+    document.querySelector(".dear-title").style.animation =
+      "openTextCircle 2s ease-in-out 1";
+    middleCircle.style.animation = "openMiddleCircle 2s ease-in-out 1";
+    frame1.style.animation = "openCardFrame 2s ease-in-out 1";
+    frame2.style.animation = "openCardFrame-2 2s ease-in-out 1";
+    sparkleInv.style.animation = "openCardFrame 2s ease-in-out 1";
 
     document
       .querySelectorAll(
-        ".flower-1, .flower-2, .leave-1, .leave-2, .leave-3, .leave-4, .golden-blur"
+        ".flower-1, .flower-2, .leave-1, .leave-2, .leave-3, .leave-4, .golden-blur, .tap-to-open"
       )
       .forEach((element) => {
-        element.style.animation = "openRemove 4s ease-in-out 1";
+        element.style.animation = "openRemove 2s ease-in-out 1";
       });
 
     setTimeout(function () {
       setTimeout(() => {
         document.body.style.overflow = "auto";
-      }, 300);
+      }, 1000);
+      document.querySelector(".spinning-cd").style.display = "block";
       document.querySelector(".landing-inv").style.animation =
-        "reverseBlur 4s linear 1";
+        "reverseBlur 0.3s linear 1";
       invContainer.remove();
-    }, 4000);
+    }, 2000);
     first = false;
   }
 });
@@ -56,7 +61,11 @@ function playInvitationSong() {
   var audio = document.getElementById("invitationAudio");
   if (audio.paused) {
     audio.play();
+    document.querySelector(".spinning-cd").style.animation =
+      "frameRotation 10s linear infinite";
   } else {
+    document.querySelector(".spinning-cd").style.animation =
+      "frameRotation 99999s linear infinite";
     audio.pause();
   }
 }

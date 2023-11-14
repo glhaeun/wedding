@@ -24,23 +24,50 @@
 .landing-flower {
   position: absolute;
   /* width: 100vw; */
-  height: 100vh;
+  z-index: 0;
+  width: max(20vw, 60vh);
+  height: auto;
   bottom: 0;
   left: 0;
+  /* animation: landingFlower 5s linear infinite alternate; */
+}
+
+@keyframes landingFlower {
+  from {
+    width: max(20vw, 60vh);
+  }
+  to {
+    width: max(19vw, 58vh);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .landing-flower {
+    display: none;
+  }
 }
 
 .element-landing-1 {
-  width: 20vw;
+  width: max(20vw, 20vh);
+}
+
+@keyframes upAndDown {
+  from {
+  }
+
+  to {
+    transform: translateY(min(-1vw, -1vh));
+  }
 }
 
 .together-landing {
   color: #c79856;
   font-family: Redressed;
-  font-size: min(5vh, 5vw);
+  font-size: min(4vh, 4vw);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin: 0;
+  margin: min(1vw, 1vh);
 }
 
 .title-landing {
@@ -61,38 +88,41 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 0;
+  margin: min(1vw, 1vh);
 }
 
 .text-landing {
   color: #000;
   text-align: center;
   font-family: Enriqueta;
-  font-size: 24px;
+  font-size: min(3vh, 3vw);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin: min(0.5vh, 0.5vw);
+  /* animation: upAndDown 10s alternate ease-in-out infinite; */
 }
 
 .date-landing {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: min(2vh, 2vw);
 }
 
-.date-separator-landing {
-  height: 100%;
+.separator-date-landing-1 {
+  height: 50%;
 }
 
 .side-date-landing {
   color: #b27f32;
   text-align: center;
   font-family: Asul;
-  font-size: 52px;
+  font-size: min(6vh, 6vw);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 0 30px;
+  padding: 0 min(3vh, 3vw);
   margin: 0;
 }
 
@@ -101,24 +131,25 @@
   text-align: center;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: Asul;
-  font-size: 72px;
+  font-size: min(8vh, 8vw);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 0 30px;
-  margin: 0;
+  padding: 0 min(4vh, 4vw);
+  margin: min(1vh, 1vw);
 }
 
 .flower-3 {
   bottom: 0vh;
   animation: idle 20s infinite alternate ease-in-out;
-  right: 0vw;
+  right: 10vw;
 }
 .bride-groom-landing {
   border-radius: 9999px;
   background-image: url(../images/ziven/borderbridegroom.png);
-  width: 390px;
-  height: 390px;
+  width: min(30vw, 30vh);
+  height: min(30vw, 30vh);
+  margin-top: min(3vw, 3vh);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,4 +158,21 @@
 }
 .bride-groom-landing img {
   border-radius: 350px;
+  width: min(27vw, 27vh);
+  height: min(27vw, 27vh);
+}
+
+.flex-inv {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-flow: column;
+  z-index: 1;
+}
+
+.flex-inv-container {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  align-items: center;
 }
