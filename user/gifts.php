@@ -81,12 +81,21 @@
                         <div class="row justify-content-center">
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJjAh42YvBECBVsT_HRjTsRWwuxdZlLG7bug&usqp=CAU" alt="Description of the image" class="img-fluid rounded" width="150">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJjAh42YvBECBVsT_HRjTsRWwuxdZlLG7bug&usqp=CAU" alt="Hadiah" class="img-fluid rounded" width="150">
                             <ol>
                                 <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Hair Dryer</li>
                                 <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Microwave</li>
                                 <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Air Purifier</li>
                             </ol>
+                            </div>
+                            <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" >
+                                <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fpng.pngtree.com%2Felement_our%2F20200702%2Fourlarge%2Fpngtree-address-icon-image_2290344.jpg&tbnid=bL5U8oHkBbG9GM&vet=10CBsQMyh0ahcKEwiQhvCY2MKCAxUAAAAAHQAAAAAQHQ..i&imgrefurl=https%3A%2F%2Fid.pngtree.com%2Ffreepng%2Faddress-icon_5462492.html&docid=3a_-kybEb3hrgM&w=640&h=640&q=foto%20alamat&ved=0CBsQMyh0ahcKEwiQhvCY2MKCAxUAAAAAHQAAAAAQHQ" class="img-fluid rounded" width="150" alt="alamat">
+
+                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Alamat Rumah</p>
+                                <p class="card-text" style="font-size: 0.9rem;"> Jalan Padang Bulan No 101, Medan</p></p>
+                                <p class="card-text" style="font-size: 0.9rem;"> No Telp: 08123456789</p></p>
+                                <!-- Ubah juga data-nomer sesuai dengan no rekening -->
+                                <button class="btn btn-light btn-sm rounded-3" data-rek="Jalan Padang Bulan No 101, 08123456789">Salin Alamat</button>
                             </div>
 
 
