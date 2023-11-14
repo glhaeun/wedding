@@ -81,12 +81,14 @@
                         <div class="row justify-content-center">
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;">
-
-                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">No. Rekening 123456789</p>
-                                <p class="card-text" style="font-size: 0.9rem;">a.n Lorem ipsum dolor</p>
-
-                                <button class="btn btn-light btn-sm rounded-3" data-rek="123456789">Salin No. Rekening</button>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJjAh42YvBECBVsT_HRjTsRWwuxdZlLG7bug&usqp=CAU" alt="Description of the image" class="img-fluid rounded" width="150">
+                            <ol>
+                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Hair Dryer</li>
+                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Microwave</li>
+                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Air Purifier</li>
+                            </ol>
                             </div>
+
 
                             
                         </div>
