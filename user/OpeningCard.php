@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Redressed&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Cormorant+Infant:wght@300&family=Fasthand&family=Redressed&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
@@ -33,8 +35,9 @@
         <div id="frame-1" data-aos="fade-up" data-aos-delay="100" class="frame-inv frame-1"></div>
         <div id="frame-2" data-aos="fade-up" data-aos-delay="100" class="frame-inv frame-2"></div>
         <div class="middle-circle-inv" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="invitation-title">Celebrating Love’s</h2>
+            <h2 class="invitation-title inv-title-1">Celebrating Love’s</h2>
             <h2 class="invitation-title">Journey</h2>
+            <h3 class="dear-title">Dear, grace</h3>
         </div>
 
         <h1 class="tap-to-open">Tap to open</h1>

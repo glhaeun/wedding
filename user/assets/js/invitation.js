@@ -27,9 +27,11 @@ document.addEventListener("click", () => {
     circleText.forEach((element) => {
       element.style.animation = "openTextCircle 2s ease-in-out 1";
     });
-    setTimeout(() => {
-      document.querySelector(".tap-to-open").innerHTML = " ";
-    }, 200);
+    document.querySelector(".tap-to-open").innerHTML = "";
+    document.querySelector(".tap-to-open").style.animation =
+      "openTextCircle 2s ease-in-out 1";
+    document.querySelector(".dear-title").style.animation =
+      "openTextCircle 2s ease-in-out 1";
     middleCircle.style.animation = "openMiddleCircle 2s ease-in-out 1";
     frame1.style.animation = "openCardFrame 2s ease-in-out 1";
     frame2.style.animation = "openCardFrame-2 2s ease-in-out 1";
