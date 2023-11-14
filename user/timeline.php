@@ -28,6 +28,23 @@
             color: #000000 !important;
         }
 
+        #background-container {           
+            background-image: url(../user/assets/images/jason/11.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* animation: spin 10s linear infinite; */
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         .crown {
             width: 300px; 
             height: 65px;
@@ -44,9 +61,9 @@
             align-items: center;
         }
 
-        .timeline-container {
+        /* .timeline-item {
             width: 900px;
-        }
+        } */
 
         .timeline-bullet {
             width: 20px;
@@ -58,6 +75,10 @@
             flex: 0 0 20px; 
             cursor: pointer;
         }
+
+        .timeline-bullet:hover {
+            background-color: #e1c46c;
+        } 
 
         .timeline-content {
             max-width: 400px; /* Set a maximum width */
@@ -87,20 +108,36 @@
             /* transform: translate(-50%, -50%); */
             background-color: rgba(0, 0, 0, 0.4); /* Set the background color with transparency */
             padding: 10px;
+            margin-bottom: 10px;
             border-radius: 30px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             max-width: 900px; /* Set a maximum width for the board */
-            transition: all 0.3s ease; /* Add a smooth transition effect */
+            animation: slide-in-board 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        @keyframes slide-in-board {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .board img {
-            width: 30%; /* Set the width of each picture to 30% of the total width */
+            width: 31%; /* Set the width of each picture to 30% of the total width */
             /* max-width: 100%; */
             height: auto;
             margin-left: 10px;
             margin-top: 10px;
             margin-bottom: 10px;
+        }
+
+        .board img:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .close-button {
@@ -112,6 +149,10 @@
             border: none;
             font-size: 18px;
             color: white;
+        }
+
+        .close-button:hover {
+            color: red;
         }
 
         .slide-in-left {
@@ -392,7 +433,7 @@
 
 <div class="container pb-2 pt-4" data-aos="fade-left" data-aos-duration="2000">
 
-    <div class="card-body border rounded-4 shadow p-3">
+    <div class="card-body border rounded-4 shadow p-3" id="background-container">
 
         <h1 class="font-esthetic text-center py-3" style="font-size: 3rem;"  data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100" >Our Love Story</h1>
 
@@ -400,15 +441,15 @@
             <img src="../user/assets/images/jason/12.png" alt="" class="crown img-fluid">
         </div>
 
-        <div class="timeline py-2" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500" >
+        <div class="timeline py-2" data-aos="flip-down"  data-aos-delay="500" >
             <div class="row timeline-item">
                 <div class="col-12 col-md-1">
                     <div class="timeline-bullet" onclick="showBoard(this)"></div>
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4 class="font-arabic">First Meet (2013)</h4>
-                        <p class="font-arabic">Bulan Agustus 2013, kami pertama kali bertemu pada Ospek Perkuliahan. Pada masa tersebut kami hanyalah teman biasa saja.</p>
+                        <h4>First Meet (2013)</h4>
+                        <p>Bulan Agustus 2013, kami pertama kali bertemu pada Ospek Perkuliahan. Pada masa tersebut kami hanyalah teman biasa saja.</p>
                     </div>
                     <!-- Picture board code -->
                     <div class="board">
@@ -426,8 +467,8 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4 class="font-arabic">Relationship (2018)</h4>
-                        <p class="font-arabic">Tanggal 25 Februari 2018, kami mengikat janji sebagai sepasang kekasih.</p>
+                        <h4>Relationship (2018)</h4>
+                        <p>Tanggal 25 Februari 2018, kami mengikat janji sebagai sepasang kekasih.</p>
                     </div>
                     <div class="board">
                         <img src="../user/assets/images/jason/bridegroom1.png" alt="" class="img-fluid slide-in-left">
@@ -443,8 +484,8 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4 class="font-arabic">Engagement (2021)</h4>
-                        <p class="font-arabic">Lika-liku hubungan kami lalui bersama hingga kami memutuskan untuk bertunangan pada 25 Februari 2021.</p>
+                        <h4>Engagement (2021)</h4>
+                        <p>Lika-liku hubungan kami lalui bersama hingga kami memutuskan untuk bertunangan pada 25 Februari 2021.</p>
                     </div>
                 <!-- Picture board code -->
                 <div class="board">
@@ -462,8 +503,8 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4 class="font-arabic">Married (2023)</h4>
-                        <p class="font-arabic">Kami memutuskan untuk mengikat janji suci pernikahan pada 29 Oktober 2023</p>
+                        <h4>Married (2023)</h4>
+                        <p>Kami memutuskan untuk mengikat janji suci pernikahan pada 29 Oktober 2023</p>
                     </div>
                 <!-- Picture board code -->
                     <div class="board">

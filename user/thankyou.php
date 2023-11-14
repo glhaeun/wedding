@@ -41,6 +41,8 @@
 
                 <h1 class="font-esthetic" >Terima kasih</h1>
                 <hr class="mt-3 mb-2">
+                <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg2.pngdownload.id%2F20181209%2Fch%2Fkisspng-bridegroom-wedding-dress-portable-network-graphics-5c0d9f2b0a4fc5.5362063615443965870422.jpg&tbnid=CQCUu88t15-ECM&vet=12ahUKEwjqlYTq2cKCAxXUwaACHcGBADYQMyhAegUIARDqAQ..i&imgrefurl=https%3A%2F%2Fwww.pngdownload.id%2Fpng-ymtwpf%2F&docid=KibpVop_ty3_IM&w=900&h=900&q=graphic%20mempelai&ved=2ahUKEwjqlYTq2cKCAxXUwaACHcGBADYQMyhAegUIARDqAQ" class="img-fluid rounded" width="150" alt="bride">
+
 
             </div>
         </div>

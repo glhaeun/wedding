@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
     <style>
-        .crown {
+        .line {
             width: 300px; 
-            height: 65px;
+            height: auto;
             margin-top: -40px;
             margin-bottom: 0px;
             /* border: 1px solid black; */
@@ -55,7 +55,7 @@
             <h1 class="font-esthetic py-3" style="font-size: 2rem;">Wedding Information</h1>
 
             <div class="d-flex justify-content-center">
-                <img src="../user/assets/images/jason/12.png" alt="" class="crown img-fluid">
+                <img src="../user/assets/images/darren/Asset 1@4xa.png" alt="" class="line img-fluid">
             </div>
 
                     <div class="overflow-x-hidden">
