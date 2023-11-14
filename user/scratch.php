@@ -161,7 +161,15 @@
 </head>
 
 <body class="bg-light">
+    <h1 class="text-center">Lucky Draw</h1>
+    <p class="text-center">
+    Gunakan kursor pada perangkat komputer atau gesek layar dengan jari pada perangkat seluler untuk mengungkap area yang ditentukan pada kartu. Perhatikan dan simpan huruf atau angka yang terungkap setelah penggosokan.
+    </p>
     <div class="container">
+
+
+         
+
         <div class="row">
             <div class="col-12">
                 <h2 class="main-heading border-left border-danger pl-3 mt-0 mb-4"></h2>

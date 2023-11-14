@@ -36,8 +36,8 @@ body {
   background-image: url(../images/ziven/golden-blur.png);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 60vw;
-  height: 60vh;
+  width: max(40vw, 40vh);
+  height: max(40vw, 40vh);
   animation: golden-blur 15s linear infinite alternate;
 }
 
@@ -66,12 +66,12 @@ body {
 
 @keyframes golden-blur {
   from {
-    width: 60vw;
-    height: 60vh;
+    width: max(40vw, 40vh);
+    height: max(40vw, 40vh);
   }
   to {
-    width: 80vw;
-    height: 80vh;
+    width: max(60vw, 60vh);
+    height: max(60vw, 60vh);
   }
 }
 
@@ -416,10 +416,10 @@ body {
     /* box-shadow: none; */
     /* border-radius: 0; */
     /* background: gold; */
-    background-image: url(../images/ziven/landingBackground.png);
     background-position: center;
     transform: scale(10);
     /* border-radius: 0; */
+    background-image: url(../images/ziven/landingBackground.png);
   }
 
   100% {

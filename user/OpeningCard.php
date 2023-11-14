@@ -72,7 +72,7 @@
             </div>
         </div>
        
-        <div class="flower-inv flower-3" data-aos="fade-right" data-aos-delay="150" data-aos-duration="2000"></div>
+        <div class="flower-inv flower-3" data-aos="fade-left" data-aos-delay="400" data-aos-duration="2000"></div>
         
     </div>
     
