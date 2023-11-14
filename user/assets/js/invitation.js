@@ -28,6 +28,7 @@ document.addEventListener("click", () => {
       element.style.animation = "openTextCircle 2s ease-in-out 1";
     });
     document.querySelector(".tap-to-open").innerHTML = "";
+
     document.querySelector(".tap-to-open").style.animation =
       "openTextCircle 2s ease-in-out 1";
     document.querySelector(".dear-title").style.animation =

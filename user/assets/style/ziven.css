@@ -21,7 +21,7 @@ body {
 .container-inv {
   width: 100vw;
   height: 100vh;
-  background-image: url(../images/ziven/background.png);
+  background-image: url(../images/ziven/background.webp);
   background-size: cover;
   background-position: center center;
   display: flex;
@@ -33,7 +33,7 @@ body {
 
 .golden-blur {
   position: absolute;
-  background-image: url(../images/ziven/golden-blur.png);
+  background-image: url(../images/ziven/golden-blur.webp);
   background-size: cover;
   background-repeat: no-repeat;
   width: max(40vw, 40vh);
@@ -78,7 +78,7 @@ body {
 .leave-a {
   position: absolute;
 
-  background-image: url(../images/ziven/leave-1.png);
+  background-image: url(../images/ziven/leave-1.webp);
   background-size: contain;
   background-repeat: no-repeat;
 
@@ -174,7 +174,7 @@ body {
 
 .flower-inv {
   position: absolute;
-  background-image: url(../images/ziven/flower.png);
+  background-image: url(../images/ziven/flower.webp);
   background-size: contain;
   background-repeat: no-repeat;
   width: 30vw;
@@ -228,7 +228,7 @@ body {
 
 .sparkle-inv {
   position: absolute;
-  background-image: url(../images/ziven/sparkle.png);
+  background-image: url(../images/ziven/sparkle.webp);
   background-size: contain;
   background-repeat: no-repeat;
   width: min(85vw, 85vh);
@@ -238,7 +238,7 @@ body {
 
 .frame-inv {
   position: absolute;
-  background-image: url(../images/ziven/frame.png);
+  background-image: url(../images/ziven/frame.webp);
   background-size: contain;
   background-repeat: no-repeat;
   width: min(85vw, 85vh);

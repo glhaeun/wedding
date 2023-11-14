@@ -1,7 +1,7 @@
 .landing-inv {
   width: 100vw;
   height: 100vh;
-  background-image: url(../images/ziven/landingBackground.png);
+  background-image: url(../images/ziven/landingBackground.webp);
   background-size: cover;
   background-position: center center;
   display: flex;
@@ -146,7 +146,7 @@
 }
 .bride-groom-landing {
   border-radius: 9999px;
-  background-image: url(../images/ziven/borderbridegroom.png);
+  background-image: url(../images/ziven/borderbridegroom.webp);
   width: min(30vw, 30vh);
   height: min(30vw, 30vh);
   margin-top: min(3vw, 3vh);
