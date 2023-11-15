@@ -20,10 +20,28 @@
     <style>
         body{
            background-image: url(assets/images/ziven/background.png);
+           z-index: -1;
         }
 
+        .leave-1-png {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1; 
+            width: 300px; 
+        }
+
+        .flower-png{
+            position: fixed;
+            bottom: -275px;
+            right: -150px; 
+            z-index: -1; 
+            width: 500px; 
+        }
+        
         .container-rsvp,
         .new-card{
+            z-index:1;
             outline: 2px solid #FAD983;
             border-radius: 15px;
         }
@@ -37,22 +55,25 @@
             font-family: 'Enriqueta', serif !important;
             color: #000000 !important;
         }
+
     </style>
 </head>
 <body>
+    <img src="assets/images/ziven/leave-1.png" class="leave-1-png" alt="">
+    <img src="assets/images/ziven/flower.png" class="flower-png" alt="">
     <section id="rsvp" class="m-5">
         <div class="container-rsvp">
             <div class="card-body border rounded-4 shadow p-3">
                 <form action="" id="rsvp-form">
-                    <h1 class="font-esthetic text-center mb-3" style="font-size: 3rem;">Ucapan & Doa</h1>
+                    <h1 class="font-esthetic text-center mb-3" style="font-size: 4rem;">Ucapan & Doa</h1>
                     <div class="mb-1" id="balasan"></div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 font-arabic">
                         <label for="form-nama" class="form-label">Nama</label>
                         <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Isikan Nama Anda">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 font-arabic">
                         <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
                         <select class="form-select shadow-sm" id="form-kehadiran">
                             <option value="0" selected>Konfirmasi Kehadiran</option>
@@ -61,12 +82,12 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 font-arabic">
                         <label for="form-pesan" class="form-label">Ucapan & Doa</label>
                         <textarea class="form-control shadow-sm" id="form-pesan" rows="4" placeholder="Tulis Ucapan & Doa"></textarea>
                     </div>
 
-                    <div class="d-flex">
+                    <div class="d-flex font-arabic">
                         <button class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1"  id="kirim">
                             Kirim
                             <i class="fa-solid fa-paper-plane ms-1"></i>
@@ -76,7 +97,7 @@
             </div>
         </div>
 
-        <div class="rounded-4 mt-5 mb-2 daftar-ucapan" id="daftar-ucapan">
+        <div class="rounded-4 mt-5 mb-2 daftar-ucapan font-arabic" id="daftar-ucapan">
         </div>
     </section>
 </body>
