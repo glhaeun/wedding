@@ -38,7 +38,7 @@
             z-index: -1; 
             width: 500px; 
         }
-        
+
         .container-rsvp,
         .new-card{
             z-index:1;
@@ -46,6 +46,10 @@
             border-radius: 15px;
         }
 
+        .font-time{
+            font-family: 'Digital-7', sans-serif !important;
+            color: #000000 !important;
+        }
         .font-esthetic {
             font-family: 'Ephesis', cursive !important;
             color: #000000 !important;
@@ -96,8 +100,8 @@
                 </form>
             </div>
         </div>
-
         <div class="rounded-4 mt-5 mb-2 daftar-ucapan font-arabic" id="daftar-ucapan">
+        <!-- list ucapan -->
         </div>
     </section>
 </body>
@@ -111,13 +115,12 @@
 
         form.addEventListener('submit', function (event) {
             event.preventDefault(); 
-
             if (!namaInput.value || !kehadiranInput.value) {
                 const toastNode = document.createElement("div");
                 toastNode.innerHTML = "<i class='fas fa-exclamation-triangle'></i> ";
                 Toastify({
                     text: "👀 Field nama atau status kehadiran wajib diisi !",
-                    duration: 2000,
+                    duration: 3000,
                     newWindow: true,
                     gravity: "bottom",
                     position: 'right',
@@ -130,24 +133,35 @@
                 const kehadiran = kehadiranInput.value;
                 const pesan = pesanInput.value;
                 const newCard = document.createElement('div');
+                const statusHadir = kehadiran == '1' ? "Hadir" : "Berhalangan";
+                const iconStatus = kehadiran == '1' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
+                const datetime = new Date().toLocaleString();
+
                 newCard.className = 'mb-3 new-card';
                 newCard.innerHTML = `
                     <div class="card-body bg-light shadow p-3 m-0 rounded-4">
-                    <div class="d-flex flex-wrap justify-content-between align-items-center">
-                        <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                        <strong class="me-1">${nama}</strong><i class="fa-solid fa-circle-check text-success"></i>
-                        </p>
-                    </div>
-                    <hr class="text-dark my-1">
-                    <p class="text-dark mt-0 mb-1 mx-0 p-0" style="white-space: pre-line">${pesan}</p>
-                    <div class="d-flex flex-wrap justify-content-between align-items-center">
-                        <button style="font-size: 0.8rem;" data-uuid="${generateUUID()}" class="btn btn-sm btn-outline-dark rounded-2 py-0 px-0" fdprocessedid="qrakml">
-                        <div class="d-flex justify-content-start align-items-center">
-                            <p class="my-0 mx-1" data-suka="0">0 suka</p>
-                            <i class="py-1 me-1 p-0 fa-regular fa-heart"></i>
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <div>
+                                <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                    <strong class="me-1">${nama}</strong>
+                                </p>
+                                <p class="mt-1 font-time">${datetime}</p>
+                            </div>
+                            <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                <strong class="me-1">${statusHadir}</strong>
+                                ${iconStatus}
+                            </div>
                         </div>
-                        </button>
-                    </div> 
+                        <hr class="text-dark my-1">
+                        <p class="text-dark mt-0 mb-1 mx-0 p-0" style="white-space: pre-line">${pesan}</p>
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <button style="font-size: 0.8rem;" data-uuid="${generateUUID()}" class="btn btn-sm btn-outline-dark rounded-2 py-0 px-0" fdprocessedid="qrakml">
+                            <div class="d-flex justify-content-start align-items-center">
+                                <p class="my-0 mx-1" data-suka="0">Suka</p>
+                                <i class="py-1 me-1 p-0 fa-regular fa-heart"></i>
+                            </div>
+                            </button>
+                        </div> 
                     </div>`;
                 daftarUcapan.appendChild(newCard);
                 namaInput.value = '';
@@ -155,12 +169,12 @@
                 pesanInput.value = '';
 
                 Toastify({
-                    text: "🙏 Terima Kasih atas respond yang diberikan !",
-                    duration: 2000,
+                    text: "😍 Terima Kasih atas respond yang diberikan !",
+                    duration: 3000,
                     newWindow: true,
                     gravity: "bottom",
                     position: 'right',
-                    backgroundColor: "",
+                    backgroundColor: "#ffca2c",
                     stopOnFocus: true,
                     onClick: function () { }
                 }).showToast();  
