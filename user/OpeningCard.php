@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +40,27 @@
         <div class="middle-circle-inv" data-aos="fade-up" data-aos-delay="100">
             <h2 class="invitation-title inv-title-1">Celebrating Love’s</h2>
             <h2 class="invitation-title">Journey</h2>
-            <h3 class="dear-title">Dear, grace</h3>
+            <?php
+                if (isset($_SESSION['userEmail'])) {
+                    $email = $_SESSION['userEmail'];
+                    $query = "SELECT name from user where email = '$email'";
+                    $show_user = $connect->prepare($query);
+                    $show_user -> execute();
+
+                    if($show_user -> rowCount()>0) {
+                        while($fetch_user = $show_user->fetch(PDO::FETCH_ASSOC)){
+                            ?>
+                        <h3 class="dear-title">Dear, <?=$fetch_user['name'] ?></h3>
+                            <?php
+                        }
+                    }
+                } else {
+                    ?>
+                    <h3 class="dear-title">Dear, Guest</h3>
+                    <?php
+                }
+            ?>
+            
         </div>
 
         <h1 class="tap-to-open">Tap to open</h1>
