@@ -63,11 +63,14 @@
                         dapat melalui :
                     </p>
 
-                <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic">Send Angpao</button>
-                <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic">Send Gift</button>
+               <div class="button-container">
+            <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic">Send Angpao</button>
+            <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic">Send Gift</button>
+        </div>
 
-                <img src="user/assets/images/elvina/heartpanjang.png" alt="HeartPanjang">
-                
+        <div class="image-container">
+            <img src="user/assets/images/elvina/heartpanjang.png" alt="HeartPanjang">
+        </div>
                     <div class="overflow-x-hidden font-inside" id="angpao">
                         <div class="row justify-content-center">
 
@@ -101,6 +104,7 @@
                                 <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Hair Dryer</li>
                                 <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Microwave</li>
                                 <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Air Purifier</li>
+                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Vacuum Cleaner</li>
                             </ol>
                             </div>
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" >
