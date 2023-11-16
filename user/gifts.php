@@ -108,7 +108,7 @@
                             </ol>
                             </div>
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" >
-                                <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fpng.pngtree.com%2Felement_our%2F20200702%2Fourlarge%2Fpngtree-address-icon-image_2290344.jpg&tbnid=bL5U8oHkBbG9GM&vet=10CBsQMyh0ahcKEwiQhvCY2MKCAxUAAAAAHQAAAAAQHQ..i&imgrefurl=https%3A%2F%2Fid.pngtree.com%2Ffreepng%2Faddress-icon_5462492.html&docid=3a_-kybEb3hrgM&w=640&h=640&q=foto%20alamat&ved=0CBsQMyh0ahcKEwiQhvCY2MKCAxUAAAAAHQAAAAAQHQ" class="img-fluid rounded" width="150" alt="alamat">
+                                <img src="user/assets/images/elvina/location.png" class="img-fluid rounded" width="150" alt="alamat">
 
                                 <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Alamat Rumah</p>
                                 <p class="card-text" style="font-size: 0.9rem;"> Jalan Padang Bulan No 101, Medan</p></p>
