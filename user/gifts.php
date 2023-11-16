@@ -46,6 +46,7 @@
     background-color: #ffcc00 !important; /* Change button background color on hover to a slightly different shade of gold/yellow */
 }
 
+        
 .font-inside {
         font-family: 'Asul';
         }
@@ -65,7 +66,8 @@
                 <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic">Send Angpao</button>
                 <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic">Send Gift</button>
 
-
+                <img src="user/assets/images/elvina/heartpanjang.png" alt="HeartPanjang">
+                
                     <div class="overflow-x-hidden font-inside" id="angpao">
                         <div class="row justify-content-center">
 
