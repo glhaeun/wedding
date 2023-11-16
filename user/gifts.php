@@ -113,7 +113,7 @@
                                 <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Alamat Rumah</p>
                                 <p class="card-text" style="font-size: 0.9rem;"> Jalan Padang Bulan No 101, Medan</p></p>
                                 <p class="card-text" style="font-size: 0.9rem;"> No Telp: 08123456789</p></p>
-                                <!-- Ubah juga data-nomer sesuai dengan no rekening -->
+                                <!-- Ubah juga data-nomer sesuai dengan alamat rumah -->
                                 <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="Jalan Padang Bulan No 101, 08123456789">Salin Alamat</button>
                             </div>
 
