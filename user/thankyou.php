@@ -41,8 +41,8 @@
                         To all beloved invited guests, are expected to obey health protocol.
                     </p>
 
-                    <img src="user/assets/images/elvina/Butterfly.png" alt="Kupu-kupu">
-                    <img src="user/assets/images/elvina/garisbelah.png" alt="Garis Belah">
+                    <!-- <img src="assets/images/elvina/Butterfly.png" alt="Kupu-kupu">
+                    <img src="assets/images/elvina/garisbelah.png" alt="Garis Belah"> -->
 
                     <h1 class="font-esthetic yellow">Terima kasih</h1>
                     <hr class="mt-3 mb-2">

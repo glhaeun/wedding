@@ -1,5 +1,4 @@
-<?php include '../component/connect.php';
-?>
+<?php include '../component/connect.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,59 +45,10 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Daftar Tamu</h1>
-                        <a href="addemail.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i>Invite Guest</a>
+        
                     </div>
 
-                    <div class="card shadow mb-4 w-100">
-                        
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Nama</th>
-                                            <th>Email</th>
-                                            <th>Attend</th>
-                                            <th>Win Prize</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-
-<?php 
-
-    $query ="SELECT * FROM user";
-    $select_user =  $connect->prepare($query);
-    $select_user -> execute();
-
-    $index = 1;
-    if($select_user->rowCount()>0){
-        while ($fetch_user = $select_user ->fetch(PDO::FETCH_ASSOC)){
-            ?>
-                        <tr>
-                            <td><?=$index?></td>
-                            <td><?=$fetch_user['name']?></td>
-                            <td><?=$fetch_user['email']?></td>
-                            <td><?=$fetch_user['attend']?></td>     
-                            <td><?=$fetch_user['isScratch']?></td>
-                            <td>Delete/View Message</td>       
-                    <?php
-                        $index++;
-        }
-    }
-                                    
-?>
-
-                                    
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <?php include 'timelineForm.php' ?>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -106,7 +56,6 @@
             <!-- End of Main Content -->
 
             <?php include '../component/footer.php' ?>
-
 
         </div>
         <!-- End of Content Wrapper -->

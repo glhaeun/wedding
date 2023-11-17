@@ -69,7 +69,7 @@
         </div>
 
         <div class="image-container">
-            <img src="user/assets/images/elvina/heartpanjang.png" alt="HeartPanjang">
+            <!-- <img src="assets/images/elvina/heartpanjang.png" alt="HeartPanjang"> -->
         </div>
                     <div class="overflow-x-hidden font-inside" id="angpao">
                         <div class="row justify-content-center">
@@ -108,7 +108,7 @@
                             </ol>
                             </div>
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" >
-                                <img src="user/assets/images/elvina/location.png" class="img-fluid rounded" width="150" alt="alamat">
+                                <!-- <img src="assets/images/elvina/location.png" class="img-fluid rounded" width="150" alt="alamat"> -->
 
                                 <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Alamat Rumah</p>
                                 <p class="card-text" style="font-size: 0.9rem;"> Jalan Padang Bulan No 101, Medan</p></p>

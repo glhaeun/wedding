@@ -1,3 +1,7 @@
+<?php 
+    include './component/getBrideGroom.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,10 +63,10 @@
             <div class="details">
             <div class="name">
             <img class="butterfly" src="assets/images/haeun/butterfly.png"  data-aos="fade-down-right" data-aos-duration="2000">
-            <h1 class="font-arabic" style="font-size: 2rem;">Wahyu Siapa</h1>
+            <h1 class="font-arabic" style="font-size: 2rem;"><?= $groom['groom'] ?></h1>
             </div>
             <h5 class="font-inside mt-3 mb-0 " style="font-size: 1.5rem;">Son of</h5>
-            <p class="mb-0 font-inside" style="font-size: 1rem;">Mr A, Mrs B</p>
+            <p class="mb-0 font-inside" style="font-size: 1rem;">Mr <?= $groom['dad'] ?> & Mrs <?= $groom['mom'] ?></p>
 
 
             </div>
@@ -80,10 +84,10 @@
             <div class="details">
             <div class="name">
             <img class="butterfly" src="assets/images/haeun/butterfly.png"  data-aos="fade-down-right" data-aos-duration="2000">
-            <h1 class="font-arabic" style="font-size: 2rem;">Wahyu Siapa</h1>
+            <h1 class="font-arabic" style="font-size: 2rem;"><?= $bride['bride'] ?></h1>
             </div>
             <h5 class="font-inside mt-3 mb-0 " style="font-size: 1.5rem;">Daughter of</h5>
-            <p class="mb-0 font-inside" style="font-size: 1rem;">Mr A, Mrs B</p>
+            <p class="mb-0 font-inside" style="font-size: 1rem;">Mr <?= $bride['dad'] ?> & Mrs <?= $bride['mom'] ?></p>
 
 
             </div>
