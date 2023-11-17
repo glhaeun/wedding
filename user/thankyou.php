@@ -37,8 +37,8 @@
                 <div class="text-center">
 
                     <p style="font-size: 0.9rem;" class="pt-2 pb-1 px-2">
-                        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak / Ibu / Saudara / i.
-                        Berkenan hadir untuk merayakan hari yang bahagia ini.
+                        Your blessing and coming to our wedding are enough for us.
+                        To all beloved invited guests, are expected to obey health protocol.
                     </p>
 
                     <img src="user/assets/images/elvina/Butterfly.png" alt="Kupu-kupu">
