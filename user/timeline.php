@@ -51,7 +51,7 @@
 
     <div class="card-body border rounded-4 shadow p-3">
 
-        <h1 class="font-esthetic text-center py-3" style="font-size: 3rem;"  data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100" >Our Love Story</h1>
+        <h1 class="font-esthetic text-center py-3" id="timeline-title" style="font-size: 3rem;"  data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100" >Our Love Story</h1>
 
         <div class="d-flex justify-content-center" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500" >
             <img src="../user/assets/images/jason/12.png" alt="" class="crown img-fluid">
@@ -64,14 +64,14 @@
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4 class="font-arabic">First Meet (2013)</h4>
-                        <p class="font-inside">Bulan Agustus 2013, kami pertama kali bertemu pada Ospek Perkuliahan. Pada masa tersebut kami hanyalah teman biasa saja.</p>
+                        <h4 class="font-arabic" id="timeline-desc">First Meet (2013)</h4>
+                        <p class="font-inside" id="timeline-story">Bulan Agustus 2013, kami pertama kali bertemu pada Ospek Perkuliahan. Pada masa tersebut kami hanyalah teman biasa saja.</p>
                     </div>
                     <!-- Picture board code -->
                     <div class="board">
-                        <img src="../user/assets/images/jason/bridegroom1.png" alt="" class="img-fluid slide-in-left">
-                        <img src="../user/assets/images/jason/bridegroom2.png" alt="" class="img-fluid fade-in">
-                        <img src="../user/assets/images/jason/bridegroom3.png" alt="" class="img-fluid slide-in-right">
+                        <img src="../user/assets/images/jason/bridegroom1.png" alt="" class="img-fluid slide-in-left" id="timeline-pic1">
+                        <img src="../user/assets/images/jason/bridegroom2.png" alt="" class="img-fluid fade-in" id="timeline-pic2">
+                        <img src="../user/assets/images/jason/bridegroom3.png" alt="" class="img-fluid slide-in-right" id="timeline-pic3">
                         <button class="close-button" onclick="closeBoard(this)"> X </button>
                     </div>
                     <!-- End of Picture board code -->

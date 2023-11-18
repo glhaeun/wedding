@@ -60,6 +60,15 @@
             color: #000000 !important;
         }
 
+        .page-link:focus {
+            box-shadow: none;
+        }
+
+        .disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }   
+
     </style>
 </head>
 <body>
@@ -100,9 +109,29 @@
                 </form>
             </div>
         </div>
+
         <div class="rounded-4 mt-5 mb-2 daftar-ucapan font-arabic" id="daftar-ucapan">
         <!-- list ucapan -->
         </div>
+
+        <nav class="d-flex justify-content-center mb-0 font-arabic">
+            <ul class="pagination mb-0">
+                <li class="page-item" id="previous">
+                    <button class="page-link"  aria-label="Previous">
+                        <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
+                    </button>
+                </li>
+                <li class="page-item">
+                    <span class="page-link bg-warning text-dark" id="page">1</span>
+                </li>
+                <li class="page-item" id="next">
+                    <button class="page-link"  aria-label="Next">
+                        Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
     </section>
 </body>
 <script>
@@ -154,19 +183,12 @@
                         </div>
                         <hr class="text-dark my-1">
                         <p class="text-dark mt-0 mb-1 mx-0 p-0" style="white-space: pre-line">${pesan}</p>
-                        <div class="d-flex flex-wrap justify-content-between align-items-center">
-                            <button style="font-size: 0.8rem;" data-uuid="${generateUUID()}" class="btn btn-sm btn-outline-dark rounded-2 py-0 px-0" fdprocessedid="qrakml">
-                            <div class="d-flex justify-content-start align-items-center">
-                                <p class="my-0 mx-1" data-suka="0">Suka</p>
-                                <i class="py-1 me-1 p-0 fa-regular fa-heart"></i>
-                            </div>
-                            </button>
-                        </div> 
                     </div>`;
                 daftarUcapan.appendChild(newCard);
                 namaInput.value = '';
                 kehadiranInput.value = '0';
                 pesanInput.value = '';
+                displaySubmissions();
 
                 Toastify({
                     text: "😍 Terima Kasih atas respond yang diberikan !",
@@ -187,6 +209,57 @@
                 v = c === 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
             });
+        }
+
+        const nextButton = document.getElementById('next');
+        const previousButton = document.getElementById('previous');
+        const submissionsPerPage = 5;
+        let currentPage = 1;
+
+        nextButton.addEventListener('click', function () {
+            currentPage++;
+            displaySubmissions();
+        });
+
+        previousButton.addEventListener('click', function () {
+            if (currentPage > 1) {
+                currentPage--;
+                displaySubmissions();
+            }
+        });
+
+        const nav = document.querySelector('.pagination');
+        nav.style.display = 'none';
+
+        function displaySubmissions() {
+            const allSubmissions = document.querySelectorAll('.new-card');
+            const startIdx = (currentPage - 1) * submissionsPerPage;
+            const endIdx = startIdx + submissionsPerPage;
+
+            allSubmissions.forEach((submission, index) => {
+                if (index >= startIdx && index < endIdx) {
+                    submission.style.display = 'block';
+                } else {
+                    submission.style.display = 'none';
+                }
+            });
+            
+            const pageElement = document.getElementById('page');
+            pageElement.textContent = currentPage;
+            
+            if (allSubmissions.length === 0) {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                previousButton.disabled = currentPage === 1;
+                nextButton.disabled = endIdx >= allSubmissions.length;
+
+                if (endIdx >= allSubmissions.length) {
+                    nextButton.classList.add('disabled');
+                } else {
+                    nextButton.classList.remove('disabled');
+                }
+            }
         }
     });
 </script>
