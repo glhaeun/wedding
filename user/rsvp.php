@@ -245,7 +245,8 @@
             });
             
             const pageElement = document.getElementById('page');
-    pageElement.textContent = currentPage;
+            pageElement.textContent = currentPage;
+            
             if (allSubmissions.length === 0) {
                 nav.style.display = 'none';
             } else {
