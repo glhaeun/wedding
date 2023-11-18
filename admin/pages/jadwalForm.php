@@ -35,6 +35,10 @@
                                     <label for="inv_date">Invitation Date</label>
                                     <input  name="inv_date" type="datetime-local" class="form-control" id="inv_date"  required <?php echo $readonly; ?> value="<?php echo isset($data['date']) ? $data['date'] : ''; ?>">
                                 </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inv_location">Invitation Location</label>
+                                    <input  name="inv_location" type="text" class="form-control" id="inv_location"  required <?php echo $readonly; ?> value="<?php echo isset($data['location']) ? $data['location'] : ''; ?>">
+                                </div>
                                 <div class="form-group col-md-12">
                                     <label for="ty">Thank You Message</label>
                                     <!-- <input  name="inv_title" type="text" class="form-control" id="inv_title"  required <?php echo $readonly; ?>> -->

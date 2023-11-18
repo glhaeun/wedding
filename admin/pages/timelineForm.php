@@ -2,6 +2,73 @@
     $editMode = isset($_GET['edit']); 
     $readonly = $editMode ? '' : 'readonly';
 
+    $check_database = $connect->prepare("SELECT * FROM timeline");
+    $check_database -> execute();
+
+    $data = array();
+    if ($check_database->rowCount() > 0) {
+        $data = $check_database->fetch(PDO::FETCH_ASSOC);
+    } 
+
+?>
+
+
+<?php
+    if (isset($_POST['timeline'])) {
+
+        if ($check_database->rowCount() > 0)  {
+            $titles = $_POST['titles'];
+            $years = $_POST['years'];
+            $contents = $_POST['contents'];
+    
+        
+            for ($i = 0; $i < count($titles); $i++) {
+                $title = $titles[$i];
+                $year = $years[$i];
+                $content = $contents[$i];
+
+                if ($i < $count) {
+                    $query = "UPDATE timeline SET title = ?, year = ?, content = ? WHERE id = ?";
+                    $update = $connect->prepare($query);
+                    $update->execute([$title, $year, $content, $i + 1]);
+                } else {
+                    $query = "INSERT INTO timeline (`id`, `title`, `year`, `content`) VALUES (?,?,?,?)";
+                    $update = $connect->prepare($query);
+                    $update->execute([$i, $title, $year, $content]);
+                }
+        
+            }
+        } else {
+            $titles = $_POST['titles'];
+            $years = $_POST['years'];
+            $contents = $_POST['contents'];
+    
+        
+            for ($i = 0; $i < count($titles); $i++) {
+                $title = $titles[$i];
+                $year = $years[$i];
+                $content = $contents[$i];
+
+                $query = "INSERT INTO timeline (`id`,`title`, `year`, `content`) VALUES (?,?,?,?)";
+                $update = $connect -> prepare($query);
+                $update -> execute ([$i,$title, $year, $content]);
+        
+            }
+
+            ?>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+            <script>
+                Swal.fire({
+                    icon:'success',
+                    title:'Data has been inserted successfully!',
+                }).then(function(){
+                    window.location = "timeline.php";
+                });
+            </script>
+            <?php
+        }
+        
+    }
     
 ?>
 
@@ -15,71 +82,35 @@
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data">
-                            <div class="data-general">
-                            <h4 class="text-center">Invitation</h4>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="inv_title">Invitation Title</label>
-                                    <input  name="inv_title" type="text" class="form-control" id="inv_title"  required <?php echo $readonly; ?> value="<?php echo isset($data['invitation']) ? $data['invitation'] : ''; ?>">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inv_date">Invitation Date</label>
-                                    <input  name="inv_date" type="datetime-local" class="form-control" id="inv_date"  required <?php echo $readonly; ?> value="<?php echo isset($data['date']) ? $data['date'] : ''; ?>">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="ty">Thank You Message</label>
-                                    <!-- <input  name="inv_title" type="text" class="form-control" id="inv_title"  required <?php echo $readonly; ?>> -->
-                                    <textarea name="ty" class="form-control" id="ty" rows="4" required <?php echo $readonly; ?>><?= isset($data['thankyou']) ? $data['thankyou'] : ''; ?></textarea>
-                                </div>
-                            </div>
+                        <button id="addTimeline" class="btn btn-secondary mt-3" <?php echo !$editMode ? 'disabled' : ''; ?>  >Add Timeline</button>
 
-                            <h4 class="text-center mt-5">Holy Matrimony</h4>
+                            <div class="data-timeline" id="additionalTimelines">
                             <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="holymatrimony_address">Holy Matrimony Address</label>
-                                    <input <?php echo $readonly; ?>   name="holymatrimony_address" type="text" class="form-control" id="holymatrimony_address" value="<?php echo isset($data['holymatrimony_address']) ? $data['holymatrimony_address'] : ''; ?>" required>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="holymatrimony_map">Holy Matrimony Google Map Link</label>
-                                    <input <?php echo $readonly; ?>   name="holymatrimony_map" type="text" class="form-control" id="holymatrimony_map" value="<?php echo isset($data['holymatrimony_map']) ? $data['holymatrimony_map'] : ''; ?>" required>
+                                <div class="form-group col-md-6">
+                                    <label for="title">Timeline Title</label>
+                                    <input  name="title" type="text" class="form-control" id="title"  required <?php echo $readonly; ?> value="<?php echo isset($data['invitation']) ? $data['invitation'] : ''; ?>">
                                 </div>
                                 <div class="form-group col-md-6">
-                                <label for="holymatrimony_date">Holy Matrimony Date</label>
-                                <input <?php echo $readonly; ?>   name="holymatrimony_date" type="datetime-local" class="form-control" id="holymatrimony_date" value="<?php echo isset($data['holymatrimony_date']) ? $data['holymatrimony_date'] : ''; ?>"  required>
+                                    <label for="year">Timeline Year</label>
+                                    <input  name="year" type="number" class="form-control" id="year"  required <?php echo $readonly; ?> value="<?php echo isset($data['date']) ? $data['date'] : ''; ?>">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="content">Timeline Content</label>
+                                    <textarea name="content" class="form-control" id="content" rows="3" required <?php echo $readonly; ?>><?= isset($data['thankyou']) ? $data['thankyou'] : ''; ?></textarea>
                                 </div>
                             </div>
+                            </div>
+                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary mt-5" value="Save" name="timeline">
+
                             
-                            <h4 class="text-center mt-5">Reception</h4>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="reception_address">Reception Address</label>
-                                    <input <?php echo $readonly; ?>   name="reception_address" type="text" class="form-control" id="reception_address"  required value="<?php echo isset($data['reception_address']) ? $data['reception_address'] : ''; ?>">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="reception_map">Reception Google Map Link</label>
-                                    <input <?php echo $readonly; ?>   name="reception_map" type="text" class="form-control" id="reception_map"  required value="<?php echo isset($data['reception_map']) ? $data['reception_map'] : ''; ?>">
-                                </div>
-                                <div class="form-group col-md-6">
-                                <label for="reception_date">Reception Date</label>
-                                <input <?php echo $readonly; ?>   name="reception_date" type="datetime-local" class="form-control" id="reception_date"  required value="<?php echo isset($data['reception_date']) ? $data['reception_date'] : ''; ?>">
-                                </div>
-                            </div>
-
-
-                            <h4 class="text-center mt-5">Address</h4>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="couple_address">Couple's Address</label>
-                                    <input <?php echo $readonly; ?>   name="couple_address" type="text" class="form-control" id="couple_address"  required value="<?php echo isset($data['couple_address']) ? $data['couple_address'] : ''; ?>">
-                                </div>
-                            </div>
-                            
-                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary mt-5" value="Save" name="jadwal">
                             </form>
                         </div>
                     </div>
 
     </div>
+
+
+
 
 
     

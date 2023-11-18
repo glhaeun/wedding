@@ -1,5 +1,4 @@
 <?php 
-    include './component/connect.php';
     $query = "SELECT * from bride";
     
     $bride_database = $connect->prepare("SELECT * FROM bride");

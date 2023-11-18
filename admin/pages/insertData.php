@@ -34,13 +34,13 @@
             <?php
         } else if (isset($_POST['jadwal'])) {
             if ($check_database -> rowCount()>0) {
-                $query = "UPDATE general SET invitation =?, date =?, holymatrimony_address =?, holymatrimony_date=?, holymatrimony_map=?, reception_address =?, reception_date=?, reception_map=?, thankyou=?, couple_address=?";
+                $query = "UPDATE general SET invitation =?, date =?, location=?, holymatrimony_address =?, holymatrimony_date=?, holymatrimony_map=?, reception_address =?, reception_date=?, reception_map=?, thankyou=?, couple_address=?";
                 $update = $connect -> prepare($query);
-                $update -> execute ([$_POST['inv_title'], $_POST['inv_date'], $_POST['holymatrimony_address'], $_POST['holymatrimony_date'], $_POST['holymatrimony_map'], $_POST['reception_address'], $_POST['reception_date'], $_POST['reception_map'], $_POST['ty'],  $_POST['couple_address']]);
+                $update -> execute ([$_POST['inv_title'], $_POST['inv_date'], $_POST['inv_location'], $_POST['holymatrimony_address'], $_POST['holymatrimony_date'], $_POST['holymatrimony_map'], $_POST['reception_address'], $_POST['reception_date'], $_POST['reception_map'], $_POST['ty'],  $_POST['couple_address']]);
             } else {
-                $query = "INSERT INTO general (`invitation`, `date`, `holymatrimony_address`, `holymatrimony_date`, `holymatrimony_map`, `reception_address`, `reception_date`, `reception_map`, `thankyou`, `couple_address`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+                $query = "INSERT INTO general (`invitation`, `date`, `location`, `holymatrimony_address`, `holymatrimony_date`, `holymatrimony_map`, `reception_address`, `reception_date`, `reception_map`, `thankyou`, `couple_address`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
                 $insert = $connect->prepare($query);
-                $insert -> execute ([$_POST['inv_title'], $_POST['inv_date'], $_POST['holymatrimony_address'], $_POST['holymatrimony_date'], $_POST['holymatrimony_map'], $_POST['reception_address'], $_POST['reception_date'], $_POST['reception_map'], $_POST['ty'] , $_POST['couple_address']]);
+                $insert -> execute ([$_POST['inv_title'], $_POST['inv_date'],  $_POST['inv_location'],$_POST['holymatrimony_address'], $_POST['holymatrimony_date'], $_POST['holymatrimony_map'], $_POST['reception_address'], $_POST['reception_date'], $_POST['reception_map'], $_POST['ty'] , $_POST['couple_address']]);
             }
             ?>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>

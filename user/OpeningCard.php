@@ -1,4 +1,38 @@
+<?php 
+    $combinedQuery = "
+        SELECT 'bride' AS category, bride AS name FROM bride
+        UNION
+        SELECT 'groom' AS category, groom AS name FROM groom
+        UNION
+        SELECT 'date' AS category, reception_date AS name FROM general
+        UNION
+        SELECT 'location' AS category, location AS name FROM general
+    ";
 
+    $database = $connect->prepare($combinedQuery);
+    $database->execute();
+
+    $data = array();    
+    if ($database->rowCount() > 0) {
+        foreach ($database->fetchAll(PDO::FETCH_ASSOC) as $row) {
+            $data[$row['category']] = $row['name']; 
+        }
+
+        $dateTime = new DateTime($data['date']);
+
+        $data['year'] = $dateTime->format('Y'); // Year: 2023
+        $data['month'] = $dateTime->format('M'); // Month: December
+        $data['date'] = $dateTime->format('j'); // Date: 31 (without leading zeros)
+        $data['time'] = $dateTime->format('g:i a');
+
+        $data['bride'] = explode(' ', $data['bride']);
+        $data['bride'] = $data['bride'][0];
+
+        $data['groom'] = explode(' ', $data['groom']);
+        $data['groom'] = $data['groom'][0];
+    }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,17 +118,17 @@
                 </div>
             </div>
             <div class="flex-inv-container">
-                <p class="title-landing"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000"> Alexander & Olivia</p>
+                <p class="title-landing"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000"> <?= $data['groom'] ?> & <?= $data['bride'] ?></p>
                 <p class="text-landing" data-aos="fade-up" data-aos-delay="150" data-aos-duration="2000"> invite you to celebrate their wedding</p>
                 <div class="date-landing" data-aos="fade-up" data-aos-delay="200" data-aos-duration="2000">
-                    <p class="side-date-landing">Oct</p>
+                    <p class="side-date-landing"><?= $data['month'] ?></p>
                     <img alt="separator" class="separator-date-landing-1" src="assets/images/ziven/line.png">
-                    <p class="main-date-landing">29</p>
+                    <p class="main-date-landing"><?= $data['date'] ?></p>
                     <img alt="separator" class="separator-date-landing-1" src="assets/images/ziven/line.png">
-                    <p class="side-date-landing">2023</p>
+                    <p class="side-date-landing"><?= $data['year'] ?></p>
                 </div>
-                <p class="together-landing" data-aos="fade-up" data-aos-delay="250" data-aos-duration="2000">08:00 pm</p>
-                <p class="together-landing" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">at Wisma benteng restaurant</p>
+                <p class="together-landing" data-aos="fade-up" data-aos-delay="250" data-aos-duration="2000"><?= $data['time'] ?></p>
+                <p class="together-landing" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">at <?= $data['location'] ?></p>
             </div>
         </div>
        
