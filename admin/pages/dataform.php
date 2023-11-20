@@ -183,7 +183,7 @@
                             </div>
                             </div>
                             
-                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary yellow black" value="Save" name="save">
+                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary yellow black" style="border:none" value="Save" name="save">
                             </form>
                         </div>
                     </div>
