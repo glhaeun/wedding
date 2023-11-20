@@ -1,22 +1,5 @@
 <?php 
-    include './component/connect.php';
-    $query = "SELECT * from general";
-
-
-    $database = $connect->prepare("SELECT * FROM general");
-    $database -> execute();
-
-    $data = array();
-    if ($database->rowCount() > 0) {
-        $data = $database->fetch(PDO::FETCH_ASSOC);
-
-        $dateTime = new DateTime($data['holymatrimony_date']);
-        $formattedHolyMatrimony = $dateTime->format('l, j F Y \a\t h.i a');
-        $data['holymatrimony_formatedDate'] = $formattedHolyMatrimony;
-
-        $dateTime = new DateTime($data['reception_date']);
-        $formattedReception = $dateTime->format('l, j F Y \a\t h.i a');
-        $data['reception_formatedDate'] = $formattedReception;    } 
+    include './component/getLocation.php';
 
 ?>
 
@@ -81,7 +64,7 @@
 </head>
 <body>
     <section id="lokasi">
-        <div class="container mt-5">
+        <div class="container mt-5" data-aos="flip-left" data-aos-duration="2000">
             <div class="text-center ">
             <h1 class="font-esthetic py-3" >Wedding Information</h1>
 
@@ -94,14 +77,19 @@
                             <h4 class="font-arabic" style="font-size: 2rem;">Holy Matrimony</h4>
                             <p class="font-inside"><?= isset($data['holymatrimony_formatedDate']) ? $data['holymatrimony_formatedDate'] : '[Tanggal Holy Matrimony]'; ?></p>
                             <p class="font-inside"><?= isset($data['holymatrimony_address']) ? $data['holymatrimony_address'] : '[Alamat Holy Matrimony]'; ?></p>
-                            <a class="font-inside" href="<?= isset($data['holymatrimony_map']) ? $data['holymatrimony_map'] : '#'; ?>">Get directions using maps</a>
+                            <a class="font-inside" href="<?= isset($data['holymatrimony_map']) ? $data['holymatrimony_map'] : '#'; ?>">
+    <img src="../user/assets/images/darren/image-url11.png">
+</a>
+
+
                         </div>
 
                         <div class="py-2 mb-4">
                             <h4 class="font-arabic" style="font-size: 2rem;">Reception</h4>
                             <p class="font-inside"><?= isset($data['reception_formatedDate']) ? $data['reception_formatedDate'] : '[Tanggal Reception]'; ?></p>
                             <p class="font-inside"><?= isset($data['reception_address']) ? $data['reception_address'] : '[Alamat Reception]'; ?></p>
-                            <a class="font-inside" href="<?= isset($data['reception_map']) ? $data['reception_map'] : '#'; ?>">Get directions using maps</a>
+                            <a class="font-inside" href="<?= isset($data['reception_map']) ? $data['reception_map'] : '#'; ?>">    <img src="../user/assets/images/darren/image-url11.png">
+</a>
                         </div>
                     </div>
 
@@ -130,6 +118,8 @@
 </body>
 
 <script>
+    AOS.init();
+
     const eventDate = new Date(document.querySelector('#tampilan-waktu').getAttribute('data-waktu')).getTime();
 
     setInterval(updateCountdown, 1000);

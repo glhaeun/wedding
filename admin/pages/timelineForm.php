@@ -1,85 +1,103 @@
 <?php 
-    $editMode = isset($_GET['edit']); 
-    $readonly = $editMode ? '' : 'readonly';
 
+    $editMode = false;
+    if(isset($_GET['edit']) && !empty($_GET['edit'])) {
+        $editId = $_GET['edit'];
+        $editMode = true;
+
+        $check_database = $connect->prepare("SELECT * FROM timeline WHERE id=?");
+        $check_database -> execute([$editId]);
     
+        $data = array();
+        if ($check_database->rowCount() > 0) {
+            $data = $check_database->fetch(PDO::FETCH_ASSOC);
+        } 
+    }
+    
+    include 'timelineAddEdit.php';
+
 ?>
 
+<style>
+    .yellow {
+        background-image: linear-gradient(to right, #FAD983 0%, #FAD983 100%);
+
+    }
+    .black {
+        color: black;
+    }
+</style>
 
 <div class="row justify-content-center">
         <div class="card shadow mb-4 w-75">
                         <div class="card-header py-3">
                         <h1 class="h3 mb-0 text-gray-800 ">Timeline Lovestory</h1>
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i>Edit</a>
                         </div>
                         <div class="card-body">
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <div class="data-general">
-                            <h4 class="text-center">Invitation</h4>
+                        <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+
+                            <div class="data-timeline" id="additionalTimelines">
                             <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="inv_title">Invitation Title</label>
-                                    <input  name="inv_title" type="text" class="form-control" id="inv_title"  required <?php echo $readonly; ?> value="<?php echo isset($data['invitation']) ? $data['invitation'] : ''; ?>">
+                                <div class="form-group col-md-6">
+                                    <label for="title">Timeline Title</label>
+                                    <input  name="title" type="text" class="form-control" id="title"  required  value="<?php echo isset($data['title']) ? $data['title'] : ''; ?>">
+                                    <div class="invalid-feedback">
+                                        Please enter timeline title
+                                    </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inv_date">Invitation Date</label>
-                                    <input  name="inv_date" type="datetime-local" class="form-control" id="inv_date"  required <?php echo $readonly; ?> value="<?php echo isset($data['date']) ? $data['date'] : ''; ?>">
+                                    <label for="year">Timeline Year</label>
+                                    <input  name="year" type="text" pattern="\d{4}" class="form-control" id="year"  required  value="<?php echo isset($data['year']) ? $data['year'] : ''; ?>">
+                                    <div class="invalid-feedback">
+                                        Please enter timeline year
+                                    </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label for="ty">Thank You Message</label>
-                                    <!-- <input  name="inv_title" type="text" class="form-control" id="inv_title"  required <?php echo $readonly; ?>> -->
-                                    <textarea name="ty" class="form-control" id="ty" rows="4" required <?php echo $readonly; ?>><?= isset($data['thankyou']) ? $data['thankyou'] : ''; ?></textarea>
+                                    <label for="content">Timeline Content</label>
+                                    <textarea name="content" class="form-control" id="content" rows="3" required ><?= isset($data['content']) ? $data['content'] : ''; ?></textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter timeline content
+                                    </div>
                                 </div>
                             </div>
+                            </div>
+                            <input type="submit" class="btn btn-primary yellow black mt-5" value="<?php echo !$editMode ? 'Save' : 'Edit'; ?>" name="timeline">
 
-                            <h4 class="text-center mt-5">Holy Matrimony</h4>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="holymatrimony_address">Holy Matrimony Address</label>
-                                    <input <?php echo $readonly; ?>   name="holymatrimony_address" type="text" class="form-control" id="holymatrimony_address" value="<?php echo isset($data['holymatrimony_address']) ? $data['holymatrimony_address'] : ''; ?>" required>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="holymatrimony_map">Holy Matrimony Google Map Link</label>
-                                    <input <?php echo $readonly; ?>   name="holymatrimony_map" type="text" class="form-control" id="holymatrimony_map" value="<?php echo isset($data['holymatrimony_map']) ? $data['holymatrimony_map'] : ''; ?>" required>
-                                </div>
-                                <div class="form-group col-md-6">
-                                <label for="holymatrimony_date">Holy Matrimony Date</label>
-                                <input <?php echo $readonly; ?>   name="holymatrimony_date" type="datetime-local" class="form-control" id="holymatrimony_date" value="<?php echo isset($data['holymatrimony_date']) ? $data['holymatrimony_date'] : ''; ?>"  required>
-                                </div>
-                            </div>
-                            
-                            <h4 class="text-center mt-5">Reception</h4>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="reception_address">Reception Address</label>
-                                    <input <?php echo $readonly; ?>   name="reception_address" type="text" class="form-control" id="reception_address"  required value="<?php echo isset($data['reception_address']) ? $data['reception_address'] : ''; ?>">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="reception_map">Reception Google Map Link</label>
-                                    <input <?php echo $readonly; ?>   name="reception_map" type="text" class="form-control" id="reception_map"  required value="<?php echo isset($data['reception_map']) ? $data['reception_map'] : ''; ?>">
-                                </div>
-                                <div class="form-group col-md-6">
-                                <label for="reception_date">Reception Date</label>
-                                <input <?php echo $readonly; ?>   name="reception_date" type="datetime-local" class="form-control" id="reception_date"  required value="<?php echo isset($data['reception_date']) ? $data['reception_date'] : ''; ?>">
-                                </div>
-                            </div>
-
-
-                            <h4 class="text-center mt-5">Address</h4>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="couple_address">Couple's Address</label>
-                                    <input <?php echo $readonly; ?>   name="couple_address" type="text" class="form-control" id="couple_address"  required value="<?php echo isset($data['couple_address']) ? $data['couple_address'] : ''; ?>">
-                                </div>
-                            </div>
-                            
-                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary mt-5" value="Save" name="jadwal">
                             </form>
                         </div>
                     </div>
 
     </div>
+
+    <script>
+    (function() {
+        'use strict';
+
+        var forms = document.querySelectorAll('.needs-validation');
+
+        Array.prototype.slice.call(forms).forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity() || !isYearValid()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                form.classList.add('was-validated');
+            }, false);
+        });
+
+        function isYearValid() {
+            var yearInput = document.getElementById('year');
+            var yearValue = yearInput.value;
+
+            // Check if the input value is a 4-digit number
+            return /^\d{4}$/.test(yearValue);
+        }
+    })();
+</script>
+
+
+
 
 
     

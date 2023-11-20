@@ -1,4 +1,6 @@
-<?php include '../component/connect.php';?>
+<?php include '../component/connect.php';
+      include 'timelineDelete.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +17,18 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" type="text/css">
     <link href="../component/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <style>
+    .yellow {
+        background-image: linear-gradient(to right, #FAD983 0%, #FAD983 100%);
+
+    }
+    .black {
+        color: black;
+    }
+</style>
 
 </head>
 
@@ -45,11 +57,57 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Daftar Tamu</h1>
-        
+                        <h1 class="h3 mb-0 text-gray-800">Timeline</h1>
+                        <a href="timeline.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black"><i class="fas fa-plus"></i> Tambah Timeline</a>
                     </div>
 
-                    <?php include 'addEmailForm.php' ?>
+                    <div class="card shadow mb-4 w-100">
+                        
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Title</th>
+                                            <th>Year</th>
+                                            <th>Content</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+<?php 
+
+    $query ="SELECT * FROM timeline";
+    $select_user =  $connect->prepare($query);
+    $select_user -> execute();
+
+    $index = 1;
+    if($select_user->rowCount()>0){
+        while ($fetch_user = $select_user ->fetch(PDO::FETCH_ASSOC)){
+            ?>
+                        <tr>
+                            <td><?=$index?></td>
+                            <td><?=$fetch_user['title']?></td>
+                            <td><?=$fetch_user['year']?></td>
+                            <td><?=$fetch_user['content']?></td>     
+                            <td><a href="timeline.php?edit=<?=$fetch_user['id']?>"><i class="fa-solid fa-pen-to-square" style="color: #fad983;"></i></a>
+                            <a href="timelineTable.php?delete=<?=$fetch_user['id']?>"><i class="fa-solid fa-trash" style="color: #fad983;"></i></a></td>       
+                    <?php
+                        $index++;
+        }
+    }
+                                    
+?>
+
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
