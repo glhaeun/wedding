@@ -140,7 +140,7 @@
 }
 
 .board img {
-    width: 31%; /* Set the width of each picture to 30% of the total width */
+    width: 30%; /* Set the width of each picture to 30% of the total width */
     /* max-width: 100%; */
     height: auto;
     margin-left: 10px;
