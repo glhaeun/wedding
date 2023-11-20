@@ -64,7 +64,7 @@
 </head>
 <body>
     <section id="lokasi">
-        <div class="container mt-5">
+        <div class="container mt-5" data-aos="flip-left" data-aos-duration="2000">
             <div class="text-center ">
             <h1 class="font-esthetic py-3" >Wedding Information</h1>
 
@@ -113,6 +113,8 @@
 </body>
 
 <script>
+    AOS.init();
+
     const eventDate = new Date(document.querySelector('#tampilan-waktu').getAttribute('data-waktu')).getTime();
 
     setInterval(updateCountdown, 1000);
