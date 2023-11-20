@@ -88,7 +88,7 @@
                         </div>
                         <!--Grid row-->
                         <div class="text-center text-md-left">
-                        <input class="btn btn-primary yellow black" type="submit" value="Submit" name="send">
+                        <input class="btn btn-primary yellow black" style="border: none" type="submit" value="Submit" name="send">
                         </div>
 
                     </form>
