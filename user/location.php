@@ -1,3 +1,8 @@
+<?php 
+    include './component/getLocation.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,23 +75,23 @@
                     <div class="overflow-x-hidden mt-5">
                         <div class="py-2 mb-4">
                             <h4 class="font-arabic" style="font-size: 2rem;">Holy Matrimony</h4>
-                            <p class="font-inside">Sunday, 29 October 2023 at 09.00 am</p>
-                            <p class="font-inside">Methodist Indonesia Church, Jl. M. T. Haryono No.38, Pusat Ps., Kec. Medan Kota, Kota Medan</p>
-                            <a class="font-inside" href="https://maps.google.com/?q=Methodist+Indonesia+Church,Jl.+M.+T.+Haryono+No.38,Pusat+Ps.,Kec.+Medan+Kota,Kota+Medan">Get directions using maps</a>
+                            <p class="font-inside"><?= isset($data['holymatrimony_formatedDate']) ? $data['holymatrimony_formatedDate'] : '[Tanggal Holy Matrimony]'; ?></p>
+                            <p class="font-inside"><?= isset($data['holymatrimony_address']) ? $data['holymatrimony_address'] : '[Alamat Holy Matrimony]'; ?></p>
+                            <a class="font-inside" href="<?= isset($data['holymatrimony_map']) ? $data['holymatrimony_map'] : '#'; ?>">Get directions using maps</a>
                         </div>
 
                         <div class="py-2 mb-4">
                             <h4 class="font-arabic" style="font-size: 2rem;">Reception</h4>
-                            <p class="font-inside">Sunday, 29 October 2023 at 08.00 pm</p>
-                            <p class="font-inside">Ballroom, Wisma Benteng restaurant Jl. Kapten Maulana Lubis No.6, Petisah Tengah, Kec. Medan Petisah, Kota Medan</p>
-                            <a class="font-inside" href="https://maps.google.com/?q=Ballroom,Wisma+Benteng+restaurant,Jl.+Kapten+Maulana+Lubis+No.6,Petisah+Tengah,Kec.+Medan+Petisah,Kota+Medan">Get directions using maps</a>
+                            <p class="font-inside"><?= isset($data['reception_formatedDate']) ? $data['reception_formatedDate'] : '[Tanggal Reception]'; ?></p>
+                            <p class="font-inside"><?= isset($data['reception_address']) ? $data['reception_address'] : '[Alamat Reception]'; ?></p>
+                            <a class="font-inside" href="<?= isset($data['reception_map']) ? $data['reception_map'] : '#'; ?>">Get directions using maps</a>
                         </div>
                     </div>
 
                     <!-- <h1 class="font-esthetic py-3 font-arabic" style="font-size: 2rem;">Countdown for event: </h1> -->
                     <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
 
-                        <div class="row justify-content-center mt-4 mb-5" data-waktu="2024-01-01 00:00:00" id="tampilan-waktu">
+                        <div class="row justify-content-center mt-4 mb-5" data-waktu="<?= $data['date'] ?>" id="tampilan-waktu">
                                 <div class="col-3 p-1">
                                     <h2 class="d-inline m-0 p-0 font-inside" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
                                 </div>

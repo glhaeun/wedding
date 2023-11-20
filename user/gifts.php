@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gift</title>
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Redressed&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
-
+    /*<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">*/
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
@@ -46,9 +46,17 @@
     background-color: #ffcc00 !important; /* Change button background color on hover to a slightly different shade of gold/yellow */
 }
 
+        
 .font-inside {
         font-family: 'Asul';
         }
+/*.my-image {
+      width: 10px;
+      height: 5px;
+      position: absolute;
+      top: 60px;
+      left: 50px;
+}*/
 
     </style>
 </head>
@@ -57,16 +65,22 @@
         <div class="container">
             <div class="text-center mt-5 mb-5">
             <h1 class="font-esthetic mt-0 mb-3 yellow" style="font-size: 3rem;">Hadiah</h1>
+            <img src = "https://cdn.pixabay.com/photo/2022/10/27/22/50/divider-7551966_640.png" class="justify"alt ="tes" class= "my-image">
                     <p class="mb-1 font-inside" style="font-size: 0.9rem;">
                         Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami,
                         dapat melalui :
                     </p>
 
-                <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic">Send Angpao</button>
-                <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic">Send Gift</button>
+               <div class="button-container">
+            <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic">Send Angpao</button>
+            <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic">Send Gift</button>
+        </div>
 
-
-                    <div class="overflow-x-hidden font-inside" id="angpao">
+        <div class="image-container">
+            <!-- <img src="assets/images/elvina/heartpanjang.png" alt="HeartPanjang"> -->
+            
+        </div>
+                    <div class="overflow-x-hidden font-inside" id="angpao" data-aos="fade-up">
                         <div class="row justify-content-center">
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;">
@@ -76,6 +90,7 @@
                                 <p class="card-text" style="font-size: 0.9rem;">a.n Lorem ipsum dolor</p>
 
                                 <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789">Salin No. Rekening</button>
+                              
                             </div>
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" >
@@ -90,7 +105,7 @@
                         </div>
                     </div>
 
-                    <div class="overflow-x-hidden font-inside" id="gift">
+                    <div class="overflow-x-hidden font-inside" id="gift" data-aos="fade-up">
                         <div class="row justify-content-center">
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;">
@@ -99,15 +114,17 @@
                                 <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Hair Dryer</li>
                                 <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Microwave</li>
                                 <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Air Purifier</li>
+                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Vacuum Cleaner</li>
                             </ol>
                             </div>
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" >
-                                <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fpng.pngtree.com%2Felement_our%2F20200702%2Fourlarge%2Fpngtree-address-icon-image_2290344.jpg&tbnid=bL5U8oHkBbG9GM&vet=10CBsQMyh0ahcKEwiQhvCY2MKCAxUAAAAAHQAAAAAQHQ..i&imgrefurl=https%3A%2F%2Fid.pngtree.com%2Ffreepng%2Faddress-icon_5462492.html&docid=3a_-kybEb3hrgM&w=640&h=640&q=foto%20alamat&ved=0CBsQMyh0ahcKEwiQhvCY2MKCAxUAAAAAHQAAAAAQHQ" class="img-fluid rounded" width="150" alt="alamat">
-
+                              <img src="https://cdn.pixabay.com/photo/2016/01/10/22/23/location-1132647_640.png" alt="alamat" class="img-fluid rounded" width="50">
+                                <!-- <img src="assets/images/elvina/location.png" class="img-fluid rounded" width="150" alt="alamat"> -->
+                                <!--<img src = "https://cdn.pixabay.com/photo/2022/10/27/22/50/divider-7551966_640.png" alt ="tes" class= "my-image">-->
                                 <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Alamat Rumah</p>
                                 <p class="card-text" style="font-size: 0.9rem;"> Jalan Padang Bulan No 101, Medan</p></p>
                                 <p class="card-text" style="font-size: 0.9rem;"> No Telp: 08123456789</p></p>
-                                <!-- Ubah juga data-nomer sesuai dengan no rekening -->
+                                <!-- Ubah juga data-nomer sesuai dengan alamat rumah -->
                                 <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="Jalan Padang Bulan No 101, 08123456789">Salin Alamat</button>
                             </div>
 
@@ -143,4 +160,9 @@
             });
         });
     </script>
+   <!-- <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>-->
+
 </html>

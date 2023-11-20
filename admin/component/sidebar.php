@@ -11,9 +11,9 @@
             <hr class="sidebar-divider my-0">
 
             <li class="nav-item active">
-                <a class="nav-link" href="invite.php">
+                <a class="nav-link" href="guest.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Invite Tamu</span></a>
+                    <span>Daftar Kehadiran</span></a>
             </li>
 
             <hr class="sidebar-divider">
@@ -24,7 +24,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="timeline_edit.php" data-toggle="collapse" data-target="timeline_edit.phpcollapseTwo"
+                <a class="nav-link collapsed" href="timelineTable.php" data-toggle="collapse" data-target="timeline_edit.phpcollapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Timeline</span>
@@ -41,6 +41,14 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="jadwal.php" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Jadwal Pernikahan</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="winner.php" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -48,12 +56,5 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="attendance.php" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Daftar Kehadiran</span>
-                </a>
-            </li>
 
         </ul>
