@@ -10,11 +10,11 @@
 
 <hr class="sidebar-divider my-0">
 
-<li class="nav-item active">
-    <a class="nav-link" href="guest.php">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Daftar Kehadiran</span></a>
-</li>
+            <li class="nav-item active">
+                <a class="nav-link" href="dashboard.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Daftar Kehadiran</span></a>
+            </li>
 
 <hr class="sidebar-divider">
 
@@ -22,14 +22,14 @@
     Halaman
 </div>
 
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="timelineTable.php" data-toggle="collapse" data-target="timeline_edit.phpcollapseTwo"
-        aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Timeline</span>
-    </a>
-</li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="timeline.php" data-toggle="collapse" data-target="timeline_edit.phpcollapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Timeline</span>
+                </a>
+            </li>
 
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
