@@ -27,7 +27,7 @@
 
     <style>
     .font-esthetic {
-    font-family: 'Ephesis', cursive !important;
+        font-family: 'Ephesis', cursive !important;
         }
 
     .font-arabic {
@@ -38,12 +38,33 @@
         font-family: 'Asul';
     }
 
+    .csstitle {
+        text-align: center;
+        text-shadow: 0px 4px 4px rgba(116, 116, 116, 0.25);
+        font-family: Ephesis;
+        font-size: min(10vh, 10vw);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        background: linear-gradient(
+            183deg,
+            #ffca00 40.65%,
+            #f5e08f 50.98%,
+            #d7b123 50.99%,
+            #d6a357 68.6%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: min(1vw, 1vh);
+    }
+
     </style>
 </head>
 <body>
 
     <section id="bridegroom">
-        <div class="glitter" data-aos="fade-down-right" data-aos-duration="1000">
+        <div class="glitter" data-aos="fade-down-right" data-aos-duration="1000" data-aos-delay="2000">
         <img src="assets/images/haeun/glittertop.png" alt="" class="" >
         <img src="assets/images/haeun/glittertop.png" alt="" class="glitter2">
         </div>
@@ -51,7 +72,7 @@
         <!-- <img src="assets/images/haeun/glitterbottom.png" alt="" class="glitterbottom"> -->
 
        <div class="text-center mb-5">
-       <h1 class="py-4 px-2 font-esthetic" style="font-size: 3.8rem" data-aos="fade-down" data-aos-duration="1000">Congratulations Lovebirds</h1>
+       <h1 class="py-4 px-2 font-esthetic csstitle" style="font-size: 3.8rem" data-aos="fade-up-right" data-aos-delay="2000" data-aos-duration="1000">Congratulations Lovebirds</h1>
 
        <div class="testing">
         <div class="groom" data-aos="fade-right" data-aos-duration="2000">
@@ -108,14 +129,14 @@
                 </linearGradient>
             </defs>
             <path fill="url(#grad)" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,165.3C672,160,768,96,864,96C960,96,1056,160,1152,154.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            <image href="assets/images/haeun/2.png" x="0" y="0" height="320" data-aos="fade-left" data-aos-duration="3000" data-aos-delay="1000"/>
+            <!-- <image href="assets/images/haeun/2.png" x="0" y="0" height="320" data-aos="fade-left" data-aos-duration="3000" data-aos-delay="1000"/>
             <image href="assets/images/haeun/3.png" x="100" y="0" height="320" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1000" />
             <image href="assets/images/haeun/3.png" x="300" y="0" height="320" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1000" />
             <image href="assets/images/haeun/3.png" x="500" y="0" height="320" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1000" />
             <image href="assets/images/haeun/3.png" x="700" y="0" height="320" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1000" />
             <image href="assets/images/haeun/3.png" x="900" y="0" height="320" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1000" />
             <image href="assets/images/haeun/3.png" x="1100" y="0" height="320" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1000" />
-            <image href="assets/images/haeun/1.png" x="1120" y="0" height="320" data-aos="fade-right" data-aos-duration="3000" data-aos-delay="1000" />
+            <image href="assets/images/haeun/1.png" x="1120" y="0" height="320" data-aos="fade-right" data-aos-duration="3000" data-aos-delay="1000" /> -->
 
         </svg>
 

@@ -72,6 +72,9 @@
                                             <th>Title</th>
                                             <th>Year</th>
                                             <th>Content</th>
+                                            <th>Image 1</th>
+                                            <th>Image 2</th>
+                                            <th>Image 3</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -92,7 +95,10 @@
                             <td><?=$index?></td>
                             <td><?=$fetch_user['title']?></td>
                             <td><?=$fetch_user['year']?></td>
-                            <td><?=$fetch_user['content']?></td>     
+                            <td><?=$fetch_user['content']?></td> 
+                            <td><?=$fetch_user['imageA']?></td>     
+                            <td><?=$fetch_user['imageB']?></td>     
+                            <td><?=$fetch_user['imageC']?></td>     
                             <td><a href="timeline.php?edit=<?=$fetch_user['id']?>"><i class="fa-solid fa-pen-to-square" style="color: #fad983;"></i></a>
                             <a href="timelineTable.php?delete=<?=$fetch_user['id']?>"><i class="fa-solid fa-trash" style="color: #fad983;"></i></a></td>       
                     <?php

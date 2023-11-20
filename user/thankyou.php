@@ -24,6 +24,7 @@
         overflow: hidden;
         overflow-y: hidden;
         }
+        
         .font-esthetic {
             font-family: 'Ephesis', cursive !important;
         }

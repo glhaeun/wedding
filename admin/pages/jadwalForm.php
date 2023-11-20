@@ -36,10 +36,10 @@
                             <h4 class="text-center">Invitation</h4>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="bride_image" class="d-block">Bride & Groom image</label>
-                                    <img class="my-2 mr-5" style="width: 150px; height: 150px; border-radius: 150px" src="../../images/<?= $data['image'] ?>">
+                                    <label for="bride_groom_image" class="d-block">Bride & Groom image</label>
+                                    <img id="bridegroomImagePreview" class="my-2 mr-5" style="width: 150px; height: 150px; border-radius: 150px" src="../../images/<?= $data['image'] ?>">
                                     <?php if($readonly == '') { ?>
-                                        <input  name="bride_groom_image"  type="file" id="bride_image">
+                                        <input  name="bride_groom_image"  type="file" id="bride_groom_image" onchange="previewImage(event, 'bridegroomImagePreview')">
                                     <?php } ?>  
                                 </div>
                                 <div class="form-group col-md-12">
@@ -136,4 +136,7 @@
 </div>
 
 <script src="../component/js/formValidation.js"></script>
+<script src="../component/js/updateImage.js"></script>
+
+
 

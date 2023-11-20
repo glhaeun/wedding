@@ -62,7 +62,7 @@
 
     <div class="card-body border rounded-4 shadow p-3">
 
-        <h1 class="font-esthetic text-center py-3" id="timeline-title" style="font-size: 3rem;"  data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100" >Our Love Story</h1>
+        <h1 class="font-esthetic text-center py-3 csstitle" id="timeline-title" style="font-size: 3rem;"  data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100" >Our Love Story</h1>
 
         <div class="d-flex justify-content-center" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500" >
             <img src="../user/assets/images/jason/12.png" alt="" class="crown img-fluid">

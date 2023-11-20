@@ -66,7 +66,7 @@
     <section id="lokasi">
         <div class="container mt-5" data-aos="flip-left" data-aos-duration="2000">
             <div class="text-center ">
-            <h1 class="font-esthetic py-3" >Wedding Information</h1>
+            <h1 class="font-esthetic py-3 csstitle" >Wedding Information</h1>
 
             <div class="d-flex justify-content-center mb-3">
                 <img src="../user/assets/images/darren/Asset 1@4xa.png" alt="" class="line img-fluid">

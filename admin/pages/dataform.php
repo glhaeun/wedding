@@ -104,9 +104,9 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="groom" class="d-block">Groom image</label>
-                                    <img class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
+                                    <img id="groomImagePreview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
                                     <?php if($readonly == "") { ?>
-                                    <input  name="groom_image"  type="file" id="groom">
+                                    <input  name="groom_image"  type="file" id="groom" onchange="previewImage(event, 'groomImagePreview')">
                                     <?php } ?>  
                                 </div>
 
@@ -175,9 +175,9 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="bride_image" class="d-block">Bride image</label>
-                                    <img class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images//<?= $bride_data['image'] ?>">
+                                    <img id="brideImagePreview" class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images//<?= $bride_data['image'] ?>">
                                     <?php if($readonly == "") { ?>
-                                    <input  name="bride_image"  type="file" id="bride_image">
+                                    <input  name="bride_image"  type="file" id="bride_image" onchange="previewImage(event, 'brideImagePreview')">
                                     <?php } ?>  
                                 </div>
                             </div>
@@ -192,6 +192,9 @@
     </div>
 
 <script src="../component/js/formValidation.js"></script>
+<script src="../component/js/updateImage.js"></script>
+
+
 
 
 
