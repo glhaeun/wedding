@@ -77,14 +77,19 @@
                             <h4 class="font-arabic" style="font-size: 2rem;">Holy Matrimony</h4>
                             <p class="font-inside"><?= isset($data['holymatrimony_formatedDate']) ? $data['holymatrimony_formatedDate'] : '[Tanggal Holy Matrimony]'; ?></p>
                             <p class="font-inside"><?= isset($data['holymatrimony_address']) ? $data['holymatrimony_address'] : '[Alamat Holy Matrimony]'; ?></p>
-                            <a class="font-inside" href="<?= isset($data['holymatrimony_map']) ? $data['holymatrimony_map'] : '#'; ?>">Get directions using maps</a>
+                            <a class="font-inside" href="<?= isset($data['holymatrimony_map']) ? $data['holymatrimony_map'] : '#'; ?>">
+    <img src="../user/assets/images/darren/image-url11.png">
+</a>
+
+
                         </div>
 
                         <div class="py-2 mb-4">
                             <h4 class="font-arabic" style="font-size: 2rem;">Reception</h4>
                             <p class="font-inside"><?= isset($data['reception_formatedDate']) ? $data['reception_formatedDate'] : '[Tanggal Reception]'; ?></p>
                             <p class="font-inside"><?= isset($data['reception_address']) ? $data['reception_address'] : '[Alamat Reception]'; ?></p>
-                            <a class="font-inside" href="<?= isset($data['reception_map']) ? $data['reception_map'] : '#'; ?>">Get directions using maps</a>
+                            <a class="font-inside" href="<?= isset($data['reception_map']) ? $data['reception_map'] : '#'; ?>">    <img src="../user/assets/images/darren/image-url11.png">
+</a>
                         </div>
                     </div>
 
