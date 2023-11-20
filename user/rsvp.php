@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
@@ -16,25 +17,28 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <style>
         body{
+           position: relative;
            background-image: url(assets/images/ziven/background.png);
            z-index: -1;
+           overflow-x: hidden;
         }
 
         .leave-1-png {
-            position: fixed;
-            top: 0;
+            position: absolute;
+            top: -100px;
             left: 0;
             z-index: -1; 
             width: 300px; 
         }
 
         .flower-png{
-            position: fixed;
+            position: absolute;
             bottom: -275px;
-            right: -150px; 
+            right: -175px; 
             z-index: -1; 
             width: 500px; 
         }
@@ -69,13 +73,28 @@
             opacity: 0.6;
         }   
 
+        @keyframes cardAddedAnimation {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .new-card {
+            animation: cardAddedAnimation 0.5s ease-in;
+        }
+
     </style>
 </head>
 <body>
-    <img src="assets/images/ziven/leave-1.png" class="leave-1-png" alt="">
-    <img src="assets/images/ziven/flower.png" class="flower-png" alt="">
+    <img src="assets/images/ziven/leave-1.png" data-aos="fade-right" class="leave-1-png" alt="">
+    <img src="assets/images/ziven/flower.png" data-aos="fade-left" class="flower-png" alt="">
     <section id="rsvp" class="m-5">
-        <div class="container-rsvp">
+        <div class="container-rsvp" data-aos="fade-up">
             <div class="card-body border rounded-4 shadow p-3">
                 <form action="" id="rsvp-form">
                     <h1 class="font-esthetic text-center mb-3" style="font-size: 4rem;">Ucapan & Doa</h1>
@@ -110,7 +129,7 @@
             </div>
         </div>
 
-        <div class="rounded-4 mt-5 mb-2 daftar-ucapan font-arabic" id="daftar-ucapan">
+        <div class="rounded-4 mt-5 mb-2 daftar-ucapan font-arabic" id="daftar-ucapan"> 
         <!-- list ucapan -->
         </div>
 
@@ -135,6 +154,7 @@
     </section>
 </body>
 <script>
+    AOS.init();
     document.addEventListener('DOMContentLoaded', function () {
         const form = document.getElementById('rsvp-form');
         const namaInput = document.getElementById('form-nama');
@@ -153,7 +173,7 @@
                     newWindow: true,
                     gravity: "bottom",
                     position: 'right',
-                    backgroundColor: "tomato",
+                    backgroundColor: "rgba(255, 2, 2, 0.54)",
                     stopOnFocus: true,
                     onClick: function () { }
                 }).showToast();
@@ -196,7 +216,7 @@
                     newWindow: true,
                     gravity: "bottom",
                     position: 'right',
-                    backgroundColor: "#ffca2c",
+                    backgroundColor: "rgba(172, 168, 170, 0.54)",
                     stopOnFocus: true,
                     onClick: function () { }
                 }).showToast();  
