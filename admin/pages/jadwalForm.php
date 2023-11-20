@@ -112,12 +112,12 @@
                             <h4 class="text-center mt-5">Address</h4>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="couple_address">Couple's Address</label>
-                                    <input <?php echo $readonly; ?>   name="couple_address" type="text" class="form-control" id="couple_address"   value="<?php echo isset($data['couple_address']) ? $data['couple_address'] : ''; ?>">
-                                </div>
-                                <div class="invalid-feedback">
+                                    <label for="couple_address">Address</label>
+                                    <input required <?php echo $readonly; ?>   name="couple_address" type="text" class="form-control" id="couple_address"   value="<?php echo isset($data['couple_address']) ? $data['couple_address'] : ''; ?>">
+                                    <div class="invalid-feedback">
                                         Please enter invitation location
                                     </div>
+                                </div>
                             </div>
                             
                             <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary mt-5" value="Save" name="jadwal">
