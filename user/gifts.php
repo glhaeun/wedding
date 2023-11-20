@@ -211,12 +211,14 @@
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
             pointer-events: none;
+            display:none;
         }
 
         #angpao.active,
         #gift.active {
             opacity: 1;
             pointer-events: auto;
+            display:block;
         }
 
         .font-esthetic {
