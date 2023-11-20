@@ -18,7 +18,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <style>
-        body{
+        #rsvp {
            background-image: url(assets/images/ziven/background.png);
            z-index: -1;
         }
