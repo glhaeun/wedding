@@ -102,15 +102,14 @@
                                         Please enter bank number
                                     </div>
                                 </div>
-                                <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="groom">Groom name</label>
-                                    <input  name="groom" type="text" class="form-control" id="groom" value="<?php echo isset($groom_data['groom']) ? $groom_data['groom'] : ''; ?>" required <?php echo $readonly; ?>>
-                                    <div class="invalid-feedback">
-                                        Please enter groom name
+                                    <label for="groom" class="d-block">Groom image</label>
+                                    <img class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
+                                    <?php if($readonly == "") { ?>
+                                    <input  name="groom_image"  type="file" id="groom">
+                                    <?php } ?>  
                                 </div>
-                                </div>
-                            </div>
+
                             </div>
                             </div>
 
@@ -173,6 +172,13 @@
                                     <div class="invalid-feedback">
                                         Please enter bank number
                                     </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="bride_image" class="d-block">Bride image</label>
+                                    <img class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images//<?= $bride_data['image'] ?>">
+                                    <?php if($readonly == "") { ?>
+                                    <input  name="bride_image"  type="file" id="bride_image">
+                                    <?php } ?>  
                                 </div>
                             </div>
                             </div>
