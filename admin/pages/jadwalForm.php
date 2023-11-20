@@ -27,8 +27,8 @@
 <div class="row justify-content-center">
         <div class="card shadow mb-4 w-75">
                         <div class="card-header py-3">
-                        <h1 class="h3 mb-0 text-gray-800 ">Data Pengantin</h1>
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black"><i class="fas fa-edit"></i> Edit</a>
+                        <h1 class="h3 mb-0 text-gray-800 ">Schedule Data</h1>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black"><i class="fas fa-edit"></i>  Edit</a>
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -36,20 +36,20 @@
                             <h4 class="text-center">Invitation</h4>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="inv_title">Invitation Title</label>
-                                    <input required  name="inv_title" type="text" class="form-control" id="inv_title"   <?php echo $readonly; ?> value="<?php echo isset($data['invitation']) ? $data['invitation'] : ''; ?>">
-                                    <div class="invalid-feedback">
-                                        Please enter invitation title
-                                    </div>
+                                    <label for="bride_image" class="d-block">Bride & Groom image</label>
+                                    <img class="my-2 mr-5" style="width: 150px; height: 150px; border-radius: 150px" src="../../images/<?= $data['image'] ?>">
+                                    <?php if($readonly == '') { ?>
+                                        <input  name="bride_groom_image"  type="file" id="bride_image">
+                                    <?php } ?>  
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-12">
                                     <label for="inv_date">Invitation Date</label>
                                     <input required  name="inv_date" type="datetime-local" class="form-control" id="inv_date"   <?php echo $readonly; ?> value="<?php echo isset($data['date']) ? $data['date'] : ''; ?>">
                                     <div class="invalid-feedback">
                                         Please enter invitation date
                                     </div>
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-12">
                                     <label for="inv_location">Invitation Location</label>
                                     <input required  name="inv_location" type="text" class="form-control" id="inv_location"   <?php echo $readonly; ?> value="<?php echo isset($data['location']) ? $data['location'] : ''; ?>">
                                     <div class="invalid-feedback">
@@ -61,7 +61,7 @@
                                     <!-- <input required  name="inv_title" type="text" class="form-control" id="inv_title"   <?php echo $readonly; ?>> -->
                                     <textarea name="ty" class="form-control" id="ty" rows="4"  <?php echo $readonly; ?>><?= isset($data['thankyou']) ? $data['thankyou'] : ''; ?></textarea>
                                     <div class="invalid-feedback">
-                                        Please enter invitation location
+                                        Please enter thank you message
                                     </div>
                                 </div>
                             </div>
@@ -72,21 +72,21 @@
                                     <label for="holymatrimony_address">Holy Matrimony Address</label>
                                     <input required <?php echo $readonly; ?>   name="holymatrimony_address" type="text" class="form-control" id="holymatrimony_address" value="<?php echo isset($data['holymatrimony_address']) ? $data['holymatrimony_address'] : ''; ?>" >
                                     <div class="invalid-feedback">
-                                        Please enter invitation location
+                                        Please enter holy martimony address
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="holymatrimony_map">Holy Matrimony Google Map Link</label>
                                     <input required <?php echo $readonly; ?>   name="holymatrimony_map" type="text" class="form-control" id="holymatrimony_map" value="<?php echo isset($data['holymatrimony_map']) ? $data['holymatrimony_map'] : ''; ?>" >
                                     <div class="invalid-feedback">
-                                        Please enter invitation location
+                                        Please enter holy matrimony google map link
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
                                 <label for="holymatrimony_date">Holy Matrimony Date</label>
                                 <input required <?php echo $readonly; ?>   name="holymatrimony_date" type="datetime-local" class="form-control" id="holymatrimony_date" value="<?php echo isset($data['holymatrimony_date']) ? $data['holymatrimony_date'] : ''; ?>"  >
                                 <div class="invalid-feedback">
-                                        Please enter invitation location
+                                        Please enter holy matrimony date
                                     </div>
                             </div>
                             </div>
@@ -97,21 +97,21 @@
                                     <label for="reception_address">Reception Address</label>
                                     <input required <?php echo $readonly; ?>   name="reception_address" type="text" class="form-control" id="reception_address"   value="<?php echo isset($data['reception_address']) ? $data['reception_address'] : ''; ?>">
                                     <div class="invalid-feedback">
-                                        Please enter invitation location
+                                        Please enter reception address
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="reception_map">Reception Google Map Link</label>
                                     <input required <?php echo $readonly; ?>   name="reception_map" type="text" class="form-control" id="reception_map"   value="<?php echo isset($data['reception_map']) ? $data['reception_map'] : ''; ?>">
                                     <div class="invalid-feedback">
-                                        Please enter invitation location
+                                        Please enter reception google map link
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
                                 <label for="reception_date">Reception Date</label>
                                 <input required <?php echo $readonly; ?>   name="reception_date" type="datetime-local" class="form-control" id="reception_date"   value="<?php echo isset($data['reception_date']) ? $data['reception_date'] : ''; ?>">
                                 <div class="invalid-feedback">
-                                        Please enter invitation location
+                                        Please enter reception date
                                     </div>
                             </div>
                             </div>
@@ -123,7 +123,7 @@
                                     <label for="couple_address">Address</label>
                                     <input required <?php echo $readonly; ?>   name="couple_address" type="text" class="form-control" id="couple_address"   value="<?php echo isset($data['couple_address']) ? $data['couple_address'] : ''; ?>">
                                     <div class="invalid-feedback">
-                                        Please enter address
+                                        Please enter couple address
                                     </div>
                                 </div>
                             </div>

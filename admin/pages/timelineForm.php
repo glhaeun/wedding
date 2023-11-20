@@ -42,21 +42,21 @@
                                     <label for="title">Timeline Title</label>
                                     <input  name="title" type="text" class="form-control" id="title"  required  value="<?php echo isset($data['title']) ? $data['title'] : ''; ?>">
                                     <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter timeline title
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="year">Timeline Year</label>
                                     <input  name="year" type="text" pattern="\d{4}" class="form-control" id="year"  required  value="<?php echo isset($data['year']) ? $data['year'] : ''; ?>">
                                     <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter timeline year
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="content">Timeline Content</label>
                                     <textarea name="content" class="form-control" id="content" rows="3" required ><?= isset($data['content']) ? $data['content'] : ''; ?></textarea>
                                     <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter timeline content
                                     </div>
                                 </div>
                             </div>

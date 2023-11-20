@@ -37,41 +37,41 @@
 <div class="row justify-content-center">
         <div class="card shadow mb-4 w-75">
                         <div class="card-header py-3">
-                        <h1 class="h3 mb-0 text-gray-800 ">Data Pengantin</h1>
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-edit"></i> Edit</a>
+                        <h1 class="h3 mb-0 text-gray-800 ">Bride & Groom Data</h1>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-edit"></i>  Edit</a>
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                             <div class="data-groom">
-                            <h4 class="text-center">Data Groom</h4>
+                            <h4 class="text-center">Groom data</h4>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="groom">Nama Groom</label>
+                                    <label for="groom">Groom name</label>
                                     <input  name="groom" type="text" class="form-control" id="groom" value="<?php echo isset($groom_data['groom']) ? $groom_data['groom'] : ''; ?>" required <?php echo $readonly; ?>>
                                     <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter groom name
                                 </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="groom_dad">Nama Bapak Kandung</label>
+                                    <label for="groom_dad">Father's name</label>
                                     <input <?php echo $readonly; ?>   name="groom_dad" type="text" class="form-control" id="groom_dad" value="<?php echo isset($groom_data['dad']) ? $groom_data['dad'] : ''; ?>" required>
                                     <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter father's name
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                <label for="groom_mom">Nama Ibu Kandung</label>
+                                <label for="groom_mom">Mother's name</label>
                                 <input <?php echo $readonly; ?>   name="groom_mom" type="text" class="form-control" id="groom_mom" value="<?php echo isset($groom_data['mom']) ? $groom_data['mom'] : ''; ?>" required>
                                 <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter mother's name
                                     </div>
                             </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="groom_bank">Nama Bank</label>
+                                    <label for="groom_bank">Bank name</label>
                                     <select <?php echo $readonly; ?> id="groom_bank" class="form-control" name="groom_bank">
                                     <option>--Pilih--</option>
                                     <?php 
@@ -92,49 +92,57 @@
                                     ?>
                                 </select>
                                 <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter bank name
                                 </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                <label for="groom_rek">Nomor Rekening</label>
+                                <label for="groom_rek">Bank number</label>
                                 <input <?php echo $readonly; ?>   name="groom_rek" type="number" class="form-control" id="groom_rek" value="<?php echo isset($groom_data['rekening']) ? $groom_data['rekening'] : ''; ?>" required>
                                 <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter bank number
                                     </div>
-                            </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="groom" class="d-block">Groom image</label>
+                                    <img class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
+                                    <?php if($readonly == "") { ?>
+                                    <input  name="groom_image"  type="file" id="groom">
+                                    <?php } ?>  
+                                </div>
+
                             </div>
                             </div>
 
                             <div class="data-bride mt-5">
-                            <h4 class="text-center">Data Bride</h4>
+                            <h4 class="text-center">Bride Data</h4>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="bride">Nama Bride</label>
+                                    <label for="bride">Bride name</label>
                                     <input <?php echo $readonly; ?> name="bride" type="text" class="form-control" id="bride" value="<?php echo isset($bride_data['bride']) ? $bride_data['bride'] : ''; ?>" required>
                                 </div>
                                 <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter bride name
                                     </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="bride_dad">Nama Bapak Kandung</label>
+                                    <label for="bride_dad">Father's name</label>
                                     <input <?php echo $readonly; ?>   name="bride_dad" type="text" class="form-control" id="bride_dad" value="<?php echo isset($bride_data['dad']) ? $bride_data['dad'] : ''; ?>" required>
                                     <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter father's name
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                <label for="bride_mom">Nama Ibu Kandung</label>
+                                <label for="bride_mom">Mother's name</label>
                                 <input <?php echo $readonly; ?>   name="bride_mom" type="text" class="form-control" id="bride_mom" value="<?php echo isset($bride_data['mom']) ? $bride_data['mom'] : ''; ?>" required>
                                     <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter mother's name
                                     </div>
                             </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="bride_bank">Nama Bank</label>
+                                    <label for="bride_bank">Bank name</label>
                                     <select <?php echo $readonly; ?> id="bride_bank" class="form-control" name="bride_bank">
                                     <option>--Pilih--</option>
                                     <?php 
@@ -155,15 +163,22 @@
                                     ?>
                                 </select>
                                 <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter bank name
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                <label for="bride_rek">Nomor Rekening</label>
+                                <label for="bride_rek">Bank number</label>
                                 <input <?php echo $readonly; ?>   name="bride_rek" type="number" class="form-control" id="bride_rek" value="<?php echo isset($bride_data['rekening']) ? $bride_data['rekening'] : ''; ?>" required>
                                     <div class="invalid-feedback">
-                                        Please enter invitation title
+                                        Please enter bank number
                                     </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="bride_image" class="d-block">Bride image</label>
+                                    <img class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images//<?= $bride_data['image'] ?>">
+                                    <?php if($readonly == "") { ?>
+                                    <input  name="bride_image"  type="file" id="bride_image">
+                                    <?php } ?>  
                                 </div>
                             </div>
                             </div>
