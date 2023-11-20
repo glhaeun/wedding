@@ -28,7 +28,7 @@
         <div class="card shadow mb-4 w-75">
                         <div class="card-header py-3">
                         <h1 class="h3 mb-0 text-gray-800 ">Schedule Data</h1>
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black"><i class="fas fa-edit"></i>  Edit</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-edit"></i>  Edit</a>
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -128,7 +128,7 @@
                                 </div>
                             </div>
                             
-                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary yellow black mt-5" value="Save" name="jadwal">
+                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary yellow black mt-5" style="border:none" value="Save" name="jadwal">
                             </form>
                         </div>
                     </div>

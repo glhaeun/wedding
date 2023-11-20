@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             </div>
-                            <input type="submit" class="btn btn-primary yellow black mt-5" value="<?php echo !$editMode ? 'Save' : 'Edit'; ?>" name="timeline">
+                            <input type="submit" class="btn btn-primary yellow black mt-5" style="border:none" value="<?php echo !$editMode ? 'Save' : 'Edit'; ?>" name="timeline">
 
                             </form>
                         </div>

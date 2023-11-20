@@ -10,6 +10,14 @@
     font-family: 'Asul';
 }
 
+#timeline {
+    background-image: url(../images/haeun/background.png);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
 #background-container {
     position: relative;
     /* overflow: hidden; */
@@ -45,7 +53,8 @@
     /* border: 1px solid black; */
 } 
 
-.timeline {
+.timeline-container {
+    min-height: 500px;
     margin: 20px;
     position: relative;
     display: flex;
@@ -54,10 +63,12 @@
 }
 
 .timeline-item {
-    display: flex; /* Add this line to make it a flex container */
-    align-items: center; /* Add this line to vertically center items */
+    min-width: 500px;
+    display: flex;
+    align-items: center;
     max-width: 80%;
-    margin-left: 0;
+    margin-left: auto; 
+    margin-right: auto;
 }
 
 .timeline-bullet {
@@ -396,6 +407,7 @@
     }
 
     .timeline-item {
+        min-width: 100%;
         max-width: 80%;
         margin-left: 0;
     }
@@ -425,6 +437,7 @@
     }
 
     .timeline-item {
+        min-width: 100%;
         max-width: 100%;
         margin-left: 0;
     }
@@ -454,6 +467,7 @@
     }
 
     .timeline-item {
+        min-width: 50%;
         max-width: 100%;
         margin-left: 0;
     }

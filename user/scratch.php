@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
 <style>
+      #scratch {
+          background-image: url(./assets/images/haeun/background.png);
+          background-size: cover;
+          background-position: center center;
+          overflow: hidden;
+          overflow-y: hidden;
+      }
+
         .font-esthetic {
           font-family: 'Ephesis', cursive !important;
           /* color: #ffd700 !important; Change to gold/yellow color */

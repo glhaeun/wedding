@@ -96,7 +96,7 @@
         <section id="rsvp" class="m-5">
             <div class="container-rsvp" data-aos="fade-up">
                 <div class="card-body border rounded-4 shadow p-3">
-                    <form action="" id="rsvp-form">
+                    <form method="post" id="rsvp-form">
                         <h1 class="font-esthetic text-center mb-3" style="font-size: 4rem;">Ucapan & Doa</h1>
                         <div class="mb-1" id="balasan"></div>
 
@@ -109,8 +109,8 @@
                             <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
                             <select class="form-select shadow-sm" id="form-kehadiran">
                                 <option value="0" selected>Konfirmasi Kehadiran</option>
-                                <option value="1">Hadir</option>
-                                <option value="2">Berhalangan</option>
+                                <option value="Hadir">Hadir</option>
+                                <option value="Berhalangan">Berhalangan</option>
                             </select>
                         </div>
 
@@ -221,6 +221,27 @@
                     stopOnFocus: true,
                     onClick: function () { }
                 }).showToast();  
+
+                //insert Db
+                fetch('rsvpConnection.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        'nama': nama,
+                        'kehadiran': kehadiran,
+                        'pesan': pesan,
+                    }),
+                })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
             }
         });
 
