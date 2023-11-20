@@ -14,13 +14,21 @@
     
 ?>
 
+<style>
+    .yellow {
+        background-image: linear-gradient(to right, #FAD983 0%, #FAD983 100%);
+
+    }
+    .black {
+        color: black;
+    }
+</style>
 
 <div class="row justify-content-center">
         <div class="card shadow mb-4 w-75">
                         <div class="card-header py-3">
                         <h1 class="h3 mb-0 text-gray-800 ">Data Pengantin</h1>
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i>Edit</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black"><i class="fas fa-edit"></i> Edit</a>
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -112,15 +120,15 @@
                             <h4 class="text-center mt-5">Address</h4>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="couple_address">Couple's Address</label>
-                                    <input <?php echo $readonly; ?>   name="couple_address" type="text" class="form-control" id="couple_address"   value="<?php echo isset($data['couple_address']) ? $data['couple_address'] : ''; ?>">
-                                </div>
-                                <div class="invalid-feedback">
-                                        Please enter invitation location
+                                    <label for="couple_address">Address</label>
+                                    <input required <?php echo $readonly; ?>   name="couple_address" type="text" class="form-control" id="couple_address"   value="<?php echo isset($data['couple_address']) ? $data['couple_address'] : ''; ?>">
+                                    <div class="invalid-feedback">
+                                        Please enter address
                                     </div>
+                                </div>
                             </div>
                             
-                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary mt-5" value="Save" name="jadwal">
+                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary yellow black mt-5" value="Save" name="jadwal">
                             </form>
                         </div>
                     </div>

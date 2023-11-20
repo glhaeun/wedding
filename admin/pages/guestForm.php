@@ -2,6 +2,16 @@
     include 'mail.php';
 ?>
 
+<style>
+    .yellow {
+        background-image: linear-gradient(to right, #FAD983 0%, #FAD983 100%);
+
+    }
+    .black {
+        color: black;
+    }
+</style>
+
 <section class="mb-4">
 
     <div class="card">
@@ -68,7 +78,7 @@
                         </div>
                         <!--Grid row-->
                         <div class="text-center text-md-left">
-                        <input class="btn btn-primary" type="submit" value="Submit" name="send">
+                        <input class="btn btn-primary yellow black" type="submit" value="Submit" name="send">
                         </div>
 
                     </form>
