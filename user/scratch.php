@@ -16,6 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
+      #scratch {
+          background-image: url(./assets/images/haeun/background.png);
+          background-size: cover;
+          background-position: center center;
+          overflow: hidden;
+          overflow-y: hidden;
+      }
+
         .font-esthetic {
           font-family: 'Ephesis', cursive !important;
           /* color: #ffd700 !important; Change to gold/yellow color */

@@ -10,6 +10,14 @@
     font-family: 'Asul';
 }
 
+#timeline {
+    background-image: url(../images/haeun/background.png);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
 #background-container {
     position: relative;
     /* overflow: hidden; */
@@ -45,7 +53,7 @@
     /* border: 1px solid black; */
 } 
 
-.timeline {
+.timeline-container {
     min-height: 500px;
     margin: 20px;
     position: relative;
