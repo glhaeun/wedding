@@ -24,13 +24,21 @@
     
 ?>
 
+<style>
+    .yellow {
+        background-image: linear-gradient(to right, #FAD983 0%, #FAD983 100%);
+
+    }
+    .black, span {
+        color: black;
+    }
+</style>
 
 <div class="row justify-content-center">
         <div class="card shadow mb-4 w-75">
                         <div class="card-header py-3">
                         <h1 class="h3 mb-0 text-gray-800 ">Bride & Groom Data</h1>
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Edit</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black shadow-sm"><i class="fas fa-edit"></i>  Edit</a>
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -93,6 +101,15 @@
                                 <div class="invalid-feedback">
                                         Please enter bank number
                                     </div>
+                                </div>
+                                <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="groom">Groom name</label>
+                                    <input  name="groom" type="text" class="form-control" id="groom" value="<?php echo isset($groom_data['groom']) ? $groom_data['groom'] : ''; ?>" required <?php echo $readonly; ?>>
+                                    <div class="invalid-feedback">
+                                        Please enter groom name
+                                </div>
+                                </div>
                             </div>
                             </div>
                             </div>
@@ -160,7 +177,7 @@
                             </div>
                             </div>
                             
-                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary" value="Save" name="save">
+                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary yellow black" value="Save" name="save">
                             </form>
                         </div>
                     </div>
