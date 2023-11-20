@@ -1,6 +1,4 @@
 <?php 
-    $query = "SELECT * from bride";
-    
     $bride_database = $connect->prepare("SELECT * FROM bride");
     $bride_database -> execute();
 

@@ -37,6 +37,7 @@
     .font-inside {
         font-family: 'Asul';
     }
+
     </style>
 </head>
 <body>

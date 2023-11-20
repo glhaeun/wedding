@@ -1,5 +1,4 @@
 <?php
-    include './component/connect.php';
     $database = $connect->prepare("SELECT * FROM timeline");
     $database -> execute();
 
