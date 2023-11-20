@@ -114,7 +114,7 @@
                                     <label for="couple_address">Address</label>
                                     <input required <?php echo $readonly; ?>   name="couple_address" type="text" class="form-control" id="couple_address"   value="<?php echo isset($data['couple_address']) ? $data['couple_address'] : ''; ?>">
                                     <div class="invalid-feedback">
-                                        Please enter invitation location
+                                        Please enter address
                                     </div>
                                 </div>
                             </div>
