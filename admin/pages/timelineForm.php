@@ -18,6 +18,16 @@
 
 ?>
 
+<style>
+    .yellow {
+        background-image: linear-gradient(to right, #FAD983 0%, #FAD983 100%);
+
+    }
+    .black {
+        color: black;
+    }
+</style>
+
 <div class="row justify-content-center">
         <div class="card shadow mb-4 w-75">
                         <div class="card-header py-3">
@@ -51,7 +61,7 @@
                                 </div>
                             </div>
                             </div>
-                            <input type="submit" class="btn btn-primary mt-5" value="<?php echo !$editMode ? 'Save' : 'Edit'; ?>" name="timeline">
+                            <input type="submit" class="btn btn-primary yellow black mt-5" value="<?php echo !$editMode ? 'Save' : 'Edit'; ?>" name="timeline">
 
                             </form>
                         </div>

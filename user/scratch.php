@@ -40,6 +40,18 @@
         margin-bottom: 32px;
         overflow: hidden;
         position: relative;
+        place-items: center;
+        }
+        @media screen and (max-width: 740px) {
+          .scratch-container {
+        width : auto;
+        height: 300px;
+        border-radius: 8px;
+        margin-bottom: 32px;
+        overflow: hidden;
+        position: relative;
+        place-items: center;
+        }
         }
 
         .scratch-card {
@@ -60,9 +72,9 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      align-items: start;
-      justify-content: start;
-      text-align: start;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       overflow: hidden;
     }
 
@@ -182,19 +194,10 @@
     <p class="text-center font-inside">
     Gunakan kursor pada perangkat komputer atau gesek layar dengan jari pada perangkat seluler untuk mengungkap area yang ditentukan pada kartu. Perhatikan dan simpan huruf atau angka yang terungkap setelah penggosokan.
     </p>
-    <div class="container">
-
-         
-
-        <div class="row">
-            <div class="col-12">
-                <h2 class="main-heading border-left border-danger pl-3 mt-0 mb-4"></h2>
-            </div>
-        </div>
-
+    <div class="container d-flex justify-content-center align-items-center">
         <div class="row">
             <div class="col-md-4">
-                <h3 class="font-arabic">Scratch Card 1</h3>
+                <h3 class="font-arabic text-center">Scratch Card 1</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
                         <div class="code">D7DF9CFF0C</div>
@@ -204,7 +207,7 @@
             </div>
 
             <div class="col-md-4">
-                <h3 class="font-arabic">Scratch Card 2</h3>
+                <h3 class="font-arabic text-center">Scratch Card 2</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
                         <div class="code">8DDIECIW3</div>
@@ -212,9 +215,9 @@
                     <canvas id="scratch-card2" class="w-100" height="150"></canvas>
                 </div>
             </div>
-
+ 
             <div class="col-md-4">
-                <h3 class="font-arabic">Scratch Card 3</h3>
+                <h3 class="font-arabic text-center">Scratch Card 3</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
                         <div class="code">38CUDCJS93</div>
@@ -222,36 +225,6 @@
                     <canvas id="scratch-card3" class="w-100" height="150"></canvas>
                 </div>
             </div>
-
-          <!-- <div class="col-md-4">
-                <h3>Scratch Card 1</h3>
-                <div class="scratch-container">
-                    <div class="scratch-card text-center">
-                        <div class="code">Hey, You Win</div>
-                    </div>
-                    <canvas id="scratch-card4" class="w-100" height="150"></canvas>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <h3>Scratch Card 2</h3>
-                <div class="scratch-container">
-                    <div class="scratch-card text-center">
-                        <div class="code">Hey, You Win</div>
-                    </div>
-                    <canvas id="scratch-card5" class="w-100" height="150"></canvas>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <h3>Scratch Card 3</h3>
-                <div class="scratch-container">
-                    <div class="scratch-card text-center">
-                        <div class="code">Sorry, Better Luck Next Time</div>
-                    </div>
-                    <canvas id="scratch-card6" class="w-100" height="150"></canvas>
-                </div>
-            </div> -->
         </div>
     </div>
 
@@ -372,9 +345,6 @@
 createScratchCard("scratch-card1", "assets/images/darren/image-url1.jpg");
 createScratchCard("scratch-card2", "assets/images/darren/image-url2.jpg");
 createScratchCard("scratch-card3", "assets/images/darren/image-url3.jpg");
-createScratchCard("scratch-card4", "assets/images/darren/image-url4.jpg");
-createScratchCard("scratch-card5", "assets/images/darren/image-url5.jpg");
-createScratchCard("scratch-card6", "assets/images/darren/image-url6.jpg");
 
 
     </script>

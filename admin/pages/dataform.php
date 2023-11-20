@@ -29,7 +29,7 @@
         background-image: linear-gradient(to right, #FAD983 0%, #FAD983 100%);
 
     }
-    .black, span {
+    .black {
         color: black;
     }
 </style>
@@ -38,7 +38,7 @@
         <div class="card shadow mb-4 w-75">
                         <div class="card-header py-3">
                         <h1 class="h3 mb-0 text-gray-800 ">Bride & Groom Data</h1>
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black shadow-sm"><i class="fas fa-edit"></i>  Edit</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-edit"></i>  Edit</a>
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>

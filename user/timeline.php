@@ -1,3 +1,15 @@
+<?php
+    include './component/connect.php';
+    $database = $connect->prepare("SELECT * FROM timeline");
+    $database -> execute();
+
+    $data = array();
+    if ($database->rowCount() > 0) {
+        $data = $database->fetch(PDO::FETCH_ASSOC);
+    } 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,14 +70,23 @@
         </div>
 
         <div class="timeline py-2" data-aos="flip-down"  data-aos-delay="500" >
-            <div class="row timeline-item">
+
+        <?php
+
+        $database = $connect->prepare("SELECT * FROM timeline");
+        $database -> execute();
+
+        if($database->rowCount()>0){
+            while ($fetch_data = $database ->fetch(PDO::FETCH_ASSOC)){
+        ?>
+        <div class="row timeline-item">
                 <div class="col-12 col-md-1">
                     <div class="timeline-bullet" onclick="showBoard(this)"></div>
                 </div>
                 <div class="col-12 col-md-10">
                     <div class="timeline-content">
-                        <h4 class="font-arabic" id="timeline-desc">First Meet (2013)</h4>
-                        <p class="font-inside" id="timeline-story">Bulan Agustus 2013, kami pertama kali bertemu pada Ospek Perkuliahan. Pada masa tersebut kami hanyalah teman biasa saja.</p>
+                        <h4 class="font-arabic" id="timeline-desc"><?=$fetch_data['title']?> (<?=$fetch_data['year']?>)</h4>
+                        <p class="font-inside" id="timeline-story"><?=$fetch_data['content']?></p>
                     </div>
                     <!-- Picture board code -->
                     <div class="board">
@@ -76,6 +97,29 @@
                     </div>
                     <!-- End of Picture board code -->
                 </div>
+            </div>
+        <?php
+        }
+    }
+    ?>
+            <!-- <div class="row timeline-item">
+                <div class="col-12 col-md-1">
+                    <div class="timeline-bullet" onclick="showBoard(this)"></div>
+                </div>
+                <div class="col-12 col-md-10">
+                    <div class="timeline-content">
+                        <h4 class="font-arabic" id="timeline-desc">First Meet (2013)</h4>
+                        <p class="font-inside" id="timeline-story">Bulan Agustus 2013, kami pertama kali bertemu pada Ospek Perkuliahan. Pada masa tersebut kami hanyalah teman biasa saja.</p>
+                    </div>
+                    Picture board code -->
+                    <!-- <div class="board">
+                        <img src="../user/assets/images/jason/bridegroom1.png" alt="" class="img-fluid slide-in-left" id="timeline-pic1">
+                        <img src="../user/assets/images/jason/bridegroom2.png" alt="" class="img-fluid fade-in" id="timeline-pic2">
+                        <img src="../user/assets/images/jason/bridegroom3.png" alt="" class="img-fluid slide-in-right" id="timeline-pic3">
+                        <button class="close-button" onclick="closeBoard(this)"> X </button>
+                    </div>
+                     End of Picture board code -->
+                <!-- </div>
             </div>
             <div class="row timeline-item">
                 <div class="col-12 col-md-1">
@@ -103,15 +147,15 @@
                         <h4 class="font-arabic">Engagement (2021)</h4>
                         <p class="font-inside">Lika-liku hubungan kami lalui bersama hingga kami memutuskan untuk bertunangan pada 25 Februari 2021.</p>
                     </div>
-                <!-- Picture board code -->
-                <div class="board">
+                 Picture board code -->
+                <!-- <div class="board">
                         <img src="../user/assets/images/jason/bridegroom1.png" alt="" class="img-fluid slide-in-left">
                         <img src="../user/assets/images/jason/bridegroom2.png" alt="" class="img-fluid fade-in">
                         <img src="../user/assets/images/jason/bridegroom3.png" alt="" class="img-fluid slide-in-right">
                         <button class="close-button" onclick="closeBoard(this)"> X </button>
                     </div>
-                    <!-- End of Picture board code -->
-                </div>
+                   End of Picture board code -->
+                <!-- </div>
             </div>
             <div class="row timeline-item">
                 <div class="col-12 col-md-1">
@@ -122,16 +166,16 @@
                         <h4 class="font-arabic">Married (2023)</h4>
                         <p class="font-inside">Kami memutuskan untuk mengikat janji suci pernikahan pada 29 Oktober 2023</p>
                     </div>
-                <!-- Picture board code -->
-                    <div class="board">
+                 Picture board code -->
+                    <!-- <div class="board">
                         <img src="../user/assets/images/jason/bridegroom1.png" alt="" class="img-fluid slide-in-left">
                         <img src="../user/assets/images/jason/bridegroom2.png" alt="" class="img-fluid fade-in">
                         <img src="../user/assets/images/jason/bridegroom3.png" alt="" class="img-fluid slide-in-right">
                         <button class="close-button" onclick="closeBoard(this)"> X </button>
-                    </div>
+                    </div> -->
                     <!-- End of Picture board code -->
-                </div>
-            </div>
+                <!-- </div>
+            </div>  --> 
         </div>
     </div>
 </div>
