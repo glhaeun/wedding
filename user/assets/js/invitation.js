@@ -6,6 +6,9 @@ AOS.init({
 
 document.addEventListener("DOMContentLoaded", () => {
   window.scrollTo(0, 0);
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 200);
 });
 
 var audio = document.getElementById("invitationAudio");

@@ -83,8 +83,6 @@
     <!-- <div class="landing-inv"></div> -->
     <audio id="invitationAudio" src="assets/sound/invitation.mp3"></audio>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="assets/js/invitation.js">
-        
-    </script>
 </body>
+<script defer src="assets/js/invitation.js"> </script>
 </html>
