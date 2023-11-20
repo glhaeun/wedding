@@ -29,10 +29,10 @@
             color: #ffd700 !important;
         } */
         .my-image {
- width: 200px;
- height: 100px;
- position: absolute;
- top: 80px;
+         width: 200px;
+         height: 100px;
+         position: absolute;
+         top: 80px;
  left: 50px;
 }
 /*h1{
