@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
@@ -17,19 +17,18 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <style>
         .main-container-rsvp{
            position: relative;
            background-image: url(assets/images/ziven/background.png);
-           z-index: -1;
-           overflow-x: hidden;
+           z-index: 1;
         }
 
         .leave-1-png-rsvp{
             position: absolute;
-            top: -100px;
+            top: -50px;
             left: 0;
             z-index: -1; 
             width: 300px; 
