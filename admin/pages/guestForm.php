@@ -21,6 +21,17 @@
                         <!--Grid row-->
                         <div class="row">
 
+
+                            <h4 class="text-center mt-5">Address</h4>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="couple_address">Address</label>
+                                    <input required <?php echo $readonly; ?>   name="couple_address" type="text" class="form-control" id="couple_address"   value="<?php echo isset($data['couple_address']) ? $data['couple_address'] : ''; ?>">
+                                    <div class="invalid-feedback">
+                                        Please enter couple address
+                                    </div>
+                                </div>
+                            </div>
                             <!--Grid column-->
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
