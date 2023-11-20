@@ -20,14 +20,14 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <style>
-        body{
+        .main-container-rsvp{
            position: relative;
            background-image: url(assets/images/ziven/background.png);
            z-index: -1;
            overflow-x: hidden;
         }
 
-        .leave-1-png {
+        .leave-1-png-rsvp{
             position: absolute;
             top: -100px;
             left: 0;
@@ -35,7 +35,7 @@
             width: 300px; 
         }
 
-        .flower-png{
+        .flower-png-rsvp{
             position: absolute;
             bottom: -275px;
             right: -175px; 
@@ -91,67 +91,69 @@
     </style>
 </head>
 <body>
-    <img src="assets/images/ziven/leave-1.png" data-aos="fade-right" class="leave-1-png" alt="">
-    <img src="assets/images/ziven/flower.png" data-aos="fade-left" class="flower-png" alt="">
-    <section id="rsvp" class="m-5">
-        <div class="container-rsvp" data-aos="fade-up">
-            <div class="card-body border rounded-4 shadow p-3">
-                <form action="" id="rsvp-form">
-                    <h1 class="font-esthetic text-center mb-3" style="font-size: 4rem;">Ucapan & Doa</h1>
-                    <div class="mb-1" id="balasan"></div>
+    <div class="main-container-rsvp">
+        <img src="assets/images/ziven/leave-1.png" data-aos="fade-right" class="leave-1-png-rsvp" alt="">
+        <img src="assets/images/ziven/flower.png" data-aos="fade-left" class="flower-png-rsvp" alt="">
+        <section id="rsvp" class="m-5">
+            <div class="container-rsvp" data-aos="fade-up">
+                <div class="card-body border rounded-4 shadow p-3">
+                    <form action="" id="rsvp-form">
+                        <h1 class="font-esthetic text-center mb-3" style="font-size: 4rem;">Ucapan & Doa</h1>
+                        <div class="mb-1" id="balasan"></div>
 
-                    <div class="mb-3 font-arabic">
-                        <label for="form-nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Isikan Nama Anda">
-                    </div>
+                        <div class="mb-3 font-arabic">
+                            <label for="form-nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Isikan Nama Anda">
+                        </div>
 
-                    <div class="mb-3 font-arabic">
-                        <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
-                        <select class="form-select shadow-sm" id="form-kehadiran">
-                            <option value="0" selected>Konfirmasi Kehadiran</option>
-                            <option value="1">Hadir</option>
-                            <option value="2">Berhalangan</option>
-                        </select>
-                    </div>
+                        <div class="mb-3 font-arabic">
+                            <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
+                            <select class="form-select shadow-sm" id="form-kehadiran">
+                                <option value="0" selected>Konfirmasi Kehadiran</option>
+                                <option value="1">Hadir</option>
+                                <option value="2">Berhalangan</option>
+                            </select>
+                        </div>
 
-                    <div class="mb-3 font-arabic">
-                        <label for="form-pesan" class="form-label">Ucapan & Doa</label>
-                        <textarea class="form-control shadow-sm" id="form-pesan" rows="4" placeholder="Tulis Ucapan & Doa"></textarea>
-                    </div>
+                        <div class="mb-3 font-arabic">
+                            <label for="form-pesan" class="form-label">Ucapan & Doa</label>
+                            <textarea class="form-control shadow-sm" id="form-pesan" rows="4" placeholder="Tulis Ucapan & Doa"></textarea>
+                        </div>
 
-                    <div class="d-flex font-arabic">
-                        <button class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1"  id="kirim">
-                            Kirim
-                            <i class="fa-solid fa-paper-plane ms-1"></i>
-                        </button>
-                    </div>
-                </form>
+                        <div class="d-flex font-arabic">
+                            <button class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1"  id="kirim">
+                                Kirim
+                                <i class="fa-solid fa-paper-plane ms-1"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
 
-        <div class="rounded-4 mt-5 mb-2 daftar-ucapan font-arabic" id="daftar-ucapan"> 
-        <!-- list ucapan -->
-        </div>
+            <div class="rounded-4 mt-5 mb-2 daftar-ucapan font-arabic" id="daftar-ucapan"> 
+            <!-- list ucapan -->
+            </div>
 
-        <nav class="d-flex justify-content-center mb-0 font-arabic">
-            <ul class="pagination mb-0">
-                <li class="page-item" id="previous">
-                    <button class="page-link"  aria-label="Previous">
-                        <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
-                    </button>
-                </li>
-                <li class="page-item">
-                    <span class="page-link bg-warning text-dark" id="page">1</span>
-                </li>
-                <li class="page-item" id="next">
-                    <button class="page-link"  aria-label="Next">
-                        Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
-                    </button>
-                </li>
-            </ul>
-        </nav>
+            <nav class="d-flex justify-content-center mb-0 font-arabic">
+                <ul class="pagination mb-0">
+                    <li class="page-item" id="previous">
+                        <button class="page-link"  aria-label="Previous">
+                            <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
+                        </button>
+                    </li>
+                    <li class="page-item">
+                        <span class="page-link bg-warning text-dark" id="page">1</span>
+                    </li>
+                    <li class="page-item" id="next">
+                        <button class="page-link"  aria-label="Next">
+                            Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
 
-    </section>
+        </section>
+    </div>
 </body>
 <script>
     AOS.init();
