@@ -1,6 +1,4 @@
 <?php 
-    $query = "SELECT * from general";
-
 
     $database = $connect->prepare("SELECT * FROM general");
     $database -> execute();
