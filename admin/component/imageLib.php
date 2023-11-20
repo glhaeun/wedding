@@ -19,6 +19,7 @@
         if (compressImage($foto, $targetFile, 75)) {
             return true;
         } 
+        var_dump('fail');
         return true;
     }
 

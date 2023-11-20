@@ -2,10 +2,12 @@
     include('../component/imageLib.php');
         if (isset($_POST['save'])) {
             if(isset($_FILES['bride_image']) && file_exists($_FILES['bride_image']['tmp_name'])) {
-                replaceImage('../../images', $_FILES['bride_image'], 'bride.png');
+                // replaceImage('../../images', $_FILES['bride_image'], 'bride.png');
+                moveImageWithName('../../images', $_FILES['bride_image'], 'bride.png');
             }
             if(isset($_FILES['groom_image']) && file_exists($_FILES['groom_image']['tmp_name'])) {
-                replaceImage('../../images', $_FILES['groom_image'], 'groom.png');
+                // replaceImage('../../images', $_FILES['groom_image'], 'groom.png');
+                moveImageWithName('../../images', $_FILES['groom_image'], 'groom.png');
             }
             if($check_database_bride->rowCount() > 0 ) {
                 $query = "UPDATE bride SET bride =?, mom =?, dad=?, bank=?, rekening=?";
