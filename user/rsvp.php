@@ -108,7 +108,7 @@
                         <div class="mb-3 font-arabic">
                             <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
                             <select class="form-select shadow-sm" id="form-kehadiran">
-                                <option value="0" selected>Konfirmasi Kehadiran</option>
+                                <option value="Berhalangan" selected>Konfirmasi Kehadiran</option>
                                 <option value="Hadir">Hadir</option>
                                 <option value="Berhalangan">Berhalangan</option>
                             </select>
