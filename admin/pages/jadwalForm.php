@@ -28,7 +28,7 @@
         <div class="card shadow mb-4 w-75">
                         <div class="card-header py-3">
                         <h1 class="h3 mb-0 text-gray-800 ">Schedule Data</h1>
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black"><i class="fas fa-edit"></i>  Edit</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit" class="mt-2 d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-edit"></i>  Edit</a>
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -36,10 +36,10 @@
                             <h4 class="text-center">Invitation</h4>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="bride_image" class="d-block">Bride & Groom image</label>
-                                    <img class="my-2 mr-5" style="width: 150px; height: 150px; border-radius: 150px" src="../../images/<?= $data['image'] ?>">
+                                    <label for="bride_groom_image" class="d-block">Bride & Groom image</label>
+                                    <img id="bridegroomImagePreview" class="my-2 mr-5" style="width: 150px; height: 150px; border-radius: 150px" src="../../images/<?= $data['image'] ?>">
                                     <?php if($readonly == '') { ?>
-                                        <input  name="bride_groom_image"  type="file" id="bride_image">
+                                        <input  name="bride_groom_image"  type="file" id="bride_groom_image" onchange="previewImage(event, 'bridegroomImagePreview')">
                                     <?php } ?>  
                                 </div>
                                 <div class="form-group col-md-12">
@@ -128,7 +128,7 @@
                                 </div>
                             </div>
                             
-                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary yellow black mt-5" value="Save" name="jadwal">
+                            <input <?php echo !$editMode ? 'disabled' : ''; ?> type="submit" class="btn btn-primary yellow black mt-5" style="border:none" value="Save" name="jadwal">
                             </form>
                         </div>
                     </div>
@@ -136,4 +136,7 @@
 </div>
 
 <script src="../component/js/formValidation.js"></script>
+<script src="../component/js/updateImage.js"></script>
+
+
 

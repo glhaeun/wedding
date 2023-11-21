@@ -24,6 +24,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
     <style>
+        #lokasi {
+            background-image: url(./assets/images/haeun/background.png);
+            background-size: cover;
+            background-position: center center;
+            overflow: hidden;
+            overflow-y: hidden;
+        }
+
         .line {
             width: 300px; 
             height: auto;
@@ -66,7 +74,7 @@
     <section id="lokasi">
         <div class="container mt-5" data-aos="flip-left" data-aos-duration="2000">
             <div class="text-center ">
-            <h1 class="font-esthetic py-3" >Wedding Information</h1>
+            <h1 class="font-esthetic py-3 csstitle" >Wedding Information</h1>
 
             <div class="d-flex justify-content-center mb-3">
                 <img src="../user/assets/images/darren/Asset 1@4xa.png" alt="" class="line img-fluid">

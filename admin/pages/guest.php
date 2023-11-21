@@ -59,7 +59,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Daftar Tamu</h1>
-                        <a href="guestAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black"><i class="fas fa-plus"></i> Invite Guest</a>
+                        <a href="guestAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-plus"></i> Invite Guest</a>
                     </div>
 
                     <div class="card shadow mb-4 w-100">
@@ -96,7 +96,7 @@
                             <td><?=$fetch_user['email']?></td>
                             <td><?=$fetch_user['attend']?></td>     
                             <td><?=$fetch_user['isScratch']?></td>
-                            <td><a href="timeline.php?edit=<?=$fetch_user['id']?>"><i class="fa-solid fa-message" style="color: #fad983;"></i></a>
+                            <td><a href="guestMessage.php?view=<?=$fetch_user['id']?>"><i class="fa-solid fa-message" style="color: #fad983;"></i></a>
                             <a href="guest.php?delete=<?=$fetch_user['id']?>"><i class="fas fa-trash" style="color: #fad983;"></i></a></td>      
                     <?php
                         $index++;

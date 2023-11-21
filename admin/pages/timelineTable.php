@@ -58,7 +58,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Timeline</h1>
-                        <a href="timeline.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black"><i class="fas fa-plus"></i> Tambah Timeline</a>
+                        <a href="timeline.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-plus"></i> Tambah Timeline</a>
                     </div>
 
                     <div class="card shadow mb-4 w-100">
@@ -72,6 +72,9 @@
                                             <th>Title</th>
                                             <th>Year</th>
                                             <th>Content</th>
+                                            <th>Image 1</th>
+                                            <th>Image 2</th>
+                                            <th>Image 3</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -92,7 +95,10 @@
                             <td><?=$index?></td>
                             <td><?=$fetch_user['title']?></td>
                             <td><?=$fetch_user['year']?></td>
-                            <td><?=$fetch_user['content']?></td>     
+                            <td><?=$fetch_user['content']?></td> 
+                            <td><?=$fetch_user['imageA']?></td>     
+                            <td><?=$fetch_user['imageB']?></td>     
+                            <td><?=$fetch_user['imageC']?></td>     
                             <td><a href="timeline.php?edit=<?=$fetch_user['id']?>"><i class="fa-solid fa-pen-to-square" style="color: #fad983;"></i></a>
                             <a href="timelineTable.php?delete=<?=$fetch_user['id']?>"><i class="fa-solid fa-trash" style="color: #fad983;"></i></a></td>       
                     <?php

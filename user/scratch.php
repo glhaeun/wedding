@@ -14,8 +14,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Redressed&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
 <style>
+      #scratch {
+          background-image: url(./assets/images/haeun/background.png);
+          background-size: cover;
+          background-position: center center;
+          overflow: hidden;
+          overflow-y: hidden;
+      }
+
         .font-esthetic {
           font-family: 'Ephesis', cursive !important;
           /* color: #ffd700 !important; Change to gold/yellow color */
@@ -190,13 +199,13 @@
   <section id="scratch">
 
     <div class="container mt-5 ">
-    <h1 class="text-center font-esthetic">Lucky Draw</h1>
-    <p class="text-center font-inside">
+    <h1 class="text-center font-esthetic csstitle" data-aos="fade-down-left" data-aos-duration="2000">Lucky Draw</h1>
+    <p class="text-center font-inside" data-aos="fade-down-left" data-aos-duration="2000">
     Gunakan kursor pada perangkat komputer atau gesek layar dengan jari pada perangkat seluler untuk mengungkap area yang ditentukan pada kartu. Perhatikan dan simpan huruf atau angka yang terungkap setelah penggosokan.
     </p>
     <div class="container d-flex justify-content-center align-items-center">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500">
                 <h3 class="font-arabic text-center">Scratch Card 1</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
@@ -206,7 +215,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="600">
                 <h3 class="font-arabic text-center">Scratch Card 2</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
@@ -216,7 +225,7 @@
                 </div>
             </div>
  
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="700">
                 <h3 class="font-arabic text-center">Scratch Card 3</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
@@ -232,7 +241,7 @@
     <div class="container">
       <div class="row">
         <!-- Prize 1 -->
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1000">
           <div class="prize-container">
             <h5 class="prize-title font-arabic">Prize 1</h5>
             <!-- Image for Prize 1 -->
@@ -251,7 +260,7 @@
           </div>
     
         <!-- Prize 2 -->
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1100">
           <div class="prize-container">
             <h5 class="prize-title font-arabic">Prize 2</h5>
             <!-- Image for Prize 2 -->
@@ -270,7 +279,7 @@
           </div>
     
         <!-- Prize 3 -->
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1200">
           <div class="prize-container">
             <h5 class="prize-title font-arabic">Prize 3</h5>
             <!-- Image for Prize 3 -->
@@ -295,6 +304,10 @@
 
   </section>
     
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     
 
     <script>

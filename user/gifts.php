@@ -207,6 +207,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
     <style>
+        #hadiah {
+        background-image: url(./assets/images/haeun/background.png);
+        background-size: cover;
+        background-position: center center;
+        overflow: hidden;
+        overflow-y: hidden;
+        }
+
         #angpao,
         #gift {
             opacity: 0;
@@ -261,7 +269,7 @@
     <section id="hadiah">
         <div class="container">
             <div class="text-center mt-5 mb-5">
-                <h1 class="font-esthetic mt-0 mb-3 yellow" style="font-size: 3rem;"data-aos="fade-out" data-aos-duration="2000">Hadiah</h1>
+                <h1 class="font-esthetic mt-0 mb-3 csstitle" style="font-size: 3rem;"data-aos="fade-out" data-aos-duration="2000">Hadiah</h1>
                 <img src="https://cdn.pixabay.com/photo/2022/10/27/22/50/divider-7551966_640.png" alt="tes" class="my-image"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                 <p class="mb-1 font-inside" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                     Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami,

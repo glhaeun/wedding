@@ -17,9 +17,9 @@
     <div class="card">
         <div class="card-body">
 
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Invite Guest</h2>
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Message</h2>
 
-        <p class="text-center w-responsive mx-auto mb-5">Please enter the name, email and number of the guest.</p>
+        <p class="text-center w-responsive mx-auto mb-5">This is the message from your lovely guest</p>
 
     
             <div class="row justify-content-center">
@@ -41,34 +41,9 @@
                             </div>
                             <!--Grid column-->
 
-                            <!--Grid column-->
-                            <div class="col-md-6">
-                                <div class="md-form mb-0 form-group">
-                                    <label for="email" class="">Guest email</label>
-                                    <input type="email" id="email" required name="email" class="form-control">
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email address
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Grid column-->
-
                         </div>
                         <!--Grid row-->
 
-                        <!--Grid row-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="md-form mb-0 form-group">
-                                    <label for="subject" class="">Subject</label>
-                                    <input type="text" id="subject" required name="subject" class="form-control">
-                                    <div class="invalid-feedback">
-                                        Please enter subject
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Grid row-->
 
                         <!--Grid row-->
                         <div class="row">
@@ -77,7 +52,23 @@
                             <div class="col-md-12">
 
                                 <div class="md-form form-group">
-                                    <label for="message">Invitation message</label>
+                                    <label for="message">Message 1</label>
+                                    <textarea type="text" required id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter invitation message
+                                    </div>
+                                </div>
+
+                                <div class="md-form form-group">
+                                    <label for="message">Message 2</label>
+                                    <textarea type="text" required id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter invitation message
+                                    </div>
+                                </div>
+
+                                <div class="md-form form-group">
+                                    <label for="message">Message 3</label>
                                     <textarea type="text" required id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
                                     <div class="invalid-feedback">
                                         Please enter invitation message
@@ -88,7 +79,7 @@
                         </div>
                         <!--Grid row-->
                         <div class="text-center text-md-left">
-                        <input class="btn btn-primary yellow black" style="border: none" type="submit" value="Submit" name="send">
+                        <input class="btn btn-primary yellow black" type="submit" value="Submit" name="send">
                         </div>
 
                     </form>
