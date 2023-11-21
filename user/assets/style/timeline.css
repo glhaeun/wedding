@@ -33,7 +33,7 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  animation: spin 10s linear infinite;
+  animation: spin 30s linear infinite;
 }
 
 @keyframes spin {
