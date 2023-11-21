@@ -4,11 +4,16 @@ AOS.init({
   offset: 0,
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  window.scrollTo(0, 0);
-  setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 200);
+// document.addEventListener("DOMContentLoaded", () => {
+//   window.scrollTo(0, 0);
+//   setTimeout(() => {
+//     window.scrollTo(0, 0);
+//   }, 200);
+// });
+
+$(document).ready(function () {
+  $("html").animate({ scrollTop: 0 }, 1);
+  $("body").animate({ scrollTop: 0 }, 1);
 });
 
 var audio = document.getElementById("invitationAudio");
