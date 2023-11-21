@@ -21,6 +21,7 @@ body {
 .container-inv {
   width: 100vw;
   height: 100vh;
+  background: white;
   background-image: url(../images/ziven/background.webp);
   background-size: cover;
   background-position: center center;
@@ -28,7 +29,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  overflow-y: hidden;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10000;
 }
 
 .golden-blur {

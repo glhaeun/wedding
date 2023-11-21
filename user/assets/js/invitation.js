@@ -11,15 +11,10 @@ AOS.init({
 //   }, 200);
 // });
 
-// $(document).ready(function () {
-//   $("html").animate({ scrollTop: 0 }, 1);
-//   $("body").animate({ scrollTop: 0 }, 1);
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.documentElement.scrollTop = 0;
+//   document.body.scrollTop = 0;
 // });
-
-document.addEventListener("DOMContentLoaded", function () {
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
-});
 
 var audio = document.getElementById("invitationAudio");
 // audio.autoplay = true;
@@ -67,6 +62,7 @@ document.addEventListener("click", () => {
       document.querySelector(".landing-inv").style.animation =
         "reverseBlur 0.3s linear 1";
       invContainer.remove();
+      // window.scrollTo(0, 0);
     }, 2000);
     first = false;
   }
