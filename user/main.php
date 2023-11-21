@@ -8,7 +8,7 @@
     include 'bridegroom.php';
     include 'location.php';
     include 'timeline.php';
-    include 'rsvp.php';
+    // include 'rsvp.php';
     include 'scratch.php';
     include 'gifts.php';
     include 'thankyou.php';

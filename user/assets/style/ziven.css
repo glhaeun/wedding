@@ -228,7 +228,7 @@ body {
 
 .sparkle-inv {
   position: absolute;
-  background-image: url(../images/ziven/sparkle.webp);
+  background-image: url(../images/ziven/sparkle.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: min(85vw, 85vh);
@@ -238,7 +238,7 @@ body {
 
 .frame-inv {
   position: absolute;
-  background-image: url(../images/ziven/frame.webp);
+  background-image: url(../images/ziven/frame.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: min(85vw, 85vh);
