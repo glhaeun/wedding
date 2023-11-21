@@ -1,101 +1,139 @@
-
 #bridegroom {
-    background-image: url(../images/haeun/background.png);
-    background-size: cover;
-    background-position: center center;
-    overflow: hidden;
-    overflow-y: hidden;
-    }
-    .img-crop-bridegroom {
-        width: 16rem;
-        height: 16rem;
-        position: relative;
-        border-radius: 50%;
-        background-image: url(../images/haeun/frame.png);
-        background-size: cover;
-        display: flex;
-    }
-    .img-crop-bridegroom>img {
-        display: inline;
-        margin: auto 22px;
-        height: 85%;
-        width: 85%;
-        border-radius: 50%;
-    }
-    
-    img.flower {
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        z-index: 1;
-        display: flex;
-    } 
-    
-    .flower1 {
-        top: 40px;
-        left: 25px;
-    }
-    
-    .flower2 {
-        top: 60px;
-        left: 25px;
-    }
-    
-    img.butterfly {
-        position: relative;
-        width: 100px;
-        height: 100px;
-    }
-    
-    
-    .testing {
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    @media (max-width: 768px) {
-        .testing {
-            display: block; /* Change display property to 'block' for smaller screens */
-        }
-    }
-    
-    .font-esthetic {
-        font-family: 'Ephesis', cursive !important;
-        color: #000000 !important;
-    }
-    
-    .font-arabic {
-        font-family: 'Enriqueta', serif !important;
-        color: #000000 !important;
-    }
-    
-    .glitter{
-        position: absolute; 
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .glittertop, .glitterbottom {
-        position: absolute;
-        width: 100%;
-    }
-    
-    .glitter2 {
-        transform: scaleX(-1);
-    }
-    .glitterbottom{
-        height: 115%;
-        position: absolute;
-    }
-    
-    .name {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  background-image: url(../images/haeun/background.png);
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+  overflow-y: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+.img-crop-bridegroom {
+  width: 16rem;
+  height: 16rem;
+  position: relative;
+  border-radius: 50%;
+  background-image: url(../images/haeun/frame.png);
+  background-size: cover;
+  display: flex;
+}
+.img-crop-bridegroom > img {
+  display: inline;
+  margin: auto 22px;
+  height: 85%;
+  width: 85%;
+  border-radius: 50%;
+}
 
-    
-    
+img.flower {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  z-index: 1;
+  display: flex;
+}
+
+.flower1 {
+  top: 40px;
+  left: 25px;
+}
+
+.flower2 {
+  top: 60px;
+  left: 25px;
+}
+
+img.butterfly {
+  position: relative;
+  width: auto;
+  height: 100px;
+}
+
+.testing {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 768px) {
+  .testing {
+    display: block; /* Change display property to 'block' for smaller screens */
+  }
+
+  .golden-blur-4 {
+    bottom: -70vh !important;
+    right: 0;
+  }
+}
+
+.font-esthetic {
+  font-family: "Ephesis", cursive !important;
+  color: #000000 !important;
+}
+
+.font-arabic {
+  font-family: "Enriqueta", serif !important;
+  color: #000000 !important;
+}
+
+.glitter {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  /* top: 0; */
+}
+
+.glittertop,
+.glitterbottom {
+  position: absolute;
+  width: 100%;
+}
+
+.glitter2 {
+  top: 0;
+  transform: scaleX(-1);
+}
+.glitterbottom {
+  height: 115%;
+  position: absolute;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.golden-blur {
+  position: absolute;
+  background-image: url(../images/ziven/golden-blur.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: max(40vw, 40vh);
+  height: max(40vw, 40vh);
+  animation: golden-blur 15s linear infinite alternate;
+}
+
+.golden-blur-1 {
+  top: 0;
+  left: 0;
+  transform: scaleX(-1) scaleY(-1);
+}
+
+.golden-blur-2 {
+  bottom: 0;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+.golden-blur-3 {
+  top: 0;
+  right: 0;
+  transform: scaleY(-1);
+}
+
+.golden-blur-4 {
+  bottom: -20vh;
+  right: 0;
+}

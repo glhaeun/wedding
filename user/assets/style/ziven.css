@@ -35,38 +35,7 @@ body {
   cursor: pointer;
 }
 
-.golden-blur {
-  position: absolute;
-  background-image: url(../images/ziven/golden-blur.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: max(40vw, 40vh);
-  height: max(40vw, 40vh);
-  animation: golden-blur 15s linear infinite alternate;
-}
 
-.golden-blur-1 {
-  top: 0;
-  left: 0;
-  transform: scaleX(-1) scaleY(-1);
-}
-
-.golden-blur-2 {
-  bottom: 0;
-  left: 0;
-  transform: scaleX(-1);
-}
-
-.golden-blur-3 {
-  top: 0;
-  right: 0;
-  transform: scaleY(-1);
-}
-
-.golden-blur-4 {
-  bottom: 0;
-  right: 0;
-}
 
 @keyframes golden-blur {
   from {
