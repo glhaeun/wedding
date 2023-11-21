@@ -1,6 +1,10 @@
 <?php
-    require("component/connect.php");
+require("component/connect.php");
 
+$action = $_GET['action'];
+
+// Insert Data
+if ($action === 'insert') {
     $nama = $_POST['nama'];
     $kehadiran = $_POST['kehadiran'];
     $pesan = $_POST['pesan'];
@@ -13,13 +17,24 @@
             echo "Data updated successfully";
         }
     }
-    
+
     $sql = "INSERT INTO message_rsvp (name, status, message) VALUES ('$nama', '$kehadiran', '$pesan')";
     if ($connect->query($sql) === TRUE) {
         echo "Data inserted successfully";
     }
+} 
 
-    
+// Select Data
+if ($action === 'select') {
+    $selectQuery = "SELECT * FROM message_rsvp";
+    $result = $connect->query($selectQuery);
 
+    if (!$result) {
+        die("Error in SQL query: " . $connect->errorInfo()[2]);
+    }
 
+    $data = $result->fetchAll(PDO::FETCH_ASSOC);
+
+    echo json_encode($data);
+} 
 ?>
