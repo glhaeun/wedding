@@ -11,9 +11,14 @@ AOS.init({
 //   }, 200);
 // });
 
-$(document).ready(function () {
-  $("html").animate({ scrollTop: 0 }, 1);
-  $("body").animate({ scrollTop: 0 }, 1);
+// $(document).ready(function () {
+//   $("html").animate({ scrollTop: 0 }, 1);
+//   $("body").animate({ scrollTop: 0 }, 1);
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 });
 
 var audio = document.getElementById("invitationAudio");
