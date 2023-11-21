@@ -59,6 +59,27 @@
                                         Please enter timeline content
                                     </div>
                                 </div>
+                                <div class="form-group col-md-6">
+                                    <label for="timeline_image1" class="d-block">Image 1</label>
+                                    <img id="timelineImage1Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
+                                    <?php if($readonly == "") { ?>
+                                    <input  name="timeline_image1"  type="file" id="timeline_image1" onchange="previewImage(event, 'timelineImage1Preview')">
+                                    <?php } ?>  
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="timeline_image2" class="d-block">Image 2</label>
+                                    <img id="timelineImage2Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
+                                    <?php if($readonly == "") { ?>
+                                    <input  name="timeline_image2"  type="file" id="timeline_image2" onchange="previewImage(event, 'timelineImage2Preview')">
+                                    <?php } ?>  
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="timeline_image3" class="d-block">Image 3</label>
+                                    <img id="timelineImage3Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
+                                    <?php if($readonly == "") { ?>
+                                    <input  name="timeline_image3"  type="file" id="timeline_image3" onchange="previewImage(event, 'timelineImage3Preview')">
+                                    <?php } ?>  
+                                </div>
                             </div>
                             </div>
                             <input type="submit" class="btn btn-primary yellow black mt-5" style="border:none" value="<?php echo !$editMode ? 'Save' : 'Edit'; ?>" name="timeline">

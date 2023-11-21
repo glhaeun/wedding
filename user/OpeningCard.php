@@ -106,6 +106,7 @@
     </div>
     <!-- <div class="landing-inv"></div> -->
     <div class="landing-inv">
+
         <div class="golden-blur golden-blur-2"></div>
         <div class="golden-blur golden-blur-3"></div>
         <img class="landing-flower" alt="Flower for wedding" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300" src="assets/images/ziven/flowerLanding.webp">
@@ -131,11 +132,11 @@
                 <p class="together-landing" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">at <?= $data['location'] ?></p>
             </div>
         </div>
-       
+
         <div class="flower-inv flower-3" data-aos="fade-left" data-aos-delay="400" data-aos-duration="2000"></div>
-        
     </div>
     
+
     <!-- <div class="landing-inv"></div> -->
     <audio id="invitationAudio" src="assets/sound/invitation.mp3"></audio>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

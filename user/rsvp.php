@@ -97,7 +97,7 @@
             <div class="container-rsvp" data-aos="fade-up">
                 <div class="card-body border rounded-4 shadow p-3">
                     <form method="post" id="rsvp-form">
-                        <h1 class="font-esthetic text-center mb-3" style="font-size: 4rem;">Ucapan & Doa</h1>
+                        <h1 class="font-esthetic text-center mb-3 csstitle" style="font-size: 4rem;">Ucapan & Doa</h1>
                         <div class="mb-1" id="balasan"></div>
 
                         <div class="mb-3 font-arabic">

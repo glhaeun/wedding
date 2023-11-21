@@ -59,12 +59,16 @@
         margin: min(1vw, 1vh);
     }
 
+    .cssSubtitle {
+        color: #b27f32;
+    }
+
     </style>
 </head>
 <body>
 
     <section id="bridegroom">
-        <div class="glitter" data-aos="fade-down-right" data-aos-duration="1000" data-aos-delay="2000">
+        <div class="glitter" data-aos="fade-down-right" data-aos-duration="1000" data-aos-delay="1000">
         <img src="assets/images/haeun/glittertop.png" alt="" class="" >
         <img src="assets/images/haeun/glittertop.png" alt="" class="glitter2">
         </div>
@@ -72,7 +76,7 @@
         <!-- <img src="assets/images/haeun/glitterbottom.png" alt="" class="glitterbottom"> -->
 
        <div class="text-center mb-5">
-       <h1 class="py-4 px-2 font-esthetic csstitle" style="font-size: 3.8rem" data-aos="fade-up-right" data-aos-delay="2000" data-aos-duration="1000">Congratulations Lovebirds</h1>
+       <h1 class="py-4 px-2 font-esthetic csstitle" style="font-size: 3.8rem" data-aos="fade-up-right" data-aos-delay="1000" data-aos-duration="1000">Congratulations Lovebirds</h1>
 
        <div class="testing">
         <div class="groom" data-aos="fade-right" data-aos-duration="2000">
@@ -85,10 +89,10 @@
             <div class="details">
             <div class="name">
             <img class="butterfly" src="assets/images/haeun/butterfly.png"  data-aos="fade-down-right" data-aos-duration="2000">
-            <h1 class="font-arabic" style="font-size: 2rem;"><?= $groom['groom'] ?></h1>
+            <h1 class="font-arabic" style="font-size: 2rem; color: #b27f32;"><?= $groom['groom'] ?></h1>
             </div>
-            <h5 class="font-inside mt-3 mb-0 " style="font-size: 1.5rem;">Son of</h5>
-            <p class="mb-0 font-inside" style="font-size: 1rem;">Mr <?= $groom['dad'] ?> & Mrs <?= $groom['mom'] ?></p>
+            <h5 class="font-inside mt-3 mb-0 cssSubtitle" style="font-size: 1.5rem;">Son of</h5>
+            <p class="mb-0 font-inside cssSubtitle" style="font-size: 1rem;">Mr <?= $groom['dad'] ?> & Mrs <?= $groom['mom'] ?></p>
 
 
             </div>
@@ -108,8 +112,8 @@
             <img class="butterfly" src="assets/images/haeun/butterfly.png"  data-aos="fade-down-right" data-aos-duration="2000">
             <h1 class="font-arabic" style="font-size: 2rem;"><?= $bride['bride'] ?></h1>
             </div>
-            <h5 class="font-inside mt-3 mb-0 " style="font-size: 1.5rem;">Daughter of</h5>
-            <p class="mb-0 font-inside" style="font-size: 1rem;">Mr <?= $bride['dad'] ?> & Mrs <?= $bride['mom'] ?></p>
+            <h5 class="font-inside mt-3 mb-0 cssSubtitle" style="font-size: 1.5rem;">Daughter of</h5>
+            <p class="mb-0 font-inside cssSubtitle" style="font-size: 1rem;">Mr <?= $bride['dad'] ?> & Mrs <?= $bride['mom'] ?></p>
 
 
             </div>
