@@ -35,8 +35,6 @@ body {
   cursor: pointer;
 }
 
-
-
 @keyframes golden-blur {
   from {
     width: max(40vw, 40vh);

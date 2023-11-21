@@ -29,6 +29,7 @@
             background-position: center center;
             overflow: hidden;
             overflow-y: hidden;
+            position: relative;
         }
 
         .line {
@@ -81,7 +82,9 @@
 </head>
 <body>
     <section id="lokasi">
-        <div class="container mt-5" data-aos="flip-left" data-aos-duration="2000">
+        <div class="golden-blur golden-blur-2"></div>
+        <div class="golden-blur golden-blur-3"></div>
+        <div class="container my-5" data-aos="flip-left" data-aos-duration="2000">
             <div class="text-center ">
             <h1 class="font-esthetic py-3 csstitle" >Wedding Information</h1>
 
@@ -109,7 +112,6 @@
 </a>
                         </div>
                     </div>
-
                     <!-- <h1 class="font-esthetic py-3 font-arabic" style="font-size: 2rem;">Countdown for event: </h1> -->
                     <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4 countdown-container">
 
@@ -130,6 +132,7 @@
                     </div>
             </div>
         </div>
+        
         <?php include 'divider.php' ?>
     </section>
 </body>

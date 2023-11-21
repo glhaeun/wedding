@@ -22,6 +22,8 @@
     #d6a357 68.6%
   );
   filter: blur(2px);
+  /* position: relative; */
+  /* z-index: 100000; */
 }
 
 @keyframes reverseBlur {

@@ -54,13 +54,15 @@
 </head> -->
 
 <section id="timeline">
-
-<div class="container pb-2 pt-4" data-aos="fade-left" data-aos-duration="2000">
+<div class="golden-blur golden-blur-1"></div>
+<div class="golden-blur golden-blur-4"></div>    
+<div class="container py-4 my-4" data-aos="fade-left" data-aos-duration="2000">
+    
     <div id="background-container">
         <div class="background-image"></div>
     </div>
 
-    <div class="card-body border rounded-4 shadow p-3">
+    <div class="card-body border card-timeline  rounded-4 shadow p-3">
 
         <h1 class="font-esthetic text-center py-3 csstitle" id="timeline-title" style="font-size: 3rem;"  data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100" >Our Love Story</h1>
 
