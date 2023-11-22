@@ -6,17 +6,29 @@
 
     include 'OpeningCard.php';
     include 'bridegroom.php';
-    ?><div class="separator-landing"></div><?php
+    ?>
+    <!-- <div class="separator-landing"></div> -->
+    <?php
     include 'location.php';
-    ?><div class="separator-landing"></div><?php
+    ?>
+    <!-- <div class="separator-landing"></div> -->
+    <?php
     include 'timeline.php';
-    ?><div class="separator-landing"></div><?php
+    ?>
+    <!-- <div class="separator-landing"></div> -->
+    <?php
     include 'rsvp.php';
-    ?><div class="separator-landing"></div><?php
+    ?>
+    <!-- <div class="separator-landing"></div> -->
+    <?php
     include 'scratch.php';
-    ?><div class="separator-landing"></div><?php
+    ?>
+    <!-- <div class="separator-landing"></div> -->
+    <?php
     include 'gifts.php';
-    ?><div class="separator-landing"></div><?php
+    ?>
+    <!-- <div class="separator-landing"></div> -->
+    <?php
     include 'thankyou.php';
 ?>
 
