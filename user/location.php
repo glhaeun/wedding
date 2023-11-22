@@ -24,7 +24,7 @@
 
     <style>
         #lokasi {
-            background-image: url(./assets/images/haeun/background.png);
+            background-image: url(./assets/images/ziven/landingBackground.webp);
             background-size: cover;
             background-position: center center;
             overflow: hidden;
@@ -112,8 +112,8 @@
 </a>
                         </div>
                     </div>
-                    <!-- <h1 class="font-esthetic py-3 font-arabic" style="font-size: 2rem;">Countdown for event: </h1> -->
-                    <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4 countdown-container">
+                    <div class="d-flex justify-content-center">
+                    <div class="border justify-content-center rounded-pill shadow py-2 px-4 mb-4 w-75 countdown-container">
 
                         <div class="row justify-content-center mt-3 mb-3" data-waktu="<?= $data['date'] ?>" id="tampilan-waktu">
                                 <div class="col-3 p-1 font-color-location">
@@ -130,7 +130,9 @@
                                 </div>
                         </div>
                     </div>
+    </div>
             </div>
+        </div>
         </div>
         
         <?php include 'divider.php' ?>

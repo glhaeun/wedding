@@ -208,7 +208,7 @@
 
     <style>
         #hadiah {
-        background-image: url(./assets/images/haeun/background.png);
+        background-image: url(./assets/images/ziven/landingBackground.webp);
         background-size: cover;
         background-position: center center;
         overflow: hidden;

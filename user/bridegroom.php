@@ -126,9 +126,9 @@
         </div>
        </div> 
 
-       <div>
+       <!-- <div>
        <img src="assets/images/haeun/grass.png" alt="" class="glittertop">
-       </div>
+       </div> -->
        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <defs>
                 <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
