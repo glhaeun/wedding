@@ -102,9 +102,12 @@
                     </div>
                     <!-- Picture board code -->
                     <div class="board">
-                        <img src="../user/assets/images/jason/bridegroom1.png" alt="" class="img-fluid slide-in-left" id="timeline-pic1">
-                        <img src="../user/assets/images/jason/bridegroom2.png" alt="" class="img-fluid fade-in" id="timeline-pic2">
-                        <img src="../user/assets/images/jason/bridegroom3.png" alt="" class="img-fluid slide-in-right" id="timeline-pic3">
+                        <?php if($fetch_data['imageA'] != '') { ?>
+                        <img src="../images/<?= $fetch_data['imageA'] ?>" alt="" class="img-fluid slide-in-left" id="timeline-pic1"> <?php } ?>
+                        <?php if($fetch_data['imageB'] != '') { ?>
+                        <img src="../images/<?= $fetch_data['imageB'] ?>" alt="" class="img-fluid fade-in" id="timeline-pic2"> <?php } ?>
+                        <?php if($fetch_data['imageC'] != '') { ?>
+                        <img src="../images/<?= $fetch_data['imageC'] ?>" alt="" class="img-fluid slide-in-right" id="timeline-pic3"> <?php } ?>
                         <button class="close-button" onclick="closeBoard(this)"> X </button>
                     </div>
                     <!-- End of Picture board code -->
