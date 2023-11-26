@@ -96,9 +96,9 @@
                             <td><?=$fetch_user['title']?></td>
                             <td><?=$fetch_user['year']?></td>
                             <td><?=$fetch_user['content']?></td> 
-                            <td><?=$fetch_user['imageA']?></td>     
-                            <td><?=$fetch_user['imageB']?></td>     
-                            <td><?=$fetch_user['imageC']?></td>     
+                            <td><?php if($fetch_user['imageA'] != "") { ?><img style="width: 150px; height: 150px;" src="../../images/<?=$fetch_user['imageA']?>"> <?php } ?></td>     
+                            <td><?php if($fetch_user['imageB'] != "") { ?><img style="width: 150px; height: 150px;" src="../../images/<?=$fetch_user['imageB']?>"> <?php } ?></td>     
+                            <td><?php if($fetch_user['imageC'] != "") { ?><img style="width: 150px; height: 150px;" src="../../images/<?=$fetch_user['imageC']?>"> <?php } ?></td>     
                             <td><a href="timeline.php?edit=<?=$fetch_user['id']?>"><i class="fa-solid fa-pen-to-square" style="color: #fad983;"></i></a>
                             <a href="timelineTable.php?delete=<?=$fetch_user['id']?>"><i class="fa-solid fa-trash" style="color: #fad983;"></i></a></td>       
                     <?php

@@ -5,9 +5,9 @@
         $extension = pathinfo($image["name"], PATHINFO_EXTENSION);
         $newFileName = uniqid() . "." . $extension;
         $targetFile = $targetDirectory . $newFileName;
-        // if (compressImage($foto, $targetFile, 75)) {
-        //     return $newFileName;
-        // } 
+        if (compressImage($foto, $targetFile, 75)) {
+            return $newFileName;
+        } 
         return $newFileName;
     }
 
