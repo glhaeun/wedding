@@ -248,13 +248,6 @@
             <div class="stage">
             <p class="prize-description font-inside">Brand New Private Jet</p>
               <div class="stage-content"></div>
-              <label class="curtain-container">
-                <div class="curtain-panel">
-                  <input type="checkbox" class="curtain-trigger" />
-                  <div class="left-curtain curtain"></div>
-                  <div class="right-curtain curtain"></div>
-                </div>
-              </label>
             </div>
             </div>
           </div>
@@ -267,13 +260,6 @@
             <div class="stage">
             <p class="prize-description font-inside">Brand New Car</p>
               <div class="stage-content1"></div>
-              <label class="curtain-container">
-                <div class="curtain-panel">
-                  <input type="checkbox" class="curtain-trigger" />
-                  <div class="left-curtain curtain"></div>
-                  <div class="right-curtain curtain"></div>
-                </div>
-              </label>
             </div>
             </div>
           </div>
@@ -286,13 +272,6 @@
             <div class="stage">
             <p class="prize-description font-inside">Brand New Motorcycle</p>
               <div class="stage-content2"></div>
-              <label class="curtain-container">
-                <div class="curtain-panel">
-                  <input type="checkbox" class="curtain-trigger" />
-                  <div class="left-curtain curtain"></div>
-                  <div class="right-curtain curtain"></div>
-                </div>
-              </label>
             </div>
             </div>
           </div>
