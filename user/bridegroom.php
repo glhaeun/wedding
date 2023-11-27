@@ -44,7 +44,7 @@
         text-align: center;
         text-shadow: 0px 4px 4px rgba(116, 116, 116, 0.25);
         font-family: Ephesis;
-        font-size: min(8vh, 8vw);
+        font-size: min(10vh, 10vw);
         font-style: normal;
         font-weight: 400;
         line-height: normal;

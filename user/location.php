@@ -115,7 +115,7 @@
                     <div class="d-flex justify-content-center">
                     <div class="border justify-content-center rounded-pill shadow py-2 px-4 mb-4 w-75 countdown-container">
 
-                        <div class="row justify-content-center mt-3 mb-3" data-waktu="<?= $data['date'] ?>" id="tampilan-waktu">
+                        <div class="row justify-content-center mt-3" data-waktu="<?= $data['date'] ?>" id="tampilan-waktu">
                                 <div class="col-3 p-1 font-color-location">
                                     <h2 class="d-inline m-0 p-0 font-inside" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
                                 </div>
