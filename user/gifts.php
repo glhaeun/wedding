@@ -291,13 +291,13 @@
                             <img src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png" class="img-fluid rounded" width="150" alt="bni"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                             <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening 123456789</p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n Lorem ipsum dolor</p>
-                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789">Salin No. Rekening</button>
+                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
                         </div>
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/2560px-BANK_BRI_logo.svg.png" class="img-fluid rounded" width="150" alt="bri"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                             <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening 123456789</p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n Lorem ipsum dolor</p>
-                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789">Salin No. Rekening</button>
+                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
                         </div>
                     </div>
                 </div>
@@ -315,10 +315,10 @@
                         </div>
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="https://cdn.pixabay.com/photo/2016/01/10/22/23/location-1132647_640.png" alt="alamat" class="img-fluid rounded" width="50"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">
-                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">Alamat Rumah</p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000"> Jalan Padang Bulan No 101, Medan</p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000"> No Telp: 08123456789</p>
-                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="Jalan Padang Bulan No 101, 08123456789">Salin Alamat</button>
+                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Alamat Rumah</p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> Jalan Padang Bulan No 101, Medan</p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> No Telp: 08123456789</p>
+                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="Jalan Padang Bulan No 101, 08123456789"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin Alamat</button>
                         </div>
                     </div>
                 </div>
