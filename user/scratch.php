@@ -211,7 +211,7 @@
                 <h3 class="font-arabic text-center">Scratch Card 1</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
-                        <div class="code"><?= $code['kode1'] ?></div>
+                        <div class="code"><?= isset($code['kode1'])? $code['kode1'] : '123456789' ?></div>
                     </div>
                     <canvas id="scratch-card1" class="w-100" height="160"></canvas>
                 </div>
@@ -221,7 +221,7 @@
                 <h3 class="font-arabic text-center">Scratch Card 2</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
-                        <div class="code"><?= $code['kode2'] ?></div>
+                      <div class="code"><?= isset($code['kode2'])? $code['kode2'] : '111222333' ?></div>
                     </div>
                     <canvas id="scratch-card2" class="w-100" height="150"></canvas>
                 </div>
@@ -231,7 +231,7 @@
                 <h3 class="font-arabic text-center">Scratch Card 3</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
-                        <div class="code"><?= $code['kode3'] ?></div>
+                      <div class="code"><?= isset($code['kode3'])? $code['kode3'] : '332211223' ?></div>
                     </div>
                     <canvas id="scratch-card3" class="w-100" height="150"></canvas>
                 </div>
