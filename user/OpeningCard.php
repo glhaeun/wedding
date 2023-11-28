@@ -54,7 +54,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&family=Fasthand&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
-    <title>Alexander & Olivia Wedding Invitation</title>
+    <title>Wedding Invitation</title>
 </head>
 <body>
     <div class="container-inv">
