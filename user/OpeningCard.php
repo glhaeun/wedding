@@ -7,6 +7,8 @@
         SELECT 'date' AS category, reception_date AS name FROM general
         UNION
         SELECT 'location' AS category, location AS name FROM general
+        UNION
+        SELECT 'image' AS category, image AS name FROM general
     ";
 
     $database = $connect->prepare($combinedQuery);
@@ -115,7 +117,7 @@
                 <img class="element-landing-1" alt="Element for wedding" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300"src="assets/images/ziven/element1.webp">
                 <!-- <p class="together-landing">Together with their families</p> -->
                 <div class="bride-groom-landing" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
-                    <img alt="bride groom"  src="assets/images/ziven/bridegroom.webp">
+                    <img alt="bride groom"  src="../images/<?=$data['image']?>">
                 </div>
             </div>
             <div class="flex-inv-container">

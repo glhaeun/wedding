@@ -67,10 +67,10 @@
 </li>
 
 <li class="nav-item">
-    <a class="nav-link collapsed" href="winner.php" data-toggle="collapse" data-target="#collapseUtilities"
+    <a class="nav-link collapsed" href="prize.php" data-toggle="collapse" data-target="#collapseUtilities"
         aria-expanded="true" aria-controls="collapseUtilities">
         <i class="fas fa-trophy" style="color: #000000;"></i>
-        <span>Pemenang Hadiah</span>
+        <span>Data Hadiah</span>
     </a>
 </li>
 

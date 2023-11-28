@@ -92,7 +92,7 @@
 <body>
     <div class="main-container-rsvp">
         <img src="assets/images/ziven/leave-1.png" data-aos="fade-right" class="leave-1-png-rsvp" alt="">
-        <img src="assets/images/ziven/flower.png" data-aos="fade-left" class="flower-png-rsvp" alt="">
+        <!-- <img src="assets/images/ziven/flower.png" data-aos="fade-left" class="flower-png-rsvp" alt=""> -->
         <section id="rsvp" class="m-5">
             <div class="container-rsvp" data-aos="fade-up">
                 <div class="card-body border rounded-4 shadow p-3">
