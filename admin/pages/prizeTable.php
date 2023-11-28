@@ -1,5 +1,5 @@
 <?php include '../component/connect.php';
-      include 'guestDelete.php';
+      include 'prizeDelete.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +17,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" type="text/css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" type="text/css">
     <link href="../component/css/sb-admin-2.min.css" rel="stylesheet">
 
     <style>
@@ -58,8 +57,8 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Daftar Tamu</h1>
-                        <a href="guestAdd.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-plus"></i> Invite Guest</a>
+                        <h1 class="h3 mb-0 text-gray-800">Prize</h1>
+                        <a href="prize.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-plus"></i> Tambah Prize</a>
                     </div>
 
                     <div class="card shadow mb-4 w-100">
@@ -70,23 +69,9 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Nama</th>
-                                            <th>Email</th>
-                                            <th>Attend</th>
-                                            <?php
-                                                $query = "SELECT name FROM prize";
-                                                $getPrize = $connect->prepare($query);
-                                                $getPrize->execute();
-                                                if($getPrize->rowCount()>0) {
-                                                    while($row = $getPrize->fetch(PDO::FETCH_ASSOC)){
-                                                        ?>
-                                                    <th>
-                                                        Kode: <?=$row['name']?>
-                                                    </th>
-                                                        <?php
-                                                    }
-                                                }
-                                            ?>
+                                            <th>Prize Name</th>
+                                            <th>Prize Image</th>
+                                            <th>Scratch Card Image</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -95,7 +80,7 @@
 
 <?php 
 
-    $query ="SELECT * FROM user";
+    $query ="SELECT * FROM prize";
     $select_user =  $connect->prepare($query);
     $select_user -> execute();
 
@@ -106,25 +91,10 @@
                         <tr>
                             <td><?=$index?></td>
                             <td><?=$fetch_user['name']?></td>
-                            <td><?=$fetch_user['email']?></td>
-                            <td><?=$fetch_user['attend']?></td> 
-                            <?php
-                            $query = "SELECT id FROM prize";
-                            $getPrize = $connect->prepare($query);
-                            $getPrize->execute();
-
-                            if ($getPrize->rowCount() > 0) {
-                                while ($row = $getPrize->fetch(PDO::FETCH_ASSOC)) {
-                                    $prizeId = $row['id'];
-                                    ?>
-                                    <td><?=$fetch_user['kode_'.$prizeId]?></td> 
-                                    <?php
-                                }
-                            }
-
-                            ?>
-                            <td><a href="guestMessage.php?view=<?=$fetch_user['id']?>"><i class="fa-solid fa-message" style="color: #fad983;"></i></a>
-                            <a href="guest.php?delete=<?=$fetch_user['id']?>"><i class="fas fa-trash" style="color: #fad983;"></i></a></td>      
+                            <td><?=$fetch_user['image']?></td>
+                            <td><?=$fetch_user['cardImage']?></td> 
+                            <td><a href="prize.php?edit=<?=$fetch_user['id']?>"><i class="fa-solid fa-pen-to-square" style="color: #fad983;"></i></a>
+                            <a href="prizeTable.php?delete=<?=$fetch_user['id']?>"><i class="fa-solid fa-trash" style="color: #fad983;"></i></a></td>       
                     <?php
                         $index++;
         }
