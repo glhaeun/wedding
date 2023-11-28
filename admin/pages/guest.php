@@ -73,7 +73,9 @@
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>Attend</th>
-                                            <th>Win Prize</th>
+                                            <th>Code 1</th>
+                                            <th>Code 2</th>
+                                            <th>Code 3</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -95,7 +97,9 @@
                             <td><?=$fetch_user['name']?></td>
                             <td><?=$fetch_user['email']?></td>
                             <td><?=$fetch_user['attend']?></td>     
-                            <td><?=$fetch_user['isScratch']?></td>
+                            <td><?=$fetch_user['kode1']?></td>
+                            <td><?=$fetch_user['kode2']?></td>
+                            <td><?=$fetch_user['kode3']?></td>
                             <td><a href="guestMessage.php?view=<?=$fetch_user['id']?>"><i class="fa-solid fa-message" style="color: #fad983;"></i></a>
                             <a href="guest.php?delete=<?=$fetch_user['id']?>"><i class="fas fa-trash" style="color: #fad983;"></i></a></td>      
                     <?php

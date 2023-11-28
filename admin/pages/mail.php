@@ -51,9 +51,15 @@ if (isset($_POST['send'])) {
             $result = $mail->Send();
     
             if ($result) {
-                $query = "INSERT INTO user (name, email, attend, isScratch, scratchData) VALUES ( ?, ?, ?, ?, ?)";
+                function generateCode() {
+                    return mt_rand(100000000, 999999999);
+                }
+                $kode1 = generateCode();
+                $kode2 = generateCode();
+                $kode3 = generateCode();
+                $query = "INSERT INTO user (name, email, attend, kode1, kode2, kode3 ) VALUES ( ?, ?, ?, ? ,? ,?)";
                 $insert_user = $connect -> prepare($query);
-                $insert_user -> execute ([$name, $email, 'Unknown', false, '']);
+                $insert_user -> execute ([$name, $email, 'Unknown', $kode1, $kode2, $kode3]);
                 ?>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
             <script>

@@ -208,7 +208,7 @@
 
     <style>
         #hadiah {
-        background-image: url(./assets/images/haeun/background.png);
+        background-image: url(./assets/images/ziven/landingBackground.webp);
         background-size: cover;
         background-position: center center;
         overflow: hidden;
@@ -271,54 +271,54 @@
             <div class="text-center mt-5 mb-5">
                 <h1 class="font-esthetic mt-0 mb-3 csstitle" style="font-size: 3rem;"data-aos="fade-out" data-aos-duration="2000">Hadiah</h1>
                 <img src="https://cdn.pixabay.com/photo/2022/10/27/22/50/divider-7551966_640.png" alt="tes" class="my-image"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                <p class="mb-1 font-inside" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
+                <p class="mb-1 font-inside" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                     Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami,
                     dapat melalui :
                 </p>
 
                 <div class="button-container"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">
-                    <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">Send Angpao</button>
-                    <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">Send Gift</button>
+                    <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">Send Angpao</button>
+                    <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">Send Gift</button>
                 </div>
 
                 <div class="image-container">
                     <!-- <img src="assets/images/elvina/heartpanjang.png" alt="HeartPanjang"> -->
 
                 </div>
-                <div class="overflow-x-hidden font-inside" id="angpao"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                    <div class="row justify-content-center" data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
+                <div class="overflow-x-hidden font-inside" id="angpao"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
+                    <div class="row justify-content-center" data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
+                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png" class="img-fluid rounded" width="150" alt="bni"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">No. Rekening 123456789</p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">a.n Lorem ipsum dolor</p>
-                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789">Salin No. Rekening</button>
+                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening 123456789</p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n Lorem ipsum dolor</p>
+                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
                         </div>
-                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
+                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/2560px-BANK_BRI_logo.svg.png" class="img-fluid rounded" width="150" alt="bri"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">No. Rekening 123456789</p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">a.n Lorem ipsum dolor</p>
-                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789">Salin No. Rekening</button>
+                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening 123456789</p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n Lorem ipsum dolor</p>
+                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="overflow-x-hidden font-inside" id="gift"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
+                <div class="overflow-x-hidden font-inside" id="gift"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                     <div class="row justify-content-center"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
+                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJjAh42YvBECBVsT_HRjTsRWwuxdZlLG7bug&usqp=CAU" alt="Hadiah" class="img-fluid rounded" width="150"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                             <ol>
-                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">Hair Dryer</li>
-                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">Microwave</li>
-                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">Air Purifier</li>
-                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">Vacuum Cleaner</li>
+                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Hair Dryer</li>
+                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Microwave</li>
+                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Air Purifier</li>
+                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Vacuum Cleaner</li>
                             </ol>
                         </div>
-                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                            <img src="https://cdn.pixabay.com/photo/2016/01/10/22/23/location-1132647_640.png" alt="alamat" class="img-fluid rounded" width="50"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">
-                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">Alamat Rumah</p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000"> Jalan Padang Bulan No 101, Medan</p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000"> No Telp: 08123456789</p>
-                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="Jalan Padang Bulan No 101, 08123456789">Salin Alamat</button>
+                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
+                            <img src="https://cdn.pixabay.com/photo/2016/01/10/22/23/location-1132647_640.png" alt="alamat" class="img-fluid rounded" width="50"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">
+                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Alamat Rumah</p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> Jalan Padang Bulan No 101, Medan</p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> No Telp: 08123456789</p>
+                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="Jalan Padang Bulan No 101, 08123456789"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin Alamat</button>
                         </div>
                     </div>
                 </div>

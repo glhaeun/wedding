@@ -1,6 +1,8 @@
+<?php
+    include './component/getCode.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +20,7 @@
 
 <style>
       #scratch {
-          background-image: url(./assets/images/haeun/background.png);
+          background-image: url(./assets/images/ziven/landingBackground.webp);
           background-size: cover;
           background-position: center center;
           overflow: hidden;
@@ -209,7 +211,7 @@
                 <h3 class="font-arabic text-center">Scratch Card 1</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
-                        <div class="code">D7DF9CFF0C</div>
+                        <div class="code"><?= $code['kode1'] ?></div>
                     </div>
                     <canvas id="scratch-card1" class="w-100" height="160"></canvas>
                 </div>
@@ -219,7 +221,7 @@
                 <h3 class="font-arabic text-center">Scratch Card 2</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
-                        <div class="code">8DDIECIW3</div>
+                        <div class="code"><?= $code['kode2'] ?></div>
                     </div>
                     <canvas id="scratch-card2" class="w-100" height="150"></canvas>
                 </div>
@@ -229,7 +231,7 @@
                 <h3 class="font-arabic text-center">Scratch Card 3</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
-                        <div class="code">38CUDCJS93</div>
+                        <div class="code"><?= $code['kode3'] ?></div>
                     </div>
                     <canvas id="scratch-card3" class="w-100" height="150"></canvas>
                 </div>
@@ -248,13 +250,6 @@
             <div class="stage">
             <p class="prize-description font-inside">Brand New Private Jet</p>
               <div class="stage-content"></div>
-              <label class="curtain-container">
-                <div class="curtain-panel">
-                  <input type="checkbox" class="curtain-trigger" />
-                  <div class="left-curtain curtain"></div>
-                  <div class="right-curtain curtain"></div>
-                </div>
-              </label>
             </div>
             </div>
           </div>
@@ -267,13 +262,6 @@
             <div class="stage">
             <p class="prize-description font-inside">Brand New Car</p>
               <div class="stage-content1"></div>
-              <label class="curtain-container">
-                <div class="curtain-panel">
-                  <input type="checkbox" class="curtain-trigger" />
-                  <div class="left-curtain curtain"></div>
-                  <div class="right-curtain curtain"></div>
-                </div>
-              </label>
             </div>
             </div>
           </div>
@@ -286,13 +274,6 @@
             <div class="stage">
             <p class="prize-description font-inside">Brand New Motorcycle</p>
               <div class="stage-content2"></div>
-              <label class="curtain-container">
-                <div class="curtain-panel">
-                  <input type="checkbox" class="curtain-trigger" />
-                  <div class="left-curtain curtain"></div>
-                  <div class="right-curtain curtain"></div>
-                </div>
-              </label>
             </div>
             </div>
           </div>

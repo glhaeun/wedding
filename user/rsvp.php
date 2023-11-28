@@ -108,7 +108,7 @@
                         <div class="mb-3 font-arabic">
                             <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
                             <select class="form-select shadow-sm" id="form-kehadiran">
-                                <option value="0" selected>Konfirmasi Kehadiran</option>
+                                <option value="Berhalangan" selected>Konfirmasi Kehadiran</option>
                                 <option value="Hadir">Hadir</option>
                                 <option value="Berhalangan">Berhalangan</option>
                             </select>
@@ -162,6 +162,40 @@
         const kehadiranInput = document.getElementById('form-kehadiran');
         const pesanInput = document.getElementById('form-pesan');
         const daftarUcapan = document.getElementById('daftar-ucapan');
+
+        fetch('rsvpConnection.php?action=select')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(item => {
+                    const newCard = document.createElement('div');
+                    const datetime = new Date(item.timestamp).toLocaleString();
+
+                    newCard.className = 'mb-3 new-card';
+                    newCard.innerHTML = `
+                        <div class="card-body bg-light shadow p-3 m-0 rounded-4">
+                            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                <div>
+                                    <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                        <strong class="me-1">${item.name}</strong>
+                                    </p>
+                                    <p class="mt-1 font-time">${item.created_datetime}</p>
+                                </div>
+                                <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                    <strong class="me-1">${item.status}</strong>
+                                    ${item.status == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
+                                </div>
+                            </div>
+                            <hr class="text-dark my-1">
+                            <p class="text-dark mt-0 mb-1 mx-0 p-0" style="white-space: pre-line">${item.message}</p>
+                        </div>`;
+
+                    daftarUcapan.appendChild(newCard);
+                });
+                displaySubmissions();
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
 
         form.addEventListener('submit', function (event) {
             event.preventDefault(); 
@@ -223,7 +257,7 @@
                 }).showToast();  
 
                 //insert Db
-                fetch('rsvpConnection.php', {
+                fetch('rsvpConnection.php?action=insert', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',

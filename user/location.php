@@ -1,6 +1,5 @@
 <?php 
     include './component/getLocation.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,11 +24,12 @@
 
     <style>
         #lokasi {
-            background-image: url(./assets/images/haeun/background.png);
+            background-image: url(./assets/images/ziven/landingBackground.webp);
             background-size: cover;
             background-position: center center;
             overflow: hidden;
             overflow-y: hidden;
+            position: relative;
         }
 
         .line {
@@ -48,6 +48,16 @@
             border-radius: 50%;
         }
 
+        .countdown-container {
+            opacity: 1;
+            background: white;
+        }
+
+        .font-color-location {
+            color: #c79856;
+            text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+        }
+
         .img-crop>img {
             display: inline;
             margin: 0 auto;
@@ -57,7 +67,7 @@
         .font-esthetic {
             font-family: 'Ephesis', cursive !important;
             color: #000000 !important;
-            font-size: 3.8rem;
+            /* font-size: 3.8rem; */
         }
 
         .font-arabic {
@@ -72,7 +82,9 @@
 </head>
 <body>
     <section id="lokasi">
-        <div class="container mt-5" data-aos="flip-left" data-aos-duration="2000">
+        <div class="golden-blur golden-blur-2"></div>
+        <div class="golden-blur golden-blur-3"></div>
+        <div class="container my-5" data-aos="flip-left" data-aos-duration="2000">
             <div class="text-center ">
             <h1 class="font-esthetic py-3 csstitle" >Wedding Information</h1>
 
@@ -100,31 +112,33 @@
 </a>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-center">
+                    <div class="border justify-content-center rounded-pill shadow py-2 px-4 mb-4 w-75 countdown-container">
 
-                    <!-- <h1 class="font-esthetic py-3 font-arabic" style="font-size: 2rem;">Countdown for event: </h1> -->
-                    <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
-
-                        <div class="row justify-content-center mt-4 mb-5" data-waktu="<?= $data['date'] ?>" id="tampilan-waktu">
-                                <div class="col-3 p-1">
+                        <div class="row justify-content-center mt-3" data-waktu="<?= $data['date'] ?>" id="tampilan-waktu">
+                                <div class="col-3 p-1 font-color-location">
                                     <h2 class="d-inline m-0 p-0 font-inside" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
                                 </div>
-                                <div class="col-3 p-1">
+                                <div class="col-3 p-1 font-color-location">
                                     <h2 class="d-inline m-0 p-0 font-inside" id="jam">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Jam</small>
                                 </div>
-                                <div class="col-3 p-1">
+                                <div class="col-3 p-1 font-color-location">
                                     <h2 class="d-inline m-0 p-0 font-inside" id="menit">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Menit</small>
                                 </div>
-                                <div class="col-3 p-1">
+                                <div class="col-3 p-1 font-color-location">
                                     <h2 class="d-inline m-0 p-0 font-inside" id="detik">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Detik</small>
                                 </div>
                         </div>
                     </div>
+    </div>
             </div>
         </div>
+        </div>
+        
         <?php include 'divider.php' ?>
     </section>
 </body>
-
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
 

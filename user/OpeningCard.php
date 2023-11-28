@@ -136,7 +136,7 @@
         <div class="flower-inv flower-3" data-aos="fade-left" data-aos-delay="400" data-aos-duration="2000"></div>
     </div>
     
-
+    <div class="separator-landing"></div>
     <!-- <div class="landing-inv"></div> -->
     <audio id="invitationAudio" src="assets/sound/invitation.mp3"></audio>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

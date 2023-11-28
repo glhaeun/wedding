@@ -12,6 +12,20 @@
   position: relative;
 }
 
+.separator-landing {
+  width: 100%;
+  height: 2vh;
+  background: linear-gradient(
+    270deg,
+    #f5e08f 37.86%,
+    #f5e08f 50.98%,
+    #d6a357 68.6%
+  );
+  /* filter: blur(10px); */
+  /* position: relative; */
+  /* z-index: 100000; */
+}
+
 @keyframes reverseBlur {
   0% {
     filter: blur(10px);

@@ -54,13 +54,15 @@
 </head> -->
 
 <section id="timeline">
-
-<div class="container pb-2 pt-4" data-aos="fade-left" data-aos-duration="2000">
+<div class="golden-blur golden-blur-1"></div>
+<div class="golden-blur golden-blur-4"></div>    
+<div class="container py-4 my-4" data-aos="fade-left" data-aos-duration="2000">
+    
     <div id="background-container">
         <div class="background-image"></div>
     </div>
 
-    <div class="card-body border rounded-4 shadow p-3">
+    <div class="card-body border card-timeline  rounded-4 shadow p-3">
 
         <h1 class="font-esthetic text-center py-3 csstitle" id="timeline-title" style="font-size: 3rem;"  data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100" >Our Love Story</h1>
 
@@ -100,9 +102,12 @@
                     </div>
                     <!-- Picture board code -->
                     <div class="board">
-                        <img src="../user/assets/images/jason/bridegroom1.png" alt="" class="img-fluid slide-in-left" id="timeline-pic1">
-                        <img src="../user/assets/images/jason/bridegroom2.png" alt="" class="img-fluid fade-in" id="timeline-pic2">
-                        <img src="../user/assets/images/jason/bridegroom3.png" alt="" class="img-fluid slide-in-right" id="timeline-pic3">
+                        <?php if($fetch_data['imageA'] != '') { ?>
+                        <img src="../images/<?= $fetch_data['imageA'] ?>" alt="" class="img-fluid slide-in-left" id="timeline-pic1"> <?php } ?>
+                        <?php if($fetch_data['imageB'] != '') { ?>
+                        <img src="../images/<?= $fetch_data['imageB'] ?>" alt="" class="img-fluid fade-in" id="timeline-pic2"> <?php } ?>
+                        <?php if($fetch_data['imageC'] != '') { ?>
+                        <img src="../images/<?= $fetch_data['imageC'] ?>" alt="" class="img-fluid slide-in-right" id="timeline-pic3"> <?php } ?>
                         <button class="close-button" onclick="closeBoard(this)"> X </button>
                     </div>
                     <!-- End of Picture board code -->
