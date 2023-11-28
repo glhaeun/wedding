@@ -1,5 +1,16 @@
 <?php
-    include 'mail.php';
+    if (isset($_GET['view']) && !empty($_GET['view'])) {
+        $userEmail = $_GET['view'];
+    
+        $check_database = $connect->prepare("SELECT * FROM message_rsvp WHERE email = ?");
+        $check_database->execute([$userEmail]);
+    
+        $data = array();
+        if ($check_database->rowCount() > 0) {
+            $data = $check_database->fetch(PDO::FETCH_ASSOC);
+        }
+    }
+    
 ?>
 
 <style>
@@ -30,13 +41,10 @@
 
                         <!--Grid row-->
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="md-form mb-0 form-group">
                                     <label for="name" class="">Guest name</label>
-                                    <input type="text" id="name" required name="name" class="form-control">
-                                    <div class="invalid-feedback">
-                                        Please enter guest name
-                                    </div>
+                                    <input type="text" id="name"  name="name" class="form-control" disabled value="<?php echo isset($data['name']) ? $data['name'] : ''; ?>">
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -53,34 +61,14 @@
 
                                 <div class="md-form form-group">
                                     <label for="message">Message 1</label>
-                                    <textarea type="text" required id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                    <div class="invalid-feedback">
-                                        Please enter invitation message
-                                    </div>
-                                </div>
-
-                                <div class="md-form form-group">
-                                    <label for="message">Message 2</label>
-                                    <textarea type="text" required id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                    <div class="invalid-feedback">
-                                        Please enter invitation message
-                                    </div>
-                                </div>
-
-                                <div class="md-form form-group">
-                                    <label for="message">Message 3</label>
-                                    <textarea type="text" required id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                    <div class="invalid-feedback">
-                                        Please enter invitation message
-                                    </div>
+                                    <textarea type="text" disabled  id="message" name="message" rows="2" class="form-control md-textarea"><?php echo isset($data['message']) ? $data['message'] : 
+                                    'No message has been made by user yet'; ?>
+                                    </textarea>
+                                    
                                 </div>
 
                             </div>
-                        </div>
-                        <!--Grid row-->
-                        <div class="text-center text-md-left">
-                        <input class="btn btn-primary yellow black" type="submit" value="Submit" name="send">
-                        </div>
+                        </div>                        
 
                     </form>
 

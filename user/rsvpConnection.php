@@ -16,9 +16,11 @@ if ($action === 'insert') {
         if ($connect->query($query) === TRUE) {
             echo "Data updated successfully";
         }
+    } else {
+        $email = 'anonymous';
     }
 
-    $sql = "INSERT INTO message_rsvp (name, status, message) VALUES ('$nama', '$kehadiran', '$pesan')";
+    $sql = "INSERT INTO message_rsvp (name, status, message, email) VALUES ('$nama', '$kehadiran', '$pesan', '$email')";
     if ($connect->query($sql) === TRUE) {
         echo "Data inserted successfully";
     }

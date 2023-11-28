@@ -4,8 +4,24 @@
                 $image = $_POST["image"];
                 $cardImage = $_POST["cardImage"];
 
-                echo $name.$image;
-                $sql = "INSERT INTO prize (name, image, cardImage) VALUES ('$name', '$image', '$cardImage')";
+                if($editMode) {
+                    $query = "UPDATE prize SET name = ?, image = ?, cardImage = ? WHERE id = ?";
+                    $update = $connect->prepare($query);
+                    $update->execute([$name, $image, $cardImage, $editId]);
+                    ?>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+                    <script>
+                        Swal.fire({
+                            icon:'success',
+                            title:'Data has been updated successfully!',
+                        }).then(function(){
+                            window.location = `prize.php?edit=<?=$editId?>`;
+                        });
+                    </script>
+                    <?php
+                            
+                } else {
+                    $sql = "INSERT INTO prize (name, image, cardImage) VALUES ('$name', '$image', '$cardImage')";
                 $insert = $connect->prepare($sql);
                 $insert ->execute();
 
@@ -38,6 +54,18 @@
                     $updateSql = "UPDATE user SET kode_$lastPrizeID = '$randomNumber' WHERE id = '$userID'";
                     $connect->query($updateSql);
                 }
+                }
+                ?>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+                    <script>
+                        Swal.fire({
+                            icon:'success',
+                            title:'Data has been inserted successfully!',
+                        }).then(function(){
+                            window.location = "prizeTable.php";
+                        });
+                    </script>
+                    <?php
             
             }
     ?>

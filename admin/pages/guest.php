@@ -123,7 +123,7 @@
                             }
 
                             ?>
-                            <td><a href="guestMessage.php?view=<?=$fetch_user['id']?>"><i class="fa-solid fa-message" style="color: #fad983;"></i></a>
+                            <td><a href="guestMessage.php?view=<?=$fetch_user['email']?>"><i class="fa-solid fa-message" style="color: #fad983;"></i></a>
                             <a href="guest.php?delete=<?=$fetch_user['id']?>"><i class="fas fa-trash" style="color: #fad983;"></i></a></td>      
                     <?php
                         $index++;
