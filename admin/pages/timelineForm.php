@@ -35,7 +35,12 @@
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                            <?php
+                            if ($editMode) {
+                                echo "<input type='hidden' name='timeline_id' value='$editId'>";
+                            }
 
+                            ?>
                             <div class="data-timeline" id="additionalTimelines">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
@@ -61,18 +66,24 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="timeline_image1" class="d-block">Image 1</label>
-                                    <img id="timelineImage1Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
-                                    <input  name="timeline_image1"  type="file" id="timeline_image1" onchange="previewImage(event, 'timelineImage1Preview')">
+                                     <?php if(isset($data['imageA']) && $data['imageA'] != "") { ?>                           
+                                    <img id="timelineImage1Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $data['imageA'] ?>">
+                                    <?php } ?>
+                                    <input  name="timeline_image1"  type="file" id="timeline_image1" onchange="previewImage(event, 'timelineImage1Preview')">  
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="timeline_image2" class="d-block">Image 2</label>
-                                    <img id="timelineImage2Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
-                                    <input  name="timeline_image2"  type="file" id="timeline_image2" onchange="previewImage(event, 'timelineImage2Preview')">
+                                    <?php if(isset($data['imageB']) && $data['imageB'] != "") { ?>                            
+                                    <img id="timelineImage2Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $data['imageB'] ?>">
+                                    <?php } ?>
+                                    <input  name="timeline_image2"  type="file" id="timeline_image2" onchange="previewImage(event, 'timelineImage2Preview')">  
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="timeline_image3" class="d-block">Image 3</label>
-                                    <img id="timelineImage3Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
-                                    <input  name="timeline_image3"  type="file" id="timeline_image3" onchange="previewImage(event, 'timelineImage3Preview')">
+                                    <?php if(isset($data['imageC']) && $data['imageC'] != "") { ?>                                      
+                                    <img id="timelineImage3Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $data['imageC'] ?>">
+                                    <?php } ?>
+                                    <input  name="timeline_image3"  type="file" id="timeline_image3" onchange="previewImage(event, 'timelineImage3Preview')">  
                                 </div>
                             </div>
                             </div>
@@ -83,7 +94,7 @@
                     </div>
 
     </div>
-
+    <script src="../component/js/updateImage.js"></script>
     <script>
     (function() {
         'use strict';
@@ -110,7 +121,6 @@
         }
     })();
 </script>
-<script src="../component/js/updateImage.js"></script>
 
 
 
