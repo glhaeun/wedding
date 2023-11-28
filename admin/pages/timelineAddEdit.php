@@ -19,7 +19,7 @@
         }
 
         if ($editMode)  {
-            $query = "UPDATE timeline SET title = ?, year = ?, content = ? WHERE id = ?";
+            $query = "UPDATE timeline SET title = ?, year = ?, content = ?, imageA =?, imageB = ?, imageC =? WHERE id = ?";
             $update = $connect->prepare($query);
             $update->execute([$title, $year, $content, $editId]);
                
