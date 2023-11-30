@@ -1,10 +1,37 @@
 <?php 
+            include('../component/imageLib.php');
             if (isset($_POST['prize'])) {
                 $name = $_POST["name"];
-                $image = $_POST["image"];
-                $cardImage = $_POST["cardImage"];
+
+
+                if(isset($_FILES['prizeImage']) && file_exists($_FILES['prizeImage']['tmp_name'])) {
+                    $image = moveImage('../../images', $_FILES['prizeImage']);
+                } 
+                if(isset($_FILES['cardImage']) && file_exists($_FILES['cardImage']['tmp_name'])) {
+                    $cardImage = moveImage('../../images', $_FILES['cardImage']);
+                }
+
 
                 if($editMode) {
+                    $check_database = $connect->prepare("SELECT * FROM prize WHERE id=?");
+                    $check_database -> execute([$_POST['edit_id']]);
+                
+                    $data = array();
+                    if ($check_database->rowCount() > 0) {
+                        $data = $check_database->fetch(PDO::FETCH_ASSOC);
+                    } 
+
+                    if (empty($image)) {
+                        $image = $data['image'];
+                    } else {
+                        deleteImage('../../images', $data['image']);
+                    }
+                    if (empty($cardImage)) {
+                        $cardImage = $data['cardImage'];
+                    } else {
+                        deleteImage('../../images', $data['cardImage']);
+                    }
+                    
                     $query = "UPDATE prize SET name = ?, image = ?, cardImage = ? WHERE id = ?";
                     $update = $connect->prepare($query);
                     $update->execute([$name, $image, $cardImage, $editId]);
@@ -21,6 +48,13 @@
                     <?php
                             
                 } else {
+                    if (empty($image)) {
+                        $image = '';
+                    }
+                    if (empty($cardImage)) {
+                        $cardImage = '';
+                    }
+
                     $sql = "INSERT INTO prize (name, image, cardImage) VALUES ('$name', '$image', '$cardImage')";
                 $insert = $connect->prepare($sql);
                 $insert ->execute();

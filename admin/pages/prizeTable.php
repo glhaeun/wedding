@@ -91,8 +91,16 @@
                         <tr>
                             <td><?=$index?></td>
                             <td><?=$fetch_user['name']?></td>
-                            <td><?=$fetch_user['image']?></td>
-                            <td><?=$fetch_user['cardImage']?></td> 
+                            <td>
+                            <?php if($fetch_user['image'] != '') {?>
+                                <img style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $fetch_user['image'] ?>">
+                            <?php } ?>
+                            </td>
+                            <td>
+                            <?php if($fetch_user['cardImage'] != '') {?>
+                                <img style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $fetch_user['cardImage'] ?>">
+                            <?php } ?>
+                            </td> 
                             <td><a href="prize.php?edit=<?=$fetch_user['id']?>"><i class="fa-solid fa-pen-to-square" style="color: #fad983;"></i></a>
                             <a href="prizeTable.php?delete=<?=$fetch_user['id']?>"><i class="fa-solid fa-trash" style="color: #fad983;"></i></a></td>       
                     <?php
