@@ -77,14 +77,14 @@
         cursor: grabbing;
         }
         .prize-container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          overflow: hidden;
+        }
 
     .prize-image {
       margin-top: 10px;
@@ -101,10 +101,16 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    padding-top: 68%;
-    background-image: url('assets/images/darren/image-url7.jpg');
+
+    /* padding-top: 68%; */
+    /* background-image: url('assets/images/darren/image-url7.jpg'); */
   }
-  .stage-content1 {
+
+  .stage-content img {
+    width: auto;
+    height: 200px;
+  }
+  /* .stage-content1 {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -117,7 +123,7 @@
     background-position: center;
     padding-top: 68%;
     background-image: url('assets/images/darren/image-url9.jpg');
-  }
+  } */
   
   
   .curtain-container {
@@ -205,12 +211,13 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="row">
           <?php
+          if (isset($email)) {
             $select_user = $connect->prepare("SELECT * FROM user where email='$email'");
             $select_user -> execute();
 
             if($select_user->rowCount()>0){
               while ($fetch_user = $select_user ->fetch(PDO::FETCH_ASSOC)){
-              $query = "SELECT id FROM prize";
+              $query = "SELECT * FROM prize";
               $getPrize = $connect->prepare($query);
               $getPrize->execute();
               $index = 1;
@@ -273,7 +280,7 @@
                         init();
                       };
 
-                      createScratchCard<?= $index ?>("scratch-card<?= $index ?>", "assets/images/darren/image-url3.jpg");
+                      createScratchCard<?= $index ?>("scratch-card<?= $index ?>", "../images/<?= $row['cardImage'] ?>");
                     })();
                   </script>
                   <?php
@@ -283,6 +290,7 @@
               }
           }
         }
+      }
           ?>
             
 
@@ -312,40 +320,53 @@
     <div class="container">
       <div class="row">
         <!-- Prize 1 -->
-        <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1000">
+        <?php
+        $query = "SELECT * FROM prize";
+              $getPrize = $connect->prepare($query);
+              $getPrize->execute();
+              $index = 1;
+              if ($getPrize->rowCount() > 0) {
+                while ($row = $getPrize->fetch(PDO::FETCH_ASSOC)) {
+                  ?>
+                  <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1000">
+                    <div class="prize-container">
+                      <h5 class="prize-title font-arabic">Prize <?=$index?></h5>
+                      <div class="stage">
+                      <p class="prize-description font-inside"><?= $row['name'] ?></p>
+                        <div class="stage-content">
+                          <img src='../images/<?= $row['image'] ?>'>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <?php
+                $index++;
+                }
+              }
+
+        ?>
+        <!-- <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1000">
           <div class="prize-container">
             <h5 class="prize-title font-arabic">Prize 1</h5>
-            <!-- Image for Prize 1 -->
             <div class="stage">
             <p class="prize-description font-inside">Brand New Private Jet</p>
               <div class="stage-content"></div>
             </div>
-            </div>
           </div>
+        </div>
     
-        <!-- Prize 2 -->
+
         <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1100">
           <div class="prize-container">
             <h5 class="prize-title font-arabic">Prize 2</h5>
-            <!-- Image for Prize 2 -->
             <div class="stage">
             <p class="prize-description font-inside">Brand New Car</p>
               <div class="stage-content1"></div>
             </div>
             </div>
           </div>
-    
-        <!-- Prize 3 -->
-        <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1200">
-          <div class="prize-container">
-            <h5 class="prize-title font-arabic">Prize 3</h5>
-            <!-- Image for Prize 3 -->
-            <div class="stage">
-            <p class="prize-description font-inside">Brand New Motorcycle</p>
-              <div class="stage-content2"></div>
-            </div>
-            </div>
-          </div>
+     -->
+
       </div>
 
       </div>
