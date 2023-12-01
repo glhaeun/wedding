@@ -215,10 +215,11 @@
             } else {
                 const nama = namaInput.value;
                 const kehadiran = kehadiranInput.value;
+                console.log(kehadiran)
                 const pesan = pesanInput.value;
                 const newCard = document.createElement('div');
-                const statusHadir = kehadiran == '1' ? "Hadir" : "Berhalangan";
-                const iconStatus = kehadiran == '1' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
+                const statusHadir = kehadiran == 'Hadir' ? "Hadir" : "Berhalangan";
+                const iconStatus = kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
                 const datetime = new Date().toLocaleString();
 
                 newCard.className = 'mb-3 new-card';
