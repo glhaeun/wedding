@@ -1,3 +1,9 @@
+<?php
+    include './component/getGift.php';
+    include './component/getLocation.php';
+    include './component/getBrideGroom.php';
+?>
+
 <!--<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -206,6 +212,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
     <style>
         #hadiah {
         background-image: url(./assets/images/ziven/landingBackground.webp);
@@ -287,17 +296,17 @@
                 </div>
                 <div class="overflow-x-hidden font-inside" id="angpao"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                     <div class="row justify-content-center" data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
-                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
-                            <img src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png" class="img-fluid rounded" width="150" alt="bni"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening 123456789</p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n Lorem ipsum dolor</p>
-                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
+                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3 d-flex flex-column align-items-center justify-content-center" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
+                            <img src="<?=$dataGroomBank['link_image'] ?>" class="img-fluid rounded" width="150" alt="<?=$dataGroomBank['bank_name'] ?>"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
+                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening <?=$groom['rekening']?></p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n <?=$groom['name']?></p>
+                            <button onclick="salinData(this)" class="btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$groomRek?>" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
                         </div>
-                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/2560px-BANK_BRI_logo.svg.png" class="img-fluid rounded" width="150" alt="bri"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening 123456789</p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n Lorem ipsum dolor</p>
-                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="123456789"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
+                        <div class="col-12 card-body border rounded-4 shadow p-3 m-3 d-flex flex-column align-items-center justify-content-center" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
+                            <img src="<?=$dataBrideBank['link_image'] ?>" class="img-fluid rounded" width="150" alt="<?=$dataBrideBank['bank_name'] ?>"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
+                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening <?=$bride['rekening']?></p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n <?=$bride['name']?></p>
+                            <button onclick="salinData(this)" class="btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$brideRek?>" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
                         </div>
                     </div>
                 </div>
@@ -316,9 +325,10 @@
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="https://cdn.pixabay.com/photo/2016/01/10/22/23/location-1132647_640.png" alt="alamat" class="img-fluid rounded" width="50"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">
                             <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Alamat Rumah</p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> Jalan Padang Bulan No 101, Medan</p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> No Telp: 08123456789</p>
-                            <button class="btn btn-light btn-sm rounded-3 font-arabic" data-rek="Jalan Padang Bulan No 101, 08123456789"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin Alamat</button>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> <?=$data['couple_address'] ?></p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> Groom's Telp No: <?=$groom['number']?></p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> Bride's Telp No: <?=$bride['number']?></p>
+                            <button onclick="salinData(this)" class="btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$data['couple_address'] ?> Groom's Telp No: <?=$groom['number']?> Bride's Telp No: <?=$bride['number']?>"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin Alamat & Nomor</button>
                         </div>
                     </div>
                 </div>
@@ -329,6 +339,32 @@
 </body>
 
 <script>
+    function salinData(element) {
+        var valueToCopy = element.getAttribute("data-salin");
+
+        // Create a temporary input element to copy the text to clipboard
+        var tempInput = document.createElement("input");
+        tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+        tempInput.value = valueToCopy;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+
+        const toastNode = document.createElement("div");
+        toastNode.innerHTML = "<i class='fas fa-exclamation-triangle'></i> ";
+        Toastify({
+            text: "Successfully Copied!",
+            duration: 3000,
+            newWindow: true,
+            gravity: "bottom",
+            position: 'right',
+            backgroundColor: "rgba(255, 2, 2, 0.54)",
+            stopOnFocus: true,
+            onClick: function () { }
+            }).showToast();
+    }
+
     var buttons = document.querySelectorAll("button[data-toggle]");
 
     buttons.forEach(function (button) {
