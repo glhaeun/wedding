@@ -10,23 +10,23 @@
                 moveImageWithName('../../images', $_FILES['groom_image'], 'groom.png');
             }
             if($check_database_bride->rowCount() > 0 ) {
-                $query = "UPDATE bride SET bride =?, mom =?, dad=?, bank=?, rekening=?, image=?";
+                $query = "UPDATE bride SET bride =?, number=?, mom =?, dad=?, bank=?, rekening=?, image=?";
                 $update = $connect -> prepare($query);
-                $update -> execute ([$_POST['bride'], $_POST['bride_mom'], $_POST['bride_dad'], $_POST['bride_bank'], $_POST['bride_rek'], "bride.png"]);
+                $update -> execute ([$_POST['bride'],$_POST['brideNo'],  $_POST['bride_mom'], $_POST['bride_dad'], $_POST['bride_bank'], $_POST['bride_rek'], "bride.png"]);
             } else {
-                $query = "INSERT INTO bride (`bride`, `mom`, `dad`, `bank`, `rekening`, `image`) VALUES (?,?,?,?,?,?)";
+                $query = "INSERT INTO bride (`bride`,`number`, `mom`, `dad`, `bank`, `rekening`, `image`) VALUES (?,?,?,?,?,?,?)";
                 $insert = $connect->prepare($query);
-                $insert -> execute ([$_POST['bride'], $_POST['bride_mom'], $_POST['bride_dad'], $_POST['bride_bank'], $_POST['bride_rek'], "bride.png"]);
+                $insert -> execute ([$_POST['bride'], $_POST['brideNo'], $_POST['bride_mom'], $_POST['bride_dad'], $_POST['bride_bank'], $_POST['bride_rek'], "bride.png"]);
             }
 
             if($check_database_groom->rowCount() > 0 ) {
-                $query = "UPDATE groom SET groom =?, mom =?, dad=?, bank=?, rekening=?, image=?";
+                $query = "UPDATE groom SET groom =?, number=?, mom =?, dad=?, bank=?, rekening=?, image=?";
                 $update = $connect -> prepare($query);
-                $update -> execute ([$_POST['groom'], $_POST['groom_mom'], $_POST['groom_dad'], $_POST['groom_bank'], $_POST['groom_rek'], "groom.png"]);
+                $update -> execute ([$_POST['groom'],$_POST['groomNo'],  $_POST['groom_mom'], $_POST['groom_dad'], $_POST['groom_bank'], $_POST['groom_rek'], "groom.png"]);
             } else {
-                $query = "INSERT INTO groom (`groom`, `mom`, `dad`, `bank`, `rekening`, `image`) VALUES (?,?,?,?,?,?)";
+                $query = "INSERT INTO groom (`groom`, `number`, `mom`, `dad`, `bank`, `rekening`, `image`) VALUES (?,?,?,?,?,?,?)";
                 $insert = $connect->prepare($query);
-                $insert -> execute ([$_POST['groom'], $_POST['groom_mom'], $_POST['groom_dad'], $_POST['groom_bank'], $_POST['groom_rek'], "groom.png"]);
+                $insert -> execute ([$_POST['groom'],$_POST['groomNo'], $_POST['groom_mom'], $_POST['groom_dad'], $_POST['groom_bank'], $_POST['groom_rek'], "groom.png"]);
             }
 
             ?>

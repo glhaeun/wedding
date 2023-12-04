@@ -24,7 +24,7 @@ if ($action === 'insert') {
     if ($connect->query($sql) === TRUE) {
         echo "Data inserted successfully";
     }
-} 
+}
 
 // Select Data
 if ($action === 'select') {
@@ -38,5 +38,19 @@ if ($action === 'select') {
     $data = $result->fetchAll(PDO::FETCH_ASSOC);
 
     echo json_encode($data);
-} 
+}
+
+// Update Data
+if ($action === 'update') {
+    $id = $_POST['messageId']; 
+    $editedMessage = $_POST['updatedMessage']; 
+
+    $updateQuery = "UPDATE message_rsvp SET message='$editedMessage' WHERE id=$id";
+    if ($connect->query($updateQuery) === TRUE) {
+        echo "Data updated successfully";
+    } else {
+        echo "Error updating data: " . $connect->errorInfo()[2];
+    }
+}
+
 ?>

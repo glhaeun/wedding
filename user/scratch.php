@@ -79,6 +79,7 @@
         .prize-container {
           position: relative;
           display: flex;
+          margin-bottom: 32px;
           flex-direction: column;
           align-items: center;
           justify-content: center;
@@ -196,6 +197,10 @@
     transform: translateX(calc(100%));
   }
 
+  .test {
+    justify-content: space-around;
+  }
+
 
     </style>
 </head>
@@ -208,8 +213,8 @@
     <p class="text-center font-inside" data-aos="fade-down-left" data-aos-duration="2000">
     Gunakan kursor pada perangkat komputer atau gesek layar dengan jari pada perangkat seluler untuk mengungkap area yang ditentukan pada kartu. Perhatikan dan simpan huruf atau angka yang terungkap setelah penggosokan.
     </p>
-    <div class="container d-flex justify-content-center align-items-center">
-        <div class="row">
+    <div class="container">
+        <div class="row test">
           <?php
           if (isset($email)) {
             $select_user = $connect->prepare("SELECT * FROM user where email='$email'");
@@ -290,6 +295,78 @@
               }
           }
         }
+      } else {
+        $index = 1;
+        $query = "SELECT * FROM prize";
+              $getPrize = $connect->prepare($query);
+              $getPrize->execute();
+              $index = 1;
+              if ($getPrize->rowCount() > 0) {
+                while ($row = $getPrize->fetch(PDO::FETCH_ASSOC)) {
+                  ?>
+                  <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500">
+                      <h3 class="font-arabic text-center">Scratch Card <?=$index?></h3>
+                      <div class="scratch-container">
+                          <div class="scratch-card text-center">
+                              <div class="code"><?= isset($fetch_user['kode_'.$row['id']])? $fetch_user['kode_'.$row['id']]: 'Test Kode 1234' ?></div>
+                          </div>
+                          <canvas id="scratch-card<?=$index?>" class="w-100" height="160"></canvas>
+                      </div>
+                  </div>    
+                  <script>
+                            (function() {
+                      const currentIndex = <?= json_encode($index) ?>;
+                      const createScratchCard<?= $index ?> = (canvasId, imageUrl) => {
+                        let canvas = document.getElementById(canvasId);
+                        let context = canvas.getContext("2d");
+
+                        const init = () => {
+                          let image = new Image();
+                          image.src = imageUrl;
+
+                          image.onload = () => {
+                            context.drawImage(image, 0, 0, 300, 150);
+                          };
+                        };
+
+                        let isDragging = false;
+
+                        const scratch = (x, y) => {
+                          context.globalCompositeOperation = "destination-out";
+                          context.beginPath();
+                          context.arc(x, y, 24, 0, 2 * Math.PI);
+                          context.fill();
+                        };
+
+                        canvas.addEventListener("mousedown", (event) => {
+                          isDragging = true;
+                          scratch(event.offsetX, event.offsetY);
+                        });
+
+                        canvas.addEventListener("mousemove", (event) => {
+                          if (isDragging) {
+                            scratch(event.offsetX, event.offsetY);
+                          }
+                        });
+
+                        canvas.addEventListener("mouseup", () => {
+                          isDragging = false;
+                        });
+
+                        canvas.addEventListener("mouseleave", () => {
+                          isDragging = false;
+                        });
+
+                        init();
+                      };
+
+                      createScratchCard<?= $index ?>("scratch-card<?= $index ?>", "../images/<?=$row['cardImage'] ?>");
+                    })();
+                  </script>         
+        <?php
+          $index++;
+                }
+                }
       }
           ?>
             
@@ -318,7 +395,7 @@
 
     
     <div class="container">
-      <div class="row">
+      <div class="row test">
         <!-- Prize 1 -->
         <?php
         $query = "SELECT * FROM prize";

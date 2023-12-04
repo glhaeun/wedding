@@ -87,12 +87,19 @@
             animation: cardAddedAnimation 0.5s ease-in;
         }
 
+        .borderless {
+            border: none;
+            outline: none;
+            box-shadow: none; 
+            background:none;
+        }
+
+
     </style>
 </head>
 <body>
     <div class="main-container-rsvp">
         <img src="assets/images/ziven/leave-1.png" data-aos="fade-right" class="leave-1-png-rsvp" alt="">
-        <!-- <img src="assets/images/ziven/flower.png" data-aos="fade-left" class="flower-png-rsvp" alt=""> -->
         <section id="rsvp" class="m-5">
             <div class="container-rsvp" data-aos="fade-up">
                 <div class="card-body border rounded-4 shadow p-3">
@@ -186,10 +193,17 @@
                                 </div>
                             </div>
                             <hr class="text-dark my-1">
-                            <p class="text-dark mt-0 mb-1 mx-0 p-0" style="white-space: pre-line">${item.message}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <input type="text" value="${item.message}" class="borderless"/>
+                                <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn">
+                                    Edit
+                                    <i class="fas fa-edit ms-1"></i>
+                                </button>
+                            </div>
                         </div>`;
-
                     daftarUcapan.appendChild(newCard);
+                    const editBtn = newCard.querySelector('.edit-btn');
+                    editBtn.addEventListener('click', createEditHandler(item));
                 });
                 displaySubmissions();
             })
@@ -215,10 +229,11 @@
             } else {
                 const nama = namaInput.value;
                 const kehadiran = kehadiranInput.value;
+                console.log(kehadiran)
                 const pesan = pesanInput.value;
                 const newCard = document.createElement('div');
-                const statusHadir = kehadiran == '1' ? "Hadir" : "Berhalangan";
-                const iconStatus = kehadiran == '1' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
+                const statusHadir = kehadiran == 'Hadir' ? "Hadir" : "Berhalangan";
+                const iconStatus = kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
                 const datetime = new Date().toLocaleString();
 
                 newCard.className = 'mb-3 new-card';
@@ -237,13 +252,19 @@
                             </div>
                         </div>
                         <hr class="text-dark my-1">
-                        <p class="text-dark mt-0 mb-1 mx-0 p-0" style="white-space: pre-line">${pesan}</p>
+                        <input type="text" value="${pesan}"class="borderless"/>
+                        <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn">
+                            Edit
+                            <i class="fas fa-edit ms-1"></i>
+                        </button>
                     </div>`;
+
                 daftarUcapan.appendChild(newCard);
                 namaInput.value = '';
                 kehadiranInput.value = '0';
                 pesanInput.value = '';
                 displaySubmissions();
+                form.submit();
 
                 Toastify({
                     text: "😍 Terima Kasih atas respond yang diberikan !",
@@ -337,6 +358,42 @@
                 }
             }
         }
+
+        function createEditHandler(item) {
+            return function (event) {
+                const editBtn = event.target;
+                const card = editBtn.closest('.new-card');
+                const updatedMessage = card.querySelector('input').value;
+
+                if (updatedMessage.trim() !== '') {
+                    const messageId = item.id;
+                    fetch('rsvpConnection.php?action=update', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            'messageId': messageId,
+                            'updatedMessage': updatedMessage,
+                        }),
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        Toastify({
+                            text: "✅Pesan Telah Diubah!",
+                            duration: 3000,
+                            newWindow: true,
+                            gravity: "bottom",
+                            position: 'right',
+                            backgroundColor: "green",
+                            stopOnFocus: true,
+                            onClick: function () { }
+                        }).showToast();  
+                    });
+                }
+            };
+        }
+
     });
 </script>
 </html>

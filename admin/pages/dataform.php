@@ -50,7 +50,14 @@
                                     <input  name="groom" type="text" class="form-control" id="groom" value="<?php echo isset($groom_data['groom']) ? $groom_data['groom'] : ''; ?>" required <?php echo $readonly; ?>>
                                     <div class="invalid-feedback">
                                         Please enter groom name
+                                    </div>
                                 </div>
+                                <div class="form-group col-md-6">
+                                    <label for="groomNo">Phone number</label>
+                                    <input  name="groomNo" type="text" class="form-control" id="groomNo" value="<?php echo isset($groom_data['number']) ? $groom_data['number'] : ''; ?>" required <?php echo $readonly; ?>>
+                                    <div class="invalid-feedback">
+                                        Please enter groom number
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -119,10 +126,17 @@
                                 <div class="form-group col-md-6">
                                     <label for="bride">Bride name</label>
                                     <input <?php echo $readonly; ?> name="bride" type="text" class="form-control" id="bride" value="<?php echo isset($bride_data['bride']) ? $bride_data['bride'] : ''; ?>" required>
-                                </div>
-                                <div class="invalid-feedback">
+                                    <div class="invalid-feedback">
                                         Please enter bride name
                                     </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="brideNo">Phone number</label>
+                                    <input  name="brideNo" type="text" class="form-control" id="brideNo" value="<?php echo isset($bride_data['number']) ? $bride_data['number'] : ''; ?>" required <?php echo $readonly; ?>>
+                                    <div class="invalid-feedback">
+                                        Please enter bride number
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
