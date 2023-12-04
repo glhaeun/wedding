@@ -79,6 +79,7 @@
         .prize-container {
           position: relative;
           display: flex;
+          margin-bottom: 32px;
           flex-direction: column;
           align-items: center;
           justify-content: center;
@@ -196,6 +197,10 @@
     transform: translateX(calc(100%));
   }
 
+  .test {
+    justify-content: space-around;
+  }
+
 
     </style>
 </head>
@@ -208,8 +213,8 @@
     <p class="text-center font-inside" data-aos="fade-down-left" data-aos-duration="2000">
     Gunakan kursor pada perangkat komputer atau gesek layar dengan jari pada perangkat seluler untuk mengungkap area yang ditentukan pada kartu. Perhatikan dan simpan huruf atau angka yang terungkap setelah penggosokan.
     </p>
-    <div class="container d-flex justify-content-center align-items-center">
-        <div class="row">
+    <div class="container">
+        <div class="row test">
           <?php
           if (isset($email)) {
             $select_user = $connect->prepare("SELECT * FROM user where email='$email'");
@@ -390,7 +395,7 @@
 
     
     <div class="container">
-      <div class="row">
+      <div class="row test">
         <!-- Prize 1 -->
         <?php
         $query = "SELECT * FROM prize";
