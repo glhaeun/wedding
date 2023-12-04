@@ -7,6 +7,7 @@
     if ($action === 'insert') {
         $nama = $_POST['nama'];
         $kehadiran = $_POST['kehadiran'];
+        $kehadiran = 1 ? "Hadir" : "Berhalangan";
         $pesan = $_POST['pesan'];
 
         if ($_SESSION['userEmail']) {
@@ -44,6 +45,7 @@
         $id = $_POST['messageId']; 
         $editedName = $_POST['updatedName']; 
         $editedStatus = $_POST['updatedStatus'];
+        $editedStatus = 1 ? "Hadir" : "Berhalangan";
         $editedMessage = $_POST['updatedMessage']; 
         $updateQuery = "UPDATE message_rsvp SET name='$editedName', status='$editedStatus', message='$editedMessage' WHERE id=$id";
         
