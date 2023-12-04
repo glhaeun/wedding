@@ -36,20 +36,22 @@
         }
 
         $data = $result->fetchAll(PDO::FETCH_ASSOC);
-
         echo json_encode($data);
     }
 
     // Update Data
     if ($action === 'update') {
         $id = $_POST['messageId']; 
+        $editedName = $_POST['updatedName']; 
+        $editedStatus = $_POST['updatedStatus'];
         $editedMessage = $_POST['updatedMessage']; 
-
-        $updateQuery = "UPDATE message_rsvp SET message='$editedMessage' WHERE id=$id";
+        $updateQuery = "UPDATE message_rsvp SET name='$editedName', status='$editedStatus', message='$editedMessage' WHERE id=$id";
+        
         if ($connect->query($updateQuery) === TRUE) {
             echo "Data updated successfully";
         } else {
             echo "Error updating data: " . $connect->errorInfo()[2];
         }
     }
+    
 ?>
