@@ -74,5 +74,13 @@
     </a>
 </li>
 
+<li class="nav-item">
+    <a class="nav-link collapsed" href="wishlistTable.php" data-toggle="collapse" data-target="#collapseUtilities"
+        aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-box" style="color: #000000;"></i>
+        <span>Data Wishlist</span>
+    </a>
+</li>
+
 
 </ul>
