@@ -58,7 +58,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Wishlist</h1>
-                        <button id="btnLoadWishList" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-plus"></i> Tambah Wishlist</button>
+                        <a href="wishlist.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-plus"></i> Tambah Wishlist</a>
                     </div>
 
                     <div id="wishlistFormContainer"></div>
@@ -74,7 +74,6 @@
                                             <th>No.</th>
                                             <th>Item</th>
                                             <th>Detail</th>
-                                            <th>Qty</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -93,8 +92,7 @@
                             <td><?=$index?></td>
                             <td><?=$fetch_wishlist['item']?></td>
                             <td><?=$fetch_wishlist['detail']?></td>
-                            <td><?=$fetch_wishlist['quantity']?></td> 
-                            <td><a href="timeline.php?edit=<?=$fetch_wishlist['id']?>"><i class="fa-solid fa-pen-to-square" style="color: #fad983;"></i></a>
+                            <td><a href="wishlist.php?edit=<?=$fetch_wishlist['id']?>"><i class="fa-solid fa-pen-to-square" style="color: #fad983;"></i></a>
                             <a href="wishlistTable.php?delete=<?=$fetch_wishlist['id']?>"><i class="fa-solid fa-trash" style="color: #fad983;"></i></a></td>       
                     <?php
                         $index++;

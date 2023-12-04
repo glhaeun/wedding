@@ -51,12 +51,6 @@ if (isset($_POST['send'])) {
             $result = $mail->Send();
     
             if ($result) {
-                // function generateCode() {
-                //     return mt_rand(100000000, 999999999);
-                // }
-                // $kode1 = generateCode();
-                // $kode2 = generateCode();
-                // $kode3 = generateCode();
                 $query = "INSERT INTO user (name, email, attend) VALUES ( ?, ?, ?)";
                 $insert_user = $connect -> prepare($query);
                 $insert_user -> execute ([$name, $email, 'Unknown']);

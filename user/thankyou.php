@@ -1,3 +1,7 @@
+<?php
+    include './component/getLocation.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,16 +68,15 @@
             <div class="container" >
                 <div class="text-center">
 
-                    <p style="font-size: 0.9rem;" class="pt-4 pb-1 px-2  "  data-aos="fade-out" data-aos-duration="2000" >
-                        Your blessing and coming to our wedding are enough for us.
-                        To all beloved invited guests, are expected to obey health protocol.
+                    <p style="font-size: 0.9rem;" class="pt-4 pb-1 px-2 " ata-aos-delay="1000" data-aos="fade-out" data-aos-duration="2000" >
+                        <?=$data['thankyou']?>
                     </p>
 
                     <img src="https://cdn.pixabay.com/photo/2018/02/19/20/16/divider-3166117_640.png" alt="tes"
                         class="my-image"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">
                     <div>
                         <h1 class="font-esthetic yellow mt-4" data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-    >Thank You</h1>
+                            >Thank You</h1>
                         <hr class="mt-3 mb-3">
                     </div>
 

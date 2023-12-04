@@ -16,6 +16,7 @@
 
     $readonly = $editMode ? '' : 'readonly';
     
+    
     include 'wishlistAddEdit.php';
 
 ?>
@@ -61,7 +62,7 @@
                                 </div>
                             </div>
                         </div>
-                            <input type="submit" class="btn btn-primary yellow black mt-5" style="border:none" value="<?php echo !$editMode ? 'Save' : 'Edit'; ?>" name="wishlist">
+                            <input type="submit" class="btn btn-primary yellow black mt-5" style="border:none" value="<?php echo !$editMode ? 'Add' : 'Edit'; ?>" name="wishlist" id="wishlist">
 
                             </form>
                         </div>

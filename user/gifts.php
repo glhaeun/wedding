@@ -211,6 +211,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
@@ -279,15 +280,15 @@
         <div class="container">
             <div class="text-center mt-5 mb-5">
                 <h1 class="font-esthetic mt-0 mb-3 csstitle" style="font-size: 3rem;"data-aos="fade-out" data-aos-duration="2000">Hadiah</h1>
-                <img src="https://cdn.pixabay.com/photo/2022/10/27/22/50/divider-7551966_640.png" alt="tes" class="my-image"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                <p class="mb-1 font-inside" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
+                <img src="https://cdn.pixabay.com/photo/2022/10/27/22/50/divider-7551966_640.png" alt="tes" class="my-image"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">
+                <p class="mb-1 font-inside" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">
                     Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami,
                     dapat melalui :
                 </p>
 
-                <div class="button-container"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">
-                    <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">Send Angpao</button>
-                    <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">Send Gift</button>
+                <div class="button-container"data-aos="fade-in"  data-aos-duration="2000" data-aos-delay="500">
+                    <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">Send Angpao</button>
+                    <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">Send Gift</button>
                 </div>
 
                 <div class="image-container">
@@ -299,13 +300,13 @@
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3 d-flex flex-column align-items-center justify-content-center" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="<?=$dataGroomBank['link_image'] ?>" class="img-fluid rounded" width="150" alt="<?=$dataGroomBank['bank_name'] ?>"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                             <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening <?=$groom['rekening']?></p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n <?=$groom['name']?></p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n <?=$groom['groom']?></p>
                             <button onclick="salinData(this)" class="btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$groomRek?>" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
                         </div>
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3 d-flex flex-column align-items-center justify-content-center" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="<?=$dataBrideBank['link_image'] ?>" class="img-fluid rounded" width="150" alt="<?=$dataBrideBank['bank_name'] ?>"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                             <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening <?=$bride['rekening']?></p>
-                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n <?=$bride['name']?></p>
+                            <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n <?=$bride['bride']?></p>
                             <button onclick="salinData(this)" class="btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$brideRek?>" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
                         </div>
                     </div>
@@ -316,10 +317,20 @@
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJjAh42YvBECBVsT_HRjTsRWwuxdZlLG7bug&usqp=CAU" alt="Hadiah" class="img-fluid rounded" width="150"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                             <ol>
-                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Hair Dryer</li>
-                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Microwave</li>
-                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Air Purifier</li>
-                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Vacuum Cleaner</li>
+                            <?php
+                                $database = $connect->prepare("SELECT * FROM wishlist");
+                                $database -> execute();
+                                $index =1;
+                                if ($database->rowCount() > 0) {
+                                    while ($wishlist = $database->fetch(PDO::FETCH_ASSOC)) {
+                                        ?>
+                                    <li class="card-text mt-3 mb-0" style="font-size: 0.9rem;" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">
+                                        <a style="cursor: default;" title="<?=$wishlist['detail']?>" data-bs-toggle="tooltip"><?=$wishlist['item']?></a>
+                                    </li>
+                                        <?php
+                                    }
+                                } 
+                                ?>
                             </ol>
                         </div>
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
@@ -337,7 +348,6 @@
     </section>
 
 </body>
-
 <script>
     function salinData(element) {
         var valueToCopy = element.getAttribute("data-salin");
@@ -395,5 +405,11 @@
     AOS.init();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+    const tooltips =document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipContent = [...tooltips].map(tooltipEl => 
+    new bootstrap.tooltip(tooltipEl));
+</script>
 
 </html>
