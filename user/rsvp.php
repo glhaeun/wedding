@@ -164,6 +164,7 @@
 <script>
     AOS.init();
     document.addEventListener('DOMContentLoaded', function () {
+        let currentItem;
         const form = document.getElementById('rsvp-form');
         const namaInput = document.getElementById('form-nama');
         const kehadiranInput = document.getElementById('form-kehadiran');
@@ -200,6 +201,7 @@
                                     <i class="fas fa-edit ms-1"></i>
                                 </button>
                             </div>
+                            <input type="hidden" value="${item.id}">
                         </div>`;
                     daftarUcapan.appendChild(newCard);
                     const editBtn = newCard.querySelector('.edit-btn');
@@ -210,6 +212,14 @@
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
+
+        function populateFormForEdit(item) {
+            namaInput.value = item.name;
+            kehadiranInput.value = item.status;
+            pesanInput.value = item.message;
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById('form-id').value = item.id;
+        }
 
         form.addEventListener('submit', function (event) {
             event.preventDefault(); 
@@ -229,13 +239,12 @@
             } else {
                 const nama = namaInput.value;
                 const kehadiran = kehadiranInput.value;
-                console.log(kehadiran)
                 const pesan = pesanInput.value;
                 const newCard = document.createElement('div');
                 const statusHadir = kehadiran == 'Hadir' ? "Hadir" : "Berhalangan";
                 const iconStatus = kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
                 const datetime = new Date().toLocaleString();
-
+    
                 newCard.className = 'mb-3 new-card';
                 newCard.innerHTML = `
                     <div class="card-body bg-light shadow p-3 m-0 rounded-4">
@@ -296,7 +305,6 @@
                 .catch(error => {
                     console.error('Error:', error);
                 });
-
             }
         });
 
@@ -361,36 +369,7 @@
 
         function createEditHandler(item) {
             return function (event) {
-                const editBtn = event.target;
-                const card = editBtn.closest('.new-card');
-                const updatedMessage = card.querySelector('input').value;
-
-                if (updatedMessage.trim() !== '') {
-                    const messageId = item.id;
-                    fetch('rsvpConnection.php?action=update', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                        },
-                        body: new URLSearchParams({
-                            'messageId': messageId,
-                            'updatedMessage': updatedMessage,
-                        }),
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        Toastify({
-                            text: "✅Pesan Telah Diubah!",
-                            duration: 3000,
-                            newWindow: true,
-                            gravity: "bottom",
-                            position: 'right',
-                            backgroundColor: "green",
-                            stopOnFocus: true,
-                            onClick: function () { }
-                        }).showToast();  
-                    });
-                }
+                populateFormForEdit(item);
             };
         }
 
