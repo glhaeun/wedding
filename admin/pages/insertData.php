@@ -41,13 +41,15 @@
             </script>
             <?php
         } else if (isset($_POST['jadwal'])) {
-            if(isset($_FILES['bride_groom_image'])) {
+            if(isset($_FILES['bride_groom_image'])  && file_exists($_FILES['bride_groom_image']['tmp_name'])) {
                 replaceImage('../../images', $_FILES['bride_groom_image'], 'bridegroom.png');
             }
+           
             if ($check_database -> rowCount()>0) {
-                $query = "UPDATE general SET image=?, date =?, location=?, holymatrimony_address =?, holymatrimony_date=?, holymatrimony_map=?, reception_address =?, reception_date=?, reception_map=?, thankyou=?, couple_address=?";
+                
+                $query = "UPDATE general SET date =?, location=?, holymatrimony_address =?, holymatrimony_date=?, holymatrimony_map=?, reception_address =?, reception_date=?, reception_map=?, thankyou=?, couple_address=?";
                 $update = $connect -> prepare($query);
-                $update -> execute (["bridegroom.png",$_POST['inv_date'], $_POST['inv_location'], $_POST['holymatrimony_address'], $_POST['holymatrimony_date'], $_POST['holymatrimony_map'], $_POST['reception_address'], $_POST['reception_date'], $_POST['reception_map'], $_POST['ty'],  $_POST['couple_address']]);
+                $update -> execute ([$_POST['inv_date'], $_POST['inv_location'], $_POST['holymatrimony_address'], $_POST['holymatrimony_date'], $_POST['holymatrimony_map'], $_POST['reception_address'], $_POST['reception_date'], $_POST['reception_map'], $_POST['ty'],  $_POST['couple_address']]);
             } else {
                 $query = "INSERT INTO general (`image`, `date`, `location`, `holymatrimony_address`, `holymatrimony_date`, `holymatrimony_map`, `reception_address`, `reception_date`, `reception_map`, `thankyou`, `couple_address`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
                 $insert = $connect->prepare($query);
