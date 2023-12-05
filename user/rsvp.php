@@ -205,6 +205,11 @@
                                     <strong class="me-1">${kehadiran}</strong>
                                     ${kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
                                 </div>
+                                
+                                <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                    <strong class="me-1">${kehadiran}</strong>
+                                    ${kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
+                                </div>
                             </div>
                             <hr class="text-dark my-1">
                             <div class="d-flex justify-content-between align-items-center">
