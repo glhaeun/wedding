@@ -40,18 +40,46 @@
 
     // Update Data
     if ($action === 'update') {
-        echo "hai";
-        $id = $_POST['messageId']; 
+        $userEmail = $_POST['userEmail']; 
         $editedName = $_POST['updatedName']; 
         $editedStatus = $_POST['updatedStatus'];
         $editedMessage = $_POST['updatedMessage']; 
-        $updateQuery = "UPDATE message_rsvp SET name='$editedName', status='$editedStatus', message='$editedMessage' WHERE id=$id";
+        $updateQuery = "UPDATE message_rsvp SET name='$editedName', status='$editedStatus', message='$editedMessage' WHERE userEmail=$userEmail";
         
         if ($connect->query($updateQuery) === TRUE) {
             echo "Data updated successfully";
         } else {
             echo "Error updating data: " . $connect->errorInfo()[2];
         }
+    }
+
+    if($action === 'checkUser') {
+        $userEmail = $_GET['userEmail']; // Get the userEmail from the GET request
+
+        $database = $connect->prepare("SELECT * FROM message_rsvp WHERE email = '$userEmail'");
+        $database -> execute();
+
+        if ($database->rowCount() > 0) {
+            $row = $database->rowCount();
+            echo $row;
+        } else {
+            $row = 0;
+            echo $row;
+        }
+       
+    }
+
+    if($action === 'getData') {
+        $email = $_SESSION['userEmail'];
+        
+
+        $userEmail = $_GET['userEmail']; 
+        $database = $connect->prepare("SELECT * FROM message_rsvp WHERE email = '$userEmail'");
+        $database -> execute();
+
+        
+        $data = $database->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($data);
     }
     
 ?>

@@ -4,6 +4,20 @@ use PHPMailer\PHPMailer\Exception;
 
 require '../../vendor/autoload.php'; // Path to the autoload file from PHPMailer
 
+function generateUniqueCode($columnName, $email, $connect) {
+    do {
+        $randomNumber = mt_rand(100000000, 999999999);
+        
+        $checkQuery = "SELECT COUNT(*) as count FROM user WHERE $columnName = ? AND id != ?";
+        $checkStatement = $connect->prepare($checkQuery);
+        $checkStatement->execute([$randomNumber, $email]);
+        $result = $checkStatement->fetch(PDO::FETCH_ASSOC);
+        $count = $result['count'];
+    } while ($count > 0); 
+    
+    return $randomNumber;
+}
+
 if (isset($_POST['send'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -54,6 +68,31 @@ if (isset($_POST['send'])) {
                 $query = "INSERT INTO user (name, email, attend) VALUES ( ?, ?, ?)";
                 $insert_user = $connect -> prepare($query);
                 $insert_user -> execute ([$name, $email, 'Unknown']);
+                $getColumnsQuery = "SHOW COLUMNS FROM user";
+                $getColumnsStatement = $connect->prepare($getColumnsQuery);
+                $getColumnsStatement->execute();
+                $columns = $getColumnsStatement->fetchAll(PDO::FETCH_ASSOC);
+
+                // Determine the number of kode columns
+                $kodeColumns = [];
+                foreach ($columns as $column) {
+                    $columnName = $column['Field'];
+                    if (strpos($columnName, 'kode_') === 0) {
+                        $kodeColumns[] = $columnName;
+                    }
+                }
+
+                $numberOfCodesToUpdate = count($kodeColumns);
+
+                for ($i = 0; $i < $numberOfCodesToUpdate; $i++) {
+                    $uniqueCode = generateUniqueCode($kodeColumns[$i], $email, $connect); // Function to generate a unique code (e.g., a random string)
+                    // Update the user table with the generated unique code
+                    $updateQuery = "UPDATE user SET {$kodeColumns[$i]} = ? WHERE email = ?";
+                    $updateStatement = $connect->prepare($updateQuery);
+                    $updateStatement->execute([$uniqueCode, $email]);
+                }
+
+                
                 ?>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
             <script>
@@ -61,10 +100,11 @@ if (isset($_POST['send'])) {
                     icon:'success',
                     title:'Email sudah dikirim!',
                 }).then(function(){
-                    window.location = "dashboard.php";
+                    window.location = "guest.php";
                 });
             </script>
             <?php
+        
             } else {
                 echo 'Email could not be sent. Mailer Error: ' . $mail->ErrorInfo;
             }
