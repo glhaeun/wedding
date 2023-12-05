@@ -284,9 +284,9 @@
     <section id="hadiah">
         <div class="container">
             <div class="text-center mt-5 mb-5">
-                <h1 class="font-esthetic mt-0 mb-3 csstitle" style="font-size: 3rem;"data-aos="fade-out" data-aos-duration="2000">Hadiah</h1>
+                <h1 class="font-esthetic mt-0 csstitle" style="font-size: 3rem;"data-aos="fade-out" data-aos-duration="2000">Hadiah</h1>
                 <img src="https://cdn.pixabay.com/photo/2022/10/27/22/50/divider-7551966_640.png" alt="tes" class="my-image"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">
-                <p class="mb-1 font-inside" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">
+                <p class="m-3 font-inside" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">
                     Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami,
                     dapat melalui :
                 </p>
@@ -344,7 +344,7 @@
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> <?=$data['couple_address'] ?></p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> Groom's Telp No: <?=$groom['number']?></p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> Bride's Telp No: <?=$bride['number']?></p>
-                            <button onclick="salinData(this)" class="btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$data['couple_address'] ?> Groom's Telp No: <?=$groom['number']?> Bride's Telp No: <?=$bride['number']?>"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin Alamat & Nomor</button>
+                            <button onclick="salinData(this)" class="p-1 btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$data['couple_address'] ?> Groom's Telp No: <?=$groom['number']?> Bride's Telp No: <?=$bride['number']?>"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Copy</button>
                         </div>
                     </div>
                 </div>
@@ -367,14 +367,14 @@
         document.body.removeChild(tempInput);
 
         const toastNode = document.createElement("div");
-        toastNode.innerHTML = "<i class='fas fa-exclamation-triangle'></i> ";
+        toastNode.innerHTML = "<i class=' fas fa-exclamation-triangle'></i> ";
         Toastify({
             text: "Successfully Copied!",
             duration: 3000,
             newWindow: true,
             gravity: "bottom",
             position: 'right',
-            backgroundColor: "rgba(255, 2, 2, 0.54)",
+            backgroundColor: "#4CAF50",
             stopOnFocus: true,
             onClick: function () { }
             }).showToast();
