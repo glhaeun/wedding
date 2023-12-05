@@ -101,7 +101,7 @@
 <body>
     <div class="main-container-rsvp">
         <img src="assets/images/ziven/leave-1.png" data-aos="fade-right" class="leave-1-png-rsvp" alt="">
-        <section id="rsvp" class="m-5">
+        <section id="rsvp" class="mx-5 py-3">
             <div class="container-rsvp" data-aos="fade-up">
                 <div class="card-body border rounded-4 shadow p-3">
                     <form method="post" id="rsvp-form">
