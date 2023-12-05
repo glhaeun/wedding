@@ -309,6 +309,7 @@
             } else {
                 if (isUpdate) {
 
+                    
                 const updatedName = namaInput.value;
                 const updatedStatus = kehadiranInput.value;
                 const updatedMessage = pesanInput.value;
@@ -319,38 +320,35 @@
                 const datetime = new Date().toLocaleString(); 
                 cardToUpdate.innerHTML = `
                     <div class="card-body bg-light shadow p-3 m-0 rounded-4">
-                        <div class="d-flex flex-wrap align-items-center"    >
+                        <div class="d-flex flex-wrap align-items-center">
                             <div>
                                 <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
                                     <strong class="me-1">${updatedName}</strong>
                                 </p>
                                 <p class="mt-1 font-time">${datetime}</p>
                             </div>
-                    
                             <div class="d-flex justify-content-end align-items-center" style="flex:1;">
                                 <div class="text-end">
-                                    <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                    <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
                                         <strong class="me-1">${statusHadir}</strong>
-                                        ${statusHadir == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
-                                    </p>
-                                </div>
+                                        ${iconStatus}
+                                    </div>
+                                </div>    
                                 <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${userEmail}">
                                     Edit
                                     <i class="fas fa-edit ms-1"></i>
                                 </button>
                                 <button class="btn btn-danger btn-sm rounded-3 shadow m-1 delete-btn" data-email="${userEmail}">
-                                    Delete
-                                    <i class="fas fa-trash-alt ms-1"></i>
+                                        Delete
+                                        <i class="fas fa-trash-alt ms-1"></i>
                                 </button>  
                             </div> 
                         </div>
                         <hr class="text-dark my-1">
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex">
-                                <input type="text" value="${updatedMessage}" class="borderless"/>
-                            </div>
+                            <input type="text" value="${updatedMessage}" class="borderless"/>
                         </div>
-                        <input type="hidden" value="${item.email}">
+                        <input type="hidden" value="${userEmail}">
                     </div>`;
 
                     daftarUcapan.addEventListener('click', function(event) {
@@ -368,7 +366,7 @@
                         body: new URLSearchParams({
                             'userEmail': userEmail,
                             'updatedName': updatedName,
-                            'updatedStatus': updatedStatus,
+                            'updatedStatus': statusHadir,
                             'updatedMessage': updatedMessage,
                         }),
                     })
@@ -423,26 +421,35 @@
                     newCard.className = 'mb-3 new-card';
                     newCard.innerHTML = `
                         <div class="card-body bg-light shadow p-3 m-0 rounded-4">
-                            <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                <div>
-                                    <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                        <strong class="me-1">${namaInput.value}</strong>
-                                    </p>
-                                    <p class="mt-1 font-time">${datetime}</p>
-                                </div>
-                                <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                    <strong class="me-1">${statusHadir}</strong>
-                                    ${iconStatus}
-                                </div>
+                        <div class="d-flex flex-wrap align-items-center">
+                            <div>
+                                <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                    <strong class="me-1">${namaInput.value}</strong>
+                                </p>
+                                <p class="mt-1 font-time">${datetime}</p>
                             </div>
-                            <hr class="text-dark my-1">
-                            <div class="d-flex justify-content-between align-items-center">
-                            <input type="text" value="${pesan}"class="borderless"/>
-                            <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${userEmail}">
-                                Edit
-                                <i class="fas fa-edit ms-1"></i>
-                            </button>
-                            </div>
+                            <div class="d-flex justify-content-end align-items-center" style="flex:1;">
+                                <div class="text-end">
+                                    <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                        <strong class="me-1">${statusHadir}</strong>
+                                        ${iconStatus}
+                                    </div>
+                                </div>    
+                                <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${userEmail}">
+                                    Edit
+                                    <i class="fas fa-edit ms-1"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm rounded-3 shadow m-1 delete-btn" data-email="${userEmail}">
+                                        Delete
+                                        <i class="fas fa-trash-alt ms-1"></i>
+                                </button>  
+                            </div> 
+                        </div>
+                        <hr class="text-dark my-1">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="text" value="${pesan}" class="borderless"/>
+                        </div>
+                        <input type="hidden" value="${userEmail}">
                         </div>`;
 
                     daftarUcapan.appendChild(newCard);
@@ -495,6 +502,7 @@
                     .catch(error => {
                         console.error('Error:', error);
                     });
+
 
                 }
             }
