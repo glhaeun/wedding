@@ -167,8 +167,8 @@
     document.addEventListener('DOMContentLoaded', function () {
         let isUpdate = false; 
         let updatingId = null;
-        const userEmail = "haeunictsis@gmail.com";
-        const userId = "<?php echo isset($_SESSION['userId']) ? $_SESSION['userId'] : null; ?>";
+         const userEmail = "<?php echo isset( $_SESSION['userEmail'])? $_SESSION['userEmail']: null; ?>";
+        const userId = "<?php echo isset( $_SESSION['userId'])? $_SESSION['userId']: null; ?>";
         const form = document.getElementById('rsvp-form');
         const namaInput = document.getElementById('form-nama');
         const kehadiranInput = document.getElementById('form-kehadiran');
