@@ -204,6 +204,7 @@
                                         ${item.status == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
                                     </p>
                                 </div>
+                                ${item.email == userEmail ? `
                                 <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${item.email}">
                                     Edit
                                     <i class="fas fa-edit ms-1"></i>
@@ -211,7 +212,8 @@
                                 <button class="btn btn-danger btn-sm rounded-3 shadow m-1 delete-btn" data-email="${item.email}">
                                     Delete
                                     <i class="fas fa-trash-alt ms-1"></i>
-                                </button>  
+                                </button> ` : ``
+                                }
                             </div> 
                         </div>
                         <hr class="text-dark my-1">
