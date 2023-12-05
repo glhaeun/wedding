@@ -1,6 +1,3 @@
-<?php include './component/session.php' ;
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +19,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <style>
         .main-container-rsvp{
            position: relative;
@@ -162,6 +160,7 @@
         </section>
     </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <script>
     AOS.init();
     document.addEventListener('DOMContentLoaded', function () {
@@ -277,37 +276,46 @@
                         onClick: function () { }
                     }).showToast();
             } else {
-                const cardToDelete = document.querySelector(`.new-card input[value="${email}"]`).closest('.new-card');
-                cardToDelete.remove();
+                $.confirm({
+                    title: 'Confirm Deletion',
+                    content: 'Are you sure you want to delete your submission?',
+                    buttons: {
+                        confirm: function () {
 
-                fetch('rsvpConnection.php?action=delete', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    'userEmail': email,
-                }),
-            })
-                .then(response => response.text())
-                .then(data => {
-                    console.log(data);
-                    const cardToDelete = document.querySelector(`.new-card input[value="${email}"]`).closest('.new-card');
-                    cardToDelete.remove();
-                    Toastify({
-                        text: "😢 Pesan berhasil dihapus!",
-                        duration: 3000,
-                        newWindow: true,
-                        gravity: "bottom",
-                        position: 'right',
-                        backgroundColor: "rgba(255, 99, 71, 0.6)",
-                        stopOnFocus: true,
-                        onClick: function () { }
-                    }).showToast();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
+                            fetch('rsvpConnection.php?action=delete', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: new URLSearchParams({
+                                'userEmail': email,
+                            }),
+                            })
+                            .then(response => response.text())
+                            .then(data => {
+                                const cardToDelete = document.querySelector(`.new-card input[value="${userEmail}"]`).closest('.new-card');
+                                cardToDelete.remove();
+                                Toastify({
+                                    text: "😢 Pesan berhasil dihapus!",
+                                    duration: 3000,
+                                    newWindow: true,
+                                    gravity: "bottom",
+                                    position: 'right',
+                                    backgroundColor: "rgba(255, 99, 71, 0.6)",
+                                    stopOnFocus: true,
+                                    onClick: function () { }
+                                }).showToast();
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                                    },
+                                    cancel: function () {
+                                        $.alert('Deletion canceled!');
+                                    }
+                                }
+                            });
+                
             }
             
         }
@@ -378,7 +386,16 @@
                             createEditHandler(email);
                         }
                     });
+                    
+                    const deleteBtns = cardToUpdate.querySelectorAll('.delete-btn');
+                        deleteBtns.forEach(button => {
+                            button.addEventListener('click', function() {
+                                const email = this.getAttribute('data-email');
+                                deleteEntry(email);
+                            });
+                        });
 
+                    
                     fetch('rsvpConnection.php?action=update', {
                         method: 'POST',
                         headers: {
@@ -499,6 +516,13 @@
                         if (event.target.classList.contains('edit-btn')) {
                             const email = event.target.getAttribute('data-email');
                             createEditHandler(email);
+                        }
+                    });
+
+                    daftarUcapan.addEventListener('click', function(event) {
+                        if (event.target.classList.contains('delete-btn')) {
+                            const email = event.target.getAttribute('data-email');
+                            deleteEntry(email);
                         }
                     });
 

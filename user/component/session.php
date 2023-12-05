@@ -1,5 +1,4 @@
 <?php
-    include 'connect.php';
     if (isset($_GET['email'])) {
         $_SESSION['userEmail']  = $_GET['email'];
         $user = $_GET['email'];
