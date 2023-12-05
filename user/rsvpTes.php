@@ -99,7 +99,7 @@
 <body>
     <div class="main-container-rsvp">
         <img src="assets/images/ziven/leave-1.png" data-aos="fade-right" class="leave-1-png-rsvp" alt="">
-        <section id="rsvp" class="m-5">
+        <section id="rsvp" class="mx-5 py-3">
             <div class="container-rsvp" data-aos="fade-up">
                 <div class="card-body border rounded-4 shadow p-3">
                     <form method="post" id="rsvp-form">
@@ -142,15 +142,15 @@
             <nav class="d-flex justify-content-center mb-0 font-arabic">
                 <ul class="pagination mb-0">
                     <li class="page-item" id="previous">
-                        <button class="page-link"  aria-label="Previous">
+                        <button class="page-link" style='color:#c7863d' aria-label="Previous">
                             <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
                         </button>
                     </li>
                     <li class="page-item">
                         <span class="page-link bg-warning text-dark" id="page">1</span>
                     </li>
-                    <li class="page-item" id="next">
-                        <button class="page-link"  aria-label="Next">
+                    <li class="page-item"  id="next">
+                        <button class="page-link"  style='color:#c7863d' aria-label="Next">
                             Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
                         </button>
                     </li>
