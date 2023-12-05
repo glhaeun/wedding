@@ -7,7 +7,6 @@
     if ($action === 'insert') {
         $nama = $_POST['nama'];
         $kehadiran = $_POST['kehadiran'];
-        $kehadiran = 1 ? "Hadir" : "Berhalangan";
         $pesan = $_POST['pesan'];
 
         if ($_SESSION['userEmail']) {
@@ -31,7 +30,6 @@
     if ($action === 'select') {
         $selectQuery = "SELECT * FROM message_rsvp";
         $result = $connect->query($selectQuery);
-
         if (!$result) {
             die("Error in SQL query: " . $connect->errorInfo()[2]);
         }
