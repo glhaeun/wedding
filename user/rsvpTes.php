@@ -291,6 +291,7 @@
                                 <i class="fas fa-edit ms-1"></i>
                             </button>
                         </div>
+                        <input type="hidden" value="${userEmail}">
                     </div>`;
 
                     daftarUcapan.addEventListener('click', function(event) {
@@ -300,6 +301,7 @@
                         }
                     });
 
+
                     fetch('rsvpConnection.php?action=update', {
                         method: 'POST',
                         headers: {
@@ -308,7 +310,7 @@
                         body: new URLSearchParams({
                             'userEmail': userEmail,
                             'updatedName': updatedName,
-                            'updatedStatus': updatedStatus,
+                            'updatedStatus': statusHadir,
                             'updatedMessage': updatedMessage,
                         }),
                     })
@@ -383,6 +385,7 @@
                                 <i class="fas fa-edit ms-1"></i>
                             </button>
                             </div>
+                            <input type="hidden" value="${userEmail}">
                         </div>`;
 
                     daftarUcapan.appendChild(newCard);
@@ -456,7 +459,7 @@
                 }).showToast();
             } else {
                 isUpdate = true;
-                populateFormForEdit(email);
+                populateFormForEdit(userEmail);
                 
             }
         }

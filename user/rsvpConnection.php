@@ -44,7 +44,10 @@
         $editedName = $_POST['updatedName']; 
         $editedStatus = $_POST['updatedStatus'];
         $editedMessage = $_POST['updatedMessage']; 
-        $updateQuery = "UPDATE message_rsvp SET name='$editedName', status='$editedStatus', message='$editedMessage' WHERE userEmail=$userEmail";
+
+        var_dump($userEmail, $editedName, $editedStatus, $editedMessage);
+
+        $updateQuery = "UPDATE message_rsvp SET name='$editedName', status='$editedStatus', message='$editedMessage' WHERE email='$userEmail'";
         
         if ($connect->query($updateQuery) === TRUE) {
             echo "Data updated successfully";
