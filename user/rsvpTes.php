@@ -142,14 +142,14 @@
             <nav class="d-flex justify-content-center mb-0 font-arabic">
                 <ul class="pagination mb-0">
                     <li class="page-item" id="previous">
-                        <button class="page-link"  aria-label="Previous">
+                        <button class="page-link" style='color:#c7863d' aria-label="Previous">
                             <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
                         </button>
                     </li>
                     <li class="page-item">
                         <span class="page-link bg-warning text-dark" id="page">1</span>
                     </li>
-                    <li class="page-item" id="next">
+                    <li class="page-item" style='color:#c7863d' id="next">
                         <button class="page-link"  aria-label="Next">
                             Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
                         </button>
