@@ -164,8 +164,6 @@
 <script>
     AOS.init();
     document.addEventListener('DOMContentLoaded', function () {
-        let isUpdate = false; 
-        let updatingId = null;
         const form = document.getElementById('rsvp-form');
         const namaInput = document.getElementById('form-nama');
         const kehadiranInput = document.getElementById('form-kehadiran');
@@ -178,8 +176,15 @@
                 data.forEach(item => {
                     const newCard = document.createElement('div');
                     const datetime = new Date(item.timestamp).toLocaleString();
-
-                    newCard.className = 'mb-3 new-card';
+                    let kehadiran;
+                    console.log(item.status)
+                    if(item.status == 1){
+                        kehadiran = 'Hadir';
+                    }
+                    else{
+                        kehadiran = 'Berhalangan';
+                    }
+                    newCard.className = 'mb-3 new-card'; 
                     newCard.innerHTML = `
                         <div class="card-body bg-light shadow p-3 m-0 rounded-4">
                             <div class="d-flex flex-wrap justify-content-between align-items-center">
@@ -190,14 +195,14 @@
                                     <p class="mt-1 font-time">${item.created_datetime}</p>
                                 </div>
                                 <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                    <strong class="me-1">${item.status}</strong>
-                                    ${item.status == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
+                                    <strong class="me-1">${kehadiran}</strong>
+                                    ${kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
                                 </div>
                             </div>
                             <hr class="text-dark my-1">
                             <div class="d-flex justify-content-between align-items-center">
                                 <input type="text" value="${item.message}" class="borderless"/>
-                                <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" onClick="createEditHandler(${JSON.stringify(item)})">
+                                <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn">
                                     Edit
                                     <i class="fas fa-edit ms-1"></i>
                                 </button>
@@ -205,21 +210,12 @@
                             <input type="hidden" value="${item.id}">
                         </div>`;
                     daftarUcapan.appendChild(newCard);
-                    const editBtn = newCard.querySelector('.edit-btn');
-                    editBtn.addEventListener('click', createEditHandler(item));
                 });
                 displaySubmissions();
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
-
-        function populateFormForEdit(item) {
-            namaInput.value = item.name;
-            kehadiranInput.value = item.status;
-            pesanInput.value = item.message;
-            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
 
         form.addEventListener('submit', function (event) {
             event.preventDefault(); 
@@ -237,23 +233,22 @@
                     onClick: function () { }
                 }).showToast();
             } else {
-                if (isUpdate) {
-                // If it's an update operation, send a request to update the data
-                const updatedName = namaInput.value;
-                const updatedStatus = kehadiranInput.value;
-                const updatedMessage = pesanInput.value;
-
-                // Update the card in the UI
-                const cardToUpdate = document.querySelector(`.new-card input[value="${updatingId}"]`).closest('.new-card');
-                const statusHadir = updatedStatus === '1' ? "Hadir" : "Berhalangan";
-                const iconStatus = updatedStatus === '1' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
-                const datetime = new Date().toLocaleString(); 
-                cardToUpdate.innerHTML = `
+                const nama = namaInput.value;
+                const kehadiran = parseInt(kehadiranInput.value);
+                const pesan = pesanInput.value;
+                const newCard = document.createElement('div');
+                const statusHadir = kehadiran == '1' ? "Hadir" : "Berhalangan";
+                const iconStatus = kehadiran == '1' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
+                const datetime = new Date().toLocaleString();
+                console.log(kehadiran);
+                
+                newCard.className = 'mb-3 new-card';
+                newCard.innerHTML = `
                     <div class="card-body bg-light shadow p-3 m-0 rounded-4">
                         <div class="d-flex flex-wrap justify-content-between align-items-center">
                             <div>
                                 <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                    <strong class="me-1">${updatedName}</strong>
+                                    <strong class="me-1">${nama}</strong>
                                 </p>
                                 <p class="mt-1 font-time">${datetime}</p>
                             </div>
@@ -263,128 +258,53 @@
                             </div>
                         </div>
                         <hr class="text-dark my-1">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <input type="text" value="${updatedMessage}" class="borderless"/>
-                            <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" onClick="createEditHandler(${JSON.stringify(updatingId)})">
-                                Edit
-                                <i class="fas fa-edit ms-1"></i>
-                            </button>
-                        </div>
+                        <input type="text" value="${pesan}"class="borderless"/>
+                        <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn">
+                            Edit
+                            <i class="fas fa-edit ms-1"></i>
+                        </button>
                     </div>`;
 
-                    fetch('rsvpConnection.php?action=update', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                        },
-                        body: new URLSearchParams({
-                            'messageId': updatingId,
-                            'updatedName': updatedName,
-                            'updatedStatus': updatedStatus,
-                            'updatedMessage': updatedMessage,
-                        }),
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        Toastify({
-                            text: "😍 Pesan berhasil diupdate !",
-                            duration: 3000,
-                            newWindow: true,
-                            gravity: "bottom",
-                            position: 'right',
-                            backgroundColor: "green",
-                            stopOnFocus: true,
-                            onClick: function () { }
-                        }).showToast(); 
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-                    form.reset();
-                    isUpdate = false;
-                    updatingId = null;
-                }
-                else{
-                    const nama = namaInput.value;
-                    const kehadiran = kehadiranInput.value;
-                    const pesan = pesanInput.value;
-                    const newCard = document.createElement('div');
-                    const statusHadir = kehadiran == '1' ? "Hadir" : "Berhalangan";
-                    const iconStatus = kehadiran == '1' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
-                    const datetime = new Date().toLocaleString();
-        
-                    newCard.className = 'mb-3 new-card';
-                    newCard.innerHTML = `
-                        <div class="card-body bg-light shadow p-3 m-0 rounded-4">
-                            <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                <div>
-                                    <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                        <strong class="me-1">${nama}</strong>
-                                    </p>
-                                    <p class="mt-1 font-time">${datetime}</p>
-                                </div>
-                                <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                    <strong class="me-1">${statusHadir}</strong>
-                                    ${iconStatus}
-                                </div>
-                            </div>
-                            <hr class="text-dark my-1">
-                            <input type="text" value="${pesan}"class="borderless"/>
-                            <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" onClick="createEditHandler(${JSON.stringify(item)})">
-                                Edit
-                                <i class="fas fa-edit ms-1"></i>
-                            </button>
-                        </div>`;
+                daftarUcapan.appendChild(newCard);
+                namaInput.value = '';
+                kehadiranInput.value = '0';
+                pesanInput.value = '';
+                form.reset();
+                displaySubmissions();
+                form.submit();
 
-                    daftarUcapan.appendChild(newCard);
-                    namaInput.value = '';
-                    kehadiranInput.value = '0';
-                    pesanInput.value = '';
-                    form.reset();
-                    displaySubmissions();
-                    form.submit();
+                Toastify({
+                    text: "😍 Terima Kasih atas respond yang diberikan !",
+                    duration: 3000,
+                    newWindow: true,
+                    gravity: "bottom",
+                    position: 'right',
+                    backgroundColor: "rgba(172, 168, 170, 0.54)",
+                    stopOnFocus: true,
+                    onClick: function () { }
+                }).showToast();  
 
-                    Toastify({
-                        text: "😍 Terima Kasih atas respond yang diberikan !",
-                        duration: 3000,
-                        newWindow: true,
-                        gravity: "bottom",
-                        position: 'right',
-                        backgroundColor: "rgba(172, 168, 170, 0.54)",
-                        stopOnFocus: true,
-                        onClick: function () { }
-                    }).showToast();  
-
-                    //insert Db
-                    fetch('rsvpConnection.php?action=insert', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                        },
-                        body: new URLSearchParams({
-                            'nama': nama,
-                            'kehadiran': kehadiran,
-                            'pesan': pesan,
-                        }),
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        console.log(data);
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-                }
+                //insert Db
+                fetch('rsvpConnection.php?action=insert', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        'nama': nama,
+                        'kehadiran': kehadiran,
+                        'pesan': pesan,
+                    }),
+                })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
             }
         });
-
-        function createEditHandler(item) {
-            return function (event) {
-                isUpdate = true;
-                updatingId = item.id;
-                populateFormForEdit(item);
-            };
-        }
 
         function generateUUID() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
