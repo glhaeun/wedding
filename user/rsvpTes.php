@@ -158,6 +158,8 @@
             </nav>
 
         </section>
+
+        <?php include 'divider.php'; ?>
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
@@ -283,7 +285,6 @@
                     content: 'Are you sure you want to delete your submission?',
                     buttons: {
                         confirm: function () {
-
                             fetch('rsvpConnection.php?action=delete', {
                             method: 'POST',
                             headers: {
@@ -307,6 +308,8 @@
                                     stopOnFocus: true,
                                     onClick: function () { }
                                 }).showToast();
+
+                                form.reset();
                             })
                             .catch(error => {
                                 console.error('Error:', error);

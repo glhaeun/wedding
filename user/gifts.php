@@ -272,6 +272,11 @@
             top: 40px;
             left: 500px;
         }
+        .no-bullet {
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        }
     </style>
 </head>
 
@@ -315,8 +320,8 @@
                 <div class="overflow-x-hidden font-inside" id="gift"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                     <div class="row justify-content-center"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
-                            <img src="assets/images/elvina/gift.png" style='width: 50px; height: 50px;' class='mb-5' alt="Hadiah" class="img-fluid rounded" width="150"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                            <ol>
+                            <img src="assets/images/elvina/gift.png" style='width: 50px; height: 50px;' class='mb-4' data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
+                            <ul class="no-bullet">
                             <?php
                                 $database = $connect->prepare("SELECT * FROM wishlist");
                                 $database -> execute();
@@ -331,10 +336,10 @@
                                     }
                                 } 
                                 ?>
-                            </ol>
+                            </ul>
                         </div>
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
-                            <img src="https://cdn.pixabay.com/photo/2016/01/10/22/23/location-1132647_640.png" alt="alamat" class="img-fluid rounded" width="50"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">
+                            <img src="assets/images/elvina/location2.png" style='width: auto; height: 50px;' class='mb-4' data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">
                             <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Alamat Rumah</p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> <?=$data['couple_address'] ?></p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> Groom's Telp No: <?=$groom['number']?></p>
