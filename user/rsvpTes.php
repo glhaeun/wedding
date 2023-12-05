@@ -96,8 +96,6 @@
             box-shadow: none; 
             background:none;
         }
-
-
     </style>
 </head>
 <body>
@@ -169,7 +167,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         let isUpdate = false; 
         let updatingId = null;
-        const userEmail = "<?php echo isset($_SESSION['userEmail']) ? $_SESSION['userEmail'] : null; ?>";
+        const userEmail = "haeunictsis@gmail.com";
         const userId = "<?php echo isset($_SESSION['userId']) ? $_SESSION['userId'] : null; ?>";
         const form = document.getElementById('rsvp-form');
         const namaInput = document.getElementById('form-nama');
@@ -186,38 +184,56 @@
 
                     newCard.className = 'mb-3 new-card';
                     newCard.innerHTML = `
-                        <div class="card-body bg-light shadow p-3 m-0 rounded-4">
-                            <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                <div>
-                                    <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                        <strong class="me-1">${item.name}</strong>
-                                    </p>
-                                    <p class="mt-1 font-time">${item.created_datetime}</p>
-                                </div>
-                                <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                    <strong class="me-1">${item.status}</strong>
-                                    ${item.status == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
-                                </div>
+                    <div class="card-body bg-light shadow p-3 m-0 rounded-4">
+                        <div class="d-flex flex-wrap align-items-center"    >
+                            <div>
+                                <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                    <strong class="me-1">${item.name}</strong>
+                                </p>
+                                <p class="mt-1 font-time">${item.created_datetime}</p>
                             </div>
-                            <hr class="text-dark my-1">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <input type="text" value="${item.message}" class="borderless"/>
+                    
+                            <div class="d-flex justify-content-end align-items-center" style="flex:1;">
+                                <div class="text-end">
+                                    <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                        <strong class="me-1">${item.status}</strong>
+                                        ${item.status == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
+                                    </p>
+                                </div>
                                 <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${item.email}">
                                     Edit
                                     <i class="fas fa-edit ms-1"></i>
                                 </button>
+                                <button class="btn btn-danger btn-sm rounded-3 shadow m-1 delete-btn" data-email="${item.email}">
+                                    Delete
+                                    <i class="fas fa-trash-alt ms-1"></i>
+                                </button>  
+                            </div> 
+                        </div>
+                        <hr class="text-dark my-1">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex">
+                                <input type="text" value="${item.message}" class="borderless"/>
                             </div>
-                            <input type="hidden" value="${item.email}">
-                        </div>`;
+                        </div>
+                        <input type="hidden" value="${item.email}">
+                    </div>`;
                         daftarUcapan.appendChild(newCard);
     
                         // Select all elements with class .edit-btn inside newCard
                         const editBtns = newCard.querySelectorAll('.edit-btn');
-                        
+                        const deleteBtns = newCard.querySelectorAll('.delete-btn');
                         editBtns.forEach(button => {
                             button.addEventListener('click', function() {
                                 const email = this.getAttribute('data-email');
                                 createEditHandler(email);
+                            });
+                        });
+
+                        deleteBtns.forEach(button => {
+                            button.addEventListener('click', function() {
+                                const email = this.getAttribute('data-email');
+                                deleteEntry(email);
                             });
                         });
                 });
@@ -243,6 +259,37 @@
             
         }
 
+        const deleteEntry = (email) => {
+            fetch('rsvpConnection.php?action=delete', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'userEmail': email,
+                }),
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                    const cardToDelete = document.querySelector(`.new-card input[value="${email}"]`).closest('.new-card');
+                    cardToDelete.remove();
+                    Toastify({
+                        text: "😢 Pesan berhasil dihapus!",
+                        duration: 3000,
+                        newWindow: true,
+                        gravity: "bottom",
+                        position: 'right',
+                        backgroundColor: "rgba(255, 99, 71, 0.6)",
+                        stopOnFocus: true,
+                        onClick: function () { }
+                    }).showToast();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
         form.addEventListener('submit', function (event) {
             event.preventDefault(); 
             if (!namaInput.value || !kehadiranInput.value) {
@@ -258,6 +305,7 @@
                     stopOnFocus: true,
                     onClick: function () { }
                 }).showToast();
+
             } else {
                 if (isUpdate) {
 
@@ -271,26 +319,38 @@
                 const datetime = new Date().toLocaleString(); 
                 cardToUpdate.innerHTML = `
                     <div class="card-body bg-light shadow p-3 m-0 rounded-4">
-                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="d-flex flex-wrap align-items-center"    >
                             <div>
                                 <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
                                     <strong class="me-1">${updatedName}</strong>
                                 </p>
                                 <p class="mt-1 font-time">${datetime}</p>
                             </div>
-                            <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                <strong class="me-1">${statusHadir}</strong>
-                                ${iconStatus}
-                            </div>
+                    
+                            <div class="d-flex justify-content-end align-items-center" style="flex:1;">
+                                <div class="text-end">
+                                    <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                        <strong class="me-1">${statusHadir}</strong>
+                                        ${statusHadir == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
+                                    </p>
+                                </div>
+                                <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${userEmail}">
+                                    Edit
+                                    <i class="fas fa-edit ms-1"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm rounded-3 shadow m-1 delete-btn" data-email="${userEmail}">
+                                    Delete
+                                    <i class="fas fa-trash-alt ms-1"></i>
+                                </button>  
+                            </div> 
                         </div>
                         <hr class="text-dark my-1">
                         <div class="d-flex justify-content-between align-items-center">
-                            <input type="text" value="${updatedMessage}" class="borderless"/>
-                            <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${userEmail}">
-                                Edit
-                                <i class="fas fa-edit ms-1"></i>
-                            </button>
+                            <div class="d-flex">
+                                <input type="text" value="${updatedMessage}" class="borderless"/>
+                            </div>
                         </div>
+                        <input type="hidden" value="${item.email}">
                     </div>`;
 
                     daftarUcapan.addEventListener('click', function(event) {
