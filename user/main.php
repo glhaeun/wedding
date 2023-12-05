@@ -17,7 +17,7 @@
     ?>
     <!-- <div class="separator-landing"></div> -->
     <?php
-    include 'rsvp.php';
+    include 'rsvpTes.php';
     ?>
     <!-- <div class="separator-landing"></div> -->
     <?php
