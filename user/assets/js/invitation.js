@@ -51,7 +51,7 @@ document.addEventListener("click", () => {
         ".flower-1, .flower-2, .leave-1, .leave-2, .leave-3, .leave-4, .golden-blur, .tap-to-open"
       )
       .forEach((element) => {
-        // element.style.animation = "openRemove 2s ease-in-out 1";
+        // element.style.animation = "none";
       });
 
     setTimeout(function () {
