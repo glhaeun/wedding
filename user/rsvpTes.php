@@ -167,7 +167,12 @@
     document.addEventListener('DOMContentLoaded', function () {
         let isUpdate = false; 
         let updatingId = null;
-         const userEmail = "<?php echo isset( $_SESSION['userEmail'])? $_SESSION['userEmail']: null; ?>";
+        let guestMode = true;
+        const userEmail = "<?php echo isset( $_SESSION['userEmail'])? $_SESSION['userEmail']: ''; ?>";
+        if (userEmail != '') {
+            guestMode = false;
+        }
+        console.log(guestMode)
         const userId = "<?php echo isset( $_SESSION['userId'])? $_SESSION['userId']: null; ?>";
         const form = document.getElementById('rsvp-form');
         const namaInput = document.getElementById('form-nama');
@@ -200,6 +205,7 @@
                                         ${item.status == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
                                     </p>
                                 </div>
+                                ${item.email == userEmail ? `
                                 <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${item.email}">
                                     Edit
                                     <i class="fas fa-edit ms-1"></i>
@@ -207,7 +213,8 @@
                                 <button class="btn btn-danger btn-sm rounded-3 shadow m-1 delete-btn" data-email="${item.email}">
                                     Delete
                                     <i class="fas fa-trash-alt ms-1"></i>
-                                </button>  
+                                </button> ` : ``
+                                }
                             </div> 
                         </div>
                         <hr class="text-dark my-1">
@@ -260,7 +267,22 @@
         }
 
         const deleteEntry = (email) => {
-            fetch('rsvpConnection.php?action=delete', {
+            if(guestMode || email != userEmail) {
+                    Toastify({
+                        text: "😢 You can't delete other's message!",
+                        duration: 3000,
+                        newWindow: true,
+                        gravity: "bottom",
+                        position: 'right',
+                        backgroundColor: "rgba(255, 99, 71, 0.6)",
+                        stopOnFocus: true,
+                        onClick: function () { }
+                    }).showToast();
+            } else {
+                const cardToDelete = document.querySelector(`.new-card input[value="${email}"]`).closest('.new-card');
+                cardToDelete.remove();
+
+                fetch('rsvpConnection.php?action=delete', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -288,6 +310,8 @@
                 .catch(error => {
                     console.error('Error:', error);
                 });
+            }
+            
         }
 
         form.addEventListener('submit', function (event) {
@@ -305,10 +329,10 @@
                     stopOnFocus: true,
                     onClick: function () { }
                 }).showToast();
-
             } else {
                 if (isUpdate) {
 
+                    
                 const updatedName = namaInput.value;
                 const updatedStatus = kehadiranInput.value;
                 const updatedMessage = pesanInput.value;
@@ -319,38 +343,35 @@
                 const datetime = new Date().toLocaleString(); 
                 cardToUpdate.innerHTML = `
                     <div class="card-body bg-light shadow p-3 m-0 rounded-4">
-                        <div class="d-flex flex-wrap align-items-center"    >
+                        <div class="d-flex flex-wrap align-items-center">
                             <div>
                                 <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
                                     <strong class="me-1">${updatedName}</strong>
                                 </p>
                                 <p class="mt-1 font-time">${datetime}</p>
                             </div>
-                    
                             <div class="d-flex justify-content-end align-items-center" style="flex:1;">
                                 <div class="text-end">
-                                    <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                    <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
                                         <strong class="me-1">${statusHadir}</strong>
-                                        ${statusHadir == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
-                                    </p>
-                                </div>
+                                        ${iconStatus}
+                                    </div>
+                                </div>    
                                 <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${userEmail}">
                                     Edit
                                     <i class="fas fa-edit ms-1"></i>
                                 </button>
                                 <button class="btn btn-danger btn-sm rounded-3 shadow m-1 delete-btn" data-email="${userEmail}">
-                                    Delete
-                                    <i class="fas fa-trash-alt ms-1"></i>
+                                        Delete
+                                        <i class="fas fa-trash-alt ms-1"></i>
                                 </button>  
                             </div> 
                         </div>
                         <hr class="text-dark my-1">
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex">
-                                <input type="text" value="${updatedMessage}" class="borderless"/>
-                            </div>
+                            <input type="text" value="${updatedMessage}" class="borderless"/>
                         </div>
-                        <input type="hidden" value="${item.email}">
+                        <input type="hidden" value="${userEmail}">
                     </div>`;
 
                     daftarUcapan.addEventListener('click', function(event) {
@@ -368,7 +389,7 @@
                         body: new URLSearchParams({
                             'userEmail': userEmail,
                             'updatedName': updatedName,
-                            'updatedStatus': updatedStatus,
+                            'updatedStatus': statusHadir,
                             'updatedMessage': updatedMessage,
                         }),
                     })
@@ -392,7 +413,21 @@
                     isUpdate = false;
                     updatingId = null;
                 }
-                else{
+                else {
+                if (guestMode) {
+                    const toastNode = document.createElement("div");
+                    toastNode.innerHTML = "<i class='fas fa-exclamation-triangle'></i> ";
+                    Toastify({
+                        text: "👀 You can't send RSVP in guest mode !",
+                        duration: 3000,
+                        newWindow: true,
+                        gravity: "bottom",
+                        position: 'right',
+                        backgroundColor: "rgba(255, 2, 2, 0.54)",
+                        stopOnFocus: true,
+                        onClick: function () { }
+                    }).showToast();
+                } else {
                     fetch(`rsvpConnection.php?action=checkUser&&userEmail=${userEmail}`)
                     .then(response => response.text())
                     .then(data => {
@@ -423,26 +458,35 @@
                     newCard.className = 'mb-3 new-card';
                     newCard.innerHTML = `
                         <div class="card-body bg-light shadow p-3 m-0 rounded-4">
-                            <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                <div>
-                                    <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                        <strong class="me-1">${namaInput.value}</strong>
-                                    </p>
-                                    <p class="mt-1 font-time">${datetime}</p>
-                                </div>
-                                <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                    <strong class="me-1">${statusHadir}</strong>
-                                    ${iconStatus}
-                                </div>
+                        <div class="d-flex flex-wrap align-items-center">
+                            <div>
+                                <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                    <strong class="me-1">${namaInput.value}</strong>
+                                </p>
+                                <p class="mt-1 font-time">${datetime}</p>
                             </div>
-                            <hr class="text-dark my-1">
-                            <div class="d-flex justify-content-between align-items-center">
-                            <input type="text" value="${pesan}"class="borderless"/>
-                            <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${userEmail}">
-                                Edit
-                                <i class="fas fa-edit ms-1"></i>
-                            </button>
-                            </div>
+                            <div class="d-flex justify-content-end align-items-center" style="flex:1;">
+                                <div class="text-end">
+                                    <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                        <strong class="me-1">${statusHadir}</strong>
+                                        ${iconStatus}
+                                    </div>
+                                </div>    
+                                <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn" data-email="${userEmail}">
+                                    Edit
+                                    <i class="fas fa-edit ms-1"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm rounded-3 shadow m-1 delete-btn" data-email="${userEmail}">
+                                        Delete
+                                        <i class="fas fa-trash-alt ms-1"></i>
+                                </button>  
+                            </div> 
+                        </div>
+                        <hr class="text-dark my-1">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="text" value="${pesan}" class="borderless"/>
+                        </div>
+                        <input type="hidden" value="${userEmail}">
                         </div>`;
 
                     daftarUcapan.appendChild(newCard);
@@ -479,7 +523,7 @@
                         },
                         body: new URLSearchParams({
                             'nama': nama,
-                            'kehadiran': kehadiran,
+                            'kehadiran': statusHadir,
                             'pesan': pesan,
                         }),
                     })
@@ -496,6 +540,9 @@
                         console.error('Error:', error);
                     });
 
+
+                    }
+                    
                 }
             }
         });
