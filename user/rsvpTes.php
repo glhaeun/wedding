@@ -167,7 +167,12 @@
     document.addEventListener('DOMContentLoaded', function () {
         let isUpdate = false; 
         let updatingId = null;
-         const userEmail = "<?php echo isset( $_SESSION['userEmail'])? $_SESSION['userEmail']: null; ?>";
+        let guestMode = true;
+        const userEmail = "<?php echo isset( $_SESSION['userEmail'])? $_SESSION['userEmail']: ''; ?>";
+        if (userEmail != '') {
+            guestMode = false;
+        }
+        console.log(guestMode)
         const userId = "<?php echo isset( $_SESSION['userId'])? $_SESSION['userId']: null; ?>";
         const form = document.getElementById('rsvp-form');
         const namaInput = document.getElementById('form-nama');
@@ -260,7 +265,22 @@
         }
 
         const deleteEntry = (email) => {
-            fetch('rsvpConnection.php?action=delete', {
+            if(guestMode || email != userEmail) {
+                    Toastify({
+                        text: "😢 You can't delete other's message!",
+                        duration: 3000,
+                        newWindow: true,
+                        gravity: "bottom",
+                        position: 'right',
+                        backgroundColor: "rgba(255, 99, 71, 0.6)",
+                        stopOnFocus: true,
+                        onClick: function () { }
+                    }).showToast();
+            } else {
+                const cardToDelete = document.querySelector(`.new-card input[value="${email}"]`).closest('.new-card');
+                cardToDelete.remove();
+
+                fetch('rsvpConnection.php?action=delete', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -288,6 +308,8 @@
                 .catch(error => {
                     console.error('Error:', error);
                 });
+            }
+            
         }
 
         form.addEventListener('submit', function (event) {
@@ -305,7 +327,6 @@
                     stopOnFocus: true,
                     onClick: function () { }
                 }).showToast();
-
             } else {
                 if (isUpdate) {
 
@@ -390,7 +411,21 @@
                     isUpdate = false;
                     updatingId = null;
                 }
-                else{
+                else {
+                if (guestMode) {
+                    const toastNode = document.createElement("div");
+                    toastNode.innerHTML = "<i class='fas fa-exclamation-triangle'></i> ";
+                    Toastify({
+                        text: "👀 You can't send RSVP in guest mode !",
+                        duration: 3000,
+                        newWindow: true,
+                        gravity: "bottom",
+                        position: 'right',
+                        backgroundColor: "rgba(255, 2, 2, 0.54)",
+                        stopOnFocus: true,
+                        onClick: function () { }
+                    }).showToast();
+                } else {
                     fetch(`rsvpConnection.php?action=checkUser&&userEmail=${userEmail}`)
                     .then(response => response.text())
                     .then(data => {
@@ -486,7 +521,7 @@
                         },
                         body: new URLSearchParams({
                             'nama': nama,
-                            'kehadiran': kehadiran,
+                            'kehadiran': statusHadir,
                             'pesan': pesan,
                         }),
                     })
@@ -504,6 +539,8 @@
                     });
 
 
+                    }
+                    
                 }
             }
         });

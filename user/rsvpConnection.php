@@ -92,7 +92,7 @@
         if ($connect->query($sql) === TRUE) {
             echo "Record deleted successfully";
         } else {
-            echo "Error deleting record: " . $connect->error;
+            echo "Error deleting ";
         }
     }
 ?>
