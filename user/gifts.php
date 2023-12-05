@@ -315,7 +315,7 @@
                 <div class="overflow-x-hidden font-inside" id="gift"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                     <div class="row justify-content-center"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJjAh42YvBECBVsT_HRjTsRWwuxdZlLG7bug&usqp=CAU" alt="Hadiah" class="img-fluid rounded" width="150"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
+                            <img src="assets/images/elvina/gift.png" style='width: 50px; height: 50px;' class='mb-5' alt="Hadiah" class="img-fluid rounded" width="150"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                             <ol>
                             <?php
                                 $database = $connect->prepare("SELECT * FROM wishlist");
