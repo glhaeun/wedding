@@ -67,7 +67,7 @@ if (isset($_POST['send'])) {
                     icon:'success',
                     title:'Email sudah dikirim!',
                 }).then(function(){
-                    window.location = "dashboard.php";
+                    window.location = "guest.php";
                 });
             </script>
             <?php
