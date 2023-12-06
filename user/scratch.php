@@ -1,6 +1,3 @@
-<?php
-    include './component/getCode.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,14 +94,15 @@
         cursor: grabbing;
         }
         .prize-container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
+          position: relative;
+          display: flex;
+          margin-bottom: 32px;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          overflow: hidden;
+        }
 
     .prize-image {
       margin-top: 10px;
@@ -121,10 +119,16 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    padding-top: 68%;
-    background-image: url('assets/images/darren/image-url7.jpg');
+
+    /* padding-top: 68%; */
+    /* background-image: url('assets/images/darren/image-url7.jpg'); */
   }
-  .stage-content1 {
+
+  .stage-content img {
+    width: auto;
+    height: 200px;
+  }
+  /* .stage-content1 {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -137,7 +141,7 @@
     background-position: center;
     padding-top: 68%;
     background-image: url('assets/images/darren/image-url9.jpg');
-  }
+  } */
   
   
   .curtain-container {
@@ -210,6 +214,10 @@
     transform: translateX(calc(100%));
   }
 
+  .test {
+    justify-content: space-around;
+  }
+
 
     </style>
 </head>
@@ -222,78 +230,237 @@
     <p class="text-center font-inside" data-aos="fade-down-left" data-aos-duration="2000">
     Gunakan kursor pada perangkat komputer atau gesek layar dengan jari pada perangkat seluler untuk mengungkap area yang ditentukan pada kartu. Perhatikan dan simpan huruf atau angka yang terungkap setelah penggosokan.
     </p>
-    <div class="container d-flex justify-content-center align-items-center">
-        <div class="row">
-            <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500">
-                <h5 class="font-arabic text-center">Scratch Card 1</h5>
-                <div class="scratch-container">
-                    <div class="scratch-card text-center">
-                        <div class="code"><?= $code['kode1'] ?></div>
-                    </div>
-                    <canvas id="scratch-card1" class="w-100" height="150"></canvas>
-                </div>
-            </div>
+    <div class="container">
+        <div class="row test">
+          <?php
+          if (isset($email)) {
+            $select_user = $connect->prepare("SELECT * FROM user where email='$email'");
+            $select_user -> execute();
 
-            <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="600">
-                <h5 class="font-arabic text-center">Scratch Card 2</h5>
+            if($select_user->rowCount()>0){
+              while ($fetch_user = $select_user ->fetch(PDO::FETCH_ASSOC)){
+              $query = "SELECT * FROM prize";
+              $getPrize = $connect->prepare($query);
+              $getPrize->execute();
+              $index = 1;
+              if ($getPrize->rowCount() > 0) {
+                while ($row = $getPrize->fetch(PDO::FETCH_ASSOC)) {
+                  ?>
+                  <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500">
+                      <h3 class="font-arabic text-center">Scratch Card <?=$index?></h3>
+                      <div class="scratch-container">
+                          <div class="scratch-card text-center">
+                              <div class="code"><?= isset($fetch_user['kode_'.$row['id']])? $fetch_user['kode_'.$row['id']]: '123456789' ?></div>
+                          </div>
+                          <canvas id="scratch-card<?=$index?>" class="w-100" height="160"></canvas>
+                      </div>
+                  </div>
+                  <script>
+                            (function() {
+                      const currentIndex = <?= json_encode($index) ?>;
+                      const createScratchCard<?= $index ?> = (canvasId, imageUrl) => {
+                        let canvas = document.getElementById(canvasId);
+                        let context = canvas.getContext("2d");
+
+                        const init = () => {
+                          let image = new Image();
+                          image.src = imageUrl;
+
+                          image.onload = () => {
+                            context.drawImage(image, 0, 0, 300, 150);
+                          };
+                        };
+
+                        let isDragging = false;
+
+                        const scratch = (x, y) => {
+                          context.globalCompositeOperation = "destination-out";
+                          context.beginPath();
+                          context.arc(x, y, 24, 0, 2 * Math.PI);
+                          context.fill();
+                        };
+
+                        canvas.addEventListener("mousedown", (event) => {
+                          isDragging = true;
+                          scratch(event.offsetX, event.offsetY);
+                        });
+
+                        canvas.addEventListener("mousemove", (event) => {
+                          if (isDragging) {
+                            scratch(event.offsetX, event.offsetY);
+                          }
+                        });
+
+                        canvas.addEventListener("mouseup", () => {
+                          isDragging = false;
+                        });
+
+                        canvas.addEventListener("mouseleave", () => {
+                          isDragging = false;
+                        });
+
+                        init();
+                      };
+
+                      createScratchCard<?= $index ?>("scratch-card<?= $index ?>", "../images/<?= $row['cardImage'] ?>");
+                    })();
+                  </script>
+                  <?php
+                  $index++;
+
+                }
+              }
+          }
+        }
+      } else {
+        $index = 1;
+        $query = "SELECT * FROM prize";
+              $getPrize = $connect->prepare($query);
+              $getPrize->execute();
+              $index = 1;
+              if ($getPrize->rowCount() > 0) {
+                while ($row = $getPrize->fetch(PDO::FETCH_ASSOC)) {
+                  ?>
+                  <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500">
+                      <h3 class="font-arabic text-center">Scratch Card <?=$index?></h3>
+                      <div class="scratch-container">
+                          <div class="scratch-card text-center">
+                              <div class="code"><?= isset($fetch_user['kode_'.$row['id']])? $fetch_user['kode_'.$row['id']]: 'Test Kode 1234' ?></div>
+                          </div>
+                          <canvas id="scratch-card<?=$index?>" class="w-100" height="160"></canvas>
+                      </div>
+                  </div>    
+                  <script>
+                            (function() {
+                      const currentIndex = <?= json_encode($index) ?>;
+                      const createScratchCard<?= $index ?> = (canvasId, imageUrl) => {
+                        let canvas = document.getElementById(canvasId);
+                        let context = canvas.getContext("2d");
+
+                        const init = () => {
+                          let image = new Image();
+                          image.src = imageUrl;
+
+                          image.onload = () => {
+                            context.drawImage(image, 0, 0, 300, 150);
+                          };
+                        };
+
+                        let isDragging = false;
+
+                        const scratch = (x, y) => {
+                          context.globalCompositeOperation = "destination-out";
+                          context.beginPath();
+                          context.arc(x, y, 24, 0, 2 * Math.PI);
+                          context.fill();
+                        };
+
+                        canvas.addEventListener("mousedown", (event) => {
+                          isDragging = true;
+                          scratch(event.offsetX, event.offsetY);
+                        });
+
+                        canvas.addEventListener("mousemove", (event) => {
+                          if (isDragging) {
+                            scratch(event.offsetX, event.offsetY);
+                          }
+                        });
+
+                        canvas.addEventListener("mouseup", () => {
+                          isDragging = false;
+                        });
+
+                        canvas.addEventListener("mouseleave", () => {
+                          isDragging = false;
+                        });
+
+                        init();
+                      };
+
+                      createScratchCard<?= $index ?>("scratch-card<?= $index ?>", "../images/<?=$row['cardImage'] ?>");
+                    })();
+                  </script>         
+        <?php
+          $index++;
+                }
+                }
+      }
+          ?>
+            
+
+            <!-- <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="600">
+                <h3 class="font-arabic text-center">Scratch Card 2</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
-                        <div class="code"><?= $code['kode2'] ?></div>
+                      <div class="code"><?= isset($code['kode2'])? $code['kode2'] : '111222333' ?></div>
                     </div>
                     <canvas id="scratch-card2" class="w-100" height="150"></canvas>
                 </div>
             </div>
  
             <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="700">
-                <h5 class="font-arabic text-center">Scratch Card 3</h5>
+                <h3 class="font-arabic text-center">Scratch Card 3</h3>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
-                        <div class="code"><?= $code['kode3'] ?></div>
+                      <div class="code"><?= isset($code['kode3'])? $code['kode3'] : '332211223' ?></div>
                     </div>
                     <canvas id="scratch-card3" class="w-100" height="150"></canvas>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
     
     <div class="container">
-      <div class="row">
+      <div class="row test">
         <!-- Prize 1 -->
-        <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1000">
+        <?php
+        $query = "SELECT * FROM prize";
+              $getPrize = $connect->prepare($query);
+              $getPrize->execute();
+              $index = 1;
+              if ($getPrize->rowCount() > 0) {
+                while ($row = $getPrize->fetch(PDO::FETCH_ASSOC)) {
+                  ?>
+                  <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1000">
+                    <div class="prize-container">
+                      <h5 class="prize-title font-arabic">Prize <?=$index?></h5>
+                      <div class="stage">
+                      <p class="prize-description font-inside"><?= $row['name'] ?></p>
+                        <div class="stage-content">
+                          <img src='../images/<?= $row['image'] ?>'>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <?php
+                $index++;
+                }
+              }
+
+        ?>
+        <!-- <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1000">
           <div class="prize-container">
             <h5 class="prize-title font-arabic">Prize 1</h5>
-            <!-- Image for Prize 1 -->
             <div class="stage">
             <p class="prize-description font-inside">Brand New Private Jet</p>
               <div class="stage-content"></div>
             </div>
-            </div>
           </div>
+        </div>
     
-        <!-- Prize 2 -->
+
         <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1100">
           <div class="prize-container">
             <h5 class="prize-title font-arabic">Prize 2</h5>
-            <!-- Image for Prize 2 -->
             <div class="stage">
             <p class="prize-description font-inside">Brand New Car</p>
               <div class="stage-content1"></div>
             </div>
             </div>
           </div>
-    
-        <!-- Prize 3 -->
-        <div class="col-md-4" data-aos="fade-up-left" data-aos-duration="2000" data-aos-delay="1200">
-          <div class="prize-container">
-            <h5 class="prize-title font-arabic">Prize 3</h5>
-            <!-- Image for Prize 3 -->
-            <div class="stage">
-            <p class="prize-description font-inside">Brand New Motorcycle</p>
-              <div class="stage-content2"></div>
-            </div>
-            </div>
-          </div>
+     -->
+
       </div>
 
       </div>
@@ -308,54 +475,11 @@
     </script>
     
 
-    <script>
-        const createScratchCard = (canvasId, imageUrl) => {
-  let canvas = document.getElementById(canvasId);
-  let context = canvas.getContext("2d");
-
-  const init = () => {
-    let image = new Image();
-    image.src = imageUrl;
-
-    image.onload = () => {
-      context.drawImage(image, 0, 0, 300, 150);
-    };
-  };
-
-  let isDragging = false;
-
-  const scratch = (x, y) => {
-    context.globalCompositeOperation = "destination-out";
-    context.beginPath();
-    context.arc(x, y, 24, 0, 2 * Math.PI);
-    context.fill();
-  };
-
-  canvas.addEventListener("mousedown", (event) => {
-    isDragging = true;
-    scratch(event.offsetX, event.offsetY);
-  });
-
-  canvas.addEventListener("mousemove", (event) => {
-    if (isDragging) {
-      scratch(event.offsetX, event.offsetY);
-    }
-  });
-
-  canvas.addEventListener("mouseup", () => {
-    isDragging = false;
-  });
-
-  canvas.addEventListener("mouseleave", () => {
-    isDragging = false;
-  });
-
-  init();
-};
-
-createScratchCard("scratch-card1", "assets/images/darren/image-url1.jpg");
-createScratchCard("scratch-card2", "assets/images/darren/image-url2.jpg");
-createScratchCard("scratch-card3", "assets/images/darren/image-url3.jpg");
+  <script>
+  
+// createScratchCard("scratch-card1", "assets/images/darren/image-url1.jpg");
+// createScratchCard("scratch-card2", "assets/images/darren/image-url2.jpg");
+// createScratchCard("scratch-card3", "assets/images/darren/image-url3.jpg");
 
 
     </script>

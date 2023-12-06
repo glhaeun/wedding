@@ -1,40 +1,98 @@
 <?php
-require("component/connect.php");
+    require("component/connect.php");
 
-$action = $_GET['action'];
+    $action = $_GET['action'];
 
-// Insert Data
-if ($action === 'insert') {
-    $nama = $_POST['nama'];
-    $kehadiran = $_POST['kehadiran'];
-    $pesan = $_POST['pesan'];
+    // Insert Data
+    if ($action === 'insert') {
+        $nama = $_POST['nama'];
+        $kehadiran = $_POST['kehadiran'];
+        $pesan = $_POST['pesan'];
 
-    if ($_SESSION['userEmail']) {
-        $email = $_SESSION['userEmail'];
+        if ($_SESSION['userEmail']) {
+            $email = $_SESSION['userEmail'];
 
-        $query = "UPDATE user SET attend='$kehadiran' WHERE email = '$email'";
-        if ($connect->query($query) === TRUE) {
-            echo "Data updated successfully";
+            $query = "UPDATE user SET attend='$kehadiran' WHERE email = '$email'";
+            if ($connect->query($query) === TRUE) {
+                echo "Data updated successfully";
+            }
+        } else {
+            $email = 'anonymous';
+        }
+
+        $sql = "INSERT INTO message_rsvp (name, status, message, email) VALUES ('$nama', '$kehadiran', '$pesan', '$email')";
+        if ($connect->query($sql) === TRUE) {
+            echo "Data inserted successfully";
         }
     }
 
-    $sql = "INSERT INTO message_rsvp (name, status, message) VALUES ('$nama', '$kehadiran', '$pesan')";
-    if ($connect->query($sql) === TRUE) {
-        echo "Data inserted successfully";
-    }
-} 
+    // Select Data
+    if ($action === 'select') {
+        $selectQuery = "SELECT * FROM message_rsvp";
+        $result = $connect->query($selectQuery);
+        if (!$result) {
+            die("Error in SQL query: " . $connect->errorInfo()[2]);
+        }
 
-// Select Data
-if ($action === 'select') {
-    $selectQuery = "SELECT * FROM message_rsvp";
-    $result = $connect->query($selectQuery);
-
-    if (!$result) {
-        die("Error in SQL query: " . $connect->errorInfo()[2]);
+        $data = $result->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($data);
     }
 
-    $data = $result->fetchAll(PDO::FETCH_ASSOC);
+    // Update Data
+    if ($action === 'update') {
+        $userEmail = $_POST['userEmail']; 
+        $editedName = $_POST['updatedName']; 
+        $editedStatus = $_POST['updatedStatus'];
+        $editedMessage = $_POST['updatedMessage']; 
 
-    echo json_encode($data);
-} 
+        var_dump($userEmail, $editedName, $editedStatus, $editedMessage);
+
+        $updateQuery = "UPDATE message_rsvp SET name='$editedName', status='$editedStatus', message='$editedMessage' WHERE email='$userEmail'";
+        
+        if ($connect->query($updateQuery) === TRUE) {
+            echo "Data updated successfully";
+        } else {
+            echo "Error updating data: " . $connect->errorInfo()[2];
+        }
+    }
+
+    if($action === 'checkUser') {
+        $userEmail = $_GET['userEmail']; // Get the userEmail from the GET request
+
+        $database = $connect->prepare("SELECT * FROM message_rsvp WHERE email = '$userEmail'");
+        $database -> execute();
+
+        if ($database->rowCount() > 0) {
+            $row = $database->rowCount();
+            echo $row;
+        } else {
+            $row = 0;
+            echo $row;
+        }
+       
+    }
+
+    if($action === 'getData') {
+        $email = $_SESSION['userEmail'];
+        
+
+        $userEmail = $_GET['userEmail']; 
+        $database = $connect->prepare("SELECT * FROM message_rsvp WHERE email = '$userEmail'");
+        $database -> execute();
+
+        
+        $data = $database->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($data);
+    }
+    
+    if ($_GET['action'] == 'delete') {
+        $userEmail = $_POST['userEmail'];
+        $sql = "DELETE FROM message_rsvp WHERE email = '$userEmail'";
+    
+        if ($connect->query($sql) === TRUE) {
+            echo "Record deleted successfully";
+        } else {
+            echo "Error deleting ";
+        }
+    }
 ?>

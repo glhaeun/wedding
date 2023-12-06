@@ -23,3 +23,15 @@
     document.getElementById('bride_groom_image').addEventListener('change', function(event) {
         previewImage(event, 'bridegroomImagePreview');
     });
+
+    document.getElementById('timeline_image1').addEventListener('change', function(event) {
+        previewImage(event, 'timelineImage1Preview');
+    });
+
+    document.getElementById('timeline_image2').addEventListener('change', function(event) {
+        previewImage(event, 'timelineImage2Preview');
+    });
+
+    document.getElementById('timeline_image3').addEventListener('change', function(event) {
+        previewImage(event, 'timelineImage3Preview');
+    });

@@ -87,12 +87,19 @@
             animation: cardAddedAnimation 0.5s ease-in;
         }
 
+        .borderless {
+            border: none;
+            outline: none;
+            box-shadow: none; 
+            background:none;
+        }
+
+
     </style>
 </head>
 <body>
     <div class="main-container-rsvp">
         <img src="assets/images/ziven/leave-1.png" data-aos="fade-right" class="leave-1-png-rsvp" alt="">
-        <img src="assets/images/ziven/flower.png" data-aos="fade-left" class="flower-png-rsvp" alt="">
         <section id="rsvp" class="m-5">
             <div class="container-rsvp" data-aos="fade-up">
                 <div class="card-body border rounded-4 shadow p-3">
@@ -108,9 +115,9 @@
                         <div class="mb-3 font-arabic">
                             <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
                             <select class="form-select shadow-sm" id="form-kehadiran">
-                                <option value="Berhalangan" selected>Konfirmasi Kehadiran</option>
-                                <option value="Hadir">Hadir</option>
-                                <option value="Berhalangan">Berhalangan</option>
+                                <option value="0" selected>Konfirmasi Kehadiran</option>
+                                <option value="1">Hadir</option>
+                                <option value="2">Berhalangan</option>
                             </select>
                         </div>
 
@@ -120,8 +127,15 @@
                         </div>
 
                         <div class="d-flex font-arabic">
-                            <button class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1"  id="kirim">
+                            <button class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1" style="display: block;" id="kirim">
                                 Kirim
+                                <i class="fa-solid fa-paper-plane ms-1"></i>
+                            </button>
+                        </div>
+
+                        <div class="d-flex font-arabic">
+                            <button class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1" style="display: none;" id="update">
+                                Update
                                 <i class="fa-solid fa-paper-plane ms-1"></i>
                             </button>
                         </div>
@@ -162,6 +176,8 @@
         const kehadiranInput = document.getElementById('form-kehadiran');
         const pesanInput = document.getElementById('form-pesan');
         const daftarUcapan = document.getElementById('daftar-ucapan');
+        const kirimButton = document.getElementById('kirim');
+        const updateButton = document.getElementById('update');
 
         fetch('rsvpConnection.php?action=select')
             .then(response => response.json())
@@ -169,8 +185,13 @@
                 data.forEach(item => {
                     const newCard = document.createElement('div');
                     const datetime = new Date(item.timestamp).toLocaleString();
-
-                    newCard.className = 'mb-3 new-card';
+                    if(item.status == 1){
+                        kehadiran = 'Hadir';
+                    }
+                    else{
+                        kehadiran = 'Berhalangan';
+                    }
+                    newCard.className = 'mb-3 new-card'; 
                     newCard.innerHTML = `
                         <div class="card-body bg-light shadow p-3 m-0 rounded-4">
                             <div class="d-flex flex-wrap justify-content-between align-items-center">
@@ -181,21 +202,64 @@
                                     <p class="mt-1 font-time">${item.created_datetime}</p>
                                 </div>
                                 <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                    <strong class="me-1">${item.status}</strong>
-                                    ${item.status == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
+                                    <strong class="me-1">${kehadiran}</strong>
+                                    ${kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
+                                </div>
+                                
+                                <div class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                    <strong class="me-1">${kehadiran}</strong>
+                                    ${kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
                                 </div>
                             </div>
                             <hr class="text-dark my-1">
-                            <p class="text-dark mt-0 mb-1 mx-0 p-0" style="white-space: pre-line">${item.message}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <input type="text" value="${item.message}" class="borderless"/>
+                                <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn">
+                                    Edit
+                                    <i class="fas fa-edit ms-1"></i>
+                                </button>
+                            </div>
+                            <input type="hidden" value="${item.id}">
                         </div>`;
 
+                    const editBtn = newCard.querySelector('.edit-btn');
+                    editBtn.addEventListener('click', function () {
+                        namaInput.value = item.name;
+                        kehadiran = 'Hadir' ? 1 : 0;
+                        kehadiranInput.value = kehadiran;
+                        pesanInput.value = item.message;
+                        updateButton.style.display = 'block';
+                        kirimButton.style.display = 'none';
+                        console.log(item.id);
+                        fetch('rsvpConnection.php?action=update', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: new URLSearchParams({
+                                'updatedName': item.name,
+                                'updatedStatus': item.status,
+                                'updatedMessage': item.message,
+                                'messageId' : item.id,
+                            }),
+                        })
+                        .then(response => response.text())
+                        .then(data => {
+                            
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+
+                    });
+                    
                     daftarUcapan.appendChild(newCard);
                 });
                 displaySubmissions();
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
-            });
+        });
 
         form.addEventListener('submit', function (event) {
             event.preventDefault(); 
@@ -214,13 +278,12 @@
                 }).showToast();
             } else {
                 const nama = namaInput.value;
-                const kehadiran = kehadiranInput.value;
+                const kehadiran = parseInt(kehadiranInput.value);
                 const pesan = pesanInput.value;
                 const newCard = document.createElement('div');
                 const statusHadir = kehadiran == '1' ? "Hadir" : "Berhalangan";
                 const iconStatus = kehadiran == '1' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
                 const datetime = new Date().toLocaleString();
-
                 newCard.className = 'mb-3 new-card';
                 newCard.innerHTML = `
                     <div class="card-body bg-light shadow p-3 m-0 rounded-4">
@@ -237,13 +300,20 @@
                             </div>
                         </div>
                         <hr class="text-dark my-1">
-                        <p class="text-dark mt-0 mb-1 mx-0 p-0" style="white-space: pre-line">${pesan}</p>
+                        <input type="text" value="${pesan}"class="borderless"/>
+                        <button class="btn btn-warning btn-sm rounded-3 shadow m-1 edit-btn">
+                            Edit
+                            <i class="fas fa-edit ms-1"></i>
+                        </button>
                     </div>`;
+
                 daftarUcapan.appendChild(newCard);
                 namaInput.value = '';
                 kehadiranInput.value = '0';
                 pesanInput.value = '';
+                form.reset();
                 displaySubmissions();
+                form.submit();
 
                 Toastify({
                     text: "😍 Terima Kasih atas respond yang diberikan !",
@@ -270,12 +340,23 @@
                 })
                 .then(response => response.text())
                 .then(data => {
-                    console.log(data);
+                    Toastify({
+                        text: "🚀 Data updated successfully!",
+                        duration: 3000,
+                        newWindow: true,
+                        gravity: "bottom",
+                        position: 'right',
+                        backgroundColor: "rgba(172, 168, 170, 0.54)",
+                        stopOnFocus: true,
+                        onClick: function () { }
+                    }).showToast();
                 })
                 .catch(error => {
                     console.error('Error:', error);
                 });
 
+                updateButton.style.display = 'none';
+                kirimButton.style.display = 'block';
             }
         });
 

@@ -73,9 +73,20 @@
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>Attend</th>
-                                            <th>Code 1</th>
-                                            <th>Code 2</th>
-                                            <th>Code 3</th>
+                                            <?php
+                                                $query = "SELECT name FROM prize";
+                                                $getPrize = $connect->prepare($query);
+                                                $getPrize->execute();
+                                                if($getPrize->rowCount()>0) {
+                                                    while($row = $getPrize->fetch(PDO::FETCH_ASSOC)){
+                                                        ?>
+                                                    <th>
+                                                        Kode: <?=$row['name']?>
+                                                    </th>
+                                                        <?php
+                                                    }
+                                                }
+                                            ?>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -96,11 +107,23 @@
                             <td><?=$index?></td>
                             <td><?=$fetch_user['name']?></td>
                             <td><?=$fetch_user['email']?></td>
-                            <td><?=$fetch_user['attend']?></td>     
-                            <td><?=$fetch_user['kode1']?></td>
-                            <td><?=$fetch_user['kode2']?></td>
-                            <td><?=$fetch_user['kode3']?></td>
-                            <td><a href="guestMessage.php?view=<?=$fetch_user['id']?>"><i class="fa-solid fa-message" style="color: #fad983;"></i></a>
+                            <td><?=$fetch_user['attend']?></td> 
+                            <?php
+                            $query = "SELECT id FROM prize";
+                            $getPrize = $connect->prepare($query);
+                            $getPrize->execute();
+
+                            if ($getPrize->rowCount() > 0) {
+                                while ($row = $getPrize->fetch(PDO::FETCH_ASSOC)) {
+                                    $prizeId = $row['id'];
+                                    ?>
+                                    <td><?=$fetch_user['kode_'.$prizeId]?></td> 
+                                    <?php
+                                }
+                            }
+
+                            ?>
+                            <td><a href="guestMessage.php?view=<?=$fetch_user['email']?>"><i class="fa-solid fa-message" style="color: #fad983;"></i></a>
                             <a href="guest.php?delete=<?=$fetch_user['id']?>"><i class="fas fa-trash" style="color: #fad983;"></i></a></td>      
                     <?php
                         $index++;

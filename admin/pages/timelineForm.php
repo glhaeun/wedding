@@ -73,14 +73,14 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="timeline_image2" class="d-block">Image 2</label>
-                                    <?php if(isset($data['imageB']) && $data['imageA'] != "") { ?>                            
+                                    <?php if(isset($data['imageB']) && $data['imageB'] != "") { ?>                            
                                     <img id="timelineImage2Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $data['imageB'] ?>">
                                     <?php } ?>
                                     <input  name="timeline_image2"  type="file" id="timeline_image2" onchange="previewImage(event, 'timelineImage2Preview')">  
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="timeline_image3" class="d-block">Image 3</label>
-                                    <?php if(isset($data['imageC']) && $data['imageA'] != "") { ?>                                      
+                                    <?php if(isset($data['imageC']) && $data['imageC'] != "") { ?>                                      
                                     <img id="timelineImage3Preview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $data['imageC'] ?>">
                                     <?php } ?>
                                     <input  name="timeline_image3"  type="file" id="timeline_image3" onchange="previewImage(event, 'timelineImage3Preview')">  

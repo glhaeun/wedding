@@ -7,18 +7,12 @@
         $content = $_POST['content'];
 
         if(isset($_FILES['timeline_image1']) && file_exists($_FILES['timeline_image1']['tmp_name'])) {
-            // replaceImage('../../images', $_FILES['timeline_image1'], 'bride.png');
-            // moveImageWithName('../../images', $_FILES['timeline_image1'], 'bride.png');
             $image1 = moveImage('../../images', $_FILES['timeline_image1']);
         } 
         if(isset($_FILES['timeline_image2']) && file_exists($_FILES['timeline_image2']['tmp_name'])) {
-            // replaceImage('../../images', $_FILES['timeline_image2'], 'groom.png');
-            // moveImageWithName('../../images', $_FILES['timeline_image2'], 'groom.png');
             $image2 = moveImage('../../images', $_FILES['timeline_image2']);
         }
         if(isset($_FILES['timeline_image3']) && file_exists($_FILES['timeline_image3']['tmp_name'])) {
-            // replaceImage('../../images', $_FILES['timeline_image2'], 'groom.png');
-            // moveImageWithName('../../images', $_FILES['timeline_image2'], 'groom.png');
             $image3 = moveImage('../../images', $_FILES['timeline_image3']);
         }
 

@@ -1,7 +1,7 @@
 <?php 
     $editMode = isset($_GET['edit']); 
     $readonly = $editMode ? '' : 'readonly';
-
+    
     $check_database = $connect->prepare("SELECT * FROM general");
     $check_database -> execute();
 
@@ -32,6 +32,13 @@
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        <?php
+                            if($editMode) {
+                                ?>
+                                <input type='hidden' name='edit' value='1'>
+                                <?php
+                            }
+                        ?>
                             <div class="data-general">
                             <h4 class="text-center">Invitation</h4>
                             <div class="form-row">
