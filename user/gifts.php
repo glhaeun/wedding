@@ -284,17 +284,17 @@
     <section id="hadiah">
         <div class="container">
             <div class="text-center mt-5 mb-5">
-                <h1 class="font-esthetic mt-0 csstitle" style="font-size: 3rem;"data-aos="fade-out" data-aos-duration="2000">Hadiah</h1>
+                <h1 class="font-esthetic mt-0 csstitle" style="font-size: 3rem;"data-aos="fade-out" data-aos-duration="2000">Gift</h1>
                 <img src="https://cdn.pixabay.com/photo/2022/10/27/22/50/divider-7551966_640.png" alt="tes" class="my-image"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">
                 <p class="m-3 font-inside" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">
-                    Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami,
-                    dapat melalui :
+                    For Family and friends who wish to send gifts 
+                    Please send them through:
                 </p>
 
                 <div class="button-container"data-aos="fade-in"  data-aos-duration="2000" data-aos-delay="500">
                     <button data-toggle="angpao" class="btn btn-light btn-sm rounded-3 font-arabic"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">Send Angpao</button>
                     <button data-toggle="gift" class="btn btn-light btn-sm rounded-3 font-arabic"data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">Send Gift</button>
-                </div>
+                </div>  
 
                 <div class="image-container">
                     <!-- <img src="assets/images/elvina/heartpanjang.png" alt="HeartPanjang"> -->
@@ -304,15 +304,15 @@
                     <div class="row justify-content-center" data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3 d-flex flex-column align-items-center justify-content-center" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="<?=$dataGroomBank['link_image'] ?>" class="img-fluid rounded" width="150" alt="<?=$dataGroomBank['bank_name'] ?>"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening <?=$groom['rekening']?></p>
+                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">Account Number <?=$groom['rekening']?></p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n <?=$groom['groom']?></p>
-                            <button onclick="salinData(this)" class="btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$groomRek?>" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
+                            <button onclick="salinData(this)" class="btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$groomRek?>" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Copy</button>
                         </div>
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3 d-flex flex-column align-items-center justify-content-center" style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="<?=$dataBrideBank['link_image'] ?>" class="img-fluid rounded" width="150" alt="<?=$dataBrideBank['bank_name'] ?>"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
-                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">No. Rekening <?=$bride['rekening']?></p>
+                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">Account Number <?=$bride['rekening']?></p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">a.n <?=$bride['bride']?></p>
-                            <button onclick="salinData(this)" class="btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$brideRek?>" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Salin No. Rekening</button>
+                            <button onclick="salinData(this)" class="btn btn-light btn-sm rounded-3 font-arabic" data-salin="<?=$brideRek?>" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Copy</button>
                         </div>
                     </div>
                 </div>
@@ -340,7 +340,7 @@
                         </div>
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">
                             <img src="assets/images/elvina/location2.png" style='width: auto; height: 50px;' class='mb-4' data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">
-                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Alamat Rumah</p>
+                            <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">Address</p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> <?=$data['couple_address'] ?></p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> Groom's Telp No: <?=$groom['number']?></p>
                             <p class="card-text" style="font-size: 0.9rem;"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000"> Bride's Telp No: <?=$bride['number']?></p>
