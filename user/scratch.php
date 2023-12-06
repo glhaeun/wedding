@@ -62,6 +62,23 @@
         overflow: hidden;
         position: relative;
         place-items: center;
+        align-items: center;
+      justify-content: center;
+
+        }
+        }
+        @media screen and (max-width: 1150px) {
+          .scratch-container {
+        width : auto;
+        height: 200px;
+        border-radius: 8px;
+        margin-bottom: 32px;
+        overflow: hidden;
+        position: relative;
+        place-items: center;
+        align-items: center;
+      justify-content: center;
+
         }
         }
 
@@ -76,7 +93,7 @@
         }
 
         canvas {
-        position: absolute;
+        position: relative;
         cursor: grabbing;
         }
         .prize-container {
@@ -208,17 +225,17 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="row">
             <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500">
-                <h3 class="font-arabic text-center">Scratch Card 1</h3>
+                <h5 class="font-arabic text-center">Scratch Card 1</h5>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
                         <div class="code"><?= $code['kode1'] ?></div>
                     </div>
-                    <canvas id="scratch-card1" class="w-100" height="160"></canvas>
+                    <canvas id="scratch-card1" class="w-100" height="150"></canvas>
                 </div>
             </div>
 
             <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="600">
-                <h3 class="font-arabic text-center">Scratch Card 2</h3>
+                <h5 class="font-arabic text-center">Scratch Card 2</h5>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
                         <div class="code"><?= $code['kode2'] ?></div>
@@ -228,7 +245,7 @@
             </div>
  
             <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="700">
-                <h3 class="font-arabic text-center">Scratch Card 3</h3>
+                <h5 class="font-arabic text-center">Scratch Card 3</h5>
                 <div class="scratch-container">
                     <div class="scratch-card text-center">
                         <div class="code"><?= $code['kode3'] ?></div>
