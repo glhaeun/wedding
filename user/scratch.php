@@ -59,6 +59,23 @@
         overflow: hidden;
         position: relative;
         place-items: center;
+        align-items: center;
+      justify-content: center;
+
+        }
+        }
+        @media screen and (max-width: 1150px) {
+          .scratch-container {
+        width : auto;
+        height: 200px;
+        border-radius: 8px;
+        margin-bottom: 32px;
+        overflow: hidden;
+        position: relative;
+        place-items: center;
+        align-items: center;
+      justify-content: center;
+
         }
         }
 
@@ -73,7 +90,7 @@
         }
 
         canvas {
-        position: absolute;
+        position: relative;
         cursor: grabbing;
         }
         .prize-container {

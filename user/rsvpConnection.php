@@ -7,6 +7,7 @@
     if ($action === 'insert') {
         $nama = $_POST['nama'];
         $kehadiran = $_POST['kehadiran'];
+        $kehadiran == 1 ? 'Hadir' : 'Berhalangan';
         $pesan = $_POST['pesan'];
 
         if ($_SESSION['userEmail']) {
@@ -43,6 +44,7 @@
         $userEmail = $_POST['userEmail']; 
         $editedName = $_POST['updatedName']; 
         $editedStatus = $_POST['updatedStatus'];
+        $editedStatus == 1 ? 'Hadir' : 'Berhalangan';
         $editedMessage = $_POST['updatedMessage']; 
 
         var_dump($userEmail, $editedName, $editedStatus, $editedMessage);

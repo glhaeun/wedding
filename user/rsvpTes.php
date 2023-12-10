@@ -187,7 +187,13 @@
                 data.forEach(item => {
                     const newCard = document.createElement('div');
                     const datetime = new Date(item.timestamp).toLocaleString();
-
+                    if(item.status == 1){
+                        kehadiran = 'Hadir';
+                    }
+                    else{
+                        kehadiran = 'Berhalangan';
+                    }
+                    console.log(kehadiran);
                     newCard.className = 'mb-3 new-card';
                     newCard.innerHTML = `
                     <div class="card-body bg-light shadow p-3 m-0 rounded-4">
@@ -202,8 +208,8 @@
                             <div class="d-flex justify-content-end align-items-center" style="flex:1;">
                                 <div class="text-end">
                                     <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                        <strong class="me-1">${item.status}</strong>
-                                        ${item.status == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
+                                        <strong class="me-1">${kehadiran}</strong>
+                                        ${kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
                                     </p>
                                 </div>
                                 ${item.email == userEmail ? `
@@ -299,7 +305,7 @@
                                 const cardToDelete = document.querySelector(`.new-card input[value="${userEmail}"]`).closest('.new-card');
                                 cardToDelete.remove();
                                 Toastify({
-                                    text: "😢 Pesan berhasil dihapus!",
+                                    text: "😢 Message has been deleted!",
                                     duration: 3000,
                                     newWindow: true,
                                     gravity: "bottom",
@@ -331,7 +337,7 @@
                 const toastNode = document.createElement("div");
                 toastNode.innerHTML = "<i class='fas fa-exclamation-triangle'></i> ";
                 Toastify({
-                    text: "👀 Field nama atau status kehadiran wajib diisi !",
+                    text: "👀 Name Field Or status is mandatory !",
                     duration: 3000,
                     newWindow: true,
                     gravity: "bottom",
@@ -342,14 +348,12 @@
                 }).showToast();
             } else {
                 if (isUpdate) {
-
-                    
                 const updatedName = namaInput.value;
                 const updatedStatus = kehadiranInput.value;
                 const updatedMessage = pesanInput.value;
-
                 const cardToUpdate = document.querySelector(`.new-card input[value="${userEmail}"]`).closest('.new-card');
-                const statusHadir = updatedStatus === '1' ? "Hadir" : "Berhalangan";
+                const statusHadir = updatedStatus === '1' ? 'Hadir' : 'Berhalangan';
+                console.log(statusHadir);
                 const iconStatus = updatedStatus === '1' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
                 const datetime = new Date().toLocaleString(); 
                 cardToUpdate.innerHTML = `
@@ -416,7 +420,7 @@
                     .then(response => response.text())
                     .then(data => {
                         Toastify({
-                            text: "😍 Pesan berhasil diupdate !",
+                            text: "😍 Message has been updated !",
                             duration: 3000,
                             newWindow: true,
                             gravity: "bottom",
@@ -532,7 +536,7 @@
                     });
 
                     Toastify({
-                        text: "😍 Terima Kasih atas respond yang diberikan !",
+                        text: "😍 Thankyou for the respond !",
                         duration: 3000,
                         newWindow: true,
                         gravity: "bottom",
