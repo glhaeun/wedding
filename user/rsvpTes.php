@@ -305,7 +305,7 @@
                                 const cardToDelete = document.querySelector(`.new-card input[value="${userEmail}"]`).closest('.new-card');
                                 cardToDelete.remove();
                                 Toastify({
-                                    text: "😢 Pesan berhasil dihapus!",
+                                    text: "😢 Message has been deleted!",
                                     duration: 3000,
                                     newWindow: true,
                                     gravity: "bottom",
@@ -351,7 +351,6 @@
                 const updatedName = namaInput.value;
                 const updatedStatus = kehadiranInput.value;
                 const updatedMessage = pesanInput.value;
-
                 const cardToUpdate = document.querySelector(`.new-card input[value="${userEmail}"]`).closest('.new-card');
                 const statusHadir = updatedStatus === '1' ? 'Hadir' : 'Berhalangan';
                 console.log(statusHadir);
@@ -421,7 +420,7 @@
                     .then(response => response.text())
                     .then(data => {
                         Toastify({
-                            text: "😍 Pesan berhasil diupdate !",
+                            text: "😍 Message has been updated !",
                             duration: 3000,
                             newWindow: true,
                             gravity: "bottom",
@@ -537,7 +536,7 @@
                     });
 
                     Toastify({
-                        text: "😍 Terima Kasih atas respond yang diberikan !",
+                        text: "😍 Thankyou for the respond !",
                         duration: 3000,
                         newWindow: true,
                         gravity: "bottom",
