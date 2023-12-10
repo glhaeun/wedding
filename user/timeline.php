@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
-    <link rel="stylesheet" href="assets/style/timeline.css">
+    <link rel="stylesheet" href="assets/style/timelinenew.css">
 </head>
 <body>
     <section id="timeline">
@@ -70,11 +70,11 @@
 
                                 <div class="board">
                                     <?php if($fetch_data['imageA'] != '') { ?>
-                                    <img src="../images/<?= $fetch_data['imageA'] ?>" alt="" class="img-fluid slide-in-left" id="timeline-pic1"> <?php } ?>
+                                    <img src="../images/<?= $fetch_data['imageA'] ?>" alt="" class=" slide-in-left foto" id="timeline-pic1"> <?php } ?>
                                     <?php if($fetch_data['imageB'] != '') { ?>
-                                    <img src="../images/<?= $fetch_data['imageB'] ?>" alt="" class="img-fluid fade-in" id="timeline-pic2"> <?php } ?>
+                                    <img src="../images/<?= $fetch_data['imageB'] ?>" alt="" class=" fade-in foto" id="timeline-pic2"> <?php } ?>
                                     <?php if($fetch_data['imageC'] != '') { ?>
-                                    <img src="../images/<?= $fetch_data['imageC'] ?>" alt="" class="img-fluid slide-in-right" id="timeline-pic3"> <?php } ?>
+                                    <img src="../images/<?= $fetch_data['imageC'] ?>" alt="" class=" slide-in-right foto" id="timeline-pic3"> <?php } ?>
                                     <button class="close-button" onclick="closeBoard(this)"> X </button>
                                 </div>                        
                             </div>

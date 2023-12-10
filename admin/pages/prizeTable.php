@@ -58,7 +58,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Prize</h1>
-                        <a href="prize.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-plus"></i> Tambah Prize</a>
+                        <a href="prize.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-plus"></i> Add Prize</a>
                     </div>
 
                     <div class="card shadow mb-4 w-100">
@@ -72,7 +72,7 @@
                                             <th>Prize Name</th>
                                             <th>Prize Image</th>
                                             <th>Scratch Card Image</th>
-                                            <th>Aksi</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -98,7 +98,7 @@
                             </td>
                             <td>
                             <?php if($fetch_user['cardImage'] != '') {?>
-                                <img style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $fetch_user['cardImage'] ?>">
+                                <img style=" border-radius: 10px" src="../../images/<?= $fetch_user['cardImage'] ?>">
                             <?php } ?>
                             </td> 
                             <td><a href="prize.php?edit=<?=$fetch_user['id']?>"><i class="fa-solid fa-pen-to-square" style="color: #fad983;"></i></a>
