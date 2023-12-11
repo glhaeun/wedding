@@ -42,12 +42,13 @@
         }
 
         .scratch-container {
-        width: 300px;
+        /* width: 300px; */
         height: 150px;
         border-radius: 8px;
         margin-bottom: 32px;
         overflow: hidden;
         position: relative;
+        /* object-fit: cover; */
         place-items: center;
         }
         @media screen and (max-width: 740px) {
@@ -92,7 +93,9 @@
         canvas {
         position: relative;
         cursor: grabbing;
+        object-fit: cover;
         }
+
         .prize-container {
           position: relative;
           display: flex;
@@ -265,7 +268,7 @@
                           image.src = imageUrl;
 
                           image.onload = () => {
-                            context.drawImage(image, 0, 0, 300, 150);
+                            context.drawImage(image, 0, 0, canvas.width, canvas.height);
                           };
                         };
 

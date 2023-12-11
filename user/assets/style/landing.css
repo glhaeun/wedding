@@ -173,6 +173,7 @@
 .bride-groom-landing img {
   border-radius: 350px;
   width: min(27vw, 27vh);
+  object-fit: cover;
   height: min(27vw, 27vh);
 }
 

@@ -21,6 +21,7 @@
   margin: auto 22px;
   height: 85%;
   width: 85%;
+  object-fit: cover;
   border-radius: 50%;
 }
 
