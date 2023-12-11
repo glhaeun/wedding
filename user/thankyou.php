@@ -75,7 +75,7 @@
                     <img src="https://cdn.pixabay.com/photo/2018/02/19/20/16/divider-3166117_640.png" alt="tes"
                         class="my-image"data-aos="fade-in" data-aos-delay="1000" data-aos-duration="2000">
                     <div>
-                        <h1 class="font-esthetic yellow mt-4" data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
+                        <h1 class="font-esthetic csstitle mt-4" data-aos="fade-out" data-aos-delay="1000" data-aos-duration="2000">
                             >Thank You</h1>
                         <hr class="mt-3 mb-3">
                     </div>
