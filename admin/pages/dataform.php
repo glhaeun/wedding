@@ -111,7 +111,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="groom" class="d-block">Groom image</label>
-                                    <img id="groomImagePreview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/groom.png">
+                                    <img id="groomImagePreview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $groom_data['image'] ?>">
                                     <?php if($readonly == "") { ?>
                                     <input  name="groom_image"  type="file" id="groom" onchange="previewImage(event, 'groomImagePreview')">
                                     <?php } ?>  
@@ -189,11 +189,9 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="bride_image" class="d-block">Bride image</label>
-                                    <?php if(isset($bride_data['image']) && $bride_data['image'] != "") { ?>                                      
-                                    <img id="brideImagePreview"  class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images/<?= $bride_data['image'] ?>">
-                                    <?php } ?>
+                                    <img id="brideImagePreview" class="my-2" style="width: 150px; height: 150px; border-radius: 10px" src="../../images//<?= $bride_data['image'] ?>">
                                     <?php if($readonly == "") { ?>
-                                    <input  name="bride_image"  type="file" id="bride_image" onchange="previewImage(event, 'brideImagePreview')">  
+                                    <input  name="bride_image"  type="file" id="bride_image" onchange="previewImage(event, 'brideImagePreview')">
                                     <?php } ?>  
                                 </div>
                             </div>
