@@ -60,6 +60,23 @@
         overflow: hidden;
         position: relative;
         place-items: center;
+        align-items: center;
+      justify-content: center;
+
+        }
+        }
+        @media screen and (max-width: 1150px) {
+          .scratch-container {
+        width : auto;
+        height: 200px;
+        border-radius: 8px;
+        margin-bottom: 32px;
+        overflow: hidden;
+        position: relative;
+        place-items: center;
+        align-items: center;
+      justify-content: center;
+
         }
         }
 
@@ -74,7 +91,7 @@
         }
 
         canvas {
-        position: absolute;
+        position: relative;
         cursor: grabbing;
         object-fit: cover;
         }
@@ -213,9 +230,7 @@
 
     <div class="container mt-5 ">
     <h1 class="text-center font-esthetic csstitle" data-aos="fade-down-left" data-aos-duration="2000">Lucky Draw</h1>
-    <p class="text-center font-inside" data-aos="fade-down-left" data-aos-duration="2000">
-    Gunakan kursor pada perangkat komputer atau gesek layar dengan jari pada perangkat seluler untuk mengungkap area yang ditentukan pada kartu. Perhatikan dan simpan huruf atau angka yang terungkap setelah penggosokan.
-    </p>
+    <p class="text-center font-inside" data-aos="fade-down-left" data-aos-duration="2000">Use the cursor on your computer device or swipe the screen with your finger on your mobile device to reveal the prize code! </p>
     <div class="container">
         <div class="row test">
           <?php

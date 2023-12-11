@@ -103,31 +103,31 @@
             <div class="container-rsvp" data-aos="fade-up">
                 <div class="card-body border rounded-4 shadow p-3">
                     <form method="post" id="rsvp-form">
-                        <h1 class="font-esthetic text-center mb-3 csstitle" style="font-size: 4rem;">Ucapan & Doa</h1>
+                        <h1 class="font-esthetic text-center mb-3 csstitle" style="font-size: 4rem;">Blessing and Prayer</h1>
                         <div class="mb-1" id="balasan"></div>
 
                         <div class="mb-3 font-arabic">
-                            <label for="form-nama" class="form-label">Nama</label>
-                            <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Isikan Nama Anda">
+                            <label for="form-nama" class="form-label">Name</label>
+                            <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Your name ">
                         </div>
 
                         <div class="mb-3 font-arabic">
-                            <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
+                            <label for="form-kehadiran" class="form-label" id="label-kehadiran">Attendance</label>
                             <select class="form-select shadow-sm" id="form-kehadiran">
-                                <option value="0" selected>Konfirmasi Kehadiran</option>
-                                <option value="1">Hadir</option>
-                                <option value="2">Berhalangan</option>
+                                <option value="0" selected>Attendance Confirmation</option>
+                                <option value="1">I will attend</option>
+                                <option value="2">Sorry, I can't make it</option>
                             </select>
                         </div>
 
                         <div class="mb-3 font-arabic">
-                            <label for="form-pesan" class="form-label">Ucapan & Doa</label>
-                            <textarea class="form-control shadow-sm" id="form-pesan" rows="4" placeholder="Tulis Ucapan & Doa"></textarea>
+                            <label for="form-pesan" class="form-label">Message</label>
+                            <textarea class="form-control shadow-sm" id="form-pesan" rows="4" placeholder="Please send us your message"></textarea>
                         </div>
 
                         <div class="d-flex font-arabic">
                             <button class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1"  id="kirim">
-                                Kirim
+                                Send
                                 <i class="fa-solid fa-paper-plane ms-1"></i>
                             </button>
                         </div>
@@ -143,7 +143,7 @@
                 <ul class="pagination mb-0">
                     <li class="page-item" id="previous">
                         <button class="page-link" style='color:#c7863d' aria-label="Previous">
-                            <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
+                            <i class="fa-solid fa-circle-left me-1"></i>Before
                         </button>
                     </li>
                     <li class="page-item">
@@ -151,7 +151,7 @@
                     </li>
                     <li class="page-item"  id="next">
                         <button class="page-link"  style='color:#c7863d' aria-label="Next">
-                            Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
+                            After<i class="fa-solid fa-circle-right ms-1"></i>
                         </button>
                     </li>
                 </ul>
@@ -187,7 +187,13 @@
                 data.forEach(item => {
                     const newCard = document.createElement('div');
                     const datetime = new Date(item.timestamp).toLocaleString();
-
+                    if(item.status == 1){
+                        kehadiran = 'Attend';
+                    }
+                    else{
+                        kehadiran = 'Not Attend';
+                    }
+                    console.log(kehadiran);
                     newCard.className = 'mb-3 new-card';
                     newCard.innerHTML = `
                     <div class="card-body bg-light shadow p-3 m-0 rounded-4">
@@ -202,8 +208,8 @@
                             <div class="d-flex justify-content-end align-items-center" style="flex:1;">
                                 <div class="text-end">
                                     <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                                        <strong class="me-1">${item.status}</strong>
-                                        ${item.status == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
+                                        <strong class="me-1">${kehadiran}</strong>
+                                        ${kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
                                     </p>
                                 </div>
                                 ${item.email == userEmail ? `
@@ -257,7 +263,12 @@
             .then(data => {
                 console.log(data)
                 namaInput.value = data[0].name;
-                kehadiranInput.value = data[0].status;
+                if (data[0].status === 'Attend') {
+                    kehadiranInput.value = '1'; 
+                } else if (data[0].status === 'Not Attend') {
+                    kehadiranInput.value = '2'; 
+                }
+                
                 pesanInput.value = data[0].message;
                 form.scrollIntoView({ behavior: 'smooth', block: 'start' });
             })
@@ -282,7 +293,7 @@
             } else {
                 $.confirm({
                     title: 'Confirm Deletion',
-                    content: 'Are you sure you want to delete your submission?',
+                    content: 'Are you sure you want to delete your message?',
                     buttons: {
                         confirm: function () {
                             fetch('rsvpConnection.php?action=delete', {
@@ -299,7 +310,7 @@
                                 const cardToDelete = document.querySelector(`.new-card input[value="${userEmail}"]`).closest('.new-card');
                                 cardToDelete.remove();
                                 Toastify({
-                                    text: "😢 Pesan berhasil dihapus!",
+                                    text: "😢 Message has been deleted!",
                                     duration: 3000,
                                     newWindow: true,
                                     gravity: "bottom",
@@ -327,11 +338,11 @@
 
         form.addEventListener('submit', function (event) {
             event.preventDefault(); 
-            if (!namaInput.value || !kehadiranInput.value) {
+            if (!namaInput.value || !kehadiranInput.value || kehadiranInput.value == "0") {
                 const toastNode = document.createElement("div");
                 toastNode.innerHTML = "<i class='fas fa-exclamation-triangle'></i> ";
                 Toastify({
-                    text: "👀 Field nama atau status kehadiran wajib diisi !",
+                    text: "👀 Name Field Or status is mandatory !",
                     duration: 3000,
                     newWindow: true,
                     gravity: "bottom",
@@ -342,14 +353,12 @@
                 }).showToast();
             } else {
                 if (isUpdate) {
-
-                    
                 const updatedName = namaInput.value;
                 const updatedStatus = kehadiranInput.value;
                 const updatedMessage = pesanInput.value;
-
                 const cardToUpdate = document.querySelector(`.new-card input[value="${userEmail}"]`).closest('.new-card');
-                const statusHadir = updatedStatus === '1' ? "Hadir" : "Berhalangan";
+                const statusHadir = updatedStatus === '1' ? 'Attend' : 'Not Attend';
+                console.log(statusHadir);
                 const iconStatus = updatedStatus === '1' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
                 const datetime = new Date().toLocaleString(); 
                 cardToUpdate.innerHTML = `
@@ -416,7 +425,7 @@
                     .then(response => response.text())
                     .then(data => {
                         Toastify({
-                            text: "😍 Pesan berhasil diupdate !",
+                            text: "😍 Message has been updated !",
                             duration: 3000,
                             newWindow: true,
                             gravity: "bottom",
@@ -471,7 +480,7 @@
                     const kehadiran = kehadiranInput.value;
                     const pesan = pesanInput.value;
                     const newCard = document.createElement('div');
-                    const statusHadir = kehadiran == '1' ? "Hadir" : "Berhalangan";
+                    const statusHadir = kehadiran == '1' ? "Attend" : "Not Attend";
                     const iconStatus = kehadiran == '1' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>';
                     const datetime = new Date().toLocaleString();
         
@@ -532,7 +541,7 @@
                     });
 
                     Toastify({
-                        text: "😍 Terima Kasih atas respond yang diberikan !",
+                        text: "😍 Thankyou for the respond !",
                         duration: 3000,
                         newWindow: true,
                         gravity: "bottom",

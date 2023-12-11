@@ -117,16 +117,16 @@
 
                         <div class="row justify-content-center mt-3" data-waktu="<?= $data['date'] ?>" id="tampilan-waktu">
                                 <div class="col-3 p-1 font-color-location">
-                                    <h2 class="d-inline m-0 p-0 font-inside" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
+                                    <h2 class="d-inline m-0 p-0 font-inside" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Days</small>
                                 </div>
                                 <div class="col-3 p-1 font-color-location">
-                                    <h2 class="d-inline m-0 p-0 font-inside" id="jam">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Jam</small>
+                                    <h2 class="d-inline m-0 p-0 font-inside" id="jam">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hours</small>
                                 </div>
                                 <div class="col-3 p-1 font-color-location">
-                                    <h2 class="d-inline m-0 p-0 font-inside" id="menit">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Menit</small>
+                                    <h2 class="d-inline m-0 p-0 font-inside" id="menit">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Minutes</small>
                                 </div>
                                 <div class="col-3 p-1 font-color-location">
-                                    <h2 class="d-inline m-0 p-0 font-inside" id="detik">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Detik</small>
+                                    <h2 class="d-inline m-0 p-0 font-inside" id="detik">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Seconds</small>
                                 </div>
                         </div>
                     </div>

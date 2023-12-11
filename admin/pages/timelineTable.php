@@ -58,7 +58,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Timeline</h1>
-                        <a href="timeline.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-plus"></i> Tambah Timeline</a>
+                        <a href="timeline.php" class="d-none d-sm-inline-block btn btn-sm btn-primary yellow black" style="border:none"><i class="fas fa-plus"></i> Add Timeline</a>
                     </div>
 
                     <div class="card shadow mb-4 w-100">

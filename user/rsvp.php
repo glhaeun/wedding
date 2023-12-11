@@ -104,31 +104,31 @@
             <div class="container-rsvp" data-aos="fade-up">
                 <div class="card-body border rounded-4 shadow p-3">
                     <form method="post" id="rsvp-form">
-                        <h1 class="font-esthetic text-center mb-3 csstitle" style="font-size: 4rem;">Ucapan & Doa</h1>
+                        <h1 class="font-esthetic text-center mb-3 csstitle" style="font-size: 4rem;">Blessing and Prayer</h1>
                         <div class="mb-1" id="balasan"></div>
 
                         <div class="mb-3 font-arabic">
-                            <label for="form-nama" class="form-label">Nama</label>
+                            <label for="form-nama" class="form-label">Name</label>
                             <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Isikan Nama Anda">
                         </div>
 
                         <div class="mb-3 font-arabic">
-                            <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
+                            <label for="form-kehadiran" class="form-label" id="label-kehadiran">Attendance</label>
                             <select class="form-select shadow-sm" id="form-kehadiran">
-                                <option value="0" selected>Konfirmasi Kehadiran</option>
-                                <option value="1">Hadir</option>
-                                <option value="2">Berhalangan</option>
+                                <option value="0" selected>Confirm Attendance</option>
+                                <option value="1">I will attend</option>
+                                <option value="2">Can't make it</option>
                             </select>
                         </div>
 
                         <div class="mb-3 font-arabic">
-                            <label for="form-pesan" class="form-label">Ucapan & Doa</label>
+                            <label for="form-pesan" class="form-label">Message</label>
                             <textarea class="form-control shadow-sm" id="form-pesan" rows="4" placeholder="Tulis Ucapan & Doa"></textarea>
                         </div>
 
                         <div class="d-flex font-arabic">
                             <button class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1" style="display: block;" id="kirim">
-                                Kirim
+                                Send
                                 <i class="fa-solid fa-paper-plane ms-1"></i>
                             </button>
                         </div>
@@ -151,7 +151,7 @@
                 <ul class="pagination mb-0">
                     <li class="page-item" id="previous">
                         <button class="page-link"  aria-label="Previous">
-                            <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
+                            <i class="fa-solid fa-circle-left me-1"></i>Before
                         </button>
                     </li>
                     <li class="page-item">
@@ -159,7 +159,7 @@
                     </li>
                     <li class="page-item" id="next">
                         <button class="page-link"  aria-label="Next">
-                            Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
+                            After<i class="fa-solid fa-circle-right ms-1"></i>
                         </button>
                     </li>
                 </ul>
