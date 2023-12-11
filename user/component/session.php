@@ -8,8 +8,9 @@
         if ($database->rowCount() > 0) {
             $data = $database->fetch(PDO::FETCH_ASSOC);
             $_SESSION['userId']= $data['id'];
-        } 
-
+        } else {
+            unset($_SESSION['userEmail']);
+        }
     } else {
         unset($_SESSION['userEmail']); // Clear the userEmail from the session
     }

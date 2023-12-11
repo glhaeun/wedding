@@ -94,6 +94,10 @@
             box-shadow: none; 
             background:none;
         }
+
+        .message {
+            word-break:break-all;
+        }
     </style>
 </head>
 <body>
@@ -187,7 +191,8 @@
                 data.forEach(item => {
                     const newCard = document.createElement('div');
                     const datetime = new Date(item.timestamp).toLocaleString();
-                    if(item.status == 1){
+                    console.log(data)
+                    if(item.status == 'Attend'){
                         kehadiran = 'Attend';
                     }
                     else{
@@ -209,7 +214,7 @@
                                 <div class="text-end">
                                     <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
                                         <strong class="me-1">${kehadiran}</strong>
-                                        ${kehadiran == 'Hadir' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
+                                        ${kehadiran == 'Attend' ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fas fa-times-circle" style="color: #ff1414;"></i>'}
                                     </p>
                                 </div>
                                 ${item.email == userEmail ? `
@@ -227,7 +232,7 @@
                         <hr class="text-dark my-1">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex">
-                                <input type="text" value="${item.message}" class="borderless"/>
+                                <p class="message">${item.message}</p>
                             </div>
                         </div>
                         <input type="hidden" value="${item.email}">
@@ -245,7 +250,14 @@
                         });
 
                         deleteBtns.forEach(button => {
-                            button.addEventListener('click', function() {
+                            // button.addEventListener('click', function() {
+                            //     const email = this.getAttribute('data-email');
+                            //     deleteEntry(email);
+                            // });
+                            const clonedButton = button.cloneNode(true);
+                            button.parentNode.replaceChild(clonedButton, button);
+
+                            clonedButton.addEventListener('click', function() {
                                 const email = this.getAttribute('data-email');
                                 deleteEntry(email);
                             });
@@ -286,7 +298,7 @@
                         newWindow: true,
                         gravity: "bottom",
                         position: 'right',
-                        backgroundColor: "rgba(255, 99, 71, 0.6)",
+                        backgroundColor: "rgba(255, 2, 2, 0.54)",
                         stopOnFocus: true,
                         onClick: function () { }
                     }).showToast();
@@ -315,7 +327,7 @@
                                     newWindow: true,
                                     gravity: "bottom",
                                     position: 'right',
-                                    backgroundColor: "rgba(255, 99, 71, 0.6)",
+                                    backgroundColor: "rgba(255, 2, 2, 0.54)",
                                     stopOnFocus: true,
                                     onClick: function () { }
                                 }).showToast();
@@ -389,7 +401,7 @@
                         </div>
                         <hr class="text-dark my-1">
                         <div class="d-flex justify-content-between align-items-center">
-                            <input type="text" value="${updatedMessage}" class="borderless"/>
+                            <p class="message">${updatedMessage}</p>
                         </div>
                         <input type="hidden" value="${userEmail}">
                     </div>`;
@@ -403,7 +415,14 @@
                     
                     const deleteBtns = cardToUpdate.querySelectorAll('.delete-btn');
                         deleteBtns.forEach(button => {
-                            button.addEventListener('click', function() {
+                            // button.addEventListener('click', function() {
+                            //     const email = this.getAttribute('data-email');
+                            //     deleteEntry(email);
+                            // });
+                            const clonedButton = button.cloneNode(true);
+                            button.parentNode.replaceChild(clonedButton, button);
+
+                            clonedButton.addEventListener('click', function() {
                                 const email = this.getAttribute('data-email');
                                 deleteEntry(email);
                             });
@@ -513,7 +532,7 @@
                         </div>
                         <hr class="text-dark my-1">
                         <div class="d-flex justify-content-between align-items-center">
-                            <input type="text" value="${pesan}" class="borderless"/>
+                            <p class="message">${pesan}</p>
                         </div>
                         <input type="hidden" value="${userEmail}">
                         </div>`;
@@ -540,13 +559,15 @@
                         }
                     });
 
+                    const toastNode = document.createElement("div");
+                    toastNode.innerHTML = "<i class='fas fa-exclamation-triangle'></i> ";
                     Toastify({
                         text: "😍 Thankyou for the respond !",
                         duration: 3000,
                         newWindow: true,
                         gravity: "bottom",
                         position: 'right',
-                        backgroundColor: "rgba(172, 168, 170, 0.54)",
+                        backgroundColor: "green",
                         stopOnFocus: true,
                         onClick: function () { }
                     }).showToast();  

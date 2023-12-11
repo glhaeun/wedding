@@ -52,7 +52,7 @@
                     icon:'success',
                     title:'Data has been updated successfully!',
                 }).then(function(){
-                    window.location = `timeline.php?edit=<?=$editId?>`;
+                    window.location = `timelineTable.php`;
                 });
             </script>
             <?php

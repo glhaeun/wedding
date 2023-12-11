@@ -44,7 +44,7 @@
                             <div class="col-md-12">
                                 <div class="md-form mb-0 form-group">
                                     <label for="name" class="">Guest name</label>
-                                    <input type="text" id="name"  name="name" class="form-control" disabled value="<?php echo isset($data['name']) ? $data['name'] : ''; ?>">
+                                    <input type="text" id="name"  name="name" class="form-control" disabled value="<?php echo isset($data['name']) ? $data['name'] : 'No input has been made by user'; ?>">
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -54,13 +54,13 @@
 
 
                         <!--Grid row-->
-                        <div class="row">
+                        <div class="row mt-3">
 
                             <!--Grid column-->
                             <div class="col-md-12">
 
                                 <div class="md-form form-group">
-                                    <label for="message">Message 1</label>
+                                    <label for="message">Message</label>
                                     <textarea type="text" disabled  id="message" name="message" rows="2" class="form-control md-textarea"><?php echo isset($data['message']) ? $data['message'] : 
                                     'No message has been made by user yet'; ?>
                                     </textarea>

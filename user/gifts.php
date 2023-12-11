@@ -336,6 +336,9 @@
                                     }
                                 } 
                                 ?>
+                                <li></li>
+                                <li class="card-text mt-3 mb-0" style="font-size: 0.9rem; margin-top: 10px;" data-aos="fade-in" data-aos-delay="1000" data-aos-duration="3000">
+                                    **hover untuk melihat detail wishlist</li>
                             </ul>
                         </div>
                         <div class="col-12 card-body border rounded-4 shadow p-3 m-3"style="max-width: 25rem;"data-aos="fade-out" data-aos-delay="1000" data-aos-duration="3000">

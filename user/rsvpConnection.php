@@ -50,6 +50,8 @@
         var_dump($userEmail, $editedName, $editedStatus, $editedMessage);
 
         $updateQuery = "UPDATE message_rsvp SET name='$editedName', status='$editedStatus', message='$editedMessage' WHERE email='$userEmail'";
+        $updateUser = $connect->prepare("UPDATE user set attend='$editedStatus' WHERE email = '$userEmail'");
+        $updateUser -> execute();
         
         if ($connect->query($updateQuery) === TRUE) {
             echo "Data updated successfully";
