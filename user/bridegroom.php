@@ -62,9 +62,25 @@
         margin: min(1vw, 1vh);
     }
 
+    img.butterfly {
+    position: relative;
+    width: auto;
+    height: 50px;
+    }
+
     .cssSubtitle {
         color: #b27f32;
         font-size: min(3vh, 3vw);
+    }
+
+    .glitter {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
     }
 
     </style>
@@ -79,12 +95,13 @@
        <div class="text-center mb-5">
        <div class="golden-blur golden-blur-1"></div>
        <div class="golden-blur golden-blur-4"></div>
-       <div class="glitter" data-aos="fade-down-right" data-aos-duration="1000" data-aos-delay="1000">
-            <img src="assets/images/haeun/glittertop.png" alt="" class="" >
-            <img src="assets/images/haeun/glittertop.png" alt="" class="glitter2">
-        </div>
         <h1 class="py-4 px-2 csstitle" data-aos="fade-up-right" data-aos-delay="1000" data-aos-duration="1000">Congratulations Lovebirds</h1>
+        <div class="d-flex justify-content-center mb-3" data-aos="fade-up-right" data-aos-delay="1000" data-aos-duration="1000">
+                <img src="../user/assets/images/haeun/13A.png" alt="" class="line img-fluid">
+                <img src="../user/assets/images/haeun/13B.png" alt="" class="line img-fluid">
+            </div>
         <div class="testing">
+    
         <div class="groom" data-aos="fade-right" data-aos-duration="2000">
             <div class="img-crop-bridegroom border-light shadow my-4 mx-auto">
                 <img src="../images/<?=$groom['image']?>" alt="" class="">
@@ -126,6 +143,7 @@
         </div>
        </div> 
 
+       
        <!-- <div>
        <img src="assets/images/haeun/grass.png" alt="" class="glittertop">
        </div> -->
@@ -154,6 +172,7 @@
             <img src="assets/images/haeun/grass.png" alt="Flower Image" style="height: 100%; width: 100%;">
             <img src="assets/images/haeun/grass.png" alt="Flower Image" style="height: 100%; width: 100%;">
         </div>  -->
+        
     </section>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

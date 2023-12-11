@@ -42,11 +42,6 @@ img.flower {
   left: 25px;
 }
 
-img.butterfly {
-  position: relative;
-  width: auto;
-  height: 100px;
-}
 
 .testing {
   display: flex;
@@ -74,15 +69,7 @@ img.butterfly {
   color: #000000 !important;
 }
 
-.glitter {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  /* top: 0; */
-}
+
 
 .glittertop,
 .glitterbottom {
