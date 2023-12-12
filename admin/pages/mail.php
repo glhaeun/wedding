@@ -57,7 +57,7 @@ if (isset($_POST['send'])) {
             $mail->SMTPKeepAlive = true; 
             $mail->Username = "evotingindonesia23@gmail.com";
             $mail->Password = "ldaxltxowanuluyu";
-            $mail->SetFrom("evotingindonesia23@gmail.com","E-Voting Indonesia");
+            $mail->SetFrom("evotingindonesia23@gmail.com","Wedding Invitation");
             $mail->Subject = $subject;
             $mail->AddAddress("{$email}", $name);
             $mail->MsgHTML($message.'<br><br><p>Click <a href="' . $invitationLink . '">here</a> to open the invitation.</p>');
