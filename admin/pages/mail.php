@@ -45,7 +45,7 @@ if (isset($_POST['send'])) {
             require('../component/phpmailer/vendor/phpmailer/phpmailer/src/SMTP.php');
             require('../component/phpmailer/vendor/phpmailer/phpmailer/src/Exception.php');    
             require('../component/phpmailer/vendor/phpmailer/phpmailer/src/PHPMailer.php');
-            $invitationLink = 'http://localhost/wedding/wedding/user/main.php?email=' . $email;
+            $invitationLink = 'https://wedding-21ti2.000webhostapp.com/user/main.php?email=' . $email;
             $mail = new PHPMailer();
             $mail->IsSMTP();
             $mail->SMTPSecure = 'ssl';
