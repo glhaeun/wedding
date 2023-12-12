@@ -44,7 +44,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="bride_groom_image" class="d-block">Bride & Groom image</label>
-                                    <img id="bridegroomImagePreview" class="my-2 mr-5" style="width: 150px; height: 150px; border-radius: 150px" src="../../images/<?= $data['image'] ?>">
+                                    <img id="bridegroomImagePreview" class="my-2 mr-5" style="width: 150px; height: 150px; border-radius: 150px" src="../../images/<?= $data['image'] ?>?<?php echo time(); ?>">
                                     <?php if($readonly == '') { ?>
                                         <input  name="bride_groom_image"  type="file" id="bride_groom_image" onchange="previewImage(event, 'bridegroomImagePreview')">
                                     <?php } ?>  
@@ -65,8 +65,7 @@
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="ty">Thank You Message</label>
-                                    <!-- <input required  name="inv_title" type="text" class="form-control" id="inv_title"   <?php echo $readonly; ?>> -->
-                                    <textarea name="ty" class="form-control" id="ty" rows="4"  <?php echo $readonly; ?>><?= isset($data['thankyou']) ? $data['thankyou'] : ''; ?></textarea>
+                                    <textarea name="ty" class="form-control" id="ty" rows="4"  <?php echo $readonly; ?> required><?= isset($data['thankyou']) ? $data['thankyou'] : ''; ?></textarea>
                                     <div class="invalid-feedback">
                                         Please enter thank you message
                                     </div>

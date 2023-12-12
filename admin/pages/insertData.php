@@ -3,11 +3,41 @@
         if (isset($_POST['save'])) {
             if(isset($_FILES['bride_image']) && file_exists($_FILES['bride_image']['tmp_name'])) {
                 // replaceImage('../../images', $_FILES['bride_image'], 'bride.png');
-                moveImageWithName('../../images', $_FILES['bride_image'], 'bride.png');
+                $brideFileType = strtolower(pathinfo($_FILES['bride_image']['name'], PATHINFO_EXTENSION));
+                if($brideFileType != "png" && $brideFileType != "jpg" && $brideFileType != "jpeg") {
+                    ?>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+                    <script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Invalid file type for bride image!',
+                            text: 'Only JPG, PNG, and JPEG files are allowed.'
+                        })
+                    </script>
+                    <?php
+                    return;
+                    } else {
+                    moveImageWithName('../../images', $_FILES['bride_image'], 'bride.png');
+                }
             }
             if(isset($_FILES['groom_image']) && file_exists($_FILES['groom_image']['tmp_name'])) {
                 // replaceImage('../../images', $_FILES['groom_image'], 'groom.png');
-                moveImageWithName('../../images', $_FILES['groom_image'], 'groom.png');
+                $groomFileType = strtolower(pathinfo($_FILES['groom_image']['name'], PATHINFO_EXTENSION));
+                if($groomFileType != "png" && $groomFileType != "jpg" && $groomFileType != "jpeg") {
+                    ?>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+                    <script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Invalid file type for groom image!',
+                            text: 'Only JPG, PNG, and JPEG files are allowed.'
+                        })
+                    </script>
+                    <?php
+                    return;
+                    } else {
+                        moveImageWithName('../../images', $_FILES['groom_image'], 'groom.png');
+                    }
             }
             if($check_database_bride->rowCount() > 0 ) {
                 $query = "UPDATE bride SET bride =?, number=?, mom =?, dad=?, bank=?, rekening=?, image=?";
@@ -42,7 +72,22 @@
             <?php
         } else if (isset($_POST['jadwal'])) {
             if(isset($_FILES['bride_groom_image'])  && file_exists($_FILES['bride_groom_image']['tmp_name'])) {
-                replaceImage('../../images', $_FILES['bride_groom_image'], 'bridegroom.png');
+                $brideGroomFileType = strtolower(pathinfo($_FILES['bride_groom_image']['name'], PATHINFO_EXTENSION));
+                if($brideGroomFileType != "png" && $brideGroomFileType != "jpg" && $brideGroomFileType != "jpeg") {
+                    ?>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+                    <script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Invalid file type for cover image!',
+                            text: 'Only JPG, PNG, and JPEG files are allowed.'
+                        })
+                    </script>
+                    <?php
+                    return;
+                    } else {
+                        replaceImage('../../images', $_FILES['bride_groom_image'], 'bridegroom.png');
+                    }
             }
            
             if ($check_database -> rowCount()>0) {

@@ -104,7 +104,7 @@
     
         <div class="groom" data-aos="fade-right" data-aos-duration="2000">
             <div class="img-crop-bridegroom border-light shadow my-4 mx-auto">
-                <img src="../images/<?=$groom['image']?>" alt="" class="">
+                <img src="../images/<?=$groom['image']?>?<?php echo time(); ?>" alt="" class="">
                 <img class="flower flower1" src="assets/images/haeun/flower1.png" data-aos="fade-up" data-aos-duration="2000">
             </div>
        
@@ -126,7 +126,7 @@
 
         <div class="groom" data-aos="fade-left" data-aos-duration="2000">
             <div class="img-crop-bridegroom border border-3 border-light shadow my-4 mx-auto">
-                <img src="../images/<?=$bride['image']?>" alt="" class="w-full h-screen object-cover">
+                <img src="../images/<?=$bride['image']?>?<?php echo time(); ?>" alt="" class="w-full h-screen object-cover">
                 <img class="flower flower2" src="assets/images/haeun/flower2.png"  data-aos="fade-up" data-aos-duration="2000">
             </div>
             <div class="details">
